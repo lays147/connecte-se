@@ -1,5 +1,10 @@
-import type { MonthName, TechEvent } from "../types";
+import { MONTH_NAMES, type MonthName, type TechEvent } from "../types";
 import { renderCard } from "./card";
+
+export function monthSectionId(year: number, month: MonthName): string {
+  const monthIndex = MONTH_NAMES.indexOf(month) + 1;
+  return `month-${year}-${String(monthIndex).padStart(2, "0")}`;
+}
 
 export function renderMonthGroup(
   month: MonthName,
@@ -7,8 +12,9 @@ export function renderMonthGroup(
   events: TechEvent[],
 ): HTMLElement {
   const section = document.createElement("section");
+  section.id = monthSectionId(year, month);
   section.dataset.month = month;
-  section.className = "flex flex-col gap-4";
+  section.className = "flex flex-col gap-4 scroll-mt-20";
 
   const heading = document.createElement("h2");
   heading.className = "text-xl font-bold text-brand-900";
