@@ -1,0 +1,106 @@
+{
+  "Janeiro": [
+    {
+      "id": "2026-01-python-brasil-meetup",
+      "title": "Python Brasil Meetup SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-01-15",
+      "description": "Encontro mensal da comunidade Python de São Paulo com talks curtas e networking.",
+      "paid": false,
+      "url": "https://python.org.br"
+    }
+  ],
+  "Março": [
+    {
+      "id": "2026-03-devfest-porto-alegre",
+      "title": "DevFest Porto Alegre",
+      "region": "Sul",
+      "type": "Conferência",
+      "date": "2026-03-21",
+      "description": "Evento GDG com trilhas de Web, Cloud e IA para desenvolvedores do Sul do país.",
+      "paid": true,
+      "url": "https://devfest.gdg.org.br"
+    }
+  ],
+  "Maio": [
+    {
+      "id": "2026-05-qcon-sao-paulo",
+      "title": "QCon São Paulo",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-05-08",
+      "description": "Conferência internacional de arquitetura de software e engenharia para líderes técnicos.",
+      "paid": true,
+      "url": "https://qconsp.com"
+    }
+  ],
+  "Julho": [
+    {
+      "id": "2026-07-rust-nordeste",
+      "title": "Rust Nordeste Summit",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "date": "2026-07-11",
+      "description": "Primeiro encontro regional dedicado à linguagem Rust, com foco em sistemas embarcados.",
+      "paid": false,
+      "url": "https://rustnordeste.dev"
+    }
+  ],
+  "Agosto": [
+    {
+      "id": "2026-08-cloud-native-recife",
+      "title": "Cloud Native Recife",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "date": "2026-08-05",
+      "description": "Kubernetes, service mesh e observabilidade com especialistas da comunidade CNCF Brasil.",
+      "paid": true,
+      "url": "https://cloudnativerecife.dev"
+    },
+    {
+      "id": "2026-08-frontend-brasil",
+      "title": "Frontend Brasil Conf",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-08-22",
+      "description": "As últimas tendências em React, performance web e design systems.",
+      "paid": true,
+      "url": "https://frontend.br"
+    },
+    {
+      "id": "2026-08-women-tech-bh",
+      "title": "Women Techmakers BH",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-29",
+      "description": "Encontro da comunidade Women Techmakers com palestras e mentoria de carreira.",
+      "paid": false,
+      "url": "https://womentechmakers.com"
+    }
+  ],
+  "Setembro": [
+    {
+      "id": "2026-09-tdc-florianopolis",
+      "title": "The Developer's Conference Floripa",
+      "region": "Sul",
+      "type": "Conferência",
+      "date": "2026-09-17",
+      "description": "Uma das maiores conferências multitrilha de tecnologia do Brasil.",
+      "paid": true,
+      "url": "https://thedevconf.com"
+    }
+  ],
+  "Novembro": [
+    {
+      "id": "2026-11-devops-brasilia",
+      "title": "DevOps Days Brasília",
+      "region": "Centro-Oeste",
+      "type": "Conferência",
+      "date": "2026-11-06",
+      "description": "Cultura DevOps, automação e práticas de entrega contínua no setor público e privado.",
+      "paid": false,
+      "url": "https://devopsdays.org/events/2026-brasilia"
+    }
+  ]
+}
