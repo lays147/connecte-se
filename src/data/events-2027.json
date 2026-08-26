@@ -1,0 +1,28 @@
+{
+  "Junho": [
+    {
+      "id": "2027-06-web-summit-rio-2027",
+      "title": "Web Summit Rio 2027",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2027-06-14",
+      "description": "O Web Summit Rio reúne mais de 40.000 participantes, incluindo fundadores, investidores e líderes de tecnologia do Brasil e da América Latina, no Riocentro, no Rio de Janeiro.",
+      "paid": true,
+      "url": "https://rio.websummit.com"
+    }
+  ],
+  "Agosto": [
+    {
+      "id": "2027-08-rio-innovation-week-2027",
+      "title": "Rio Innovation Week 2027",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2027-08-24",
+      "description": "A maior conferência global de tecnologia e inovação da América Latina, reunindo líderes, cientistas e criadores para debater o futuro através de palestras e experiências imersivas no Pier Mauá, Rio de Janeiro.",
+      "paid": true,
+      "url": "https://rioinnovationweek.com.br/"
+    }
+  ]
+}
