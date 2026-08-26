@@ -8,21 +8,21 @@ export type ExtractedEvent = Omit<TechEvent, "id">;
 
 const REGIONS = ["Sudeste", "Sul", "Nordeste", "Centro-Oeste", "Norte"] as const;
 
-const ExtractedEventSchema = z.object({
-  title: z.string().min(1),
-  region: z.enum(REGIONS),
-  type: z.string().min(1),
-  modality: z.enum(["Presencial", "Online", "Híbrido", "Não informado"]),
-  date: z
-    .string()
-    .regex(/^2026-\d{2}-\d{2}$/, "date must be an ISO YYYY-MM-DD date in 2026")
-    .refine((value) => !Number.isNaN(new Date(value).getTime()), "date must be a valid calendar date"),
-  description: z.string().min(1),
-  paid: z.boolean(),
-  url: z.string().url(),
-});
-
-const ExtractedEventsSchema = z.array(ExtractedEventSchema);
+function buildExtractedEventSchema(year: number) {
+  return z.object({
+    title: z.string().min(1),
+    region: z.enum(REGIONS),
+    type: z.string().min(1),
+    modality: z.enum(["Presencial", "Online", "Híbrido", "Não informado"]),
+    date: z
+      .string()
+      .regex(new RegExp(`^${year}-\\d{2}-\\d{2}$`), `date must be an ISO YYYY-MM-DD date in ${year}`)
+      .refine((value) => !Number.isNaN(new Date(value).getTime()), "date must be a valid calendar date"),
+    description: z.string().min(1),
+    paid: z.boolean(),
+    url: z.string().url(),
+  });
+}
 
 const MODEL = "claude-sonnet-5";
 
@@ -42,7 +42,7 @@ export interface PageLink {
 
 const MAX_LINKS = 300;
 
-function buildPrompt(pageText: string, pageLinks: PageLink[], source: EventSource): string {
+function buildPrompt(pageText: string, pageLinks: PageLink[], source: EventSource, year: number): string {
   const linksBlock = pageLinks
     .slice(0, MAX_LINKS)
     .map((l) => `- "${l.text}" -> ${l.href}`)
@@ -57,7 +57,7 @@ Source context:
 - frequency: ${source.frequency}
 
 Instructions:
-- Only extract events that will actually take place in Brazil during calendar year 2026. Never invent or guess a date — if you cannot determine a specific, real 2026 date for an event, omit it.
+- Only extract events that will actually take place in Brazil during calendar year ${year}. Never invent or guess a date — if you cannot determine a specific, real ${year} date for an event, omit it.
 - Many of these sources (e.g. DevOpsDays, ServerlessDays, Web Summit, AWS Summit-style events) run many international editions/chapters. Scan the ENTIRE page for every listed edition or chapter, identify which ones are located in Brazil (by Brazilian city/state name, "Brasil"/"Brazil" labeling, or .br links), and extract ONLY those. Ignore every non-Brazil edition, even if it is the most prominent one on the page.
 - If the page is a global index/listing page whose links point to separate per-city pages, and a Brazil edition's own date/details are not directly visible in this page's text, return an empty array rather than guessing at what that sub-page might say.
 - If the page contains no discoverable concrete Brazil event details (dates, locations) at all, return an empty array.
@@ -84,14 +84,17 @@ export async function extractEventsFromPage(
   pageText: string,
   pageLinks: PageLink[],
   source: EventSource,
+  year: number,
 ): Promise<ExtractedEvent[]> {
+  const ExtractedEventsSchema = z.array(buildExtractedEventSchema(year));
+
   const response = await getClient().messages.parse({
     model: MODEL,
     max_tokens: 16000,
     output_config: {
       format: zodOutputFormat(ExtractedEventsSchema),
     },
-    messages: [{ role: "user", content: buildPrompt(pageText, pageLinks, source) }],
+    messages: [{ role: "user", content: buildPrompt(pageText, pageLinks, source, year) }],
   });
 
   if (response.parsed_output === null) {

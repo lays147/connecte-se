@@ -1,51 +1,69 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
-import { loadSources, type EventSource } from "../src/data/sources.ts";
+import { loadSources, type EventSource, type Frequency } from "../src/data/sources.ts";
 import type { EventsByMonth, TechEvent } from "../src/types.ts";
 import { extractEventsFromPage, type ExtractedEvent } from "./lib/extractEvents.ts";
 import { buildEventId, monthNameFromDate, sortEventsByMonth } from "./lib/events.ts";
 
-const EVENTS_PATH = fileURLToPath(
-  new URL("../src/data/events-2026.json", import.meta.url),
-);
+function eventsPathForYear(year: number): string {
+  return fileURLToPath(new URL(`../src/data/events-${year}.json`, import.meta.url));
+}
 
 const PAGE_TEXT_LIMIT = 15000;
 const NAV_TIMEOUT_MS = 30000;
 const RENDER_SETTLE_MS = 4000;
 
+const FREQUENCIES: Frequency[] = ["monthly", "yearly", "occasionally"];
+
 interface CliOptions {
   dryRun: boolean;
   only?: string;
   limit?: number;
+  year: number;
+  frequency?: Frequency;
+  force: boolean;
 }
 
 function parseCliOptions(argv: string[]): CliOptions {
-  const options: CliOptions = { dryRun: false };
+  const options: CliOptions = { dryRun: false, year: new Date().getFullYear(), force: false };
   for (const arg of argv) {
     if (arg === "--dry-run") {
       options.dryRun = true;
+    } else if (arg === "--force") {
+      options.force = true;
     } else if (arg.startsWith("--only=")) {
       options.only = arg.slice("--only=".length);
     } else if (arg.startsWith("--limit=")) {
       options.limit = Number(arg.slice("--limit=".length));
+    } else if (arg.startsWith("--year=")) {
+      options.year = Number(arg.slice("--year=".length));
+    } else if (arg.startsWith("--frequency=")) {
+      const value = arg.slice("--frequency=".length);
+      if (!FREQUENCIES.includes(value as Frequency)) {
+        throw new Error(`Invalid --frequency value "${value}". Must be one of ${FREQUENCIES.join(", ")}`);
+      }
+      options.frequency = value as Frequency;
     }
   }
   return options;
 }
 
-function readCurrentEvents(): EventsByMonth {
-  const raw = readFileSync(EVENTS_PATH, "utf-8");
+function readCurrentEvents(path: string): EventsByMonth {
+  if (!existsSync(path)) {
+    return {};
+  }
+  const raw = readFileSync(path, "utf-8");
   return JSON.parse(raw) as EventsByMonth;
 }
 
-function writeEvents(events: EventsByMonth): void {
-  writeFileSync(EVENTS_PATH, `${JSON.stringify(sortEventsByMonth(events), null, 2)}\n`);
+function writeEvents(path: string, events: EventsByMonth): void {
+  writeFileSync(path, `${JSON.stringify(sortEventsByMonth(events), null, 2)}\n`);
 }
 
 interface SourceResult {
   source: string;
-  status: "ok" | "no-events" | "failed";
+  status: "ok" | "no-events" | "failed" | "skipped-yearly";
   found: number;
   added: number;
   skippedDuplicate: number;
@@ -62,6 +80,7 @@ async function main(): Promise<void> {
   }
 
   const options = parseCliOptions(process.argv.slice(2));
+  const eventsPath = eventsPathForYear(options.year);
 
   let sources: EventSource[] = loadSources();
   if (options.only) {
@@ -72,17 +91,22 @@ async function main(): Promise<void> {
       return;
     }
   }
+  if (options.frequency) {
+    sources = sources.filter((s) => s.frequency === options.frequency);
+  }
   if (options.limit !== undefined) {
     sources = sources.slice(0, options.limit);
   }
 
-  const events = readCurrentEvents();
+  const events = readCurrentEvents(eventsPath);
   const existingIds = new Set<string>();
   const existingUrlDateKeys = new Set<string>();
+  const existingUrlsByYear = new Set<string>();
   for (const bucket of Object.values(events)) {
     for (const event of bucket ?? []) {
       existingIds.add(event.id);
       existingUrlDateKeys.add(`${event.url}|${event.date}`);
+      existingUrlsByYear.add(`${event.url}|${event.date.slice(0, 4)}`);
     }
   }
 
@@ -98,6 +122,16 @@ async function main(): Promise<void> {
         added: 0,
         skippedDuplicate: 0,
       };
+
+      if (
+        !options.force &&
+        source.frequency === "yearly" &&
+        existingUrlsByYear.has(`${source.url}|${options.year}`)
+      ) {
+        result.status = "skipped-yearly";
+        results.push(result);
+        continue;
+      }
 
       const page = await browser.newPage();
       try {
@@ -120,6 +154,7 @@ async function main(): Promise<void> {
           pageText,
           pageLinks,
           source,
+          options.year,
         );
         result.found = candidates.length;
         result.status = candidates.length > 0 ? "ok" : "no-events";
@@ -157,7 +192,7 @@ async function main(): Promise<void> {
   }
 
   if (!options.dryRun) {
-    writeEvents(events);
+    writeEvents(eventsPath, events);
   }
 
   printSummary(results, options.dryRun);
@@ -170,18 +205,22 @@ async function main(): Promise<void> {
 function printSummary(results: SourceResult[], dryRun: boolean): void {
   console.log(dryRun ? "\n(dry run - no changes written)\n" : "\nScrape summary:\n");
   for (const r of results) {
-    const line = `  [${r.status.padEnd(9)}] ${r.source} - found ${r.found}, added ${r.added}, skipped ${r.skippedDuplicate}`;
+    const line =
+      r.status === "skipped-yearly"
+        ? `  [${r.status.padEnd(14)}] ${r.source} - already covered for this year`
+        : `  [${r.status.padEnd(14)}] ${r.source} - found ${r.found}, added ${r.added}, skipped ${r.skippedDuplicate}`;
     console.log(r.error ? `${line} (${r.error})` : line);
   }
 
   const succeeded = results.filter((r) => r.status === "ok").length;
   const noEvents = results.filter((r) => r.status === "no-events").length;
   const failed = results.filter((r) => r.status === "failed").length;
+  const skippedYearly = results.filter((r) => r.status === "skipped-yearly").length;
   const totalAdded = results.reduce((sum, r) => sum + r.added, 0);
   const totalSkipped = results.reduce((sum, r) => sum + r.skippedDuplicate, 0);
 
   console.log(
-    `\n${succeeded} ok, ${noEvents} no-events, ${failed} failed | ${totalAdded} events added, ${totalSkipped} duplicates skipped\n`,
+    `\n${succeeded} ok, ${noEvents} no-events, ${failed} failed, ${skippedYearly} skipped-yearly | ${totalAdded} events added, ${totalSkipped} duplicates skipped\n`,
   );
 }
 

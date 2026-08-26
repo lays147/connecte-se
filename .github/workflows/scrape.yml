@@ -1,0 +1,70 @@
+name: Scrape Events
+
+on:
+  workflow_dispatch:
+    inputs:
+      frequency:
+        description: "Only scrape sources with this frequency (leave as 'all' to scrape everything)"
+        required: true
+        type: choice
+        default: all
+        options:
+          - all
+          - monthly
+          - yearly
+          - occasionally
+  schedule:
+    # Weekly: occasional sources (meetups) change often enough to need frequent checks.
+    - cron: "0 6 * * 1"
+    # Twice a year: yearly sources (conferences) rarely change, and this also
+    # doubles as a full sweep of every source.
+    - cron: "0 6 1 1,7 *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Determine frequency filter
+        id: filter
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "0 6 * * 1" ]; then
+            echo "args=--frequency=occasionally" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.frequency }}" != "all" ]; then
+            echo "args=--frequency=${{ inputs.frequency }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "args=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Scrape events
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run scrape -- ${{ steps.filter.outputs.args }}
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "feat: scrape new events"
+          branch: scrape-events/${{ github.run_id }}
+          title: "feat: scrape new events"
+          body: |
+            Automated scrape run (${{ github.event_name == 'schedule' && github.event.schedule || format('manual, frequency={0}', inputs.frequency) }}), triggered by @${{ github.actor }}.
+          add-paths: src/data/events-*.json
