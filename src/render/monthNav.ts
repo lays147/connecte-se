@@ -1,60 +1,140 @@
-import type { MonthName } from "../types";
+import type { YearNavGroup } from "../state/monthBuckets";
 import { monthSectionId } from "./monthGroup";
 
-export interface MonthNavEntry {
-  year: number;
-  monthIndex: number;
-  monthName: MonthName;
+export interface MonthNavHandlers {
+  onToggleYear: (year: number) => void;
+  onLoadMonth: (key: string) => void;
+  onLoadYear: (year: number) => void;
+  onLoadAllPast: () => void;
 }
 
-export function renderMonthNav(
-  entries: MonthNavEntry[],
-  onSelect: (entry: MonthNavEntry) => void,
-): HTMLElement {
+function keyToId(key: string): string {
+  const [year, monthIndex] = key.split("-").map(Number);
+  return monthSectionId(year, monthIndex);
+}
+
+export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNavHandlers): HTMLElement {
   const nav = document.createElement("nav");
-  nav.setAttribute("aria-label", "Navegação por mês");
   nav.className =
-    "flex shrink-0 flex-col gap-1 lg:sticky lg:top-4 lg:h-fit lg:w-40";
+    "w-full shrink-0 self-stretch border-t border-brand-100 bg-brand-50/40 p-4 lg:w-[216px] lg:border-t-0 lg:border-l";
+  nav.setAttribute("aria-label", "Navegação por mês e ano");
 
-  const byYear = new Map<number, MonthNavEntry[]>();
-  for (const entry of entries) {
-    const list = byYear.get(entry.year) ?? [];
-    list.push(entry);
-    byYear.set(entry.year, list);
-  }
+  const sticky = document.createElement("div");
+  sticky.className = "flex flex-col gap-2.5 lg:sticky lg:top-4";
 
-  const years = [...byYear.keys()].sort((a, b) => b - a);
+  const heading = document.createElement("span");
+  heading.className = "font-mono-label text-[10px] font-semibold uppercase tracking-widest text-brand-500";
+  heading.textContent = "Meses";
+  sticky.appendChild(heading);
 
-  for (const year of years) {
+  let hasPastLocked = false;
+
+  for (const group of yearGroups) {
+    const yearBlock = document.createElement("div");
+    yearBlock.className = "flex flex-col gap-0.5";
+
+    const yearBtn = document.createElement("button");
+    yearBtn.type = "button";
+    yearBtn.className =
+      "flex w-full items-baseline gap-2 rounded-lg px-2 py-1.5 text-left cursor-pointer hover:bg-brand-100/60";
+
+    const chevron = document.createElement("span");
+    chevron.className = "font-mono-label text-[10px] text-brand-400";
+    chevron.textContent = group.open ? "▾" : "▸";
+    yearBtn.appendChild(chevron);
+
     const yearLabel = document.createElement("span");
-    yearLabel.className =
-      "mt-3 px-2 text-xs font-semibold uppercase tracking-wide text-brand-500 first:mt-0";
-    yearLabel.textContent = String(year);
-    nav.appendChild(yearLabel);
+    yearLabel.className = `flex-1 font-display text-sm font-bold ${group.isCurrentYear ? "text-brand-950" : "text-brand-700"}`;
+    yearLabel.textContent = String(group.year);
+    yearBtn.appendChild(yearLabel);
 
-    for (const entry of byYear.get(year) ?? []) {
-      const link = document.createElement("a");
-      link.href = `#${monthSectionId(entry.year, entry.monthName)}`;
-      link.dataset.navMonth = monthSectionId(entry.year, entry.monthName);
-      link.className =
-        "rounded-lg px-2 py-1 text-sm text-brand-700 transition-colors hover:bg-brand-100 hover:text-brand-950";
-      link.textContent = entry.monthName;
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        onSelect(entry);
-      });
-      nav.appendChild(link);
+    const total = group.months.reduce((n, m) => n + m.count, 0);
+    const yearCount = document.createElement("span");
+    yearCount.className = "font-mono-label text-[10px] text-brand-400";
+    yearCount.textContent = total + (total === 1 ? " evento" : " eventos");
+    yearBtn.appendChild(yearCount);
+
+    yearBtn.addEventListener("click", () => handlers.onToggleYear(group.year));
+    yearBlock.appendChild(yearBtn);
+
+    if (group.hasLocked) {
+      hasPastLocked = true;
+      const loadYearBtn = document.createElement("button");
+      loadYearBtn.type = "button";
+      loadYearBtn.className =
+        "ml-[22px] mb-1 mt-0.5 self-start rounded-lg border border-brand-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-brand-700 cursor-pointer hover:border-brand-400";
+      loadYearBtn.textContent = `Carregar ${group.year}`;
+      loadYearBtn.addEventListener("click", () => handlers.onLoadYear(group.year));
+      yearBlock.appendChild(loadYearBtn);
     }
+
+    if (group.open) {
+      for (const m of group.months) {
+        if (m.loaded) {
+          const link = document.createElement("a");
+          link.href = `#${keyToId(m.key)}`;
+          link.className = [
+            "flex items-baseline gap-2 rounded-lg py-2 pl-[22px] pr-2.5 no-underline hover:bg-brand-100/60",
+            m.isCurrent ? "bg-brand-100/70" : "",
+          ].join(" ");
+
+          const label = document.createElement("span");
+          label.className = `flex-1 text-sm capitalize ${m.isCurrent ? "font-semibold text-brand-950" : "font-medium text-brand-700"}`;
+          label.textContent = m.label;
+          link.appendChild(label);
+
+          const count = document.createElement("span");
+          count.className = `font-mono-label min-w-[16px] text-right text-[11px] font-semibold ${m.isCurrent ? "text-brand-950" : "text-brand-700"}`;
+          count.textContent = String(m.count);
+          link.appendChild(count);
+
+          yearBlock.appendChild(link);
+        } else {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.title = "Carregar eventos deste mês";
+          btn.className =
+            "flex w-full items-baseline gap-2 rounded-lg py-2 pl-[22px] pr-2.5 text-left cursor-pointer hover:bg-brand-100/60";
+
+          const label = document.createElement("span");
+          label.className = "flex-1 text-sm font-medium capitalize text-brand-400";
+          label.textContent = m.label;
+          btn.appendChild(label);
+
+          const count = document.createElement("span");
+          count.className = "font-mono-label min-w-[16px] text-right text-[11px] font-semibold text-brand-700";
+          count.textContent = `+${m.count}`;
+          btn.appendChild(count);
+
+          btn.addEventListener("click", () => handlers.onLoadMonth(m.key));
+          yearBlock.appendChild(btn);
+        }
+      }
+    }
+
+    sticky.appendChild(yearBlock);
   }
 
+  if (hasPastLocked) {
+    const footer = document.createElement("div");
+    footer.className = "flex flex-col gap-2 border-t border-brand-100 pt-2.5";
+
+    const hint = document.createElement("span");
+    hint.className = "text-[11px] leading-relaxed text-brand-500";
+    hint.textContent = "Meses anteriores carregam quando você clica.";
+    footer.appendChild(hint);
+
+    const loadAllBtn = document.createElement("button");
+    loadAllBtn.type = "button";
+    loadAllBtn.className =
+      "rounded-lg border border-brand-200 bg-white px-2.5 py-2 text-xs font-semibold text-brand-700 cursor-pointer hover:border-brand-400";
+    loadAllBtn.textContent = "Carregar todos";
+    loadAllBtn.addEventListener("click", handlers.onLoadAllPast);
+    footer.appendChild(loadAllBtn);
+
+    sticky.appendChild(footer);
+  }
+
+  nav.appendChild(sticky);
   return nav;
-}
-
-export function highlightActiveMonth(nav: HTMLElement, sectionId: string): void {
-  const links = nav.querySelectorAll<HTMLAnchorElement>("[data-nav-month]");
-  for (const link of links) {
-    link.classList.toggle("bg-brand-100", link.dataset.navMonth === sectionId);
-    link.classList.toggle("text-brand-950", link.dataset.navMonth === sectionId);
-    link.classList.toggle("font-semibold", link.dataset.navMonth === sectionId);
-  }
 }

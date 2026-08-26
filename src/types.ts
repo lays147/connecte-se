@@ -10,6 +10,12 @@ export interface TechEvent {
   url: string;
 }
 
+export interface EnrichedEvent extends TechEvent {
+  time: string;
+  community: string | null;
+  city: string | null;
+}
+
 export type EventsByMonth = Partial<Record<MonthName, TechEvent[]>>;
 
 export const MONTH_NAMES = [

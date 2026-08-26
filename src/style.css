@@ -12,4 +12,27 @@
   --color-brand-800: #4016a1;
   --color-brand-900: #32117d;
   --color-brand-950: #1e0b4c;
+
+  --color-accent-blue-50: oklch(0.96 0.02 255);
+  --color-accent-blue-700: oklch(0.5 0.16 255);
+  --color-accent-teal-50: oklch(0.96 0.02 195);
+  --color-accent-teal-700: oklch(0.5 0.12 195);
+  --color-accent-coral-50: oklch(0.96 0.02 25);
+  --color-accent-coral-700: oklch(0.55 0.16 25);
+  --color-neutral-50: oklch(0.96 0.005 292);
+  --color-neutral-700: oklch(0.45 0.02 292);
+
+  --color-price-paid-bg: oklch(0.95 0.04 75);
+  --color-price-paid-text: oklch(0.45 0.1 60);
+  --color-price-free-bg: oklch(0.94 0.05 160);
+  --color-price-free-text: oklch(0.44 0.1 160);
+
+  --color-modality-online-bg: oklch(0.85 0.15 155);
+  --color-modality-presencial-bg: oklch(0.86 0.13 85);
+
+  --color-page: #f2f0f7;
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono-label: "IBM Plex Mono", ui-monospace, monospace;
 }
