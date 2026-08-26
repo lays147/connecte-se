@@ -1,9 +1,13 @@
 import type { EventsByMonth } from "../types";
-import events2026 from "./events-2026.json";
 
-const eventsByYear: Record<number, EventsByMonth> = {
-  2026: events2026 as EventsByMonth,
-};
+const modules = import.meta.glob<EventsByMonth>("./events-*.json", { eager: true, import: "default" });
+
+const eventsByYear: Record<number, EventsByMonth> = {};
+for (const [path, data] of Object.entries(modules)) {
+  const match = path.match(/events-(\d{4})\.json$/);
+  if (!match) continue;
+  eventsByYear[Number(match[1])] = data;
+}
 
 export function loadYear(year: number): EventsByMonth | undefined {
   return eventsByYear[year];
