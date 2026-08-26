@@ -8,13 +8,29 @@ on:
         required: true
         type: string
       region:
-        description: "Region (e.g. Sudeste, Sul, Nordeste, Norte, Centro-Oeste)"
+        description: "Region"
         required: true
-        type: string
+        type: choice
+        options:
+          - Sudeste
+          - Sul
+          - Nordeste
+          - Norte
+          - Centro-Oeste
       event_type:
-        description: "Event type (e.g. Meetup, Conferência, Workshop, Summit)"
+        description: "Event type"
         required: true
-        type: string
+        type: choice
+        options:
+          - Meetup
+          - Meetup Online
+          - Conferência
+          - Congresso
+          - Workshop
+          - Summit
+          - Festival
+          - Community Day
+          - Evento
       date:
         description: "Event date (YYYY-MM-DD)"
         required: true

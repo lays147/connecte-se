@@ -19,3 +19,19 @@ Você pode sugerir uma nova comunidade ou evento sem precisar editar o YAML manu
    - **frequency**: `monthly`, `yearly` ou `occasionally`.
 4. Ao rodar, o workflow adiciona a nova fonte em [`sources/communities.yaml`](./sources/communities.yaml) e abre automaticamente um Pull Request com a alteração.
 5. O PR passa pela pipeline de checagem, que valida se a URL informada está no ar antes de ser revisado e mergeado.
+
+### Adicionando um novo evento
+
+Você também pode sugerir um evento específico sem editar os arquivos JSON manualmente:
+
+1. Vá até a aba **Actions** do repositório.
+2. Selecione o workflow **Add Event**.
+3. Clique em **Run workflow** e preencha os campos:
+   - **title**: título do evento.
+   - **region**: selecione a região do evento (`Sudeste`, `Sul`, `Nordeste`, `Norte` ou `Centro-Oeste`).
+   - **event_type**: selecione o tipo do evento (`Meetup`, `Meetup Online`, `Conferência`, `Congresso`, `Workshop`, `Summit`, `Festival`, `Community Day` ou `Evento`).
+   - **date**: data do evento no formato `YYYY-MM-DD`.
+   - **description**: uma breve descrição do evento.
+   - **paid**: marque caso o evento seja pago.
+   - **url**: URL do evento.
+4. Ao rodar, o workflow adiciona o novo evento em `src/data/events-<ano>.json` e abre automaticamente um Pull Request com a alteração.
