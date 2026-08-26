@@ -11,63 +11,469 @@
       "url": "https://python.org.br"
     }
   ],
+  "Fevereiro": [
+    {
+      "id": "2026-02-fundamentos-de-compute-na-aws",
+      "title": "Fundamentos de Compute na AWS",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-02-27",
+      "description": "Encontro da comunidade AWS User Group Alto Tietê sobre fundamentos de computação na nuvem AWS, realizado em Mogi das Cruzes, SP.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-alto-tiete"
+    },
+    {
+      "id": "2026-02-o-poder-da-comunidade-na-tecnologia",
+      "title": "O poder da comunidade na tecnologia",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-02-03",
+      "description": "Meetup online promovido pelo AWS User Group Sorocaba destacando a importância das comunidades tecnológicas para o crescimento profissional.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-sorocaba"
+    },
+    {
+      "id": "2026-02-kickoff-2026-google-docker-hashicorp-stack",
+      "title": "Kickoff 2026 – Google, Docker & HashiCorp Stack",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-02-24",
+      "description": "Meetup de abertura do ano com foco no stack de Google, Docker e HashiCorp, reunindo desenvolvedores e engenheiros de operações do Rio de Janeiro.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/docker-rio-de-janeiro"
+    }
+  ],
   "Março": [
     {
-      "id": "2026-03-devfest-porto-alegre",
-      "title": "DevFest Porto Alegre",
+      "id": "2026-03-118-meetup-aws-ug-sp-genai-em-escala-serverless-na-pratica",
+      "title": "118º Meetup AWS UG SP - GenAI em escala + Serverless na prática",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-03-11",
+      "description": "Encontro presencial no escritório da AWS em São Paulo com foco em GenAI em escala e práticas de arquitetura Serverless.",
+      "paid": false,
+      "url": "https://www.meetup.com/awsusergroupsp"
+    },
+    {
+      "id": "2026-03-consultor-aws-sendo-o-braco-direito-do-cliente-na-nuvem",
+      "title": "Consultor AWS: Sendo o braço direito do cliente na Nuvem",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-03-05",
+      "description": "Evento online que discute o papel do consultor AWS como parceiro estratégico do cliente em projetos de nuvem.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-sorocaba"
+    },
+    {
+      "id": "2026-03-o-quadrante-da-eficiencia-unindo-dados-seguranca-devops-e-comunidade-na-aws",
+      "title": "O Quadrante da Eficiência: Unindo Dados, Segurança, DevOps e Comunidade na AWS",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-03-17",
+      "description": "Encontro presencial do AWS User Group Circuito das Águas Paulista em Amparo-SP, unindo temas de dados, segurança, DevOps e comunidade dentro do ecossistema AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-circuito-das-aguas-paulista"
+    },
+    {
+      "id": "2026-03-8-acelerando-o-desenvolvimento-com-uso-de-serverless-na-aws",
+      "title": "#8 - Acelerando o Desenvolvimento com uso de Serverless na AWS",
       "region": "Sul",
-      "type": "Conferência",
-      "date": "2026-03-21",
-      "description": "Evento GDG com trilhas de Web, Cloud e IA para desenvolvedores do Sul do país.",
+      "type": "Meetup",
+      "date": "2026-03-24",
+      "description": "Encontro presencial do AWS User Group Joinville focado em acelerar o desenvolvimento de aplicações utilizando tecnologias serverless da AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-joinville"
+    },
+    {
+      "id": "2026-03-21-meetup-presencial-aws-user-group-triangulo-mineiro",
+      "title": "21º Meetup - Presencial - AWS User Group Triângulo Mineiro",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-03-24",
+      "description": "Encontro presencial da comunidade AWS User Group Triângulo Mineiro em Uberlândia, com discussões sobre Amazon Web Services e Cloud Computing.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-triangulo-mineiro"
+    }
+  ],
+  "Abril": [
+    {
+      "id": "2026-04-tdc-summit-sao-paulo-2026",
+      "title": "TDC Summit São Paulo 2026",
+      "region": "Sudeste",
+      "type": "Summit",
+      "date": "2026-04-23",
+      "description": "Summit do The Developers Conference em São Paulo, com foco em liderança, gestão e tendências de tecnologia.",
       "paid": true,
-      "url": "https://devfest.gdg.org.br"
+      "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+    },
+    {
+      "id": "2026-04-119-meetup-aws-ug-sp-agora-serverless-tem-servidores-gen-ai",
+      "title": "119º Meetup AWS UG SP - Agora Serverless tem servidores + GEN AI",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-23",
+      "description": "Evento presencial da comunidade AWS User Group São Paulo com discussões sobre Serverless e Inteligência Artificial Generativa.",
+      "paid": false,
+      "url": "https://www.meetup.com/awsusergroupsp"
+    },
+    {
+      "id": "2026-04-meetup-29-aws-networking-a-conexao-importa",
+      "title": "MeetUp #29 AWS Networking: A conexão importa",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-07",
+      "description": "Meetup da comunidade AWS de Belo Horizonte com foco em conceitos e práticas de networking na nuvem.",
+      "paid": false,
+      "url": "https://www.meetup.com/awsusergroupbh"
+    },
+    {
+      "id": "2026-04-desbloqueando-o-poder-do-kiro-muito-alem-da-sugestao-de-codigo",
+      "title": "Desbloqueando o Poder do Kiro: Muito Além da Sugestão de Código",
+      "region": "Sul",
+      "type": "Meetup",
+      "date": "2026-04-22",
+      "description": "Meetup da comunidade AWS em Curitiba explorando o Kiro e suas capacidades além da simples sugestão de código, realizado no espaço da EBANX.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-curitiba-user-group"
+    },
+    {
+      "id": "2026-04-armazenamento-na-aws",
+      "title": "Armazenamento na AWS",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-02",
+      "description": "Meetup presencial sobre soluções de armazenamento na AWS, com palestras e networking em Mogi das Cruzes, SP.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-alto-tiete"
+    },
+    {
+      "id": "2026-04-vibe-coding-spec-driven-com-kiro",
+      "title": "Vibe Coding & Spec-Driven com Kiro",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-30",
+      "description": "Evento da comunidade AWS sobre desenvolvimento orientado a especificações usando a ferramenta Kiro, com foco em boas práticas de codificação.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-alto-tiete"
+    },
+    {
+      "id": "2026-04-meetup-03-aws-user-group-sorocaba",
+      "title": "Meetup #03 – AWS User Group Sorocaba",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-23",
+      "description": "Encontro online da comunidade AWS User Group Sorocaba com discussões sobre arquitetura, boas práticas e serviços da AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-sorocaba"
+    },
+    {
+      "id": "2026-04-community-build-iniciativa-hands-on-01-2026",
+      "title": "Community Build: Iniciativa Hands-on #01/2026",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-10",
+      "description": "Encontro prático da comunidade AWS User Group São Lourenço com atividades hands-on sobre serviços e arquiteturas da AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-sao-lourenco"
+    },
+    {
+      "id": "2026-04-de-montes-claros-para-o-mundo-caminhos-para-carreira-internacional-em-cloud",
+      "title": "De Montes Claros para o Mundo: Caminhos para carreira internacional em Cloud",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-22",
+      "description": "Encontro presencial em Montes Claros discutindo caminhos e oportunidades para construir uma carreira internacional em Cloud Computing.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-montes-claros"
+    },
+    {
+      "id": "2026-04-09-de-zero-a-producao-seu-primeiro-agent-de-ia-em-escala-com-aws",
+      "title": "#09 - De Zero a Produção: Seu Primeiro Agent de IA em Escala com AWS",
+      "region": "Sul",
+      "type": "Meetup",
+      "date": "2026-04-09",
+      "description": "Evento da comunidade AWS User Group Joinville sobre como levar um agente de inteligência artificial da concepção até a produção em escala usando serviços AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-joinville"
+    },
+    {
+      "id": "2026-04-22-meetup-presencial-edicao-tupaciguara-aws-user-group-triangulo-mineiro",
+      "title": "22º Meetup - Presencial (Edição Tupaciguara) - AWS User Group Triângulo Mineiro",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-11",
+      "description": "Edição especial do meetup presencial da comunidade AWS realizada na cidade de Tupaciguara, Minas Gerais, com foco em compartilhamento de conhecimento sobre AWS e nuvem.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-triangulo-mineiro"
+    },
+    {
+      "id": "2026-04-docker-birthday-antigravity-party",
+      "title": "🎂 Docker Birthday & Antigravity Party 🚀",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-29",
+      "description": "Encontro da comunidade Docker Rio de Janeiro para celebrar o aniversário do Docker com talks e networking sobre containers e tecnologias relacionadas.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/docker-rio-de-janeiro"
+    },
+    {
+      "id": "2026-04-busca-semantica-rag-com-jina",
+      "title": "Busca Semântica & RAG com Jina",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-04-16",
+      "description": "Meetup da comunidade Elastic Rio de Janeiro sobre busca semântica e RAG (Retrieval-Augmented Generation) usando Jina, realizado no espaço Impulso.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/rio-de-janeiro-elastic-fantastics/"
     }
   ],
   "Maio": [
     {
-      "id": "2026-05-qcon-sao-paulo",
-      "title": "QCon São Paulo",
+      "id": "2026-05-60-aws-barbecue",
+      "title": "#60 AWS Barbecue",
       "region": "Sudeste",
-      "type": "Conferência",
-      "date": "2026-05-08",
-      "description": "Conferência internacional de arquitetura de software e engenharia para líderes técnicos.",
-      "paid": true,
-      "url": "https://qconsp.com"
+      "type": "Meetup",
+      "date": "2026-05-16",
+      "description": "Churrasco e confraternização da comunidade AWS User Group Rio em Niterói, reunindo entusiastas de nuvem para troca de experiências.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-rio"
+    },
+    {
+      "id": "2026-05-120-meetup-aws-ug-sp-engenharia-de-harness-invisible-security",
+      "title": "120º Meetup AWS UG SP - Engenharia de Harness + Invisible Security",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-05-27",
+      "description": "Meetup presencial no escritório da AWS em São Paulo abordando engenharia com Harness e segurança invisível.",
+      "paid": false,
+      "url": "https://www.meetup.com/awsusergroupsp"
+    },
+    {
+      "id": "2026-05-redes-na-aws",
+      "title": "Redes na AWS",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-05-29",
+      "description": "Meetup sobre estratégias e serviços de rede na AWS, promovido pela comunidade AWS User Group Alto Tietê em Mogi das Cruzes, SP.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-alto-tiete"
+    },
+    {
+      "id": "2026-05-beyond-apis-arquiteturas-desacopladas-event-driven-com-eks",
+      "title": "Beyond APIs: Arquiteturas Desacopladas Event-Driven com EKS",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-05-26",
+      "description": "Meetup online promovido pelo AWS User Group Vale do Paraíba abordando arquiteturas event-driven desacopladas utilizando Amazon EKS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-vale-do-paraiba"
+    },
+    {
+      "id": "2026-05-hands-on-primeiros-passos-na-aws-do-zero-a-implantacao-em-nuvem",
+      "title": "Hands-on Primeiros passos na AWS: do Zero à implantação em Nuvem",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-05-21",
+      "description": "Evento prático presencial em Montes Claros para iniciantes que desejam aprender a implantar aplicações na nuvem AWS do zero.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-montes-claros"
+    },
+    {
+      "id": "2026-05-workshop-oficial-amazon-sagemaker-ai-modelops-da-ideia-a-producao",
+      "title": "Workshop Oficial: Amazon SageMaker AI ModelOps...Da ideia à produção!",
+      "region": "Sudeste",
+      "type": "Workshop",
+      "date": "2026-05-29",
+      "description": "Workshop oficial da AWS sobre ModelOps com Amazon SageMaker, cobrindo o ciclo completo da ideia até a produção de modelos de IA.",
+      "paid": false,
+      "url": "https://www.meetup.com/awscampinas"
+    },
+    {
+      "id": "2026-05-desenvolvimento-acelerado-com-ia-da-universidade-ao-ritmo-do-mercado",
+      "title": "Desenvolvimento acelerado com IA: da universidade ao ritmo do mercado",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "date": "2026-05-06",
+      "description": "Evento realizado na UEPB em Patos, Paraíba, sobre como acelerar o desenvolvimento de software utilizando Inteligência Artificial, conectando universidade e mercado de trabalho.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-serido-e-sabugy"
+    },
+    {
+      "id": "2026-05-10-agora-serverless-tem-servidor",
+      "title": "#10 - Agora serverless tem servidor",
+      "region": "Sul",
+      "type": "Meetup",
+      "date": "2026-05-22",
+      "description": "Meetup do AWS User Group Joinville abordando arquiteturas serverless na AWS, com palestras e troca de experiências entre profissionais de cloud.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-joinville"
+    },
+    {
+      "id": "2026-05-datadog-user-group-meetup-sao-paulo-4-edicao",
+      "title": "Datadog User Group Meetup São Paulo — 4ª Edição",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-05-21",
+      "description": "Edição do meetup da comunidade Datadog em São Paulo, com foco em observabilidade, segurança de aplicações e compartilhamento de experiências práticas.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/datadog-user-group-brasil/"
+    },
+    {
+      "id": "2026-05-hack-night-rio-copa-do-mundo-edition-elastic-ai-agents",
+      "title": "Hack Night Rio – Copa do Mundo Edition | Elastic + AI Agents",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-05-29",
+      "description": "Encontro da comunidade Elastic no Rio de Janeiro com foco em IA e agentes autônomos, realizado na ESPM Rio em clima de Copa do Mundo.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/rio-de-janeiro-elastic-fantastics/"
+    },
+    {
+      "id": "2026-05-build-with-ai-rio-de-janeiro-2026",
+      "title": "Build with AI Rio de Janeiro 2026",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-05-23",
+      "description": "Encontro focado em inteligência artificial, reunindo desenvolvedores para aprender e trocar experiências sobre construção de soluções com IA no Rio de Janeiro.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/gdgriodejaneiro/"
+    },
+    {
+      "id": "2026-05-build-with-ai-sao-jose-dos-campos-tarde",
+      "title": "Build with AI - São José dos Campos (Tarde)",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-05-23",
+      "description": "Encontro presencial da comunidade GDG São José dos Campos com foco em Inteligência Artificial, realizado na UNIMAR SJC.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/gdgsjc/"
+    }
+  ],
+  "Junho": [
+    {
+      "id": "2026-06-aws-community-day-brasil-centro-oeste-brasilia",
+      "title": "AWS Community Day Brasil - Centro-Oeste (Brasília)",
+      "region": "Centro-Oeste",
+      "type": "Community Day",
+      "date": "2026-06-27",
+      "description": "Edição regional do AWS Community Day Brasil em Brasília, DF, promovendo aprendizado colaborativo sobre tecnologias AWS.",
+      "paid": false,
+      "url": "https://awscommunityday.com.br"
+    },
+    {
+      "id": "2026-06-a-ia-escreve-o-codigo-seu-trabalho-mudou",
+      "title": "A IA escreve o código. Seu trabalho mudou.",
+      "region": "Sul",
+      "type": "Meetup",
+      "date": "2026-06-11",
+      "description": "Encontro do AWS User Group Curitiba sobre como a inteligência artificial está transformando o trabalho de desenvolvimento de software.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-curitiba-user-group"
+    },
+    {
+      "id": "2026-06-workshop-criando-um-jogo-com-kiro-do-conceito-ao-codigo",
+      "title": "Workshop: Criando um jogo com Kiro, do conceito ao código!",
+      "region": "Sudeste",
+      "type": "Workshop",
+      "date": "2026-06-23",
+      "description": "Workshop prático mostrando como criar um jogo utilizando a ferramenta Kiro, do conceito inicial até o código final.",
+      "paid": false,
+      "url": "https://www.meetup.com/awscampinas"
     }
   ],
   "Julho": [
     {
-      "id": "2026-07-rust-nordeste",
-      "title": "Rust Nordeste Summit",
-      "region": "Nordeste",
+      "id": "2026-07-tdc-floripa-2026",
+      "title": "TDC Floripa 2026",
+      "region": "Sul",
       "type": "Conferência",
-      "date": "2026-07-11",
-      "description": "Primeiro encontro regional dedicado à linguagem Rust, com foco em sistemas embarcados.",
+      "date": "2026-07-22",
+      "description": "Edição do The Developers Conference realizada em Florianópolis, com trilhas de tecnologia, inovação e desenvolvimento de software.",
+      "paid": true,
+      "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+    },
+    {
+      "id": "2026-07-esquenta-aws-community-day-sudeste",
+      "title": "ESQUENTA AWS COMMUNITY DAY SUDESTE",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-07-16",
+      "description": "Encontro preparatório e de networking antes do AWS Community Day Sudeste, promovido pelo AWS User Group Belo Horizonte.",
       "paid": false,
-      "url": "https://rustnordeste.dev"
+      "url": "https://www.meetup.com/awsusergroupbh"
+    },
+    {
+      "id": "2026-07-meetup-4-e-se-o-seu-agente",
+      "title": "Meetup #4 – E se o seu agente…?",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-07-30",
+      "description": "Encontro online do AWS User Group Sorocaba sobre agentes de IA e tecnologias AWS, promovendo troca de conhecimento técnico entre a comunidade.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-sorocaba"
+    },
+    {
+      "id": "2026-07-quando-programacao-reativa-realmente-faz-diferenca-em-microsservicos-na-aws",
+      "title": "Quando programação reativa realmente faz diferença em microsserviços na AWS?",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-07-16",
+      "description": "Palestra e discussão sobre o uso de programação reativa em arquiteturas de microsserviços na nuvem AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/awscampinas"
+    },
+    {
+      "id": "2026-07-entendendo-agentes-de-ia-com-aws-strands",
+      "title": "Entendendo Agentes de IA com AWS Strands",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "date": "2026-07-23",
+      "description": "Meetup da comunidade AWS User Group Fortaleza sobre o uso de Agentes de IA utilizando o framework AWS Strands, realizado de forma online.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-fortaleza"
+    },
+    {
+      "id": "2026-07-11-jornada-cloud-na-softexpert",
+      "title": "#11 - Jornada Cloud na SoftExpert",
+      "region": "Sul",
+      "type": "Meetup",
+      "date": "2026-07-28",
+      "description": "Encontro do AWS User Group Joinville sobre a jornada de adoção de nuvem na SoftExpert, com discussões técnicas e networking.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-joinville"
+    },
+    {
+      "id": "2026-07-23-meetup-online-zoom-aws-user-group-triangulo-mineiro",
+      "title": "23º Meetup - Online ZOOM - AWS User Group Triângulo Mineiro",
+      "region": "Sudeste",
+      "type": "Meetup Online",
+      "date": "2026-07-28",
+      "description": "Encontro online via Zoom da comunidade AWS User Group Triângulo Mineiro, voltado para discussões sobre Amazon Web Services e Cloud Computing.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-triangulo-mineiro"
+    },
+    {
+      "id": "2026-07-datadog-user-group-meetup-sao-paulo-5-edicao",
+      "title": "Datadog User Group Meetup São Paulo — 5ª Edição",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-07-23",
+      "description": "Encontro da comunidade Datadog em São Paulo com palestras e discussões sobre observabilidade, monitoramento de aplicações e boas práticas de segurança.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/datadog-user-group-brasil/"
+    },
+    {
+      "id": "2026-07-google-extended-i-o-rio-de-janeiro",
+      "title": "Google Extended I/O Rio de Janeiro",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-07-07",
+      "description": "Evento comunitário que reproduz e discute os principais anúncios do Google I/O, promovendo networking entre desenvolvedores no Rio de Janeiro.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/gdgriodejaneiro/"
     }
   ],
   "Agosto": [
-    {
-      "id": "2026-08-cloud-native-recife",
-      "title": "Cloud Native Recife",
-      "region": "Nordeste",
-      "type": "Conferência",
-      "date": "2026-08-05",
-      "description": "Kubernetes, service mesh e observabilidade com especialistas da comunidade CNCF Brasil.",
-      "paid": true,
-      "url": "https://cloudnativerecife.dev"
-    },
-    {
-      "id": "2026-08-frontend-brasil",
-      "title": "Frontend Brasil Conf",
-      "region": "Sudeste",
-      "type": "Conferência",
-      "date": "2026-08-22",
-      "description": "As últimas tendências em React, performance web e design systems.",
-      "paid": true,
-      "url": "https://frontend.br"
-    },
     {
       "id": "2026-08-women-tech-bh",
       "title": "Women Techmakers BH",
@@ -77,30 +483,514 @@
       "description": "Encontro da comunidade Women Techmakers com palestras e mentoria de carreira.",
       "paid": false,
       "url": "https://womentechmakers.com"
+    },
+    {
+      "id": "2026-08-brasilia-meetup-codecon-4",
+      "title": "Brasília - Meetup Codecon #4",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "date": "2026-08-26",
+      "description": "Encontro da comunidade Codecon em Brasília para networking e troca de experiências entre desenvolvedores, realizado no London Street Pub.",
+      "paid": false,
+      "url": "https://codecon.dev"
+    },
+    {
+      "id": "2026-08-curitiba-meetup-codecon-21",
+      "title": "Curitiba - Meetup Codecon #21",
+      "region": "Sul",
+      "type": "Meetup",
+      "date": "2026-08-27",
+      "description": "Encontro da comunidade Codecon em Curitiba reunindo desenvolvedores para compartilhar conhecimento e experiências, no Pinhão Hub.",
+      "paid": false,
+      "url": "https://codecon.dev"
+    },
+    {
+      "id": "2026-08-aws-community-day-brasil-sudeste-belo-horizonte",
+      "title": "AWS Community Day Brasil - Sudeste (Belo Horizonte)",
+      "region": "Sudeste",
+      "type": "Community Day",
+      "date": "2026-08-22",
+      "description": "Edição regional do AWS Community Day Brasil em Belo Horizonte, MG, com foco em compartilhamento de conhecimento sobre a nuvem AWS.",
+      "paid": false,
+      "url": "https://awscommunityday.com.br"
+    },
+    {
+      "id": "2026-08-aws-user-group-fortaleza-kickoff",
+      "title": "AWS User Group Fortaleza Kickoff",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "date": "2026-08-27",
+      "description": "Evento de lançamento do AWS User Group Fortaleza, reunindo entusiastas e profissionais de tecnologia interessados em AWS para compartilhar conhecimento e fazer networking.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-fortaleza"
+    },
+    {
+      "id": "2026-08-clube-do-livro-aws-women-user-group-goiania",
+      "title": "Clube do Livro - AWS Women User Group Goiânia",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "date": "2026-08-26",
+      "description": "Encontro online do clube do livro promovido pelo AWS Women User Group Goiânia, voltado à discussão de temas relacionados à tecnologia e computação em nuvem.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-women-user-group-goiania"
+    },
+    {
+      "id": "2026-08-tdc-experience-rio-innovation-week-2026",
+      "title": "TDC Experience Rio Innovation Week 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-08-06",
+      "description": "Edição especial do TDC integrada à Rio Innovation Week, com foco em inovação e tecnologia na cidade do Rio de Janeiro.",
+      "paid": true,
+      "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+    },
+    {
+      "id": "2026-08-tdc-experience-sao-carlos-2026",
+      "title": "TDC Experience São Carlos 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-08-26",
+      "description": "Edição do The Developers Conference em São Carlos, voltada para a comunidade tech do interior de São Paulo.",
+      "paid": true,
+      "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+    },
+    {
+      "id": "2026-08-61-aws-meetup-esquenta-aws-community-day-bh",
+      "title": "#61 AWS Meetup: Esquenta AWS Community Day BH",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-18",
+      "description": "Encontro da comunidade AWS User Group Rio para agitar antes do AWS Community Day BH, com palestras e networking sobre tecnologias AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-rio"
+    },
+    {
+      "id": "2026-08-121-meetup-aws-ug-sp-build-learn-explore-be-an-engineer",
+      "title": "121º Meetup AWS UG SP - Build, Learn, Explore: Be an Engineer!",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-19",
+      "description": "Encontro presencial do grupo AWS User Group São Paulo na FIAP, com palestras e networking sobre AWS voltadas a engenheiros.",
+      "paid": false,
+      "url": "https://www.meetup.com/awsusergroupsp"
+    },
+    {
+      "id": "2026-08-aws-community-day-sudeste",
+      "title": "AWS Community Day Sudeste",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-08-22",
+      "description": "Evento comunitário de grande porte reunindo profissionais de tecnologia AWS na região Sudeste, realizado em Belo Horizonte.",
+      "paid": true,
+      "url": "https://www.meetup.com/awsusergroupbh"
+    },
+    {
+      "id": "2026-08-desi-usp-construindo-uma-aplicacao-cloud-native-na-aws-sistema-de-feedback",
+      "title": "DESI USP | Construindo uma Aplicação Cloud-Native na AWS: Sistema de Feedback",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-25",
+      "description": "Encontro híbrido do AWS User Group Baixada Santista realizado na USP Leste, em São Paulo, com foco na construção de uma aplicação cloud-native na AWS para um sistema de feedback.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-baixada-santista"
+    },
+    {
+      "id": "2026-08-o-fim-do-clickops-acelerando-infraestrutura-aws-com-claude",
+      "title": "O Fim Do ClickOps: Acelerando Infraestrutura AWS Com Claude",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-12",
+      "description": "Encontro online do AWS User Group Vale do Paraíba sobre automação de infraestrutura AWS utilizando IA, discutindo o fim das operações manuais (ClickOps).",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-vale-do-paraiba"
+    },
+    {
+      "id": "2026-08-o-impacto-das-certificacoes-aws-no-mercado-de-trabalho",
+      "title": "O Impacto das certificações AWS no mercado de trabalho",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-29",
+      "description": "Encontro da comunidade AWS User Group São Roque para discutir o impacto das certificações AWS no mercado de trabalho, com a participação do profissional Roberto Hindrikson. O evento acontece na FATEC São Roque, SP.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-sao-roque"
+    },
+    {
+      "id": "2026-08-maratona-de-programacao",
+      "title": "Maratona de Programação",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-29",
+      "description": "Maratona de programação promovida pela AWS User Group São Lourenço, reunindo estudantes, desenvolvedores e entusiastas de tecnologia para resolver desafios em equipe e trocar experiências.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-sao-lourenco"
+    },
+    {
+      "id": "2026-08-febraban-tech-2026",
+      "title": "Febraban Tech 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-08-24",
+      "description": "O maior evento de tecnologia e inovação do setor financeiro, reunindo líderes de bancos, tecnologia e inovação no Distrito Anhembi, em São Paulo, com painéis, palestras e área de exposição.",
+      "paid": true,
+      "url": "https://www.febrabantech.com/"
+    },
+    {
+      "id": "2026-08-edicao-especial-cloud-conversa-comunidade",
+      "title": "Edição especial: Cloud, Conversa & Comunidade!",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-24",
+      "description": "Encontro especial da comunidade AWS User Group Campinas para trocar experiências sobre cloud computing em um ambiente descontraído.",
+      "paid": false,
+      "url": "https://www.meetup.com/awscampinas"
+    },
+    {
+      "id": "2026-08-s3-files-o-novo-file-system-gerenciado-da-aws-que-voce-precisa-conhecer",
+      "title": "S3 Files: O Novo File System Gerenciado da AWS que Você Precisa Conhecer",
+      "region": "Sul",
+      "type": "Meetup",
+      "date": "2026-08-04",
+      "description": "Meetup online do AWS User Group Curitiba apresentando as novidades do S3 Files, o novo sistema de arquivos gerenciado da AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-curitiba-user-group"
+    },
+    {
+      "id": "2026-08-ti-por-onde-comecar",
+      "title": "TI: por onde começar?",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "date": "2026-08-12",
+      "description": "Encontro da comunidade AWS User Group Seridó e Sabugy na Escola Estadual João Vilar da Cunha, em Santana do Seridó, discutindo como iniciar na área de TI.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-serido-e-sabugy"
+    },
+    {
+      "id": "2026-08-meetup-03-inovacao-inteligencia-artificial-e-agilidade",
+      "title": "Meetup #03 - Inovação, Inteligência Artificial e Agilidade",
+      "region": "Sul",
+      "type": "Meetup",
+      "date": "2026-08-31",
+      "description": "Terceiro encontro do grupo AWS SBG na Univali, discutindo inovação, inteligência artificial e agilidade em formato híbrido em Itajaí, SC.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-alto-tiete"
+    },
+    {
+      "id": "2026-08-imersao-cloud-ia-do-zero-ao-primeiro-deploy-na-aws",
+      "title": "Imersão Cloud & IA: Do Zero ao Primeiro Deploy na AWS",
+      "region": "Sudeste",
+      "type": "Workshop",
+      "date": "2026-08-28",
+      "description": "Imersão prática sobre computação em nuvem e inteligência artificial, guiando participantes do zero até o primeiro deploy na AWS, realizada na Unifal em Alfenas, MG.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-alto-tiete"
+    },
+    {
+      "id": "2026-08-24-meetup-online-zoom-aws-user-group-triangulo-mineiro",
+      "title": "24º Meetup - Online ZOOM - AWS User Group Triângulo Mineiro",
+      "region": "Sudeste",
+      "type": "Meetup Online",
+      "date": "2026-08-03",
+      "description": "Mais um encontro online da comunidade AWS User Group Triângulo Mineiro, com foco em compartilhar conhecimento sobre serviços e boas práticas da AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-triangulo-mineiro"
+    },
+    {
+      "id": "2026-08-datadog-user-group-meetup-rio-de-janeiro-1-edicao",
+      "title": "Datadog User Group Meetup Rio de Janeiro — 1ª Edição",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-08-27",
+      "description": "Encontro da comunidade Datadog no Rio de Janeiro reunindo profissionais de observabilidade, DevOps e SRE para palestras e troca de experiências sobre monitoramento e performance.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/datadog-user-group-brasil/"
     }
   ],
   "Setembro": [
     {
-      "id": "2026-09-tdc-florianopolis",
-      "title": "The Developer's Conference Floripa",
+      "id": "2026-09-tdc-stage-hacktown-santa-rita-do-sapucai",
+      "title": "TDC Stage at HackTown - Santa Rita do Sapucaí",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-09-04",
+      "description": "Palco do The Developer's Conference dentro do festival HackTown, em Santa Rita do Sapucaí, MG.",
+      "paid": true,
+      "url": "https://thedevconf.com/tdc/2026/stage/santa-rita/"
+    },
+    {
+      "id": "2026-09-devopsdays-feira-de-santana",
+      "title": "DevOpsDays Feira de Santana",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "date": "2026-09-05",
+      "description": "Edição local da conferência DevOpsDays em Feira de Santana, reunindo profissionais de TI para discutir cultura DevOps e melhoria contínua.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-feira-de-santana"
+    },
+    {
+      "id": "2026-09-devopsdays-belo-horizonte",
+      "title": "DevOpsDays Belo Horizonte",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-09-26",
+      "description": "Evento da série DevOpsDays em Belo Horizonte voltado para profissionais interessados em práticas de DevOps e cultura de melhoria de TI.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-belo-horizonte"
+    },
+    {
+      "id": "2026-09-gophercon-latam-2026",
+      "title": "GopherCon Latam 2026",
       "region": "Sul",
       "type": "Conferência",
-      "date": "2026-09-17",
-      "description": "Uma das maiores conferências multitrilha de tecnologia do Brasil.",
+      "date": "2026-09-02",
+      "description": "A maior conferência de Go da América Latina, com palestras, keynotes e workshops sobre a linguagem Go, realizada no CentroSul em Florianópolis, SC.",
       "paid": true,
-      "url": "https://thedevconf.com"
+      "url": "https://gopherconlatam.org"
+    },
+    {
+      "id": "2026-09-aws-community-day-brasil-sul-curitiba",
+      "title": "AWS Community Day Brasil - Sul (Curitiba)",
+      "region": "Sul",
+      "type": "Community Day",
+      "date": "2026-09-19",
+      "description": "Edição regional do AWS Community Day Brasil em Curitiba, PR, reunindo a comunidade de usuários AWS para palestras e networking.",
+      "paid": false,
+      "url": "https://awscommunityday.com.br"
+    },
+    {
+      "id": "2026-09-aws-summit-sao-paulo-2026",
+      "title": "AWS Summit São Paulo 2026",
+      "region": "Sudeste",
+      "type": "Summit",
+      "date": "2026-09-03",
+      "description": "Evento gratuito de um dia em São Paulo com sessões técnicas, keynote e workshops sobre inovações em nuvem e IA da AWS.",
+      "paid": false,
+      "url": "https://aws.amazon.com/pt/events/summits/sao-paulo/"
+    },
+    {
+      "id": "2026-09-tdc-sao-paulo-2026",
+      "title": "TDC São Paulo 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-09-23",
+      "description": "Edição principal do The Developers Conference em São Paulo, reunindo desenvolvedores e profissionais de tecnologia por três dias de palestras e workshops.",
+      "paid": true,
+      "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+    },
+    {
+      "id": "2026-09-hacktown-2026",
+      "title": "HackTown 2026",
+      "region": "Sudeste",
+      "type": "Festival",
+      "date": "2026-09-03",
+      "description": "Festival de inovação, tecnologia e criatividade que toma conta da cidade de Santa Rita do Sapucaí (MG), com palestras, workshops, startups e ativações de marcas.",
+      "paid": true,
+      "url": "https://hacktown.com.br"
+    },
+    {
+      "id": "2026-09-golang-sp-me-ia-116",
+      "title": "Golang SP & ME. + IA - #116",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-09-10",
+      "description": "Encontro presencial e gratuito da comunidade Golang SP em São Paulo, com apresentação de case sobre construção de plataforma low-code em Go pela ME.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/golangbr/"
+    },
+    {
+      "id": "2026-09-linuxtips-local-rio-branco",
+      "title": "LINUXtips.local Rio Branco",
+      "region": "Norte",
+      "type": "Evento",
+      "date": "2026-09-21",
+      "description": "Evento itinerante da LINUXtips que leva conteúdo técnico gratuito sobre DevOps, SRE, Linux, Containers e Kubernetes para Rio Branco, abrindo a edição 2026 na região Norte.",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/linuxtips-local-rio-branco/3439933"
+    },
+    {
+      "id": "2026-09-linuxtips-local-salvador",
+      "title": "LINUXtips.local Salvador",
+      "region": "Nordeste",
+      "type": "Evento",
+      "date": "2026-09-22",
+      "description": "Edição do LINUXtips.local em Salvador, trazendo palestras técnicas gratuitas sobre tecnologia, DevOps e infraestrutura para a comunidade local.",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/linuxtips-local-salvador/3439917"
+    },
+    {
+      "id": "2026-09-linuxtips-local-campo-grande",
+      "title": "LINUXtips.local Campo Grande",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "date": "2026-09-23",
+      "description": "O LINUXtips.local chega a Campo Grande com programação gratuita de palestras e networking voltada à comunidade de tecnologia.",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/linuxtips-local-campo-grande/3439909"
+    },
+    {
+      "id": "2026-09-linuxtips-local-porto-alegre",
+      "title": "LINUXtips.local Porto Alegre",
+      "region": "Sul",
+      "type": "Evento",
+      "date": "2026-09-24",
+      "description": "Edição do LINUXtips.local em Porto Alegre, com conteúdo técnico gratuito sobre DevOps, SRE, Linux e Kubernetes para a comunidade local.",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/linuxtips-local-porto-alegre/3439924"
+    },
+    {
+      "id": "2026-09-linuxtips-local-belo-horizonte",
+      "title": "LINUXtips.local Belo Horizonte",
+      "region": "Sudeste",
+      "type": "Evento",
+      "date": "2026-09-25",
+      "description": "O tour LINUXtips.local encerra sua etapa em Belo Horizonte, reunindo a comunidade tech para palestras gratuitas e networking.",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/linuxtips-local-belo-horizonte/3439899"
+    },
+    {
+      "id": "2026-09-seguranca-na-era-pos-quantica-e-da-ia-autonoma",
+      "title": "Segurança na Era Pós-Quântica e da IA Autônoma",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "date": "2026-09-03",
+      "description": "Meetup do Elastic Rio de Janeiro User Group em parceria com a Hack in Brasil e a FIAP, com palestras sobre segurança pós-quântica, criptografia TLS e IA autônoma em produção.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/rio-de-janeiro-elastic-fantastics/"
+    }
+  ],
+  "Outubro": [
+    {
+      "id": "2026-10-python-brasil-2026",
+      "title": "Python Brasil 2026",
+      "region": "Sul",
+      "type": "Conferência",
+      "date": "2026-10-14",
+      "description": "A maior conferência de Python do Brasil e da América Latina, com cinco dias de imersão incluindo tutoriais, palestras e sprints, realizada em Florianópolis/SC.",
+      "paid": true,
+      "url": "https://pythonbrasil.org.br"
+    },
+    {
+      "id": "2026-10-devopsdays-juiz-de-fora",
+      "title": "DevOpsDays Juiz de Fora",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-10-17",
+      "description": "Conferência DevOpsDays realizada em Juiz de Fora, com foco em compartilhamento de conhecimento sobre DevOps.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-juiz-de-fora"
+    },
+    {
+      "id": "2026-10-devopsdays-florianopolis",
+      "title": "DevOpsDays Florianópolis",
+      "region": "Sul",
+      "type": "Conferência",
+      "date": "2026-10-24",
+      "description": "Edição de Florianópolis da conferência DevOpsDays, reunindo a comunidade local de TI para debater DevOps.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-florianopolis"
+    },
+    {
+      "id": "2026-10-aws-community-day-brasil-nordeste-salvador",
+      "title": "AWS Community Day Brasil - Nordeste (Salvador)",
+      "region": "Nordeste",
+      "type": "Community Day",
+      "date": "2026-10-10",
+      "description": "Edição regional do AWS Community Day Brasil em Salvador, BA, com discussões e demonstrações de serviços AWS lideradas pela comunidade.",
+      "paid": false,
+      "url": "https://awscommunityday.com.br"
+    },
+    {
+      "id": "2026-10-aws-community-day-brasil-norte-belem",
+      "title": "AWS Community Day Brasil - Norte (Belém)",
+      "region": "Norte",
+      "type": "Community Day",
+      "date": "2026-10-31",
+      "description": "Edição regional do AWS Community Day Brasil em Belém, PA, reunindo profissionais e entusiastas de AWS da região Norte.",
+      "paid": false,
+      "url": "https://awscommunityday.com.br"
+    },
+    {
+      "id": "2026-10-latinoware-2026-23-congresso-latino-americano-de-software-livre-e-tecnologias-abertas",
+      "title": "Latinoware 2026 - 23º Congresso Latino-Americano de Software Livre e Tecnologias Abertas",
+      "region": "Sul",
+      "type": "Congresso",
+      "date": "2026-10-14",
+      "description": "O Latinoware é o maior congresso latino-americano de software livre e tecnologias abertas, reunindo palestrantes e participantes de toda a América Latina em Foz do Iguaçu, Paraná.",
+      "paid": true,
+      "url": "https://latinoware.org"
     }
   ],
   "Novembro": [
     {
-      "id": "2026-11-devops-brasilia",
-      "title": "DevOps Days Brasília",
+      "id": "2026-11-devopsdays-brasilia",
+      "title": "DevOpsDays Brasília",
       "region": "Centro-Oeste",
       "type": "Conferência",
-      "date": "2026-11-06",
-      "description": "Cultura DevOps, automação e práticas de entrega contínua no setor público e privado.",
-      "paid": false,
+      "date": "2026-11-14",
+      "description": "Conferência DevOpsDays em Brasília, com palestras e discussões sobre práticas de DevOps.",
+      "paid": true,
       "url": "https://devopsdays.org/events/2026-brasilia"
+    },
+    {
+      "id": "2026-11-tdc-experience-recife-rec-n-play-2026",
+      "title": "TDC Experience Recife | Rec'n'Play 2026",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "date": "2026-11-11",
+      "description": "Edição do TDC integrada ao festival Rec'n'Play, reunindo tecnologia, cultura e inovação em Recife.",
+      "paid": true,
+      "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+    },
+    {
+      "id": "2026-11-devfest-rio-de-janeiro-2026-inovacao-e-tecnologia",
+      "title": "DevFest Rio de Janeiro 2026: Inovação e Tecnologia",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-11-14",
+      "description": "O DevFest Rio de Janeiro 2026 é um evento de um dia dedicado à inovação e tecnologia, reunindo desenvolvedores e entusiastas para palestras, workshops e networking sobre as últimas tendências relacionadas ao Google.",
+      "paid": true,
+      "url": "https://www.meetup.com/pt-BR/gdgriodejaneiro/"
+    }
+  ],
+  "Dezembro": [
+    {
+      "id": "2026-12-devopsdays-salvador",
+      "title": "DevOpsDays Salvador",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "date": "2026-12-05",
+      "description": "Edição de Salvador da conferência DevOpsDays, reunindo profissionais de tecnologia da região.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-salvador"
+    },
+    {
+      "id": "2026-12-devopsdays-recife",
+      "title": "DevOpsDays Recife",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "date": "2026-12-12",
+      "description": "Conferência DevOpsDays realizada em Recife, focada em cultura DevOps e melhoria de processos de TI.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-recife"
+    },
+    {
+      "id": "2026-12-tdcx-porto-alegre-2026",
+      "title": "TDCX Porto Alegre 2026",
+      "region": "Sul",
+      "type": "Conferência",
+      "date": "2026-12-09",
+      "description": "Edição TDCX do The Developers Conference realizada em Porto Alegre, com foco em conteúdos técnicos avançados.",
+      "paid": true,
+      "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+    },
+    {
+      "id": "2026-12-devfest-sao-jose-dos-campos-2026",
+      "title": "DevFest São José dos Campos 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "date": "2026-12-05",
+      "description": "Maior conferência sobre tecnologias Google no Brasil, reunindo palestras e trilhas sobre Inteligência Artificial, Mobile, Web, Cloud e mais, promovida pelo GDG São José dos Campos.",
+      "paid": true,
+      "url": "https://www.meetup.com/pt-BR/gdgsjc/"
     }
   ]
 }
