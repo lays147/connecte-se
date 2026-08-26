@@ -3,6 +3,7 @@ export interface TechEvent {
   title: string;
   region: string;
   type: string;
+  modality: string;
   date: string;
   description: string;
   paid: boolean;

@@ -3,6 +3,7 @@ import type { TechEvent } from "./types";
 export interface FilterState {
   region: string;
   type: string;
+  modality: string;
   paid: string;
 }
 
@@ -45,7 +46,7 @@ export function renderFilters(
   allEvents: TechEvent[],
   onChange: (state: FilterState) => void,
 ): HTMLElement {
-  const state: FilterState = { region: ALL, type: ALL, paid: ALL };
+  const state: FilterState = { region: ALL, type: ALL, modality: ALL, paid: ALL };
 
   const bar = document.createElement("div");
   bar.className =
@@ -53,6 +54,7 @@ export function renderFilters(
 
   const regions = uniqueSorted(allEvents.map((e) => e.region));
   const types = uniqueSorted(allEvents.map((e) => e.type));
+  const modalities = uniqueSorted(allEvents.map((e) => e.modality));
 
   bar.appendChild(
     buildSelect("Região", regions, (value) => {
@@ -64,6 +66,13 @@ export function renderFilters(
   bar.appendChild(
     buildSelect("Tipo", types, (value) => {
       state.type = value;
+      onChange(state);
+    }),
+  );
+
+  bar.appendChild(
+    buildSelect("Modalidade", modalities, (value) => {
+      state.modality = value;
       onChange(state);
     }),
   );
@@ -81,6 +90,7 @@ export function renderFilters(
 export function matchesFilters(event: TechEvent, state: FilterState): boolean {
   if (state.region !== ALL && event.region !== state.region) return false;
   if (state.type !== ALL && event.type !== state.type) return false;
+  if (state.modality !== ALL && event.modality !== state.modality) return false;
   if (state.paid === "Pago" && !event.paid) return false;
   if (state.paid === "Gratuito" && event.paid) return false;
   return true;
@@ -91,8 +101,9 @@ export function applyFilters(container: HTMLElement, state: FilterState): void {
   for (const card of cards) {
     const region = card.dataset.region ?? "";
     const type = card.dataset.type ?? "";
+    const modality = card.dataset.modality ?? "";
     const paid = card.dataset.paid === "true";
-    const visible = matchesFilters({ region, type, paid } as TechEvent, state);
+    const visible = matchesFilters({ region, type, modality, paid } as TechEvent, state);
     card.classList.toggle("hidden", !visible);
   }
 }

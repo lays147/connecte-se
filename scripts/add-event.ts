@@ -7,6 +7,7 @@ interface CliArgs {
   title: string;
   region: string;
   type: string;
+  modality: string;
   date: string;
   description: string;
   paid: boolean;
@@ -23,15 +24,16 @@ function parseCliArgs(argv: string[]): CliArgs {
   const title = get("title");
   const region = get("region");
   const type = get("type");
+  const modality = get("modality");
   const date = get("date");
   const description = get("description");
   const paidRaw = get("paid");
   const url = get("url");
 
-  if (!title || !region || !type || !date || !description || !paidRaw || !url) {
+  if (!title || !region || !type || !modality || !date || !description || !paidRaw || !url) {
     throw new Error(
-      "Usage: add-event --title=<title> --region=<region> --type=<type> --date=<YYYY-MM-DD> " +
-        "--description=<description> --paid=<true|false> --url=<url>",
+      "Usage: add-event --title=<title> --region=<region> --type=<type> --modality=<modality> " +
+        "--date=<YYYY-MM-DD> --description=<description> --paid=<true|false> --url=<url>",
     );
   }
 
@@ -49,7 +51,7 @@ function parseCliArgs(argv: string[]): CliArgs {
     throw new Error(`Invalid url "${url}"`);
   }
 
-  return { title, region, type, date, description, paid: paidRaw === "true", url };
+  return { title, region, type, modality, date, description, paid: paidRaw === "true", url };
 }
 
 function main(): void {
@@ -74,6 +76,7 @@ function main(): void {
     title: args.title,
     region: args.region,
     type: args.type,
+    modality: args.modality,
     date: args.date,
     description: args.description,
     paid: args.paid,

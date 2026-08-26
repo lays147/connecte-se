@@ -31,6 +31,15 @@ on:
           - Festival
           - Community Day
           - Evento
+      modality:
+        description: "Event modality"
+        required: true
+        type: choice
+        options:
+          - Presencial
+          - Online
+          - Híbrido
+          - Não informado
       date:
         description: "Event date (YYYY-MM-DD)"
         required: true
@@ -74,6 +83,7 @@ jobs:
           EVENT_TITLE: ${{ inputs.title }}
           EVENT_REGION: ${{ inputs.region }}
           EVENT_TYPE: ${{ inputs.event_type }}
+          EVENT_MODALITY: ${{ inputs.modality }}
           EVENT_DATE: ${{ inputs.date }}
           EVENT_DESCRIPTION: ${{ inputs.description }}
           EVENT_PAID: ${{ inputs.paid }}
@@ -83,6 +93,7 @@ jobs:
             --title="$EVENT_TITLE" \
             --region="$EVENT_REGION" \
             --type="$EVENT_TYPE" \
+            --modality="$EVENT_MODALITY" \
             --date="$EVENT_DATE" \
             --description="$EVENT_DESCRIPTION" \
             --paid="$EVENT_PAID" \
@@ -101,6 +112,7 @@ jobs:
             - **Date:** ${{ inputs.date }}
             - **Region:** ${{ inputs.region }}
             - **Type:** ${{ inputs.event_type }}
+            - **Modality:** ${{ inputs.modality }}
             - **Paid:** ${{ inputs.paid }}
             - **URL:** ${{ inputs.url }}
           add-paths: src/data/events-*.json

@@ -49,6 +49,12 @@ export function renderCard(event: TechEvent): HTMLElement {
   typePill.textContent = event.type;
   tagsGroup.appendChild(typePill);
 
+  const modalityPill = document.createElement("span");
+  modalityPill.className =
+    "rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700";
+  modalityPill.textContent = event.modality;
+  tagsGroup.appendChild(modalityPill);
+
   const whenPill = document.createElement("span");
   whenPill.className =
     "rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700";

@@ -33,7 +33,7 @@ const allEvents: TechEvent[] = years.flatMap((year) => {
   return Object.values(yearData).flat();
 });
 
-let filterState: FilterState = { region: "Todos", type: "Todos", paid: "Todos" };
+let filterState: FilterState = { region: "Todos", type: "Todos", modality: "Todos", paid: "Todos" };
 
 const monthNavEntries: MonthNavEntry[] = years.flatMap((year) => {
   const yearData = loadYear(year);

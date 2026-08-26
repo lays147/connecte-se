@@ -29,6 +29,7 @@ export function renderMonthGroup(
     const card = renderCard(event);
     card.dataset.region = event.region;
     card.dataset.type = event.type;
+    card.dataset.modality = event.modality;
     card.dataset.paid = String(event.paid);
     grid.appendChild(card);
   }
