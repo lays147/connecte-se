@@ -10,7 +10,8 @@
     "typecheck": "tsc -b --noEmit",
     "test:e2e": "playwright test",
     "scrape": "node --env-file-if-exists=.env scripts/scrape-events.ts",
-    "check:sources": "node scripts/check-sources.ts"
+    "check:sources": "node scripts/check-sources.ts",
+    "check:events": "node scripts/check-events.ts"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.120.0",
