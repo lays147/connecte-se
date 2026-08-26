@@ -11,10 +11,7 @@ function parseIso(s: string): Date {
 }
 
 export function buildFeaturedList(upcoming: EnrichedEvent[]): EnrichedEvent[] {
-  const online = upcoming.filter((e) => e.modality === "Online");
-  const rest = upcoming.filter((e) => e.modality !== "Online");
-  const fillers = rest.slice(0, Math.max(0, 3 - online.length));
-  return online.slice(0, 3).concat(fillers);
+  return upcoming.filter((e) => e.modality === "Online").slice(0, 3);
 }
 
 export interface FeaturedHandlers {

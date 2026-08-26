@@ -39,7 +39,7 @@ export function renderFilterBar(
 
   const h1 = document.createElement("h1");
   h1.className = "font-display text-[28px] font-bold leading-tight tracking-tight text-brand-950";
-  h1.textContent = "As conexões que você faz em eventos podem mudar sua carreira";
+  h1.textContent = "Nosso foco é fazer pontes: Você e um evento, que pode mudar sua carreira";
 
   const subtitle = document.createElement("span");
   subtitle.className = "text-[13px] text-brand-500";
