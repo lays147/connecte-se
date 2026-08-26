@@ -1,0 +1,169 @@
+sources:
+  - name: AWS Community Day Brasil
+    url: https://awscommunityday.com.br
+    type: event
+    frequency: yearly
+  - name: AWS Summit São Paulo
+    url: https://aws.amazon.com/pt/events/summits/sao-paulo/
+    type: event
+    frequency: yearly
+  - name: AWS User Group ABC Paulista
+    url: https://www.meetup.com/aws-user-group-abc-paulista
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Alto Tietê
+    url: https://www.meetup.com/aws-user-group-alto-tiete
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Atibaia
+    url: https://www.meetup.com/aws-user-group-atibaia-sp
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Baixada Santista
+    url: https://www.meetup.com/aws-user-group-baixada-santista
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Belo Horizonte
+    url: https://www.meetup.com/awsusergroupbh
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Campinas
+    url: https://www.meetup.com/awscampinas
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Circuito das Águas Paulista
+    url: https://www.meetup.com/aws-user-group-circuito-das-aguas-paulista
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Curitiba
+    url: https://www.meetup.com/aws-curitiba-user-group
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Fortaleza
+    url: https://www.meetup.com/aws-user-group-fortaleza
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Interior SP
+    url: https://www.meetup.com/aws-user-group-interior-sp
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Joinville
+    url: https://www.meetup.com/aws-user-group-joinville
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Montes Claros
+    url: https://www.meetup.com/aws-user-group-montes-claros
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Rio
+    url: https://www.meetup.com/aws-user-group-rio
+    type: community
+    frequency: occasionally
+  - name: AWS User Group São Lourenço
+    url: https://www.meetup.com/aws-user-group-sao-lourenco
+    type: community
+    frequency: occasionally
+  - name: AWS User Group São Paulo
+    url: https://www.meetup.com/awsusergroupsp
+    type: community
+    frequency: occasionally
+  - name: AWS User Group São Roque
+    url: https://www.meetup.com/aws-user-group-sao-roque
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Seridó e Sabugy
+    url: https://www.meetup.com/aws-user-group-serido-e-sabugy
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Sorocaba
+    url: https://www.meetup.com/aws-user-group-sorocaba
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Triângulo Mineiro
+    url: https://www.meetup.com/aws-user-group-triangulo-mineiro
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Vale do Paraíba
+    url: https://www.meetup.com/aws-user-group-vale-do-paraiba
+    type: community
+    frequency: occasionally
+  - name: AWS Women User Group Goiânia
+    url: https://www.meetup.com/aws-women-user-group-goiania
+    type: community
+    frequency: occasionally
+  - name: BrazilJS
+    url: https://braziljs.org
+    type: event
+    frequency: yearly
+  - name: Codecon
+    url: https://codecon.dev
+    type: community
+    frequency: occasionally
+  - name: Datadog User Groups
+    url: https://www.meetup.com/pt-BR/datadog-user-group-brasil/
+    type: community
+    frequency: occasionally
+  - name: DevOpsDays
+    url: https://devopsdays.org
+    type: event
+    frequency: yearly
+  - name: Docker Rio de Janeiro
+    url: https://www.meetup.com/pt-BR/docker-rio-de-janeiro
+    type: community
+    frequency: occasionally
+  - name: Elastic Rio de Janeiro User Group
+    url: https://www.meetup.com/pt-BR/rio-de-janeiro-elastic-fantastics/
+    type: community
+    frequency: occasionally
+  - name: Febraban Tech
+    url: https://www.febrabantech.com/
+    type: event
+    frequency: yearly
+  - name: Google Developers Group Rio de Janeiro
+    url: https://www.meetup.com/pt-BR/gdgriodejaneiro/
+    type: community
+    frequency: occasionally
+  - name: Google Developers Group São José dos Campos
+    url: https://www.meetup.com/pt-BR/gdgsjc/
+    type: community
+    frequency: occasionally
+  - name: Golang SP
+    url: https://www.meetup.com/pt-BR/golangbr/
+    type: community
+    frequency: occasionally
+  - name: GopherCon Latam
+    url: https://gopherconlatam.org
+    type: event
+    frequency: yearly
+  - name: Hackthown
+    url: https://hacktown.com.br
+    type: event
+    frequency: yearly
+  - name: Latinoware
+    url: https://latinoware.org
+    type: event
+    frequency: yearly
+  - name: LINUXtips
+    url: https://linuxtips.io/linuxtips-local/
+    type: community
+    frequency: yearly
+  - name: Python Brasil
+    url: https://pythonbrasil.org.br
+    type: community
+    frequency: yearly
+  - name: Rio Innovation Week
+    url: https://rioinnovationweek.com.br
+    type: event
+    frequency: yearly
+  - name: ServerlessDays
+    url: https://www.serverlessdays.io
+    type: event
+    frequency: yearly
+  - name: The Developers Conference
+    url: https://thedevconf.com/tdc/2026/datas-e-locais
+    type: event
+    frequency: yearly
+  - name: Web Summit Rio
+    url: https://rio.websummit.com
+    type: event
+    frequency: yearly
