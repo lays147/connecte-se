@@ -2,8 +2,9 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { loadSources, type EventSource } from "../src/data/sources.ts";
-import { MONTH_NAMES, type EventsByMonth, type MonthName, type TechEvent } from "../src/types.ts";
+import type { EventsByMonth, TechEvent } from "../src/types.ts";
 import { extractEventsFromPage, type ExtractedEvent } from "./lib/extractEvents.ts";
+import { buildEventId, monthNameFromDate, sortEventsByMonth } from "./lib/events.ts";
 
 const EVENTS_PATH = fileURLToPath(
   new URL("../src/data/events-2026.json", import.meta.url),
@@ -33,39 +34,13 @@ function parseCliOptions(argv: string[]): CliOptions {
   return options;
 }
 
-function slugify(title: string): string {
-  return title
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function buildEventId(date: string, title: string): string {
-  const [year, month] = date.split("-");
-  return `${year}-${month}-${slugify(title)}`;
-}
-
-function monthNameFromDate(date: string): MonthName {
-  const monthIndex = Number(date.split("-")[1]) - 1;
-  return MONTH_NAMES[monthIndex];
-}
-
 function readCurrentEvents(): EventsByMonth {
   const raw = readFileSync(EVENTS_PATH, "utf-8");
   return JSON.parse(raw) as EventsByMonth;
 }
 
 function writeEvents(events: EventsByMonth): void {
-  const ordered: EventsByMonth = {};
-  for (const month of MONTH_NAMES) {
-    const bucket = events[month];
-    if (bucket && bucket.length > 0) {
-      ordered[month] = bucket;
-    }
-  }
-  writeFileSync(EVENTS_PATH, `${JSON.stringify(ordered, null, 2)}\n`);
+  writeFileSync(EVENTS_PATH, `${JSON.stringify(sortEventsByMonth(events), null, 2)}\n`);
 }
 
 interface SourceResult {

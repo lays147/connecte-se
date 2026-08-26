@@ -48,12 +48,17 @@ jobs:
         run: npm ci
 
       - name: Add source
+        env:
+          SOURCE_NAME: ${{ inputs.name }}
+          SOURCE_URL: ${{ inputs.url }}
+          SOURCE_TYPE: ${{ inputs.type }}
+          SOURCE_FREQUENCY: ${{ inputs.frequency }}
         run: |
           npm run add:source -- \
-            --name="${{ inputs.name }}" \
-            --url="${{ inputs.url }}" \
-            --type="${{ inputs.type }}" \
-            --frequency="${{ inputs.frequency }}"
+            --name="$SOURCE_NAME" \
+            --url="$SOURCE_URL" \
+            --type="$SOURCE_TYPE" \
+            --frequency="$SOURCE_FREQUENCY"
 
       - name: Open pull request
         uses: peter-evans/create-pull-request@v8

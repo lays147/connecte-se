@@ -1,0 +1,90 @@
+name: Add Event
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Event title"
+        required: true
+        type: string
+      region:
+        description: "Region (e.g. Sudeste, Sul, Nordeste, Norte, Centro-Oeste)"
+        required: true
+        type: string
+      event_type:
+        description: "Event type (e.g. Meetup, Conferência, Workshop, Summit)"
+        required: true
+        type: string
+      date:
+        description: "Event date (YYYY-MM-DD)"
+        required: true
+        type: string
+      description:
+        description: "Short description of the event"
+        required: true
+        type: string
+      paid:
+        description: "Is the event paid?"
+        required: true
+        type: boolean
+        default: false
+      url:
+        description: "Event URL"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  add-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Add event
+        env:
+          EVENT_TITLE: ${{ inputs.title }}
+          EVENT_REGION: ${{ inputs.region }}
+          EVENT_TYPE: ${{ inputs.event_type }}
+          EVENT_DATE: ${{ inputs.date }}
+          EVENT_DESCRIPTION: ${{ inputs.description }}
+          EVENT_PAID: ${{ inputs.paid }}
+          EVENT_URL: ${{ inputs.url }}
+        run: |
+          npm run add:event -- \
+            --title="$EVENT_TITLE" \
+            --region="$EVENT_REGION" \
+            --type="$EVENT_TYPE" \
+            --date="$EVENT_DATE" \
+            --description="$EVENT_DESCRIPTION" \
+            --paid="$EVENT_PAID" \
+            --url="$EVENT_URL"
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "feat: add ${{ inputs.title }} event"
+          branch: add-event/${{ github.run_id }}
+          title: "feat: add ${{ inputs.title }} event"
+          body: |
+            Adds a new event via the "Add Event" workflow, triggered by @${{ github.actor }}.
+
+            - **Title:** ${{ inputs.title }}
+            - **Date:** ${{ inputs.date }}
+            - **Region:** ${{ inputs.region }}
+            - **Type:** ${{ inputs.event_type }}
+            - **Paid:** ${{ inputs.paid }}
+            - **URL:** ${{ inputs.url }}
+          add-paths: src/data/events-*.json
