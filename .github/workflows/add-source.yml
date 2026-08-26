@@ -1,0 +1,71 @@
+name: Add Source
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Community or event name"
+        required: true
+        type: string
+      url:
+        description: "Source URL (must not be time-bound, e.g. no year/month/date in it)"
+        required: true
+        type: string
+      type:
+        description: "Source type"
+        required: true
+        type: choice
+        options:
+          - community
+          - event
+      frequency:
+        description: "How often it happens"
+        required: true
+        type: choice
+        options:
+          - monthly
+          - yearly
+          - occasionally
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  add-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Add source
+        run: |
+          npm run add:source -- \
+            --name="${{ inputs.name }}" \
+            --url="${{ inputs.url }}" \
+            --type="${{ inputs.type }}" \
+            --frequency="${{ inputs.frequency }}"
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "feat: add ${{ inputs.name }} to sources"
+          branch: add-source/${{ github.run_id }}
+          title: "feat: add ${{ inputs.name }} to sources"
+          body: |
+            Adds a new source via the "Add Source" workflow, triggered by @${{ github.actor }}.
+
+            - **Name:** ${{ inputs.name }}
+            - **URL:** ${{ inputs.url }}
+            - **Type:** ${{ inputs.type }}
+            - **Frequency:** ${{ inputs.frequency }}
+          add-paths: sources/communities.yaml
