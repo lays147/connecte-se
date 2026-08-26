@@ -137,6 +137,7 @@ function render(): void {
 }
 
 const header = renderHeader({
+  active: "eventos",
   onNavCommunities: () => {
     state.groupBy = "comunidade";
     render();

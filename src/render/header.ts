@@ -1,5 +1,8 @@
+export type HeaderPage = "eventos" | "mapa";
+
 export interface HeaderHandlers {
-  onNavCommunities: () => void;
+  active: HeaderPage;
+  onNavCommunities?: () => void;
 }
 
 function githubIconSvg(): string {
@@ -36,16 +39,31 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   const nav = document.createElement("nav");
   nav.className = "flex flex-wrap items-center gap-1.5";
 
-  const eventos = document.createElement("a");
-  eventos.href = "#top";
-  eventos.className = "rounded-lg bg-brand-50 px-3 py-2.5 text-[13px] font-semibold text-brand-950";
-  eventos.textContent = "Eventos";
+  function navLink(text: string, href: string, active: boolean): HTMLAnchorElement {
+    const a = document.createElement("a");
+    a.href = href;
+    a.className = active
+      ? "rounded-lg bg-brand-50 px-3 py-2.5 text-[13px] font-semibold text-brand-950"
+      : "rounded-lg bg-transparent px-3 py-2.5 text-[13px] font-medium text-brand-500 hover:bg-brand-50";
+    a.textContent = text;
+    return a;
+  }
+
+  const eventos = navLink("Eventos", "/index.html#top", handlers.active === "eventos");
+
+  const mapa = navLink("Mapa", "/mapa.html", handlers.active === "mapa");
 
   const comunidades = document.createElement("button");
   comunidades.type = "button";
   comunidades.className = "cursor-pointer rounded-lg bg-transparent px-3 py-2.5 text-[13px] font-medium text-brand-500 hover:bg-brand-50";
   comunidades.textContent = "Comunidades";
-  comunidades.addEventListener("click", handlers.onNavCommunities);
+  if (handlers.onNavCommunities) {
+    comunidades.addEventListener("click", handlers.onNavCommunities);
+  } else {
+    comunidades.addEventListener("click", () => {
+      window.location.href = "/index.html#top";
+    });
+  }
 
   const submit = document.createElement("a");
   submit.href = "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml";
@@ -67,7 +85,7 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
     "inline-flex items-center gap-2 rounded-lg border border-brand-200 py-2 pl-2.5 pr-3 text-xs font-semibold text-brand-950 hover:border-brand-400";
   github.innerHTML = `${githubIconSvg()}GitHub`;
 
-  nav.append(eventos, comunidades, submit, divider, github);
+  nav.append(eventos, mapa, comunidades, submit, divider, github);
   header.append(logo, nav);
   return header;
 }
