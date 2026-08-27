@@ -12,8 +12,12 @@
     "scrape": "node --env-file-if-exists=.env scripts/scrape-events.ts",
     "check:sources": "node scripts/check-sources.ts",
     "check:events": "node scripts/check-events.ts",
+    "check:content": "node scripts/check-content.ts",
     "add:source": "node scripts/add-source.ts",
-    "add:event": "node scripts/add-event.ts"
+    "add:event": "node scripts/add-event.ts",
+    "add:content": "node scripts/add-content.ts",
+    "sort:sources": "node scripts/sort-sources.ts",
+    "sort:content": "node scripts/sort-content.ts"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

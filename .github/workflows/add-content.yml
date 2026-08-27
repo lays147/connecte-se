@@ -1,0 +1,81 @@
+name: Add Content
+
+on:
+  workflow_dispatch:
+    inputs:
+      section:
+        description: "Content section"
+        required: true
+        type: choice
+        options:
+          - youtube
+          - newsletter
+          - blog
+          - podcast
+          - curso
+      name:
+        description: "Channel, newsletter, blog or course name"
+        required: true
+        type: string
+      desc:
+        description: "Short description (who makes it, what it covers)"
+        required: true
+        type: string
+      themes:
+        description: "Comma-separated themes (e.g. programação,carreira)"
+        required: true
+        type: string
+      url:
+        description: "Content URL (must not be time-bound, e.g. no year/month/date in it)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  add-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Add content
+        env:
+          CONTENT_SECTION: ${{ inputs.section }}
+          CONTENT_NAME: ${{ inputs.name }}
+          CONTENT_DESC: ${{ inputs.desc }}
+          CONTENT_THEMES: ${{ inputs.themes }}
+          CONTENT_URL: ${{ inputs.url }}
+        run: |
+          npm run add:content -- \
+            --section="$CONTENT_SECTION" \
+            --name="$CONTENT_NAME" \
+            --desc="$CONTENT_DESC" \
+            --themes="$CONTENT_THEMES" \
+            --url="$CONTENT_URL"
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "feat: add ${{ inputs.name }} to content"
+          branch: add-content/${{ github.run_id }}
+          title: "feat: add ${{ inputs.name }} to content"
+          body: |
+            Adds a new content suggestion via the "Add Content" workflow, triggered by @${{ github.actor }}.
+
+            - **Section:** ${{ inputs.section }}
+            - **Name:** ${{ inputs.name }}
+            - **Themes:** ${{ inputs.themes }}
+            - **URL:** ${{ inputs.url }}
+          add-paths: sources/content.yaml

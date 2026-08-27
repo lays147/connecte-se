@@ -1,0 +1,131 @@
+youtube:
+  label: YouTube
+  items:
+    - name: Akitando
+      desc: Fabio Akita explica engenharia de software, história da computação e como pensar sobre a profissão.
+      themes: [programação, carreira]
+      url: https://www.youtube.com/@Akitando
+    - name: Código Fonte TV
+      desc: Notícias e panorama semanal do mundo da tecnologia, em formato curto e didático.
+      themes: [notícias]
+      url: https://www.youtube.com/@CodigoFonteTV
+    - name: Curso em Vídeo
+      desc: Gustavo Guanabara ensina lógica, Python, JavaScript e HTML do zero, com cursos gratuitos completos.
+      themes: [programação]
+      url: https://www.youtube.com/@CursoemVideo
+    - name: Diolinux
+      desc: Linux, software livre e sistemas operacionais, com testes e notícias do ecossistema.
+      themes: [infra & segurança]
+      url: https://www.youtube.com/@Diolinux
+    - name: Erick Wendel
+      desc: "JavaScript e Node.js em profundidade: internals, performance e boas práticas de backend."
+      themes: [programação]
+      url: https://www.youtube.com/@ErickWendelAcademy
+    - name: Fernanda Kipper
+      desc: Programação, projetos de backend e dicas de carreira, por uma engenheira de software brasileira.
+      themes: [programação, carreira]
+      url: https://www.youtube.com/@kipperdev
+    - name: Filipe Deschamps
+      desc: Projetos de programação construídos ao vivo, além de vídeos sobre carreira e mercado de tecnologia.
+      themes: [programação, carreira]
+      url: https://www.youtube.com/@FilipeDeschamps
+    - name: LINUXtips
+      desc: Linux, containers, cloud e carreira em infraestrutura, com lives técnicas e formação aprofundada.
+      themes: [infra & segurança, carreira]
+      url: https://www.youtube.com/@LINUXtips
+    - name: Loiane Groner
+      desc: Angular, Java e estruturas de dados, com séries longas e material de apoio aberto.
+      themes: [programação]
+      url: https://www.youtube.com/@loianegroner
+    - name: Lucas Montano
+      desc: Conversas sobre mercado de trabalho, entrevistas técnicas e vida de desenvolvedor dentro de grandes empresas.
+      themes: [carreira]
+      url: https://www.youtube.com/@LucasMontano
+    - name: Programação Dinâmica
+      desc: Ciência de dados, algoritmos e matemática aplicada, sempre partindo da intuição antes do código.
+      themes: [dados & IA, programação]
+      url: https://www.youtube.com/@pgdinamica
+    - name: Rafaella Ballerini
+      desc: Front-end e primeiros passos na área, com foco em quem está começando ou mudando de carreira.
+      themes: [carreira, programação]
+      url: https://www.youtube.com/@RafaellaBallerini
+    - name: Rocketseat
+      desc: Desenvolvimento web e mobile com React, Node e TypeScript, em aulas e projetos completos.
+      themes: [programação]
+      url: https://www.youtube.com/@rocketseat
+    - name: Téo Me Why
+      desc: "Ciência de dados ao vivo: projetos reais de machine learning e engenharia analítica, do início ao fim."
+      themes: [dados & IA]
+      url: https://www.youtube.com/@TeoMeWhy
+newsletter:
+  label: Newsletter
+  items:
+    - name: Alex Rios
+      desc: Alex Rios escreve sobre engenharia de software, carreira e o dia a dia de quem constrói produtos digitais.
+      themes: [programação, carreira]
+      url: https://alexriosme.substack.com/
+    - name: Diego Barreto (CEO IFood)
+      desc: Diego Barreto escreve sobre engenharia de software e reflexões sobre a carreira em tecnologia.
+      themes: [programação, carreira]
+      url: https://diegocbarreto.substack.com
+    - name: Elton Minetto
+      desc: Notas pessoais de Elton Minetto sobre Go, arquitetura de software e comunidade open source.
+      themes: [programação]
+      url: https://eltonminetto.dev
+    - name: Lays Rodrigues
+      desc: Lays Rodrigues escreve sobre engenharia de software, ferramentas e experiências de carreira em tecnologia.
+      themes: [programação, carreira]
+      url: https://lays147.substack.com/
+    - name: Mais que Senior
+      desc: Elton Minneto escreve sobre carreira, liderança técnica e crescimento além do nível sênior.
+      themes: [carreira]
+      url: https://maisquesenior.substack.com/
+    - name: Manual do Usuário
+      desc: Rodrigo Ghedin escreve sobre tecnologia de consumo, privacidade e o cotidiano digital brasileiro.
+      themes: [notícias]
+      url: https://manualdousuario.net/
+    - name: MIT Technology Review Brasil
+      desc: Edição brasileira com análises sobre IA, energia e biotecnologia traduzidas e contextualizadas.
+      themes: [dados & IA, notícias]
+      url: https://mittechreview.com.br/
+    - name: Newsletter do Filipe Deschamps
+      desc: Filipe Deschamps envia notas sobre programação, produtividade e construção de produto.
+      themes: [programação, carreira]
+      url: https://filipedeschamps.com.br/newsletter
+    - name: Semana Go
+      desc: Elton Minneto resume semanalmente novidades, artigos e projetos da comunidade Go.
+      themes: [programação]
+      url: https://www.asemanago.dev/
+blog:
+  label: Blog
+  items:
+    - name: Blog do Akita
+      desc: Textos longos de Fabio Akita sobre arquitetura, Ruby, comunidade e a cultura da engenharia.
+      themes: [programação]
+      url: https://www.akitaonrails.com/
+    - name: Tecnoblog
+      desc: Análises de produtos, tutoriais e cobertura diária do mercado de tecnologia no Brasil.
+      themes: [notícias]
+      url: https://tecnoblog.net/
+podcast:
+  label: Podcast
+  items:
+    - name: Escovando Bits
+      desc: Podcast da Codecon com conversas técnicas e de carreira com profissionais da comunidade de tecnologia.
+      themes: [programação, carreira]
+      url: https://open.spotify.com/show/2jz0gSreoUqQVxLKNprjZ9?si=680b3fd120e14c53
+    - name: Hipsters Ponto Tech
+      desc: Conversas semanais sobre desenvolvimento, dados e carreira com convidados do mercado.
+      themes: [programação, carreira]
+      url: https://hipsters.tech/
+    - name: Tecnocast
+      desc: Podcast do Tecnoblog, com discussões aprofundadas sobre um tema de tecnologia por episódio.
+      themes: [notícias]
+      url: https://tecnoblog.net/tecnocast/
+curso:
+  label: Curso
+  items:
+    - name: curso.dev
+      desc: Filipe Deschamps ensina programação, lógica e fundamentos de carreira em cursos gratuitos e completos.
+      themes: [programação, carreira]
+      url: https://curso.dev/

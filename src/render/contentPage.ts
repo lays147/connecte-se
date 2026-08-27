@@ -149,6 +149,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     ["canais", countOf("YouTube")],
     ["para ler", countOf("Newsletter") + countOf("Blog")],
     ["podcasts", countOf("Podcast")],
+    ["cursos", countOf("Curso")],
   ];
   for (const [label, n] of tallyItems) {
     const col = document.createElement("div");

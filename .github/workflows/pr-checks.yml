@@ -17,6 +17,7 @@ jobs:
     outputs:
       sources: ${{ steps.filter.outputs.sources }}
       events: ${{ steps.filter.outputs.events }}
+      content: ${{ steps.filter.outputs.content }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -30,6 +31,8 @@ jobs:
               - 'sources/communities.yaml'
             events:
               - 'src/data/events-*.json'
+            content:
+              - 'sources/content.yaml'
 
   test:
     runs-on: ubuntu-latest
@@ -91,3 +94,23 @@ jobs:
 
       - name: Check event URLs
         run: npm run check:events
+
+  check-content:
+    needs: changes
+    if: needs.changes.outputs.content == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check content URLs
+        run: npm run check:content
