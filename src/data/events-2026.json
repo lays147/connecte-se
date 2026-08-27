@@ -1271,6 +1271,17 @@
       "url": "https://www.mindthesec.com.br/inscreva-se"
     },
     {
+      "id": "2026-09-datadog-summit",
+      "title": "Datadog Summit",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "description": "Datadog Summit SP",
+      "paid": false,
+      "url": "https://events.datadoghq.com/pt/summits/datadog-summit-saopaulo/"
+    },
+    {
       "id": "2026-09-aws-community-day-brasil-sul-curitiba",
       "title": "AWS Community Day Brasil - Sul (Curitiba)",
       "region": "Sul",
