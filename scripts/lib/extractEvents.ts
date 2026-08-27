@@ -67,6 +67,7 @@ Instructions:
 - "description" should be a 1-2 sentence description written in Portuguese.
 - "paid" should reflect actual ticket/pricing information when present in the text; otherwise infer a reasonable default from the event's apparent scale (large multi-day conferences are usually paid, community meetups are usually free).
 - "url" must be a single, clean, well-formed URL identifying that SPECIFIC event/edition, not the generic source page. A "Links found on the page" list is provided below with each link's visible text and its target address — when a Brazil edition corresponds to one of those links (e.g. the link text names that city or that edition), use that link's exact href as "url". Only fall back to the source url given above when no specific per-edition link can be matched. Never concatenate multiple links, paths, or URL fragments into one string.
+- For meetup.com sources specifically: never use the group's root URL (e.g. "https://www.meetup.com/some-group") as "url". Always find and use that specific event's own page, which includes an "/events/" path segment (e.g. "https://www.meetup.com/some-group/events/123456789/"). If no such per-event link is found for a given date, omit that event rather than falling back to the group URL.
 - Return every distinct dated Brazil event you find (a page may describe multiple: recurring meetup dates, multiple Brazilian chapters of the same series, etc). If there are none, return an empty array.
 
 Links found on the page (visible text -> target URL, may be truncated):
@@ -102,9 +103,15 @@ export async function extractEventsFromPage(
   }
 
   const knownUrls = new Set([source.url, ...pageLinks.map((l) => l.href)]);
+  const isMeetupGroupUrl = /^https:\/\/www\.meetup\.com\//.test(source.url) && !/\/events\//.test(source.url);
 
-  return response.parsed_output.map((event) => ({
-    ...event,
-    url: knownUrls.has(event.url) ? event.url : source.url,
-  }));
+  return response.parsed_output.flatMap((event) => {
+    if (knownUrls.has(event.url)) {
+      return [event];
+    }
+    if (isMeetupGroupUrl) {
+      return [];
+    }
+    return [{ ...event, url: source.url }];
+  });
 }
