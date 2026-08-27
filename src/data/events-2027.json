@@ -1,4 +1,17 @@
 {
+  "Maio": [
+    {
+      "id": "2027-05-gramado-summit-2027",
+      "title": "Gramado Summit 2027",
+      "region": "Sul",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2027-05-05",
+      "description": "Maior evento de inovação e negócios do Brasil, reunindo grandes nomes do mercado, startups e empresas para três dias de palestras, networking e experiências no Serra Park, em Gramado, RS.",
+      "paid": true,
+      "url": "https://www.blueticket.com.br/evento/40709/gramado-summit-2027"
+    }
+  ],
   "Junho": [
     {
       "id": "2027-06-web-summit-rio-2027",

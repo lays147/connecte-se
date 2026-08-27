@@ -95,6 +95,14 @@ sources:
     url: https://braziljs.org
     type: event
     frequency: yearly
+  - name: Campus Party Brasil
+    url: https://brasil.campus-party.org
+    type: event
+    frequency: yearly
+  - name: Cloud Native São Paulo
+    url: https://community.cncf.io/cloud-native-sao-paulo-city/
+    type: community
+    frequency: occasionally
   - name: Codecon
     url: https://codecon.dev
     type: community
@@ -103,10 +111,18 @@ sources:
     url: https://www.meetup.com/pt-BR/datadog-user-group-brasil/
     type: community
     frequency: occasionally
+  - name: DevFest Brasil
+    url: https://devfest.com.br/
+    type: event
+    frequency: yearly
   - name: DevOpsDays
     url: https://devopsdays.org
     type: event
     frequency: yearly
+  - name: Django Girls Brasil
+    url: https://djangogirls.org
+    type: community
+    frequency: occasionally
   - name: Docker Rio de Janeiro
     url: https://www.meetup.com/pt-BR/docker-rio-de-janeiro
     type: community
@@ -119,12 +135,48 @@ sources:
     url: https://www.febrabantech.com/
     type: event
     frequency: yearly
+  - name: Frontend BR
+    url: https://www.frontendbr.com.br
+    type: community
+    frequency: occasionally
+  - name: Gramado Summit
+    url: https://www.gramadosummit.com
+    type: event
+    frequency: yearly
+  - name: Google Developers Group Belo Horizonte
+    url: https://gdgbh.com.br/
+    type: community
+    frequency: occasionally
+  - name: Google Developers Group Brasília
+    url: https://gdg.community.dev/gdg-brasilia/
+    type: community
+    frequency: occasionally
+  - name: Google Developers Group Curitiba
+    url: https://gdg.community.dev/gdg-curitiba/
+    type: community
+    frequency: occasionally
+  - name: Google Developers Group Floripa
+    url: https://gdg.community.dev/gdg-floripa/
+    type: community
+    frequency: occasionally
+  - name: Google Developers Group Porto Alegre
+    url: https://gdg.community.dev/gdg-porto-alegre/
+    type: community
+    frequency: occasionally
+  - name: Google Developers Group Recife
+    url: https://gdg.community.dev/gdg-recife/
+    type: community
+    frequency: occasionally
   - name: Google Developers Group Rio de Janeiro
     url: https://www.meetup.com/pt-BR/gdgriodejaneiro/
     type: community
     frequency: occasionally
   - name: Google Developers Group São José dos Campos
     url: https://www.meetup.com/pt-BR/gdgsjc/
+    type: community
+    frequency: occasionally
+  - name: Google Developers Group São Paulo
+    url: https://gdg.community.dev/gdg-sao-paulo/
     type: community
     frequency: occasionally
   - name: Golang SP
@@ -139,6 +191,14 @@ sources:
     url: https://hacktown.com.br
     type: event
     frequency: yearly
+  - name: KCD Brasil
+    url: https://community.cncf.io/kcd-brasil/
+    type: event
+    frequency: yearly
+  - name: Kotlin Brasil
+    url: https://kotlin.dev.br
+    type: community
+    frequency: occasionally
   - name: Latinoware
     url: https://latinoware.org
     type: event
@@ -147,16 +207,64 @@ sources:
     url: https://linuxtips.io/linuxtips-local/
     type: community
     frequency: yearly
+  - name: Mind The Sec
+    url: https://www.mindthesec.com.br
+    type: event
+    frequency: yearly
+  - name: .NET São Paulo
+    url: https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/
+    type: community
+    frequency: occasionally
+  - name: NodeBR
+    url: https://nodebr.org
+    type: community
+    frequency: occasionally
+  - name: PHP Conference Brasil
+    url: https://phpconference.com.br
+    type: event
+    frequency: yearly
+  - name: PGConf Brasil
+    url: https://pgconf.com.br
+    type: event
+    frequency: yearly
   - name: Python Brasil
     url: https://pythonbrasil.org.br
     type: community
     frequency: yearly
+  - name: PyLadies Brasil
+    url: https://brasil.pyladies.com
+    type: community
+    frequency: occasionally
   - name: Rio Innovation Week
     url: https://rioinnovationweek.com.br
     type: event
     frequency: yearly
+  - name: Roga Dx
+    url: https://rogadx.com/
+    type: event
+    frequency: yearly
+  - name: Roadsec
+    url: https://www.roadsec.com.br
+    type: event
+    frequency: yearly
+  - name: Rust Brasil
+    url: https://rustlang.com.br
+    type: community
+    frequency: occasionally
   - name: ServerlessDays
     url: https://www.serverlessdays.io
+    type: event
+    frequency: yearly
+  - name: SouJava
+    url: https://soujava.org.br
+    type: community
+    frequency: occasionally
+  - name: South Summit
+    url: https://www.southsummit.io/e/brazil/en
+    type: event
+    frequency: yearly
+  - name: Startup Summit
+    url: https://www.startupsummit.com.br
     type: event
     frequency: yearly
   - name: The Developers Conference
@@ -167,3 +275,7 @@ sources:
     url: https://rio.websummit.com
     type: event
     frequency: yearly
+  - name: Women Techmakers Brasil
+    url: https://gxgbrasil.github.io/wtmbr/
+    type: community
+    frequency: occasionally

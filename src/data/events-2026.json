@@ -60,6 +60,17 @@
       "url": "https://www.meetup.com/aws-user-group-sorocaba"
     },
     {
+      "id": "2026-03-edicao-especial-tarde-de-otel",
+      "title": "Edição especial: Tarde de OTel",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-03-06",
+      "description": "Edição especial do Cloud Native São Paulo dedicada ao tema OpenTelemetry (OTel), realizada no Bradesco Núcleo Alphaville.",
+      "paid": false,
+      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/fgqj8m8"
+    },
+    {
       "id": "2026-03-118-meetup-aws-ug-sp-genai-em-escala-serverless-na-pratica",
       "title": "118º Meetup AWS UG SP - GenAI em escala + Serverless na prática",
       "region": "Sudeste",
@@ -69,6 +80,17 @@
       "description": "Encontro presencial no escritório da AWS em São Paulo com foco em GenAI em escala e práticas de arquitetura Serverless.",
       "paid": false,
       "url": "https://www.meetup.com/awsusergroupsp"
+    },
+    {
+      "id": "2026-03-meetup-mulheres-em-foco",
+      "title": "Meetup Mulheres em Foco",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-03-13",
+      "description": "Meetup do GDG Recife voltado para discutir temas relacionados à participação feminina na tecnologia.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-recife/"
     },
     {
       "id": "2026-03-o-quadrante-da-eficiencia-unindo-dados-seguranca-devops-e-comunidade-na-aws",
@@ -102,6 +124,17 @@
       "description": "Encontro presencial da comunidade AWS User Group Triângulo Mineiro em Uberlândia, com discussões sobre Amazon Web Services e Cloud Computing.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-triangulo-mineiro"
+    },
+    {
+      "id": "2026-03-south-summit-brazil-run-2026",
+      "title": "South Summit Brazil Run 2026",
+      "region": "Sul",
+      "type": "Corrida corporativa",
+      "modality": "Presencial",
+      "date": "2026-03-28",
+      "description": "Evento paralelo ao South Summit Brazil, a corrida reuniu empreendedores, investidores e profissionais em Porto Alegre, unindo bem-estar e networking através de uma experiência esportiva com modalidade de caminhada inédita.",
+      "paid": true,
+      "url": "https://www.southsummit.io/e/brazil/en"
     }
   ],
   "Abril": [
@@ -161,6 +194,28 @@
       "url": "https://www.meetup.com/aws-user-group-triangulo-mineiro"
     },
     {
+      "id": "2026-04-workshop-do-figma-ao-codigo-gdg-poa-alura-fiap-fof-poa",
+      "title": "Workshop: Do Figma ao código | GDG Poa + Alura + Fiap + FOF Poa",
+      "region": "Sul",
+      "type": "Workshop",
+      "modality": "Não informado",
+      "date": "2026-04-11",
+      "description": "Workshop colaborativo entre GDG Porto Alegre, Alura, Fiap e FOF Poa sobre o processo de transformar designs do Figma em código.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-porto-alegre/"
+    },
+    {
+      "id": "2026-04-build-with-ai-2026",
+      "title": "Build with AI 2026",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-04-15",
+      "description": "Evento inaugural da série Build with AI do GDG Curitiba em 2026, com foco em desenvolvimento com inteligência artificial.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-curitiba/"
+    },
+    {
       "id": "2026-04-busca-semantica-rag-com-jina",
       "title": "Busca Semântica & RAG com Jina",
       "region": "Sudeste",
@@ -170,6 +225,17 @@
       "description": "Meetup da comunidade Elastic Rio de Janeiro sobre busca semântica e RAG (Retrieval-Augmented Generation) usando Jina, realizado no espaço Impulso.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/rio-de-janeiro-elastic-fantastics/"
+    },
+    {
+      "id": "2026-04-cloud-native-sao-paulo-meetup-37-no-nubank",
+      "title": "Cloud Native São Paulo - Meetup #37 no Nubank",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-04-18",
+      "description": "Meetup do chapter Cloud Native São Paulo realizado nas instalações do Nubank, reunindo a comunidade local de tecnologias cloud native.",
+      "paid": false,
+      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/w664esc"
     },
     {
       "id": "2026-04-desbloqueando-o-poder-do-kiro-muito-alem-da-sugestao-de-codigo",
@@ -262,6 +328,28 @@
       "url": "https://www.meetup.com/aws-user-group-serido-e-sabugy"
     },
     {
+      "id": "2026-05-build-com-ai-recife-explorando-o-futuro-da-tecnologia-com-inteligencia-artificial",
+      "title": "Build com AI Recife: Explorando o Futuro da Tecnologia com Inteligência Artificial",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-05-09",
+      "description": "Encontro do GDG Recife focado em explorar as aplicações e o futuro da inteligência artificial na tecnologia.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-recife/"
+    },
+    {
+      "id": "2026-05-conferencia-online-build-with-ai-latam",
+      "title": "Conferencia Online: Build With AI LATAM",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Online",
+      "date": "2026-05-09",
+      "description": "Evento online organizado em conjunto pelo GDG Barranquilla e GDG São Paulo, voltado à comunidade LATAM de desenvolvedores para explorar construção de soluções com IA.",
+      "paid": false,
+      "url": "https://gdg.community.dev/events/details/google-gdg-barranquilla-presents-conferencia-online-build-with-ai-latam/cohost-gdg-sao-paulo"
+    },
+    {
       "id": "2026-05-60-aws-barbecue",
       "title": "#60 AWS Barbecue",
       "region": "Sudeste",
@@ -328,6 +416,28 @@
       "url": "https://www.meetup.com/pt-BR/gdgsjc/"
     },
     {
+      "id": "2026-05-meetup-gdg-brasilia-e-fiap-codigo-seguro-inovacao-e-comunidade",
+      "title": "Meetup GDG Brasília e FIAP: Código Seguro, Inovação e Comunidade",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-05-23",
+      "description": "Encontro conjunto do GDG Brasília com a FIAP abordando temas de código seguro, inovação tecnológica e construção de comunidade.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-brasilia/"
+    },
+    {
+      "id": "2026-05-build-with-ai-ii-save-the-date-25-05",
+      "title": "Build with AI - II - SAVE THE DATE 25/05",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-05-25",
+      "description": "Segunda edição do evento Build with AI do GDG Curitiba, com inscrição gratuita.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-curitiba/"
+    },
+    {
       "id": "2026-05-beyond-apis-arquiteturas-desacopladas-event-driven-com-eks",
       "title": "Beyond APIs: Arquiteturas Desacopladas Event-Driven com EKS",
       "region": "Sudeste",
@@ -337,6 +447,17 @@
       "description": "Meetup online promovido pelo AWS User Group Vale do Paraíba abordando arquiteturas event-driven desacopladas utilizando Amazon EKS.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-vale-do-paraiba"
+    },
+    {
+      "id": "2026-05-estudos-e-carreira-o-que-mudou-e-como-se-adaptar",
+      "title": "Estudos e Carreira. O que mudou e como se adaptar?",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-05-26",
+      "description": "Meetup do GDG Brasília sobre mudanças no cenário de estudos e carreira e estratégias de adaptação para desenvolvedores.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-brasilia/"
     },
     {
       "id": "2026-05-120-meetup-aws-ug-sp-engenharia-de-harness-invisible-security",
@@ -385,6 +506,17 @@
   ],
   "Junho": [
     {
+      "id": "2026-06-build-with-ai-sao-jose-dos-campos-online",
+      "title": "Build with AI - São José dos Campos (ONLINE)",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "2026-06-06",
+      "description": "Encontro online da comunidade GDG São José dos Campos com foco em inteligência artificial e boas práticas de desenvolvimento com IA.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/gdgsjc/"
+    },
+    {
       "id": "2026-06-a-ia-escreve-o-codigo-seu-trabalho-mudou",
       "title": "A IA escreve o código. Seu trabalho mudou.",
       "region": "Sul",
@@ -394,6 +526,17 @@
       "description": "Encontro do AWS User Group Curitiba sobre como a inteligência artificial está transformando o trabalho de desenvolvimento de software.",
       "paid": false,
       "url": "https://www.meetup.com/aws-curitiba-user-group"
+    },
+    {
+      "id": "2026-06-caravana-bwai-gdg-rec-hands-on-com-google-cloud",
+      "title": "Caravana BWAI GDG.REC - Hands-on com Google Cloud",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-06-11",
+      "description": "Evento prático (hands-on) sobre Google Cloud promovido pelo GDG Recife como parte da iniciativa Build with AI.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-recife/"
     },
     {
       "id": "2026-06-workshop-criando-um-jogo-com-kiro-do-conceito-ao-codigo",
@@ -420,6 +563,17 @@
   ],
   "Julho": [
     {
+      "id": "2026-07-cloud-native-sao-paulo-meetup-38-na-ibm",
+      "title": "Cloud Native São Paulo - Meetup #38 na IBM",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-07-03",
+      "description": "Encontro presencial do chapter Cloud Native São Paulo realizado na sede da IBM em São Paulo, com temas de Kubernetes, Observability e Cloud Native.",
+      "paid": false,
+      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/2n73r2z"
+    },
+    {
       "id": "2026-07-google-extended-i-o-rio-de-janeiro",
       "title": "Google Extended I/O Rio de Janeiro",
       "region": "Sudeste",
@@ -429,6 +583,17 @@
       "description": "Evento comunitário que reproduz e discute os principais anúncios do Google I/O, promovendo networking entre desenvolvedores no Rio de Janeiro.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/gdgriodejaneiro/"
+    },
+    {
+      "id": "2026-07-build-with-ai-iii",
+      "title": "Build with AI III",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-07-12",
+      "description": "Terceira edição do evento Build with AI promovido pelo GDG Curitiba, focado em inteligência artificial.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-curitiba/"
     },
     {
       "id": "2026-07-esquenta-aws-community-day-sudeste",
@@ -451,6 +616,17 @@
       "description": "Palestra e discussão sobre o uso de programação reativa em arquiteturas de microsserviços na nuvem AWS.",
       "paid": false,
       "url": "https://www.meetup.com/awscampinas"
+    },
+    {
+      "id": "2026-07-recrutamento-e-carreira-na-era-das-ias",
+      "title": "Recrutamento e Carreira na Era das IAs.",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-07-16",
+      "description": "Evento do GDG Brasília discutindo recrutamento e carreira profissional no contexto da era das inteligências artificiais.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-brasilia/"
     },
     {
       "id": "2026-07-tdc-floripa-2026",
@@ -576,6 +752,28 @@
       "url": "https://www.meetup.com/aws-user-group-serido-e-sabugy"
     },
     {
+      "id": "2026-08-da-preparacao-a-uma-carreira-relevante",
+      "title": "Da Preparação a uma Carreira Relevante",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-08-12",
+      "description": "Meetup do GDG Brasília sobre preparação e desenvolvimento de carreira relevante na área de tecnologia.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-brasilia/"
+    },
+    {
+      "id": "2026-08-roga-dx-26",
+      "title": "Roga DX 26",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-08-14",
+      "description": "Evento de tecnologia e inovação em Maceió (AL), reunindo desenvolvedores, líderes, startups e comunidades tech em duas arenas de conteúdo, palestras e mentorias. 5ª edição do Roga DX, realizada no Centro de Convenções de Maceió.",
+      "paid": true,
+      "url": "https://doity.com.br/rogadx26"
+    },
+    {
       "id": "2026-08-61-aws-meetup-esquenta-aws-community-day-bh",
       "title": "#61 AWS Meetup: Esquenta AWS Community Day BH",
       "region": "Sudeste",
@@ -596,6 +794,28 @@
       "description": "Encontro presencial do grupo AWS User Group São Paulo na FIAP, com palestras e networking sobre AWS voltadas a engenheiros.",
       "paid": false,
       "url": "https://www.meetup.com/awsusergroupsp"
+    },
+    {
+      "id": "2026-08-monitoramento-e-seguranca-aplicacoes-infra-container-nuvem-15-ed",
+      "title": "Monitoramento e Segurança - aplicações, infra, container, nuvem | 15 ed",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "2026-08-19",
+      "description": "Evento online e gratuito do Canal .NET sobre monitoramento e segurança em aplicações, infraestrutura, containers e ambientes de nuvem.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/"
+    },
+    {
+      "id": "2026-08-serving-layer-pra-features-de-modelos-de-machine-learning-em-tempo-real",
+      "title": "Serving layer pra features de modelos de Machine Learning em tempo real",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-08-20",
+      "description": "Encontro do GDG Curitiba sobre serving layer para features de modelos de Machine Learning em tempo real.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-curitiba/"
     },
     {
       "id": "2026-08-aws-community-day-brasil-sudeste-belo-horizonte",
@@ -642,6 +862,17 @@
       "url": "https://www.meetup.com/awscampinas"
     },
     {
+      "id": "2026-08-open-source-de-a-a-z-projetos-dicas-possibilidades-31a-ed",
+      "title": "Open source de A a Z - projetos, dicas, possibilidades... | 31a ed",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "2026-08-24",
+      "description": "Encontro online e gratuito do Canal .NET dedicado a projetos, dicas e possibilidades no universo do código aberto (open source).",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/"
+    },
+    {
       "id": "2026-08-desi-usp-construindo-uma-aplicacao-cloud-native-na-aws-sistema-de-feedback",
       "title": "DESI USP | Construindo uma Aplicação Cloud-Native na AWS: Sistema de Feedback",
       "region": "Sudeste",
@@ -651,6 +882,17 @@
       "description": "Encontro híbrido do AWS User Group Baixada Santista realizado na USP Leste, em São Paulo, com foco na construção de uma aplicação cloud-native na AWS para um sistema de feedback.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-baixada-santista"
+    },
+    {
+      "id": "2026-08-cafe-e-inteligencia-artificial-na-pratica-experiencias-do-cotidiano",
+      "title": "Café e Inteligência Artificial na Prática: Experiências do Cotidiano",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-08-25",
+      "description": "Encontro da comunidade GDG Floripa para compartilhar experiências práticas do uso de Inteligência Artificial no dia a dia.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-floripa/"
     },
     {
       "id": "2026-08-brasilia-meetup-codecon-4",
@@ -684,6 +926,17 @@
       "description": "Edição do The Developers Conference em São Carlos, voltada para a comunidade tech do interior de São Paulo.",
       "paid": true,
       "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+    },
+    {
+      "id": "2026-08-startup-summit-2026",
+      "title": "Startup Summit 2026",
+      "region": "Sul",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-08-26",
+      "description": "O Startup Summit 2026 reúne mais de 10 mil participantes, 200+ palestrantes e investidores em Florianópolis para três dias de conteúdo, rodadas de negócios e uma feira de startups.",
+      "paid": true,
+      "url": "https://www.startupsummit.com.br"
     },
     {
       "id": "2026-08-curitiba-meetup-codecon-21",
@@ -763,6 +1016,28 @@
       "url": "https://www.meetup.com/aws-user-group-sao-lourenco"
     },
     {
+      "id": "2026-08-django-girls-novo-hamburgo",
+      "title": "Django Girls Novo Hamburgo",
+      "region": "Sul",
+      "type": "Workshop",
+      "modality": "Presencial",
+      "date": "2026-08-29",
+      "description": "Workshop gratuito de um dia para mulheres aprenderem programação com Python e Django, promovido pela comunidade Django Girls em Novo Hamburgo (RS).",
+      "paid": false,
+      "url": "https://djangogirls.org"
+    },
+    {
+      "id": "2026-08-cloud-weekend-2026-nuvem-containers-azure-ia-kubernetes",
+      "title": "Cloud Weekend 2026: Nuvem, Containers, Azure, IA, Kubernetes",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-08-29",
+      "description": "Evento presencial e gratuito em São Paulo-SP sobre computação em nuvem, Azure, Kubernetes, containers e Inteligência Artificial, realizado em parceria entre .NET São Paulo, Azure na Prática e a Escola SENAI Suíço-Brasileira.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/"
+    },
+    {
       "id": "2026-08-meetup-03-inovacao-inteligencia-artificial-e-agilidade",
       "title": "Meetup #03 - Inovação, Inteligência Artificial e Agilidade",
       "region": "Sul",
@@ -772,6 +1047,17 @@
       "description": "Terceiro encontro do grupo AWS SBG na Univali, discutindo inovação, inteligência artificial e agilidade em formato híbrido em Itajaí, SC.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-alto-tiete"
+    },
+    {
+      "id": "2026-08-kubernetes-dicas-e-truques-para-o-dia-a-dia-21a-edicao",
+      "title": "Kubernetes: dicas e truques para o dia a dia | 21a edição",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "2026-08-31",
+      "description": "Live online e gratuita do Canal .NET com dicas e truques sobre Kubernetes, AKS e integração com serviços em nuvem, apresentada por MVPs da Microsoft e especialistas em Docker.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/"
     }
   ],
   "Setembro": [
@@ -785,6 +1071,28 @@
       "description": "A maior conferência de Go da América Latina, com palestras, keynotes e workshops sobre a linguagem Go, realizada no CentroSul em Florianópolis, SC.",
       "paid": true,
       "url": "https://gopherconlatam.org"
+    },
+    {
+      "id": "2026-09-dicas-de-bancos-de-dados-para-desenvolvedores-sql-nosql-14a-ed",
+      "title": "Dicas de Bancos de Dados para Desenvolvedores - SQL, NoSQL... | 14a ed",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "2026-09-02",
+      "description": "Evento online e gratuito do Canal .NET com dicas sobre bancos de dados SQL Server, PostgreSQL, MongoDB e outras tecnologias para desenvolvedores.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/"
+    },
+    {
+      "id": "2026-09-pgconf-brasil-2026",
+      "title": "PGConf.Brasil 2026",
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-09-02",
+      "description": "A conferência brasileira de PostgreSQL reúne administradores de bancos de dados, desenvolvedores e entusiastas para debater o ecossistema PostgreSQL, com palestras do básico ao avançado. O evento de 2026 será realizado em Blumenau, SC, de 2 a 4 de setembro.",
+      "paid": true,
+      "url": "https://2026.pgconf.com.br/"
     },
     {
       "id": "2026-09-aws-summit-sao-paulo-2026",
@@ -851,6 +1159,17 @@
       "description": "Encontro presencial e gratuito da comunidade Golang SP em São Paulo, com apresentação de case sobre construção de plataforma low-code em Go pela ME.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/golangbr/"
+    },
+    {
+      "id": "2026-09-mind-the-sec-2026",
+      "title": "Mind The Sec 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "description": "O maior evento de segurança da informação e cibersegurança do Hemisfério Sul, reunindo milhares de especialistas, líderes e marcas no Transamérica Expo Center em São Paulo.",
+      "paid": true,
+      "url": "https://www.mindthesec.com.br/inscreva-se"
     },
     {
       "id": "2026-09-aws-community-day-brasil-sul-curitiba",
@@ -987,6 +1306,17 @@
       "url": "https://devopsdays.org/events/2026-juiz-de-fora"
     },
     {
+      "id": "2026-10-php-conference-brasil-2026",
+      "title": "PHP Conference Brasil 2026",
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Híbrido",
+      "date": "2026-10-19",
+      "description": "A 20ª edição do maior e mais longevo evento de PHP da América Latina, com dias online (19 a 22 de outubro) e dias presenciais na UNICESUMAR em Maringá-PR (23 e 24 de outubro).",
+      "paid": true,
+      "url": "https://phpconference.com.br"
+    },
+    {
       "id": "2026-10-devopsdays-florianopolis",
       "title": "DevOpsDays Florianópolis",
       "region": "Sul",
@@ -1007,6 +1337,28 @@
       "description": "Edição regional do AWS Community Day Brasil em Belém, PA, reunindo profissionais e entusiastas de AWS da região Norte.",
       "paid": false,
       "url": "https://awscommunityday.com.br"
+    },
+    {
+      "id": "2026-10-devfest-bh-2026",
+      "title": "DevFest BH 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-10-31",
+      "description": "Evento anual do GDG Belo Horizonte que reúne a comunidade de desenvolvedores para palestras, workshops e networking sobre tecnologias Google e do ecossistema tech.",
+      "paid": false,
+      "url": "https://gdgbh.com.br/devfest-2026"
+    },
+    {
+      "id": "2026-10-devfestpoa26",
+      "title": "DevFestPoa26",
+      "region": "Sul",
+      "type": "Festival de tecnologia",
+      "modality": "Não informado",
+      "date": "2026-10-31",
+      "description": "Edição 2026 do DevFest de Porto Alegre, organizado pelo GDG Porto Alegre, reunindo palestras e workshops sobre tecnologia, comunidade e futuro.",
+      "paid": true,
+      "url": "https://gdg.community.dev/events/details/google-gdg-porto-alegre-presents-devfestpoa26/cohost-gdg-porto-alegre"
     }
   ],
   "Novembro": [
@@ -1042,6 +1394,17 @@
       "description": "O DevFest Rio de Janeiro 2026 é um evento de um dia dedicado à inovação e tecnologia, reunindo desenvolvedores e entusiastas para palestras, workshops e networking sobre as últimas tendências relacionadas ao Google.",
       "paid": true,
       "url": "https://www.meetup.com/pt-BR/gdgriodejaneiro/"
+    },
+    {
+      "id": "2026-11-select-experience-26",
+      "title": "Select Experience 26",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-11-14",
+      "description": "Evento presencial da Codecon em São Paulo no STATE Innovation Center, reunindo profissionais de tecnologia para palestras e experiências selecionadas.",
+      "paid": true,
+      "url": "https://codecon.dev/select"
     }
   ],
   "Dezembro": [
@@ -1066,6 +1429,17 @@
       "description": "Maior conferência sobre tecnologias Google no Brasil, reunindo palestras e trilhas sobre Inteligência Artificial, Mobile, Web, Cloud e mais, promovida pelo GDG São José dos Campos.",
       "paid": true,
       "url": "https://www.meetup.com/pt-BR/gdgsjc/"
+    },
+    {
+      "id": "2026-12-devfest-recife-2026",
+      "title": "DevFest Recife 2026",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "modality": "Não informado",
+      "date": "2026-12-05",
+      "description": "O DevFest Recife 2026 é uma conferência de tecnologia organizada pelo GDG Recife, reunindo desenvolvedores para discutir inovações e tendências do setor.",
+      "paid": true,
+      "url": "https://gdg.community.dev/gdg-recife/"
     },
     {
       "id": "2026-12-tdcx-porto-alegre-2026",

@@ -45,6 +45,13 @@ const SLUG_COMMUNITIES: Record<string, string> = {
   golangbr: "GolangBR",
 };
 
+// Where the meetup group itself is based — overrides title-text guessing for
+// events like "Esquenta AWS Community Day BH", which is a Rio meetup warming
+// up for a Belo Horizonte event, not a BH event itself.
+const SLUG_CITY: Record<string, string> = {
+  "aws-user-group-rio": "Rio de Janeiro",
+};
+
 const TITLE_COMMUNITIES: [RegExp, string][] = [
   [/linuxtips/i, "LINUXtips"],
   [/codecon/i, "Codecon"],
@@ -138,12 +145,21 @@ function communityOf(ev: TechEvent): string | null {
 
 // Whitelist match against title, then meetup slug. Null when unknown — never the region.
 function cityOf(ev: TechEvent): string | null {
-  const hay = norm(ev.title + " " + (slugOf(ev) ?? "").replace(/-/g, " ") + " " + (ev.description || ""));
+  const slug = slugOf(ev);
+  if (slug && SLUG_CITY[slug]) return SLUG_CITY[slug];
+
+  const hay = norm(ev.title + " " + (slug ?? "").replace(/-/g, " ") + " " + (ev.description || ""));
   let best: string | null = null;
   for (const place of PLACES) {
     if (hay.includes(norm(place)) && (!best || place.length > best.length)) best = place;
   }
-  return best ? (PLACE_ALIASES[best] || best) : null;
+  if (best) return PLACE_ALIASES[best] || best;
+
+  const bareHay = " " + ev.title + " " + (ev.description || "") + " ";
+  for (const abbrev of Object.keys(PLACE_ALIASES)) {
+    if (new RegExp("[\\s,(/-]" + abbrev + "[\\s,.)/-]").test(bareHay)) return PLACE_ALIASES[abbrev];
+  }
+  return null;
 }
 
 export function enrichEvent(e: TechEvent): EnrichedEvent {
