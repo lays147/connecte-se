@@ -7,7 +7,7 @@ function githubIconSvg(): string {
 export function renderCtaBand(): HTMLElement {
   const band = document.createElement("div");
   band.className =
-    "flex flex-col items-start gap-6 border-t border-brand-100 bg-brand-50/60 px-6 py-6 md:flex-row md:items-center md:justify-between md:gap-8";
+    "flex flex-col items-start gap-6 border-t border-brand-100 bg-brand-50/60 px-(--spacing-gutter) py-6 md:flex-row md:items-center md:justify-between md:gap-8";
 
   const textCol = document.createElement("div");
   textCol.className = "flex max-w-full flex-col gap-1.5 md:max-w-115";

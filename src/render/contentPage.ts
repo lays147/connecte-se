@@ -121,7 +121,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
 
   // ---- hero
   const hero = document.createElement("div");
-  hero.className = "flex flex-wrap items-end justify-between gap-8 border-b border-brand-100 px-6 py-7";
+  hero.className = "flex flex-wrap items-end justify-between gap-8 border-b border-brand-100 px-(--spacing-gutter) py-7";
 
   const heroText = document.createElement("div");
   heroText.className = "flex max-w-155 flex-col gap-2";
@@ -167,7 +167,8 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
 
   // ---- filter bar
   const filterBar = document.createElement("div");
-  filterBar.className = "sticky top-0 z-5 flex flex-wrap items-center gap-3.5 border-b border-brand-100 bg-brand-50/40 px-6 py-3";
+  filterBar.className =
+    "sticky top-0 z-5 flex flex-wrap items-center gap-3.5 border-b border-brand-100 bg-brand-50/40 px-(--spacing-gutter) py-3";
 
   const searchBox = document.createElement("div");
   searchBox.className = "flex h-9 max-w-85 flex-1 basis-64 items-center gap-2 rounded-card-10 border border-brand-100 bg-white px-3";
@@ -241,7 +242,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     sectionEl.className = "flex flex-col";
 
     const heading = document.createElement("div");
-    heading.className = "flex items-baseline gap-2.5 border-y border-brand-50 bg-brand-50/40 px-6 py-4";
+    heading.className = "flex items-baseline gap-2.5 border-y border-brand-50 bg-brand-50/40 px-(--spacing-gutter) py-4";
 
     const dot = document.createElement("span");
     dot.className = "size-1.75 rounded-full";
@@ -268,7 +269,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     sectionEl.appendChild(heading);
 
     const grid = document.createElement("div");
-    grid.className = "grid grid-cols-1 gap-2.5 px-6 py-4 sm:grid-cols-2 lg:grid-cols-3";
+    grid.className = "grid grid-cols-1 gap-2.5 px-(--spacing-gutter) py-4 sm:grid-cols-2 lg:grid-cols-3";
     for (const item of section.items) {
       grid.appendChild(renderItemCard(item));
     }
@@ -281,7 +282,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
 
   if (filtered.length === 0) {
     const empty = document.createElement("div");
-    empty.className = "flex flex-col items-start gap-1.5 px-6 py-12";
+    empty.className = "flex flex-col items-start gap-1.5 px-(--spacing-gutter) py-12";
     const emptyTitle = document.createElement("span");
     emptyTitle.className = "font-display text-heading-sm font-semibold text-brand-950";
     emptyTitle.textContent = "Nada encontrado para esse filtro";
@@ -294,7 +295,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
 
   // ---- CTA
   const cta = document.createElement("div");
-  cta.className = "flex flex-wrap items-center justify-between gap-8 border-t border-brand-100 bg-brand-50/60 px-6 py-6";
+  cta.className = "flex flex-wrap items-center justify-between gap-8 border-t border-brand-100 bg-brand-50/60 px-(--spacing-gutter) py-6";
 
   const ctaText = document.createElement("div");
   ctaText.className = "flex max-w-130 flex-col gap-1.5";

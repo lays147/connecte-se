@@ -18,7 +18,7 @@ function githubIconSvg(): string {
 
 export function renderFooter(): HTMLElement {
   const footer = document.createElement("footer");
-  footer.className = "flex flex-wrap items-start justify-between gap-x-8 gap-y-7 bg-brand-950 px-6 py-7";
+  footer.className = "flex flex-wrap items-start justify-between gap-x-8 gap-y-7 bg-brand-950 px-(--spacing-gutter) py-7";
 
   const brandCol = document.createElement("div");
   brandCol.className = "flex max-w-72.5 flex-1 basis-60 flex-col gap-2.5";

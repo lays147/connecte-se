@@ -14,7 +14,7 @@ export function renderMonthSection(bucket: MonthBucket, today: Date): HTMLElemen
 
   const heading = document.createElement("div");
   heading.className = [
-    "flex items-baseline gap-2.5 border-b border-brand-100 px-6 py-4",
+    "flex items-baseline gap-2.5 border-b border-brand-100 px-(--spacing-gutter) py-4",
     bucket.isPast ? "bg-brand-50/30" : "bg-white",
   ].join(" ");
 
@@ -43,7 +43,7 @@ export function renderMonthSection(bucket: MonthBucket, today: Date): HTMLElemen
   section.appendChild(heading);
 
   const grid = document.createElement("div");
-  grid.className = "grid grid-cols-1 gap-4 px-6 py-5 sm:grid-cols-2 lg:grid-cols-3";
+  grid.className = "grid grid-cols-1 gap-4 px-(--spacing-gutter) py-5 sm:grid-cols-2 lg:grid-cols-3";
 
   const cards = bucket.list.slice(0, CARD_LIMIT);
   for (const event of cards) {
@@ -53,7 +53,7 @@ export function renderMonthSection(bucket: MonthBucket, today: Date): HTMLElemen
 
   if (bucket.list.length > CARD_LIMIT) {
     const more = document.createElement("span");
-    more.className = "px-6 pb-5 text-xs font-medium text-brand-500";
+    more.className = "px-(--spacing-gutter) pb-5 text-xs font-medium text-brand-500";
     more.textContent = `+ ${bucket.list.length - CARD_LIMIT} eventos neste mês`;
     section.appendChild(more);
   }

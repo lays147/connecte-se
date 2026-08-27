@@ -3,14 +3,12 @@ export interface PageLayout {
   main: HTMLElement;
 }
 
-export function mountLayout(header: HTMLElement, opts?: { padded?: boolean }): PageLayout {
+export function mountLayout(header: HTMLElement): PageLayout {
   const app = document.querySelector<HTMLDivElement>("#app");
   if (!app) throw new Error("#app element not found");
 
   const shell = document.createElement("div");
-  shell.className = opts?.padded
-    ? "mx-auto w-full max-w-shell bg-white px-4 sm:px-6 lg:px-8"
-    : "mx-auto w-full max-w-shell bg-white";
+  shell.className = "min-h-screen w-full bg-white";
 
   const main = document.createElement("div");
 

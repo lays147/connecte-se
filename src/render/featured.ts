@@ -33,7 +33,7 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
 
   const wrap = document.createElement("div");
   wrap.className =
-    "relative flex flex-col items-stretch gap-4 bg-brand-950 px-4 py-5 sm:gap-7 sm:px-6 sm:py-6.5 md:min-h-42 md:flex-row";
+    "relative flex flex-col items-stretch gap-4 bg-brand-950 px-(--spacing-gutter) py-5 sm:gap-7 sm:py-6.5 md:min-h-42 md:flex-row";
 
   const dateBlock = document.createElement("div");
   dateBlock.className =

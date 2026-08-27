@@ -58,7 +58,7 @@ export function renderCommunityShelves(shelves: CommunityShelf[], today: Date): 
 
   for (const shelf of shelves) {
     const row = document.createElement("div");
-    row.className = "flex flex-col gap-3.5 border-b border-brand-100 px-6 py-5";
+    row.className = "flex flex-col gap-3.5 border-b border-brand-100 px-(--spacing-gutter) py-5";
 
     const header = document.createElement("div");
     header.className = "flex items-center gap-2.5";

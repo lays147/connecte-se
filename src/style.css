@@ -67,7 +67,7 @@
   --radius-card-13: 0.8125rem; /* 13px */
   --radius-card-17: 1.0625rem; /* 17px */
 
-  --spacing-shell: 75rem; /* 1200px */
+  --spacing-gutter: clamp(1.5rem, 4vw, 4rem); /* clamp(24px, 4vw, 64px) */
 }
 
 @view-transition {

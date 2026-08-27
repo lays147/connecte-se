@@ -32,7 +32,8 @@ export function renderFilterBar(
   const options = filterOptions(allEvents);
 
   const row = document.createElement("div");
-  row.className = "flex flex-col gap-6 border-b border-brand-100 px-6 py-6 md:flex-row md:items-end md:justify-between";
+  row.className =
+    "flex flex-col gap-6 border-b border-brand-100 px-(--spacing-gutter) py-6 md:flex-row md:items-end md:justify-between";
 
   const textCol = document.createElement("div");
   textCol.className = "flex max-w-130 flex-col gap-2";

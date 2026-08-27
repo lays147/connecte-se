@@ -137,7 +137,7 @@ const header = renderHeader({
   },
 });
 
-const { shell, main } = mountLayout(header, { padded: true });
+const { shell, main } = mountLayout(header);
 shell.append(renderCtaBand(), renderFooter());
 
 render();

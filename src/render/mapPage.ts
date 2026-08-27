@@ -52,7 +52,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
 
   const heading = document.createElement("div");
   heading.className =
-    "flex flex-col items-start gap-4 border-b border-brand-100 px-4 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6";
+    "flex flex-col items-start gap-4 border-b border-brand-100 px-(--spacing-gutter) py-5 sm:flex-row sm:items-end sm:justify-between";
 
   const headingText = document.createElement("div");
   headingText.className = "flex max-w-xl flex-col gap-2";
@@ -152,7 +152,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   body.append(mapCol, sideCol);
 
   const panel = document.createElement("div");
-  panel.className = "rounded-b-card-17 border-t border-brand-100 bg-brand-50/40 px-4 py-5 sm:px-6 sm:py-6";
+  panel.className = "border-t border-brand-100 bg-brand-50/40 px-(--spacing-gutter) py-5 sm:py-6";
 
   root.append(heading, body, panel);
 

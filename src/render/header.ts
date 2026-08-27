@@ -24,7 +24,7 @@ function githubIconSvg(): string {
 export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   const header = document.createElement("header");
   header.className =
-    "flex flex-wrap items-center justify-between gap-3 border-b border-brand-100 bg-white px-4 py-3 sm:gap-6 sm:px-6 sm:py-3.5";
+    "flex flex-wrap items-center justify-between gap-3 border-b border-brand-100 bg-white px-(--spacing-gutter) py-3 sm:gap-6 sm:py-3.5";
 
   const logo = document.createElement("a");
   logo.href = "/index.html#top";

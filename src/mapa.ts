@@ -8,7 +8,7 @@ import { renderMapPage } from "./render/mapPage";
 const allEvents = loadAllEnrichedEvents();
 
 const header = renderHeader({ active: "mapa" });
-const { shell, main } = mountLayout(header, { padded: true });
+const { shell, main } = mountLayout(header);
 
 main.appendChild(renderMapPage(allEvents));
 shell.appendChild(renderFooter());

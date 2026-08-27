@@ -2,7 +2,7 @@ export type GroupBy = "data" | "comunidade";
 
 export function renderGroupToggle(groupBy: GroupBy, onChange: (value: GroupBy) => void): HTMLElement {
   const row = document.createElement("div");
-  row.className = "flex items-center justify-between gap-4 border-b border-brand-100 bg-brand-50/40 px-6 py-3";
+  row.className = "flex items-center justify-between gap-4 border-b border-brand-100 bg-brand-50/40 px-(--spacing-gutter) py-3";
 
   const label = document.createElement("span");
   label.className = "text-xs font-medium text-brand-500";
