@@ -1,4 +1,12 @@
 sources:
+  - name: .NET São Paulo
+    url: https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/
+    type: community
+    frequency: occasionally
+  - name: Agile Trends
+    url: https://agiletrendsbr.com/
+    type: event
+    frequency: yearly
   - name: AWS Community Day Brasil
     url: https://awscommunityday.com.br
     type: event
@@ -25,6 +33,10 @@ sources:
     frequency: occasionally
   - name: AWS User Group Belo Horizonte
     url: https://www.meetup.com/awsusergroupbh
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Brasília
+    url: https://www.meetup.com/aws-user-group-brasilia
     type: community
     frequency: occasionally
   - name: AWS User Group Campinas
@@ -91,6 +103,14 @@ sources:
     url: https://www.meetup.com/aws-women-user-group-goiania
     type: community
     frequency: occasionally
+  - name: Azure Academy
+    url: https://www.meetup.com/azureacademy
+    type: community
+    frequency: occasionally
+  - name: Azure Talks
+    url: https://www.meetup.com/azure-talks
+    type: community
+    frequency: occasionally
   - name: BrazilJS
     url: https://braziljs.org
     type: event
@@ -99,22 +119,50 @@ sources:
     url: https://brasil.campus-party.org
     type: event
     frequency: yearly
+  - name: Clojure BR
+    url: https://www.meetup.com/clojure-br
+    type: community
+    frequency: occasionally
   - name: Cloud Native São Paulo
     url: https://community.cncf.io/cloud-native-sao-paulo-city/
+    type: community
+    frequency: occasionally
+  - name: CocoaHeads Porto Alegre
+    url: https://www.meetup.com/cocoaheads-poa
     type: community
     frequency: occasionally
   - name: Codecon
     url: https://codecon.dev
     type: community
     frequency: occasionally
+  - name: Congresso Brasileiro de Informática na Educação
+    url: https://cbie.sbc.org.br
+    type: event
+    frequency: yearly
+  - name: Congresso Brasileiro de Software - Teoria e Prática (CBSoft)
+    url: https://cbsoft.sbc.org.br
+    type: event
+    frequency: yearly
+  - name: Congresso da Sociedade Brasileira de Computação (SBC)
+    url: https://csbc.sbc.org.br/
+    type: event
+    frequency: yearly
   - name: Datadog User Groups
     url: https://www.meetup.com/pt-BR/datadog-user-group-brasil/
+    type: community
+    frequency: occasionally
+  - name: Dev Paraná
+    url: https://www.meetup.com/developerparana
     type: community
     frequency: occasionally
   - name: DevFest Brasil
     url: https://devfest.com.br/
     type: event
     frequency: yearly
+  - name: DevOps Professionals
+    url: https://www.meetup.com/devops-professionals
+    type: community
+    frequency: occasionally
   - name: DevOpsDays
     url: https://devopsdays.org
     type: event
@@ -131,18 +179,34 @@ sources:
     url: https://www.meetup.com/pt-BR/rio-de-janeiro-elastic-fantastics/
     type: community
     frequency: occasionally
+  - name: Engenharia de Dados Academy
+    url: https://www.meetup.com/engenharia-dados-academy
+    type: community
+    frequency: occasionally
   - name: Febraban Tech
     url: https://www.febrabantech.com/
+    type: event
+    frequency: yearly
+  - name: FIAP Meetups
+    url: https://www.meetup.com/fiapmeetups
+    type: community
+    frequency: occasionally
+  - name: Flutter Curitiba
+    url: https://www.meetup.com/fluttercwb
+    type: community
+    frequency: occasionally
+  - name: Front in Floripa
+    url: https://frontin.floripa.br/
     type: event
     frequency: yearly
   - name: Frontend BR
     url: https://www.frontendbr.com.br
     type: community
     frequency: occasionally
-  - name: Gramado Summit
-    url: https://www.gramadosummit.com
-    type: event
-    frequency: yearly
+  - name: Golang SP
+    url: https://www.meetup.com/pt-BR/golangbr/
+    type: community
+    frequency: occasionally
   - name: Google Developers Group Belo Horizonte
     url: https://gdgbh.com.br/
     type: community
@@ -179,16 +243,24 @@ sources:
     url: https://gdg.community.dev/gdg-sao-paulo/
     type: community
     frequency: occasionally
-  - name: Golang SP
-    url: https://www.meetup.com/pt-BR/golangbr/
-    type: community
-    frequency: occasionally
   - name: GopherCon Latam
     url: https://gopherconlatam.org
     type: event
     frequency: yearly
+  - name: Gramado Summit
+    url: https://www.gramadosummit.com
+    type: event
+    frequency: yearly
+  - name: Grupy-SP
+    url: https://www.meetup.com/grupy-sp
+    type: community
+    frequency: occasionally
   - name: Hackthown
     url: https://hacktown.com.br
+    type: event
+    frequency: yearly
+  - name: IA Conference Brasil
+    url: https://www.iaconferencebrasil.com.br/
     type: event
     frequency: yearly
   - name: KCD Brasil
@@ -203,48 +275,68 @@ sources:
     url: https://latinoware.org
     type: event
     frequency: yearly
+  - name: Le Wagon Rio de Janeiro
+    url: https://www.meetup.com/le-wagon-rio-de-janeiro-coding-bootcamp
+    type: community
+    frequency: occasionally
   - name: LINUXtips
     url: https://linuxtips.io/linuxtips-local/
     type: community
     frequency: yearly
+  - name: Microsoft Reactor São Paulo
+    url: https://www.meetup.com/microsoft-reactor-sao-paulo
+    type: community
+    frequency: occasionally
   - name: Mind The Sec
     url: https://www.mindthesec.com.br
     type: event
     frequency: yearly
-  - name: .NET São Paulo
-    url: https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/
-    type: community
-    frequency: occasionally
   - name: NodeBR
     url: https://nodebr.org
     type: community
     frequency: occasionally
-  - name: PHP Conference Brasil
-    url: https://phpconference.com.br
-    type: event
-    frequency: yearly
+  - name: ParaibaJS
+    url: https://linktr.ee/paraibajs
+    type: community
+    frequency: occasionally
   - name: PGConf Brasil
     url: https://pgconf.com.br
     type: event
     frequency: yearly
+  - name: PHP Conference Brasil
+    url: https://phpconference.com.br
+    type: event
+    frequency: yearly
+  - name: PHPSP
+    url: https://www.meetup.com/php-sp
+    type: community
+    frequency: occasionally
+  - name: PrograMaria
+    url: https://www.programaria.org
+    type: community
+    frequency: occasionally
+  - name: PyLadies Brasil
+    url: https://brasil.pyladies.com
+    type: community
+    frequency: occasionally
   - name: Python Brasil
     url: https://pythonbrasil.org.br
     type: community
     frequency: yearly
-  - name: PyLadies Brasil
-    url: https://brasil.pyladies.com
+  - name: R-Ladies São Paulo
+    url: https://www.meetup.com/rladies-sao-paulo
     type: community
     frequency: occasionally
   - name: Rio Innovation Week
     url: https://rioinnovationweek.com.br
     type: event
     frequency: yearly
-  - name: Roga Dx
-    url: https://rogadx.com/
-    type: event
-    frequency: yearly
   - name: Roadsec
     url: https://www.roadsec.com.br
+    type: event
+    frequency: yearly
+  - name: Roga Dx
+    url: https://rogadx.com/
     type: event
     frequency: yearly
   - name: Rust Brasil
@@ -255,8 +347,16 @@ sources:
     url: https://www.serverlessdays.io
     type: event
     frequency: yearly
+  - name: Simpósio Brasileiro de Sistemas de Informação
+    url: https://sbsi.sbc.org.br
+    type: event
+    frequency: yearly
   - name: SouJava
     url: https://soujava.org.br
+    type: community
+    frequency: occasionally
+  - name: SouJava Campinas
+    url: https://www.meetup.com/soujavacampinas
     type: community
     frequency: occasionally
   - name: South Summit
@@ -271,10 +371,22 @@ sources:
     url: https://thedevconf.com/tdc/2026/datas-e-locais
     type: event
     frequency: yearly
+  - name: Uber Tech Events Brazil
+    url: https://www.meetup.com/uber-tech-latam
+    type: community
+    frequency: occasionally
+  - name: União Confraria
+    url: https://www.meetup.com/confrariaweb3
+    type: community
+    frequency: occasionally
   - name: Web Summit Rio
     url: https://rio.websummit.com
     type: event
     frequency: yearly
+  - name: WoMakersCode Brasil
+    url: https://www.meetup.com/womakerscode
+    type: community
+    frequency: occasionally
   - name: Women Techmakers Brasil
     url: https://gxgbrasil.github.io/wtmbr/
     type: community

@@ -1,6 +1,17 @@
 {
   "Janeiro": [
     {
+      "id": "2026-01-placeholder",
+      "title": "placeholder",
+      "region": "Sudeste",
+      "type": "placeholder",
+      "modality": "Não informado",
+      "date": "2026-01-01",
+      "description": "placeholder",
+      "paid": false,
+      "url": "https://cbie.sbc.org.br"
+    },
+    {
       "id": "2026-01-python-brasil-meetup",
       "title": "Python Brasil Meetup SP",
       "region": "Sudeste",
@@ -34,6 +45,17 @@
       "description": "Meetup de abertura do ano com foco no stack de Google, Docker e HashiCorp, reunindo desenvolvedores e engenheiros de operações do Rio de Janeiro.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/docker-rio-de-janeiro"
+    },
+    {
+      "id": "2026-02-gdg-talks-build-with-ai-edition",
+      "title": "GDG Talks - Build with AI edition",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-02-25",
+      "description": "Encontro da comunidade GDG Floripa com palestras sobre construção de soluções utilizando Inteligência Artificial.",
+      "paid": false,
+      "url": "https://gdg.community.dev/events/details/google-gdg-floripa-presents-gdg-talks-build-with-ai-edition/cohost-gdg-floripa"
     },
     {
       "id": "2026-02-fundamentos-de-compute-na-aws",
@@ -93,6 +115,17 @@
       "url": "https://gdg.community.dev/gdg-recife/"
     },
     {
+      "id": "2026-03-gdgirls-day-1",
+      "title": "GDGirls day #1",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-03-14",
+      "description": "Primeiro encontro do ano da iniciativa GDGirls em Porto Alegre, voltado para mulheres na área de tecnologia.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-porto-alegre/"
+    },
+    {
       "id": "2026-03-o-quadrante-da-eficiencia-unindo-dados-seguranca-devops-e-comunidade-na-aws",
       "title": "O Quadrante da Eficiência: Unindo Dados, Segurança, DevOps e Comunidade na AWS",
       "region": "Sudeste",
@@ -139,6 +172,17 @@
   ],
   "Abril": [
     {
+      "id": "2026-04-gdg-talks-2-build-with-ai-edition-ia-na-construcao-de-software-e-melhores-praticas-de-ciberseguranca",
+      "title": "GDG Talks 2 - Build with AI edition: IA na construção de software e melhores práticas de Cibersegurança",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-04-01",
+      "description": "Evento colaborativo entre GDG Belém e GDG Floripa sobre construção de software com IA e melhores práticas de cibersegurança.",
+      "paid": false,
+      "url": "https://gdg.community.dev/events/details/google-gdg-belem-presents-gdg-talks-2-build-with-ai-edition-ia-na-construcao-de-software-e-melhores-praticas-de-ciberseguranca/cohost-gdg-floripa"
+    },
+    {
       "id": "2026-04-armazenamento-na-aws",
       "title": "Armazenamento na AWS",
       "region": "Sudeste",
@@ -159,6 +203,17 @@
       "description": "Meetup da comunidade AWS de Belo Horizonte com foco em conceitos e práticas de networking na nuvem.",
       "paid": false,
       "url": "https://www.meetup.com/awsusergroupbh"
+    },
+    {
+      "id": "2026-04-gdgirls-talks-building-quality",
+      "title": "GDGirls talks - Building Quality",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "2026-04-07",
+      "description": "Encontro do GDGirls em Porto Alegre com palestras sobre qualidade de software, parte da iniciativa de inclusão de mulheres na tecnologia.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-porto-alegre/"
     },
     {
       "id": "2026-04-09-de-zero-a-producao-seu-primeiro-agent-de-ia-em-escala-com-aws",
@@ -1150,6 +1205,17 @@
       "url": "https://devopsdays.org/events/2026-feira-de-santana"
     },
     {
+      "id": "2026-09-cbsoft-2026-congresso-brasileiro-de-software-teoria-e-pratica",
+      "title": "CBSoft 2026 - Congresso Brasileiro de Software: Teoria e Prática",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-09-08",
+      "description": "O CBSoft é o principal congresso brasileiro que agrega os simpósios da área de software, reunindo pesquisadores e profissionais em São Paulo. A edição de 2026 ocorre no Instituto de Matemática, Estatística e Ciência da Computação (IME-USP), de 8 a 11 de setembro.",
+      "paid": true,
+      "url": "https://cbsoft.sbc.org.br/2026/pt/cbsoft/location"
+    },
+    {
       "id": "2026-09-golang-sp-me-ia-116",
       "title": "Golang SP & ME. + IA - #116",
       "region": "Sudeste",
@@ -1159,6 +1225,17 @@
       "description": "Encontro presencial e gratuito da comunidade Golang SP em São Paulo, com apresentação de case sobre construção de plataforma low-code em Go pela ME.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/golangbr/"
+    },
+    {
+      "id": "2026-09-paraibajs-meetup",
+      "title": "ParaibaJS Meetup",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "description": "Encontro presencial da comunidade ParaibaJS, reunindo desenvolvedores JavaScript da Paraíba para palestras e networking.",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/paraibajs/3494354"
     },
     {
       "id": "2026-09-mind-the-sec-2026",
@@ -1181,6 +1258,17 @@
       "description": "Edição regional do AWS Community Day Brasil em Curitiba, PR, reunindo a comunidade de usuários AWS para palestras e networking.",
       "paid": false,
       "url": "https://awscommunityday.com.br"
+    },
+    {
+      "id": "2026-09-staff-experience",
+      "title": "Staff Experience",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Online",
+      "date": "2026-09-19",
+      "description": "Evento online da Codecon voltado para profissionais de tecnologia em nível staff, com conteúdos e discussões sobre carreira e liderança técnica.",
+      "paid": true,
+      "url": "https://eventos.codecon.dev/eventos/staff-experience"
     },
     {
       "id": "2026-09-linuxtips-local-rio-branco",
@@ -1238,6 +1326,17 @@
       "url": "https://www.sympla.com.br/evento/linuxtips-local-porto-alegre/3439924"
     },
     {
+      "id": "2026-09-ia-conference-brasil-2026",
+      "title": "IA Conference Brasil 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-09-24",
+      "description": "Maior evento de Inteligência Artificial e tecnologia do Brasil, reunindo mais de 1.300 profissionais no Centro de Convenções Frei Caneca em São Paulo, com palestras, mentorias e networking sobre IA.",
+      "paid": true,
+      "url": "https://www.sympla.com.br/evento/ia-conference-brasil-2026/3269443"
+    },
+    {
       "id": "2026-09-linuxtips-local-belo-horizonte",
       "title": "LINUXtips.local Belo Horizonte",
       "region": "Sudeste",
@@ -1258,9 +1357,31 @@
       "description": "Evento da série DevOpsDays em Belo Horizonte voltado para profissionais interessados em práticas de DevOps e cultura de melhoria de TI.",
       "paid": true,
       "url": "https://devopsdays.org/events/2026-belo-horizonte"
+    },
+    {
+      "id": "2026-09-kcd-sao-paulo-2026",
+      "title": "KCD São Paulo 2026",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-09-26",
+      "description": "KCD São Paulo 2026 é um evento presencial que reúne a comunidade Cloud Native para discutir Kubernetes, DevOps, segurança e inovações em código aberto.",
+      "paid": true,
+      "url": "https://community.cncf.io/kcd-brasil/"
     }
   ],
   "Outubro": [
+    {
+      "id": "2026-10-cbie-2026-congresso-brasileiro-de-informatica-na-educacao",
+      "title": "CBIE 2026 - Congresso Brasileiro de Informática na Educação",
+      "region": "Centro-Oeste",
+      "type": "Congresso",
+      "modality": "Presencial",
+      "date": "2026-10-05",
+      "description": "O CBIE 2026 é a 15ª edição do Congresso Brasileiro de Informática na Educação, promovido pela Sociedade Brasileira de Computação, reunindo pesquisadores e profissionais da área em Goiânia.",
+      "paid": true,
+      "url": "https://cbie.sbc.org.br"
+    },
     {
       "id": "2026-10-aws-community-day-brasil-nordeste-salvador",
       "title": "AWS Community Day Brasil - Nordeste (Salvador)",
@@ -1405,6 +1526,17 @@
       "description": "Evento presencial da Codecon em São Paulo no STATE Innovation Center, reunindo profissionais de tecnologia para palestras e experiências selecionadas.",
       "paid": true,
       "url": "https://codecon.dev/select"
+    },
+    {
+      "id": "2026-11-front-in-floripa-2026",
+      "title": "Front in Floripa 2026",
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-11-28",
+      "description": "A 12ª edição do maior evento front-end do Brasil, com foco em AI driven development, LLMs, DX, design e cases reais, realizado no ACM em Florianópolis.",
+      "paid": true,
+      "url": "https://www.sympla.com.br/evento/front-in-floripa-2026/3540781"
     }
   ],
   "Dezembro": [
