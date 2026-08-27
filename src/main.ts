@@ -1,6 +1,7 @@
 import "./style.css";
 import { loadAllEnrichedEvents } from "./data/allEvents";
 import { renderCommunityShelves, buildCommunityTally, buildShelves } from "./render/communityShelves";
+import { mountConsentBanner } from "./render/consentBanner";
 import { renderCtaBand } from "./render/ctaBand";
 import { buildFeaturedList, renderFeaturedCarousel } from "./render/featured";
 import { renderFilterBar } from "./render/filterBar";
@@ -12,9 +13,13 @@ import { renderMonthSection } from "./render/monthGroup";
 import { renderMonthNavRail } from "./render/monthNav";
 import { createInitialState } from "./state/appState";
 import { startCarousel } from "./state/carousel";
+import { applyStoredConsent } from "./state/consent";
 import { matchesFilters } from "./state/filters";
 import { buildMonthBuckets, buildYearNav } from "./state/monthBuckets";
 import { keepScroll } from "./state/scroll";
+
+applyStoredConsent();
+mountConsentBanner();
 
 const allEvents = loadAllEnrichedEvents();
 const state = createInitialState();

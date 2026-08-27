@@ -1,8 +1,13 @@
 import "./style.css";
+import { mountConsentBanner } from "./render/consentBanner";
 import { renderFooter } from "./render/footer";
 import { renderHeader } from "./render/header";
 import { mountLayout } from "./render/layout";
 import { createInitialContentState, renderContentPage } from "./render/contentPage";
+import { applyStoredConsent } from "./state/consent";
+
+applyStoredConsent();
+mountConsentBanner();
 
 let state = createInitialContentState();
 
