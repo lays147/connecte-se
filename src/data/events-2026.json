@@ -1238,6 +1238,17 @@
       "url": "https://www.meetup.com/pt-BR/golangbr/"
     },
     {
+      "id": "2026-09-claude-na-aws",
+      "title": "Claude na AWS",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "2026-09-10",
+      "description": "Neste webinar, mostramos qual é o caminho certo para a sua organização usar o Claude na AWS de forma estratégica.",
+      "paid": false,
+      "url": "https://events.zoom.us/ev/An9ltso3z2GSOg62l9V07O8wplBYmH57gyydi8DU-f0I9PbRgBgq~AmuVifrYs1qoZiQVLxmI8LKBd0Bf46X-4qn404mieo6TOgO-g3OE5UZHanTYnfRbjY-OYIiRtq3DZOZS1vCu1MQ1RA"
+    },
+    {
       "id": "2026-09-paraibajs-meetup",
       "title": "ParaibaJS Meetup",
       "region": "Nordeste",
