@@ -19,23 +19,23 @@ export function renderMonthSection(bucket: MonthBucket, today: Date): HTMLElemen
   ].join(" ");
 
   const dot = document.createElement("span");
-  dot.className = `h-[7px] w-[7px] rounded-full ${bucket.isPast ? "bg-brand-300" : "bg-brand-700"}`;
+  dot.className = `size-1.75 rounded-full ${bucket.isPast ? "bg-brand-300" : "bg-brand-700"}`;
   heading.appendChild(dot);
 
   const label = document.createElement("h4");
-  label.className = "font-display text-[17px] font-semibold capitalize text-brand-950";
+  label.className = "font-display text-heading-sm font-semibold capitalize text-brand-950";
   label.textContent = `${bucket.label} ${bucket.year}`;
   heading.appendChild(label);
 
   const count = document.createElement("span");
-  count.className = "font-mono-label text-[11px] text-brand-500";
+  count.className = "font-mono-label text-label-sm text-brand-500";
   count.textContent = bucket.list.length + (bucket.list.length === 1 ? " evento" : " eventos");
   heading.appendChild(count);
 
   if (bucket.isPast && bucket.opened) {
     const badge = document.createElement("span");
     badge.className =
-      "rounded-full border border-brand-100 px-2 py-1 font-mono-label text-[10px] font-medium uppercase tracking-wider text-brand-500";
+      "rounded-full border border-brand-100 px-2 py-1 font-mono-label text-label-xs font-medium uppercase tracking-wider text-brand-500";
     badge.textContent = "Mês encerrado";
     heading.appendChild(badge);
   }

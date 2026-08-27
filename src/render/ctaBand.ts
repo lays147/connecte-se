@@ -10,14 +10,14 @@ export function renderCtaBand(): HTMLElement {
     "flex flex-col items-start gap-6 border-t border-brand-100 bg-brand-50/60 px-6 py-6 md:flex-row md:items-center md:justify-between md:gap-8";
 
   const textCol = document.createElement("div");
-  textCol.className = "flex max-w-full flex-col gap-1.5 md:max-w-[460px]";
+  textCol.className = "flex max-w-full flex-col gap-1.5 md:max-w-115";
 
   const title = document.createElement("h4");
-  title.className = "font-display text-[19px] font-bold leading-tight tracking-tight text-brand-950";
+  title.className = "font-display text-heading-md font-bold leading-tight tracking-tight text-brand-950";
   title.textContent = "Não encontrou seu evento?";
 
   const desc = document.createElement("span");
-  desc.className = "text-[13px] leading-relaxed text-brand-600";
+  desc.className = "text-body-sm leading-relaxed text-brand-600";
   desc.textContent =
     "Submeta pelo GitHub: um evento único entra direto na lista, uma comunidade entra no scraper e passa a ser coletada automaticamente.";
 
@@ -31,7 +31,7 @@ export function renderCtaBand(): HTMLElement {
   submitEvent.target = "_blank";
   submitEvent.rel = "noopener";
   submitEvent.className =
-    "inline-flex items-center gap-2 whitespace-nowrap rounded-[10px] bg-brand-700 px-4 py-3 text-[13px] font-semibold text-white";
+    "inline-flex items-center gap-2 whitespace-nowrap rounded-card-10 bg-brand-700 px-4 py-3 text-body-sm font-semibold text-white";
   submitEvent.innerHTML = `${githubIconSvg()}Enviar um evento`;
 
   const addSource = document.createElement("a");
@@ -39,7 +39,7 @@ export function renderCtaBand(): HTMLElement {
   addSource.target = "_blank";
   addSource.rel = "noopener";
   addSource.className =
-    "inline-flex items-center gap-2 whitespace-nowrap rounded-[10px] border border-brand-200 bg-white px-4 py-3 text-[13px] font-semibold text-brand-700 hover:border-brand-400";
+    "inline-flex items-center gap-2 whitespace-nowrap rounded-card-10 border border-brand-200 bg-white px-4 py-3 text-body-sm font-semibold text-brand-700 hover:border-brand-400";
   addSource.innerHTML = `${githubIconSvg()}Cadastrar comunidade`;
 
   actions.append(submitEvent, addSource);

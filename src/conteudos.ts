@@ -1,20 +1,13 @@
 import "./style.css";
 import { renderFooter } from "./render/footer";
 import { renderHeader } from "./render/header";
+import { mountLayout } from "./render/layout";
 import { createInitialContentState, renderContentPage } from "./render/contentPage";
-
-const app = document.querySelector<HTMLDivElement>("#app");
-if (!app) throw new Error("#app element not found");
-
-const shell = document.createElement("div");
-shell.className = "mx-auto w-full max-w-[1200px] bg-white";
-
-const dynamicRoot = document.createElement("div");
 
 let state = createInitialContentState();
 
 function render(): void {
-  dynamicRoot.replaceChildren(
+  main.replaceChildren(
     renderContentPage(state, (next) => {
       state = next;
       render();
@@ -23,8 +16,8 @@ function render(): void {
 }
 
 const header = renderHeader({ active: "conteudos" });
+const { shell, main } = mountLayout(header);
 
-shell.append(header, dynamicRoot, renderFooter());
-app.appendChild(shell);
+shell.appendChild(renderFooter());
 
 render();

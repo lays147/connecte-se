@@ -3,7 +3,7 @@ import type { EnrichedEvent } from "../types";
 
 function buildSelect(label: string, options: string[], value: string, onChange: (value: string) => void): HTMLElement {
   const wrapper = document.createElement("label");
-  wrapper.className = "flex flex-col gap-1.5 text-[11px] font-medium text-brand-500";
+  wrapper.className = "flex flex-col gap-1.5 text-label-sm font-medium text-brand-500";
   wrapper.textContent = label;
 
   const select = document.createElement("select");
@@ -35,14 +35,14 @@ export function renderFilterBar(
   row.className = "flex flex-col gap-6 border-b border-brand-100 px-6 py-6 md:flex-row md:items-end md:justify-between";
 
   const textCol = document.createElement("div");
-  textCol.className = "flex max-w-[520px] flex-col gap-2";
+  textCol.className = "flex max-w-130 flex-col gap-2";
 
   const h1 = document.createElement("h1");
-  h1.className = "font-display text-[28px] font-bold leading-tight tracking-tight text-brand-950";
+  h1.className = "font-display text-heading-2xl font-bold leading-tight tracking-tight text-brand-950";
   h1.textContent = "As conexões que você faz em eventos podem mudar sua carreira";
 
   const subtitle = document.createElement("span");
-  subtitle.className = "text-[13px] text-brand-500";
+  subtitle.className = "text-body-sm text-brand-500";
   subtitle.textContent = `${upcomingCount} ${upcomingCount === 1 ? "evento a caminho" : "eventos a caminho"} · lista coletada automaticamente, pode conter imprecisões`;
 
   textCol.append(h1, subtitle);

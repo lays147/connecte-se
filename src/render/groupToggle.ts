@@ -9,7 +9,7 @@ export function renderGroupToggle(groupBy: GroupBy, onChange: (value: GroupBy) =
   label.textContent = "Agrupar por";
 
   const group = document.createElement("div");
-  group.className = "flex gap-0.5 rounded-[10px] border border-brand-100 bg-brand-100/60 p-0.5";
+  group.className = "flex gap-0.5 rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
 
   function makeButton(text: string, value: GroupBy): HTMLButtonElement {
     const btn = document.createElement("button");

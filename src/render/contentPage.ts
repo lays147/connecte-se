@@ -41,7 +41,7 @@ function chipButton(text: string, active: boolean, onClick: () => void): HTMLBut
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = [
-    "cursor-pointer whitespace-nowrap rounded-[9px] px-2.5 py-1.5 text-xs font-medium",
+    "cursor-pointer whitespace-nowrap rounded-card-9 px-2.5 py-1.5 text-xs font-medium",
     active ? "border border-brand-400 bg-brand-50 text-brand-700" : "border border-brand-100 bg-white text-brand-500",
   ].join(" ");
   btn.textContent = text;
@@ -57,7 +57,7 @@ function renderItemCard(item: CuratedContent): HTMLElement {
   card.target = "_blank";
   card.rel = "noopener";
   card.className =
-    "flex flex-col gap-1.5 rounded-[13px] border border-brand-100 bg-white p-3.5 text-inherit no-underline hover:border-brand-300 hover:bg-brand-50/30";
+    "flex flex-col gap-1.5 rounded-card-13 border border-brand-100 bg-white p-3.5 text-inherit no-underline hover:border-brand-300 hover:bg-brand-50/30";
 
   const topRow = document.createElement("div");
   topRow.className = "flex items-center gap-2";
@@ -68,19 +68,19 @@ function renderItemCard(item: CuratedContent): HTMLElement {
   topRow.appendChild(dot);
 
   const name = document.createElement("span");
-  name.className = "font-display text-[15px] font-semibold tracking-tight text-brand-950";
+  name.className = "font-display text-body-md font-semibold tracking-tight text-brand-950";
   name.textContent = item.name;
   topRow.appendChild(name);
 
   const fmtTag = document.createElement("span");
-  fmtTag.className = "ml-auto whitespace-nowrap rounded-[5px] px-1.5 py-1 font-mono-label text-[9px] font-semibold uppercase tracking-widest";
+  fmtTag.className = "ml-auto whitespace-nowrap rounded-card-5 px-1.5 py-1 font-mono-label text-label-2xs font-semibold uppercase tracking-widest";
   fmtTag.style.color = meta.accent;
   fmtTag.style.background = meta.tint;
   fmtTag.textContent = item.fmt;
   topRow.appendChild(fmtTag);
 
   const desc = document.createElement("span");
-  desc.className = "text-[12.5px] leading-relaxed text-brand-600";
+  desc.className = "text-body-sm-tight leading-relaxed text-brand-600";
   desc.textContent = item.desc;
 
   const bottomRow = document.createElement("div");
@@ -88,13 +88,13 @@ function renderItemCard(item: CuratedContent): HTMLElement {
 
   for (const theme of item.themes) {
     const tag = document.createElement("span");
-    tag.className = "rounded-[5px] bg-brand-50 px-1.5 py-1 font-mono-label text-[10px] text-brand-500";
+    tag.className = "rounded-card-5 bg-brand-50 px-1.5 py-1 font-mono-label text-label-xs text-brand-500";
     tag.textContent = theme;
     bottomRow.appendChild(tag);
   }
 
   const hostLink = document.createElement("span");
-  hostLink.className = "ml-auto inline-flex items-center gap-1.5 text-[11px] font-medium text-brand-500";
+  hostLink.className = "ml-auto inline-flex items-center gap-1.5 text-label-sm font-medium text-brand-500";
   hostLink.innerHTML = `${hostOf(item.url)}${externalLinkIconSvg()}`;
   bottomRow.appendChild(hostLink);
 
@@ -124,18 +124,18 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
   hero.className = "flex flex-wrap items-end justify-between gap-8 border-b border-brand-100 px-6 py-7";
 
   const heroText = document.createElement("div");
-  heroText.className = "flex max-w-[620px] flex-col gap-2";
+  heroText.className = "flex max-w-155 flex-col gap-2";
 
   const eyebrow = document.createElement("span");
-  eyebrow.className = "font-mono-label text-[10px] uppercase tracking-widest text-brand-500";
+  eyebrow.className = "font-mono-label text-label-xs uppercase tracking-widest text-brand-500";
   eyebrow.textContent = "Guia de curadoria";
 
   const h1 = document.createElement("h1");
-  h1.className = "font-display text-[28px] font-bold leading-tight tracking-tight text-brand-950";
+  h1.className = "font-display text-heading-2xl font-bold leading-tight tracking-tight text-brand-950";
   h1.textContent = "Conteúdos que valem a pena seguir";
 
   const heroDesc = document.createElement("span");
-  heroDesc.className = "text-[13px] leading-relaxed text-brand-500";
+  heroDesc.className = "text-body-sm leading-relaxed text-brand-500";
   heroDesc.textContent =
     "Canais, newsletters, blogs e podcasts feitos por brasileiros. Lista curada à mão — indique o que está faltando pelo GitHub.";
 
@@ -154,10 +154,10 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     const col = document.createElement("div");
     col.className = "flex flex-col gap-1";
     const num = document.createElement("span");
-    num.className = "font-display text-[22px] font-bold text-brand-950";
+    num.className = "font-display text-heading-lg font-bold text-brand-950";
     num.textContent = String(n);
     const lbl = document.createElement("span");
-    lbl.className = "font-mono-label text-[11px] uppercase tracking-wider text-brand-400";
+    lbl.className = "font-mono-label text-label-sm uppercase tracking-wider text-brand-400";
     lbl.textContent = label;
     col.append(num, lbl);
     tallies.appendChild(col);
@@ -167,22 +167,22 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
 
   // ---- filter bar
   const filterBar = document.createElement("div");
-  filterBar.className = "sticky top-0 z-[5] flex flex-wrap items-center gap-3.5 border-b border-brand-100 bg-brand-50/40 px-6 py-3";
+  filterBar.className = "sticky top-0 z-5 flex flex-wrap items-center gap-3.5 border-b border-brand-100 bg-brand-50/40 px-6 py-3";
 
   const searchBox = document.createElement("div");
-  searchBox.className = "flex h-9 max-w-[340px] flex-1 basis-64 items-center gap-2 rounded-[10px] border border-brand-100 bg-white px-3";
-  searchBox.innerHTML = `<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#8a83a3" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.6"></circle><path d="M10.5 10.5 14 14"></path></svg>`;
+  searchBox.className = "flex h-9 max-w-85 flex-1 basis-64 items-center gap-2 rounded-card-10 border border-brand-100 bg-white px-3";
+  searchBox.innerHTML = `<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--color-icon-muted)" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.6"></circle><path d="M10.5 10.5 14 14"></path></svg>`;
 
   const searchInput = document.createElement("input");
   searchInput.type = "search";
   searchInput.placeholder = "Buscar por nome, tema ou assunto";
   searchInput.value = state.query;
-  searchInput.className = "w-full border-0 bg-transparent p-0 text-[13px] text-brand-950 outline-none";
+  searchInput.className = "w-full border-0 bg-transparent p-0 text-body-sm text-brand-950 outline-none";
   searchInput.addEventListener("input", () => onChange({ ...state, query: searchInput.value }));
   searchBox.appendChild(searchInput);
 
   const formatTabs = document.createElement("div");
-  formatTabs.className = "flex shrink-0 gap-0.5 rounded-[10px] border border-brand-100 bg-brand-100/60 p-0.5";
+  formatTabs.className = "flex shrink-0 gap-0.5 rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
   formatTabs.appendChild(segButton("Tudo", state.format === "todos", () => onChange({ ...state, format: "todos" })));
   for (const fmt of FORMAT_ORDER) {
     formatTabs.appendChild(segButton(fmt, state.format === fmt, () => onChange({ ...state, format: fmt })));
@@ -198,10 +198,10 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
   const groupWrap = document.createElement("div");
   groupWrap.className = "flex shrink-0 items-center gap-2";
   const groupLabel = document.createElement("span");
-  groupLabel.className = "font-mono-label text-[11px] uppercase tracking-wider text-brand-400";
+  groupLabel.className = "font-mono-label text-label-sm uppercase tracking-wider text-brand-400";
   groupLabel.textContent = "Agrupar";
   const groupTabs = document.createElement("div");
-  groupTabs.className = "flex gap-0.5 rounded-[10px] border border-brand-100 bg-brand-100/60 p-0.5";
+  groupTabs.className = "flex gap-0.5 rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
   groupTabs.appendChild(segButton("Formato", state.groupBy === "formato", () => onChange({ ...state, groupBy: "formato" })));
   groupTabs.appendChild(segButton("Tema", state.groupBy === "tema", () => onChange({ ...state, groupBy: "tema" })));
   groupWrap.append(groupLabel, groupTabs);
@@ -244,12 +244,12 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     heading.className = "flex items-baseline gap-2.5 border-y border-brand-50 bg-brand-50/40 px-6 py-4";
 
     const dot = document.createElement("span");
-    dot.className = "h-[7px] w-[7px] rounded-full";
+    dot.className = "size-1.75 rounded-full";
     dot.style.background = section.accent;
     heading.appendChild(dot);
 
     const label = document.createElement("h2");
-    label.className = "font-display text-[17px] font-semibold text-brand-950";
+    label.className = "font-display text-heading-sm font-semibold text-brand-950";
     label.textContent = section.label;
     heading.appendChild(label);
 
@@ -283,10 +283,10 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     const empty = document.createElement("div");
     empty.className = "flex flex-col items-start gap-1.5 px-6 py-12";
     const emptyTitle = document.createElement("span");
-    emptyTitle.className = "font-display text-[17px] font-semibold text-brand-950";
+    emptyTitle.className = "font-display text-heading-sm font-semibold text-brand-950";
     emptyTitle.textContent = "Nada encontrado para esse filtro";
     const emptyDesc = document.createElement("span");
-    emptyDesc.className = "text-[13px] text-brand-500";
+    emptyDesc.className = "text-body-sm text-brand-500";
     emptyDesc.textContent = "Tente outro tema ou limpe a busca.";
     empty.append(emptyTitle, emptyDesc);
     root.appendChild(empty);
@@ -297,12 +297,12 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
   cta.className = "flex flex-wrap items-center justify-between gap-8 border-t border-brand-100 bg-brand-50/60 px-6 py-6";
 
   const ctaText = document.createElement("div");
-  ctaText.className = "flex max-w-[520px] flex-col gap-1.5";
+  ctaText.className = "flex max-w-130 flex-col gap-1.5";
   const ctaTitle = document.createElement("h3");
-  ctaTitle.className = "font-display text-[19px] font-bold leading-tight tracking-tight text-brand-950";
+  ctaTitle.className = "font-display text-heading-md font-bold leading-tight tracking-tight text-brand-950";
   ctaTitle.textContent = "Indique um canal ou newsletter";
   const ctaDesc = document.createElement("span");
-  ctaDesc.className = "text-[13px] leading-relaxed text-brand-600";
+  ctaDesc.className = "text-body-sm leading-relaxed text-brand-600";
   ctaDesc.textContent = "A curadoria é aberta: abra uma issue com o link, quem produz e por que vale a pena acompanhar.";
   ctaText.append(ctaTitle, ctaDesc);
 
@@ -311,7 +311,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
   ctaLink.target = "_blank";
   ctaLink.rel = "noopener";
   ctaLink.className =
-    "inline-flex shrink-0 items-center gap-2 rounded-[11px] bg-brand-700 px-4.5 py-3 text-[13px] font-semibold text-white hover:bg-brand-600";
+    "inline-flex shrink-0 items-center gap-2 rounded-card-11 bg-brand-700 px-4.5 py-3 text-body-sm font-semibold text-white hover:bg-brand-600";
   ctaLink.innerHTML = `Indicar conteúdo${externalLinkIconSvg()}`;
 
   cta.append(ctaText, ctaLink);

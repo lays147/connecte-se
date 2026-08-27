@@ -7,6 +7,7 @@ import { renderFilterBar } from "./render/filterBar";
 import { renderFooter } from "./render/footer";
 import { renderGroupToggle, type GroupBy } from "./render/groupToggle";
 import { renderHeader } from "./render/header";
+import { mountLayout } from "./render/layout";
 import { renderMonthSection } from "./render/monthGroup";
 import { renderMonthNavRail } from "./render/monthNav";
 import { createInitialState } from "./state/appState";
@@ -14,9 +15,6 @@ import { startCarousel } from "./state/carousel";
 import { matchesFilters } from "./state/filters";
 import { buildMonthBuckets, buildYearNav } from "./state/monthBuckets";
 import { keepScroll } from "./state/scroll";
-
-const app = document.querySelector<HTMLDivElement>("#app");
-if (!app) throw new Error("#app element not found");
 
 const allEvents = loadAllEnrichedEvents();
 const state = createInitialState();
@@ -27,15 +25,10 @@ function todayIso(): string {
   return today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
 }
 
-const shell = document.createElement("div");
-shell.className = "mx-auto w-full max-w-[1200px] bg-white px-4 sm:px-6 lg:px-8";
-
-const dynamicRoot = document.createElement("div");
-
 let featuredCount = 0;
 
 function render(): void {
-  dynamicRoot.replaceChildren();
+  main.replaceChildren();
 
   const filtered = allEvents.filter((e) => matchesFilters(e, state.filters));
   const upcoming = filtered.filter((e) => e.date >= todayIso()).sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
@@ -57,10 +50,10 @@ function render(): void {
       render();
     },
   });
-  if (featured) dynamicRoot.appendChild(featured);
+  if (featured) main.appendChild(featured);
 
   // Filter bar
-  dynamicRoot.appendChild(
+  main.appendChild(
     renderFilterBar(allEvents, upcoming.length, state.filters, (next) => {
       state.filters = next;
       render();
@@ -68,7 +61,7 @@ function render(): void {
   );
 
   // Group-by toggle
-  dynamicRoot.appendChild(
+  main.appendChild(
     renderGroupToggle(state.groupBy, (next: GroupBy) => {
       state.groupBy = next;
       render();
@@ -83,16 +76,16 @@ function render(): void {
     const row = document.createElement("div");
     row.className = "flex flex-col items-stretch gap-6 lg:flex-row lg:items-start lg:gap-0";
 
-    const main = document.createElement("div");
-    main.className = "flex min-w-0 flex-1 flex-col";
+    const monthList = document.createElement("div");
+    monthList.className = "flex min-w-0 flex-1 flex-col";
     for (const bucket of visibleBuckets) {
-      main.appendChild(renderMonthSection(bucket, today));
+      monthList.appendChild(renderMonthSection(bucket, today));
     }
     if (visibleBuckets.length === 0) {
       const empty = document.createElement("p");
       empty.className = "px-6 py-10 text-center text-sm text-brand-500";
       empty.textContent = "Nenhum evento encontrado.";
-      main.appendChild(empty);
+      monthList.appendChild(empty);
     }
 
     const nav = renderMonthNavRail(yearNav, {
@@ -127,12 +120,12 @@ function render(): void {
       },
     });
 
-    row.append(main, nav);
-    dynamicRoot.appendChild(row);
+    row.append(monthList, nav);
+    main.appendChild(row);
   } else {
     const tally = buildCommunityTally(filtered);
     const shelves = buildShelves(tally, upcoming);
-    dynamicRoot.appendChild(renderCommunityShelves(shelves, today));
+    main.appendChild(renderCommunityShelves(shelves, today));
   }
 }
 
@@ -144,8 +137,8 @@ const header = renderHeader({
   },
 });
 
-shell.append(header, dynamicRoot, renderCtaBand(), renderFooter());
-app.appendChild(shell);
+const { shell, main } = mountLayout(header, { padded: true });
+shell.append(renderCtaBand(), renderFooter());
 
 render();
 

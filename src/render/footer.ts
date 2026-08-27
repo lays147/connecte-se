@@ -21,7 +21,7 @@ export function renderFooter(): HTMLElement {
   footer.className = "flex flex-wrap items-start justify-between gap-x-8 gap-y-7 bg-brand-950 px-6 py-7";
 
   const brandCol = document.createElement("div");
-  brandCol.className = "flex max-w-[290px] flex-1 basis-60 flex-col gap-2.5";
+  brandCol.className = "flex max-w-72.5 flex-1 basis-60 flex-col gap-2.5";
 
   const brandRow = document.createElement("div");
   brandRow.className = "flex items-center gap-2.5";
@@ -44,42 +44,42 @@ export function renderFooter(): HTMLElement {
   projectCol.className = "flex flex-1 basis-auto flex-col gap-2";
 
   const projectHeading = document.createElement("span");
-  projectHeading.className = "font-mono-label whitespace-nowrap text-[10px] font-semibold uppercase tracking-widest text-brand-300";
+  projectHeading.className = "font-mono-label whitespace-nowrap text-label-xs font-semibold uppercase tracking-widest text-brand-300";
   projectHeading.textContent = "Projeto";
 
   const repoLink = document.createElement("a");
   repoLink.href = "https://github.com/lays147/connecte-se";
   repoLink.target = "_blank";
   repoLink.rel = "noopener";
-  repoLink.className = "inline-flex items-center gap-1.5 whitespace-nowrap text-[13px] font-medium text-brand-100";
+  repoLink.className = "inline-flex items-center gap-1.5 whitespace-nowrap text-body-sm font-medium text-brand-100";
   repoLink.innerHTML = `${githubIconSvg()}lays147/connecte-se`;
 
   const submitEventLink = document.createElement("a");
   submitEventLink.href = "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml";
   submitEventLink.target = "_blank";
   submitEventLink.rel = "noopener";
-  submitEventLink.className = "text-[13px] font-medium text-brand-100";
+  submitEventLink.className = "text-body-sm font-medium text-brand-100";
   submitEventLink.textContent = "Enviar um evento";
 
   const addSourceLink = document.createElement("a");
   addSourceLink.href = "https://github.com/lays147/connecte-se/actions/workflows/add-source.yml";
   addSourceLink.target = "_blank";
   addSourceLink.rel = "noopener";
-  addSourceLink.className = "text-[13px] font-medium text-brand-100";
+  addSourceLink.className = "text-body-sm font-medium text-brand-100";
   addSourceLink.textContent = "Cadastrar comunidade";
 
   const conteudosLink = document.createElement("a");
   conteudosLink.href = "/conteudos.html";
-  conteudosLink.className = "text-[13px] font-medium text-brand-100";
+  conteudosLink.className = "text-body-sm font-medium text-brand-100";
   conteudosLink.textContent = "Conteúdos";
 
   projectCol.append(projectHeading, repoLink, submitEventLink, addSourceLink, conteudosLink);
 
   const pixCol = document.createElement("div");
-  pixCol.className = "flex max-w-[290px] flex-1 basis-60 flex-col gap-2.5";
+  pixCol.className = "flex max-w-72.5 flex-1 basis-60 flex-col gap-2.5";
 
   const pixHeading = document.createElement("span");
-  pixHeading.className = "font-mono-label text-[10px] font-semibold uppercase tracking-widest text-brand-300";
+  pixHeading.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-300";
   pixHeading.textContent = "Apoie essa plataforma";
 
   const pixDesc = document.createElement("span");
@@ -87,17 +87,17 @@ export function renderFooter(): HTMLElement {
   pixDesc.textContent = "Faça um Pix e ajude a manter a lista no ar.";
 
   const pixBox = document.createElement("div");
-  pixBox.className = "flex flex-col gap-1.5 rounded-[11px] border border-brand-800 bg-brand-900 px-3 py-2.5";
+  pixBox.className = "flex flex-col gap-1.5 rounded-card-11 border border-brand-800 bg-brand-900 px-3 py-2.5";
 
   const pixLabel = document.createElement("span");
-  pixLabel.className = "font-mono-label text-[9px] font-semibold uppercase tracking-widest text-brand-300";
+  pixLabel.className = "font-mono-label text-label-2xs font-semibold uppercase tracking-widest text-brand-300";
   pixLabel.textContent = "Chave Pix aleatória";
 
   const pixRow = document.createElement("div");
   pixRow.className = "flex items-center gap-2";
 
   const pixCode = document.createElement("code");
-  pixCode.className = "min-w-0 flex-1 break-all font-mono-label text-[11px] leading-relaxed text-white";
+  pixCode.className = "min-w-0 flex-1 break-all font-mono-label text-label-sm leading-relaxed text-white";
   pixCode.textContent = PIX_KEY;
 
   const copyBtn = document.createElement("button");
@@ -123,12 +123,12 @@ export function renderFooter(): HTMLElement {
   contactCol.className = "flex flex-1 basis-auto flex-col gap-2";
 
   const contactHeading = document.createElement("span");
-  contactHeading.className = "font-mono-label text-[10px] font-semibold uppercase tracking-widest text-brand-300";
+  contactHeading.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-300";
   contactHeading.textContent = "Contato";
 
   const mailLink = document.createElement("a");
   mailLink.href = "mailto:lays@lays147.dev.br";
-  mailLink.className = "text-[13px] font-medium text-brand-100";
+  mailLink.className = "text-body-sm font-medium text-brand-100";
   mailLink.textContent = "lays@lays147.dev.br";
 
   const copyright = document.createElement("span");

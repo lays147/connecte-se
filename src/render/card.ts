@@ -63,7 +63,7 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
     "flex flex-col overflow-hidden rounded-2xl border border-brand-200 bg-white transition-colors hover:border-brand-400";
 
   const strip = document.createElement("div");
-  strip.className = `h-[3px] ${vm.style.dot}`;
+  strip.className = `h-0.75 ${vm.style.dot}`;
   card.appendChild(strip);
 
   const body = document.createElement("div");
@@ -73,7 +73,7 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
   topRow.className = "flex items-center justify-between gap-2";
 
   const typeLabel = document.createElement("span");
-  typeLabel.className = `font-mono-label text-[10px] font-semibold uppercase tracking-widest ${vm.style.text}`;
+  typeLabel.className = `font-mono-label text-label-xs font-semibold uppercase tracking-widest ${vm.style.text}`;
   typeLabel.textContent = vm.type;
   topRow.appendChild(typeLabel);
 
@@ -83,14 +83,14 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
   topRow.appendChild(pricePill);
 
   const title = document.createElement("h4");
-  title.className = "line-clamp-2 font-display text-[17px] font-semibold leading-snug text-brand-950";
+  title.className = "line-clamp-2 font-display text-heading-sm font-semibold leading-snug text-brand-950";
   title.textContent = vm.title;
 
   const communityRow = document.createElement("div");
   communityRow.className = "flex items-center gap-2";
 
   const avatar = document.createElement("span");
-  avatar.className = `inline-flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-[7px] font-display text-[10px] font-semibold ${vm.style.bg} ${vm.style.text}`;
+  avatar.className = `inline-flex size-5.5 shrink-0 items-center justify-center rounded-card-7 font-display text-label-xs font-semibold ${vm.style.bg} ${vm.style.text}`;
   avatar.textContent = vm.initials;
   communityRow.appendChild(avatar);
 
@@ -118,7 +118,7 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
   whenPlace.appendChild(whenSpan);
 
   const placeSpan = document.createElement("span");
-  placeSpan.className = "truncate text-[11px] text-brand-500";
+  placeSpan.className = "truncate text-label-sm text-brand-500";
   placeSpan.textContent = vm.place;
   whenPlace.appendChild(placeSpan);
 

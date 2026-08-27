@@ -16,14 +16,14 @@ function keyToId(key: string): string {
 export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNavHandlers): HTMLElement {
   const nav = document.createElement("nav");
   nav.className =
-    "w-full shrink-0 self-stretch border-t border-brand-100 bg-brand-50/40 p-4 lg:w-[216px] lg:border-t-0 lg:border-l";
+    "w-full shrink-0 self-stretch border-t border-brand-100 bg-brand-50/40 p-4 lg:w-54 lg:border-t-0 lg:border-l";
   nav.setAttribute("aria-label", "Navegação por mês e ano");
 
   const sticky = document.createElement("div");
   sticky.className = "flex flex-col gap-2.5 lg:sticky lg:top-4";
 
   const heading = document.createElement("span");
-  heading.className = "font-mono-label text-[10px] font-semibold uppercase tracking-widest text-brand-500";
+  heading.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-500";
   heading.textContent = "Meses";
   sticky.appendChild(heading);
 
@@ -39,7 +39,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
       "flex w-full items-baseline gap-2 rounded-lg px-2 py-1.5 text-left cursor-pointer hover:bg-brand-100/60";
 
     const chevron = document.createElement("span");
-    chevron.className = "font-mono-label text-[10px] text-brand-400";
+    chevron.className = "font-mono-label text-label-xs text-brand-400";
     chevron.textContent = group.open ? "▾" : "▸";
     yearBtn.appendChild(chevron);
 
@@ -50,7 +50,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
 
     const total = group.months.reduce((n, m) => n + m.count, 0);
     const yearCount = document.createElement("span");
-    yearCount.className = "font-mono-label text-[10px] text-brand-400";
+    yearCount.className = "font-mono-label text-label-xs text-brand-400";
     yearCount.textContent = total + (total === 1 ? " evento" : " eventos");
     yearBtn.appendChild(yearCount);
 
@@ -62,7 +62,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
       const loadYearBtn = document.createElement("button");
       loadYearBtn.type = "button";
       loadYearBtn.className =
-        "ml-[22px] mb-1 mt-0.5 self-start rounded-lg border border-brand-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-brand-700 cursor-pointer hover:border-brand-400";
+        "ml-5.5 mb-1 mt-0.5 self-start rounded-lg border border-brand-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-brand-700 cursor-pointer hover:border-brand-400";
       loadYearBtn.textContent = `Carregar ${group.year}`;
       loadYearBtn.addEventListener("click", () => handlers.onLoadYear(group.year));
       yearBlock.appendChild(loadYearBtn);
@@ -74,7 +74,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
           const link = document.createElement("a");
           link.href = `#${keyToId(m.key)}`;
           link.className = [
-            "flex items-baseline gap-2 rounded-lg py-2 pl-[22px] pr-2.5 no-underline hover:bg-brand-100/60",
+            "flex items-baseline gap-2 rounded-lg py-2 pl-5.5 pr-2.5 no-underline hover:bg-brand-100/60",
             m.isCurrent ? "bg-brand-100/70" : "",
           ].join(" ");
 
@@ -84,7 +84,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
           link.appendChild(label);
 
           const count = document.createElement("span");
-          count.className = `font-mono-label min-w-[16px] text-right text-[11px] font-semibold ${m.isCurrent ? "text-brand-950" : "text-brand-700"}`;
+          count.className = `font-mono-label min-w-4 text-right text-label-sm font-semibold ${m.isCurrent ? "text-brand-950" : "text-brand-700"}`;
           count.textContent = String(m.count);
           link.appendChild(count);
 
@@ -94,7 +94,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
           btn.type = "button";
           btn.title = "Carregar eventos deste mês";
           btn.className =
-            "flex w-full items-baseline gap-2 rounded-lg py-2 pl-[22px] pr-2.5 text-left cursor-pointer hover:bg-brand-100/60";
+            "flex w-full items-baseline gap-2 rounded-lg py-2 pl-5.5 pr-2.5 text-left cursor-pointer hover:bg-brand-100/60";
 
           const label = document.createElement("span");
           label.className = "flex-1 text-sm font-medium capitalize text-brand-400";
@@ -102,7 +102,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
           btn.appendChild(label);
 
           const count = document.createElement("span");
-          count.className = "font-mono-label min-w-[16px] text-right text-[11px] font-semibold text-brand-700";
+          count.className = "font-mono-label min-w-4 text-right text-label-sm font-semibold text-brand-700";
           count.textContent = `+${m.count}`;
           btn.appendChild(count);
 
@@ -120,7 +120,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
     footer.className = "flex flex-col gap-2 border-t border-brand-100 pt-2.5";
 
     const hint = document.createElement("span");
-    hint.className = "text-[11px] leading-relaxed text-brand-500";
+    hint.className = "text-label-sm leading-relaxed text-brand-500";
     hint.textContent = "Meses anteriores carregam quando você clica.";
     footer.appendChild(hint);
 

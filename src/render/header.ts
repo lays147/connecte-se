@@ -37,10 +37,10 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   const lockup = document.createElement("span");
   lockup.className = "flex flex-col gap-0.5";
   const name = document.createElement("span");
-  name.className = "font-display text-[15px] font-bold tracking-tight text-brand-950";
+  name.className = "font-display text-body-md font-bold tracking-tight text-brand-950";
   name.innerHTML = `Conecte-se <span class="text-brand-500">Brasil</span>`;
   const tagline = document.createElement("span");
-  tagline.className = "font-mono-label text-[10px] uppercase tracking-widest text-brand-400";
+  tagline.className = "font-mono-label text-label-xs uppercase tracking-widest text-brand-400";
   tagline.textContent = "eventos de tecnologia";
   lockup.append(name, tagline);
 
@@ -53,8 +53,8 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
     const a = document.createElement("a");
     a.href = href;
     a.className = active
-      ? "rounded-lg bg-brand-50 px-3 py-2.5 text-[13px] font-semibold text-brand-950"
-      : "rounded-lg bg-transparent px-3 py-2.5 text-[13px] font-medium text-brand-500 hover:bg-brand-50";
+      ? "rounded-lg bg-brand-50 px-3 py-2.5 text-body-sm font-semibold text-brand-950"
+      : "rounded-lg bg-transparent px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
     a.textContent = text;
     return a;
   }
@@ -67,7 +67,7 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
 
   const comunidades = document.createElement("button");
   comunidades.type = "button";
-  comunidades.className = "cursor-pointer rounded-lg bg-transparent px-3 py-2.5 text-[13px] font-medium text-brand-500 hover:bg-brand-50";
+  comunidades.className = "cursor-pointer rounded-lg bg-transparent px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
   comunidades.textContent = "Comunidades";
   if (handlers.onNavCommunities) {
     comunidades.addEventListener("click", handlers.onNavCommunities);
@@ -81,11 +81,11 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   submit.href = "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml";
   submit.target = "_blank";
   submit.rel = "noopener";
-  submit.className = "rounded-lg px-3 py-2.5 text-[13px] font-medium text-brand-500 hover:bg-brand-50";
+  submit.className = "rounded-lg px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
   submit.textContent = "Enviar evento";
 
   const divider = document.createElement("span");
-  divider.className = "mx-2 hidden h-[22px] w-px bg-brand-100 sm:block";
+  divider.className = "mx-2 hidden h-5.5 w-px bg-brand-100 sm:block";
 
   const github = document.createElement("a");
   github.href = "https://github.com/lays147/connecte-se";

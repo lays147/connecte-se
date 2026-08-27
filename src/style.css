@@ -32,7 +32,57 @@
 
   --color-page: #f2f0f7;
 
+  --color-map-empty: #faf9fd;
+  --color-map-scale-start: #ddd2fa;
+  --color-map-scale-end: #28095e;
+  --color-map-label-line: #b6adcf;
+  --color-map-label-dark: #4a4368;
+  --color-map-label-light: #ffffff;
+  --color-icon-muted: #8a83a3;
+
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
   --font-mono-label: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* type-scale steps used across cards, badges and labels beyond Tailwind's defaults */
+  --text-label-2xs: 0.5625rem; /* 9px */
+  --text-label-xs: 0.625rem; /* 10px */
+  --text-label-sm: 0.6875rem; /* 11px */
+  --text-body-sm: 0.8125rem; /* 13px */
+  --text-body-sm-tight: 0.78125rem; /* 12.5px */
+  --text-body-md: 0.9375rem; /* 15px */
+  --text-heading-sm: 1.0625rem; /* 17px */
+  --text-heading-md: 1.1875rem; /* 19px */
+  --text-heading-lg: 1.375rem; /* 22px */
+  --text-heading-xl: 1.5625rem; /* 25px */
+  --text-heading-2xl: 1.75rem; /* 28px */
+  --text-heading-3xl: 2.375rem; /* 38px */
+
+  --radius-card-4: 0.25rem; /* 4px */
+  --radius-card-5: 0.3125rem; /* 5px */
+  --radius-card-7: 0.4375rem; /* 7px */
+  --radius-card-9: 0.5625rem; /* 9px */
+  --radius-card-10: 0.625rem; /* 10px */
+  --radius-card-11: 0.6875rem; /* 11px */
+  --radius-card-13: 0.8125rem; /* 13px */
+  --radius-card-17: 1.0625rem; /* 17px */
+
+  --spacing-shell: 75rem; /* 1200px */
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.22s;
+  animation-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }

@@ -33,20 +33,20 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
 
   const wrap = document.createElement("div");
   wrap.className =
-    "relative flex flex-col items-stretch gap-4 bg-brand-950 px-4 py-5 sm:gap-7 sm:px-6 sm:py-6.5 md:min-h-[168px] md:flex-row";
+    "relative flex flex-col items-stretch gap-4 bg-brand-950 px-4 py-5 sm:gap-7 sm:px-6 sm:py-6.5 md:min-h-42 md:flex-row";
 
   const dateBlock = document.createElement("div");
   dateBlock.className =
-    "flex w-full shrink-0 flex-row items-center justify-center gap-2 rounded-2xl bg-brand-900 px-4 py-2.5 md:w-[104px] md:flex-col md:gap-0.5 md:px-0 md:py-0";
+    "flex w-full shrink-0 flex-row items-center justify-center gap-2 rounded-2xl bg-brand-900 px-4 py-2.5 md:w-26 md:flex-col md:gap-0.5 md:px-0 md:py-0";
 
   const wd = document.createElement("span");
-  wd.className = "font-mono-label text-[10px] uppercase tracking-widest text-brand-300";
+  wd.className = "font-mono-label text-label-xs uppercase tracking-widest text-brand-300";
   wd.textContent = WD_SUN[d.getDay()];
   const day = document.createElement("span");
-  day.className = "font-display text-[38px] font-bold leading-[1.05] text-white";
+  day.className = "font-display text-heading-3xl font-bold leading-[1.05] text-white";
   day.textContent = String(d.getDate());
   const mon = document.createElement("span");
-  mon.className = "font-mono-label text-[11px] uppercase text-brand-200";
+  mon.className = "font-mono-label text-label-sm uppercase text-brand-200";
   mon.textContent = MONTHS_SHORT[d.getMonth()];
   dateBlock.append(wd, day, mon);
 
@@ -57,21 +57,21 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
   badgeRow.className = "flex items-center gap-2.5";
 
   const badgePill = document.createElement("span");
-  badgePill.className = `inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono-label text-[10px] font-semibold uppercase tracking-widest text-brand-950 ${badge.bg}`;
+  badgePill.className = `inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-950 ${badge.bg}`;
   badgePill.textContent = badge.label;
   badgeRow.appendChild(badgePill);
 
   const destaque = document.createElement("span");
-  destaque.className = "font-mono-label text-[10px] uppercase tracking-widest text-brand-200";
+  destaque.className = "font-mono-label text-label-xs uppercase tracking-widest text-brand-200";
   destaque.textContent = "Em destaque";
   badgeRow.appendChild(destaque);
 
   const title = document.createElement("h3");
-  title.className = "line-clamp-2 font-display text-[25px] font-bold leading-tight tracking-tight text-white";
+  title.className = "line-clamp-2 font-display text-heading-xl font-bold leading-tight tracking-tight text-white";
   title.textContent = vm.title;
 
   const desc = document.createElement("span");
-  desc.className = "line-clamp-2 max-w-full text-[13px] leading-relaxed text-brand-100 md:max-w-[620px]";
+  desc.className = "line-clamp-2 max-w-full text-body-sm leading-relaxed text-brand-100 md:max-w-155";
   desc.textContent = vm.description;
 
   const metaRow = document.createElement("div");
@@ -132,7 +132,7 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
     positionRow.className = "flex items-center gap-2.5";
 
     const position = document.createElement("span");
-    position.className = "font-mono-label text-[11px] text-brand-300";
+    position.className = "font-mono-label text-label-sm text-brand-300";
     position.textContent = `${idx + 1} / ${list.length}`;
     positionRow.appendChild(position);
 
@@ -144,8 +144,8 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
       dotBtn.setAttribute("aria-label", "Ir para destaque");
       const active = i === idx;
       dotBtn.className = [
-        "h-[7px] cursor-pointer rounded-full border-0 p-0 transition-[width]",
-        active ? "w-[22px] bg-white" : "w-[7px] bg-brand-600",
+        "h-1.75 cursor-pointer rounded-full border-0 p-0 transition-[width]",
+        active ? "w-5.5 bg-white" : "w-1.75 bg-brand-600",
       ].join(" ");
       dotBtn.addEventListener("click", () => handlers.onSelect(i));
       dots.appendChild(dotBtn);

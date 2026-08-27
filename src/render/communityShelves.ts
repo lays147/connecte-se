@@ -64,7 +64,7 @@ export function renderCommunityShelves(shelves: CommunityShelf[], today: Date): 
     header.className = "flex items-center gap-2.5";
 
     const avatar = document.createElement("span");
-    avatar.className = `inline-flex h-[30px] w-[30px] items-center justify-center rounded-[9px] font-display text-xs font-semibold ${shelf.bg} ${shelf.text}`;
+    avatar.className = `inline-flex size-7.5 items-center justify-center rounded-card-9 font-display text-xs font-semibold ${shelf.bg} ${shelf.text}`;
     avatar.textContent = shelf.initials;
 
     const name = document.createElement("span");
@@ -72,7 +72,7 @@ export function renderCommunityShelves(shelves: CommunityShelf[], today: Date): 
     name.textContent = shelf.name;
 
     const count = document.createElement("span");
-    count.className = "font-mono-label text-[11px] text-brand-500";
+    count.className = "font-mono-label text-label-sm text-brand-500";
     count.textContent = shelf.count + (shelf.count === 1 ? " evento" : " eventos");
 
     header.append(avatar, name, count);
