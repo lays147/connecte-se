@@ -5,8 +5,6 @@ export function monthSectionId(year: number, monthIndex: number): string {
   return `month-${year}-${String(monthIndex + 1).padStart(2, "0")}`;
 }
 
-const CARD_LIMIT = 9;
-
 export function renderMonthSection(bucket: MonthBucket, today: Date): HTMLElement {
   const section = document.createElement("section");
   section.id = monthSectionId(bucket.year, bucket.monthIndex);
@@ -45,18 +43,10 @@ export function renderMonthSection(bucket: MonthBucket, today: Date): HTMLElemen
   const grid = document.createElement("div");
   grid.className = "grid grid-cols-1 gap-4 px-(--spacing-gutter) py-5 sm:grid-cols-2 lg:grid-cols-3";
 
-  const cards = bucket.list.slice(0, CARD_LIMIT);
-  for (const event of cards) {
+  for (const event of bucket.list) {
     grid.appendChild(renderCard(event, today));
   }
   section.appendChild(grid);
-
-  if (bucket.list.length > CARD_LIMIT) {
-    const more = document.createElement("span");
-    more.className = "px-(--spacing-gutter) pb-5 text-xs font-medium text-brand-500";
-    more.textContent = `+ ${bucket.list.length - CARD_LIMIT} eventos neste mês`;
-    section.appendChild(more);
-  }
 
   return section;
 }

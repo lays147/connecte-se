@@ -9,8 +9,9 @@ import { renderFooter } from "./render/footer";
 import { renderGroupToggle, type GroupBy } from "./render/groupToggle";
 import { renderHeader } from "./render/header";
 import { mountLayout } from "./render/layout";
-import { renderMonthSection } from "./render/monthGroup";
+import { renderMonthSection, monthSectionId } from "./render/monthGroup";
 import { renderMonthNavRail } from "./render/monthNav";
+import { observeActiveMonth } from "./state/activeMonth";
 import { createInitialState } from "./state/appState";
 import { startCarousel } from "./state/carousel";
 import { applyStoredConsent } from "./state/consent";
@@ -31,8 +32,17 @@ function todayIso(): string {
 }
 
 let featuredCount = 0;
+let stopObservingActiveMonth: () => void = () => {};
+
+function scrollToMonthKey(key: string): void {
+  const [year, monthIndex] = key.split("-").map(Number);
+  requestAnimationFrame(() => {
+    document.getElementById(monthSectionId(year, monthIndex))?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
 
 function render(): void {
+  stopObservingActiveMonth();
   main.replaceChildren();
 
   const filtered = allEvents.filter((e) => matchesFilters(e, state.filters));
@@ -83,8 +93,11 @@ function render(): void {
 
     const monthList = document.createElement("div");
     monthList.className = "flex min-w-0 flex-1 flex-col";
+    const sectionEls: HTMLElement[] = [];
     for (const bucket of visibleBuckets) {
-      monthList.appendChild(renderMonthSection(bucket, today));
+      const section = renderMonthSection(bucket, today);
+      sectionEls.push(section);
+      monthList.appendChild(section);
     }
     if (visibleBuckets.length === 0) {
       const empty = document.createElement("p");
@@ -100,20 +113,18 @@ function render(): void {
         keepScroll(render);
       },
       onLoadMonth: (key) => {
-        keepScroll(() => {
-          state.openPast = new Set(state.openPast).add(key);
-          render();
-        });
+        state.openPast = new Set(state.openPast).add(key);
+        render();
+        scrollToMonthKey(key);
       },
       onLoadYear: (year) => {
         const group = yearNav.find((g) => g.year === year);
         if (!group) return;
-        keepScroll(() => {
-          const next = new Set(state.openPast);
-          for (const key of group.lockedKeys) next.add(key);
-          state.openPast = next;
-          render();
-        });
+        const next = new Set(state.openPast);
+        for (const key of group.lockedKeys) next.add(key);
+        state.openPast = next;
+        render();
+        if (group.lockedKeys.length > 0) scrollToMonthKey(group.lockedKeys[0]);
       },
       onLoadAllPast: () => {
         keepScroll(() => {
@@ -127,6 +138,7 @@ function render(): void {
 
     row.append(monthList, nav);
     main.appendChild(row);
+    stopObservingActiveMonth = observeActiveMonth(sectionEls, nav);
   } else {
     const tally = buildCommunityTally(filtered);
     const shelves = buildShelves(tally, upcoming);

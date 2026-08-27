@@ -70,6 +70,16 @@
   --spacing-gutter: clamp(1.5rem, 4vw, 4rem); /* clamp(24px, 4vw, 64px) */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @view-transition {
   navigation: auto;
 }

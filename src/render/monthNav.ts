@@ -71,22 +71,35 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
     if (group.open) {
       for (const m of group.months) {
         if (m.loaded) {
+          const id = keyToId(m.key);
           const link = document.createElement("a");
-          link.href = `#${keyToId(m.key)}`;
+          link.href = `#${id}`;
+          link.dataset.monthId = id;
           link.className = [
-            "flex items-baseline gap-2 rounded-lg py-2 pl-5.5 pr-2.5 no-underline hover:bg-brand-100/60",
+            "flex items-baseline gap-2 rounded-lg py-2 pl-5.5 pr-2.5 no-underline transition-colors duration-200 hover:bg-brand-100/60",
             m.isCurrent ? "bg-brand-100/70" : "",
           ].join(" ");
 
           const label = document.createElement("span");
-          label.className = `flex-1 text-sm capitalize ${m.isCurrent ? "font-semibold text-brand-950" : "font-medium text-brand-700"}`;
+          label.dataset.role = "label";
+          label.className = `flex-1 text-sm capitalize transition-colors duration-200 ${m.isCurrent ? "font-semibold text-brand-950" : "font-medium text-brand-700"}`;
           label.textContent = m.label;
           link.appendChild(label);
 
           const count = document.createElement("span");
-          count.className = `font-mono-label min-w-4 text-right text-label-sm font-semibold ${m.isCurrent ? "text-brand-950" : "text-brand-700"}`;
+          count.dataset.role = "count";
+          count.className = `font-mono-label min-w-4 text-right text-label-sm font-semibold transition-colors duration-200 ${m.isCurrent ? "text-brand-950" : "text-brand-700"}`;
           count.textContent = String(m.count);
           link.appendChild(count);
+
+          link.addEventListener("click", (e) => {
+            const target = document.getElementById(id);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+              history.replaceState(null, "", `#${id}`);
+            }
+          });
 
           yearBlock.appendChild(link);
         } else {
