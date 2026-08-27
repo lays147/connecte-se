@@ -114,7 +114,8 @@ async function main(): Promise<void> {
 
   const browser = await chromium.launch({ headless: true });
   try {
-    for (const source of sources) {
+    for (const [index, source] of sources.entries()) {
+      const progress = `[${index + 1}/${sources.length}]`;
       const result: SourceResult = {
         source: source.name,
         status: "failed",
@@ -130,8 +131,11 @@ async function main(): Promise<void> {
       ) {
         result.status = "skipped-yearly";
         results.push(result);
+        console.log(`${progress} ${source.name} - skipped (already covered for this year)`);
         continue;
       }
+
+      console.log(`${progress} ${source.name} - scraping...`);
 
       const page = await browser.newPage();
       try {
@@ -185,6 +189,9 @@ async function main(): Promise<void> {
         await page.close();
       }
 
+      console.log(
+        `${progress} ${source.name} - ${result.status} (found ${result.found}, added ${result.added})`,
+      );
       results.push(result);
     }
   } finally {
