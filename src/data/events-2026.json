@@ -1027,6 +1027,17 @@
       "url": "https://www.meetup.com/pt-BR/datadog-user-group-brasil/"
     },
     {
+      "id": "2026-08-loka-talks-and-drinks-rio-edition",
+      "title": "Loka Talks and Drinks - Rio Edition",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-08-27",
+      "description": "Together, we'll explore how AI is changing the way we build software—from shipping production-ready code with AI assistants to modern DevOps practices, maintainable data engineering, and the evolving role of software engineers.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-br/loka-talks-and-drinks-brazil/events/316007902/?eventOrigin=home_page_upcoming_events%24all"
+    },
+    {
       "id": "2026-08-imersao-cloud-ia-do-zero-ao-primeiro-deploy-na-aws",
       "title": "Imersão Cloud & IA: Do Zero ao Primeiro Deploy na AWS",
       "region": "Sudeste",
