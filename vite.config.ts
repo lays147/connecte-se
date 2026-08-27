@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, "index.html"),
         mapa: resolve(import.meta.dirname, "mapa.html"),
+        conteudos: resolve(import.meta.dirname, "conteudos.html"),
       },
     },
   },

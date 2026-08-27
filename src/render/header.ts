@@ -1,8 +1,18 @@
-export type HeaderPage = "eventos" | "mapa";
+export type HeaderPage = "eventos" | "mapa" | "conteudos";
 
 export interface HeaderHandlers {
   active: HeaderPage;
   onNavCommunities?: () => void;
+}
+
+function logoMarkSvg(): string {
+  return `<svg width="40" height="33" viewBox="0 0 120 100" aria-hidden="true">
+    <g fill="none" stroke-linecap="round">
+      <g stroke="oklch(0.5 0.17 292)" stroke-width="6.5"><path d="M14 68A22 26 0 0 1 58 68"></path><path d="M62 68A22 26 0 0 1 106 68"></path></g>
+      <path d="M6 68h108" stroke="oklch(0.7 0.16 300)" stroke-width="7.5"></path>
+      <g stroke="oklch(0.7 0.16 300)" stroke-width="5.5" opacity="0.9"><path d="M17 72v20M60 72v24M103 72v20"></path></g>
+    </g>
+  </svg>`;
 }
 
 function githubIconSvg(): string {
@@ -17,18 +27,18 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
     "flex flex-wrap items-center justify-between gap-3 border-b border-brand-100 bg-white px-4 py-3 sm:gap-6 sm:px-6 sm:py-3.5";
 
   const logo = document.createElement("a");
-  logo.href = "#top";
+  logo.href = "/index.html#top";
   logo.className = "flex items-center gap-2.5";
 
   const mark = document.createElement("span");
-  mark.className = "flex h-[26px] w-[26px] items-center justify-center rounded-lg bg-brand-700 font-display text-[13px] font-bold text-white";
-  mark.textContent = "C";
+  mark.className = "flex shrink-0 items-center";
+  mark.innerHTML = logoMarkSvg();
 
   const lockup = document.createElement("span");
   lockup.className = "flex flex-col gap-0.5";
   const name = document.createElement("span");
   name.className = "font-display text-[15px] font-bold tracking-tight text-brand-950";
-  name.textContent = "Conecte-se Brasil";
+  name.innerHTML = `Conecte-se <span class="text-brand-500">Brasil</span>`;
   const tagline = document.createElement("span");
   tagline.className = "font-mono-label text-[10px] uppercase tracking-widest text-brand-400";
   tagline.textContent = "eventos de tecnologia";
@@ -52,6 +62,8 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   const eventos = navLink("Eventos", "/index.html#top", handlers.active === "eventos");
 
   const mapa = navLink("Mapa", "/mapa.html", handlers.active === "mapa");
+
+  const conteudos = navLink("Conteúdos", "/conteudos.html", handlers.active === "conteudos");
 
   const comunidades = document.createElement("button");
   comunidades.type = "button";
@@ -85,7 +97,7 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
     "inline-flex items-center gap-2 rounded-lg border border-brand-200 py-2 pl-2.5 pr-3 text-xs font-semibold text-brand-950 hover:border-brand-400";
   github.innerHTML = `${githubIconSvg()}GitHub`;
 
-  nav.append(eventos, mapa, comunidades, submit, divider, github);
+  nav.append(eventos, mapa, conteudos, comunidades, submit, divider, github);
   header.append(logo, nav);
   return header;
 }
