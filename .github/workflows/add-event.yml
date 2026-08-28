@@ -41,8 +41,12 @@ on:
           - Híbrido
           - Não informado
       date:
-        description: "Event date (YYYY-MM-DD)"
+        description: "Event date (DD/MM/YYYY)"
         required: true
+        type: string
+      time:
+        description: "Event time (HH:mm, 24h)"
+        required: false
         type: string
       description:
         description: "Short description of the event"
@@ -85,19 +89,32 @@ jobs:
           EVENT_TYPE: ${{ inputs.event_type }}
           EVENT_MODALITY: ${{ inputs.modality }}
           EVENT_DATE: ${{ inputs.date }}
+          EVENT_TIME: ${{ inputs.time }}
           EVENT_DESCRIPTION: ${{ inputs.description }}
           EVENT_PAID: ${{ inputs.paid }}
           EVENT_URL: ${{ inputs.url }}
         run: |
-          npm run add:event -- \
-            --title="$EVENT_TITLE" \
-            --region="$EVENT_REGION" \
-            --type="$EVENT_TYPE" \
-            --modality="$EVENT_MODALITY" \
-            --date="$EVENT_DATE" \
-            --description="$EVENT_DESCRIPTION" \
-            --paid="$EVENT_PAID" \
+          if [[ ! "$EVENT_DATE" =~ ^([0-3][0-9])/([0-1][0-9])/([0-9]{4})$ ]]; then
+            echo "Invalid date \"$EVENT_DATE\": expected format DD/MM/YYYY" >&2
+            exit 1
+          fi
+          ISO_DATE="${BASH_REMATCH[3]}-${BASH_REMATCH[2]}-${BASH_REMATCH[1]}"
+
+          ARGS=(
+            --title="$EVENT_TITLE"
+            --region="$EVENT_REGION"
+            --type="$EVENT_TYPE"
+            --modality="$EVENT_MODALITY"
+            --date="$ISO_DATE"
+            --description="$EVENT_DESCRIPTION"
+            --paid="$EVENT_PAID"
             --url="$EVENT_URL"
+          )
+          if [[ -n "$EVENT_TIME" ]]; then
+            ARGS+=(--time="$EVENT_TIME")
+          fi
+
+          npm run add:event -- "${ARGS[@]}"
 
       - name: Open pull request
         uses: peter-evans/create-pull-request@v8
@@ -110,6 +127,7 @@ jobs:
 
             - **Title:** ${{ inputs.title }}
             - **Date:** ${{ inputs.date }}
+            - **Time:** ${{ inputs.time }}
             - **Region:** ${{ inputs.region }}
             - **Type:** ${{ inputs.event_type }}
             - **Modality:** ${{ inputs.modality }}
