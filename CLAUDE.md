@@ -6,4 +6,6 @@
 - the scrapper should fetch events from the source url's on the best effort.
 - on the github workflows pipelines, always use the latest available version for each action
 - this project use mise as the package manager, run the node commands using it
+- use playwright to test the rendering of the website
+- dont use chromium-cli for rentering testing
 
