@@ -23,15 +23,18 @@ interface CliOptions {
   year: number;
   frequency?: Frequency;
   force: boolean;
+  backfillTime: boolean;
 }
 
 function parseCliOptions(argv: string[]): CliOptions {
-  const options: CliOptions = { dryRun: false, year: new Date().getFullYear(), force: false };
+  const options: CliOptions = { dryRun: false, year: new Date().getFullYear(), force: false, backfillTime: false };
   for (const arg of argv) {
     if (arg === "--dry-run") {
       options.dryRun = true;
     } else if (arg === "--force") {
       options.force = true;
+    } else if (arg === "--backfill-time") {
+      options.backfillTime = true;
     } else if (arg.startsWith("--only=")) {
       options.only = arg.slice("--only=".length);
     } else if (arg.startsWith("--limit=")) {
@@ -67,6 +70,7 @@ interface SourceResult {
   found: number;
   added: number;
   skippedDuplicate: number;
+  backfilled: number;
   error?: string;
 }
 
@@ -99,13 +103,13 @@ async function main(): Promise<void> {
   }
 
   const events = readCurrentEvents(eventsPath);
-  const existingIds = new Set<string>();
-  const existingUrlDateKeys = new Set<string>();
+  const existingById = new Map<string, TechEvent>();
+  const existingByUrlDateKey = new Map<string, TechEvent>();
   const existingUrlsByYear = new Set<string>();
   for (const bucket of Object.values(events)) {
     for (const event of bucket ?? []) {
-      existingIds.add(event.id);
-      existingUrlDateKeys.add(`${event.url}|${event.date}`);
+      existingById.set(event.id, event);
+      existingByUrlDateKey.set(`${event.url}|${event.date}`, event);
       existingUrlsByYear.add(`${event.url}|${event.date.slice(0, 4)}`);
     }
   }
@@ -122,6 +126,7 @@ async function main(): Promise<void> {
         found: 0,
         added: 0,
         skippedDuplicate: 0,
+        backfilled: 0,
       };
 
       if (
@@ -166,9 +171,15 @@ async function main(): Promise<void> {
         for (const candidate of candidates) {
           const id = buildEventId(candidate.date, candidate.title);
           const urlDateKey = `${candidate.url}|${candidate.date}`;
+          const existing = existingById.get(id) ?? existingByUrlDateKey.get(urlDateKey);
 
-          if (existingIds.has(id) || existingUrlDateKeys.has(urlDateKey)) {
-            result.skippedDuplicate += 1;
+          if (existing) {
+            if (options.backfillTime && !existing.time && candidate.time) {
+              existing.time = candidate.time;
+              result.backfilled += 1;
+            } else {
+              result.skippedDuplicate += 1;
+            }
             continue;
           }
 
@@ -178,8 +189,8 @@ async function main(): Promise<void> {
           bucket.push(event);
           events[month] = bucket;
 
-          existingIds.add(id);
-          existingUrlDateKeys.add(urlDateKey);
+          existingById.set(id, event);
+          existingByUrlDateKey.set(urlDateKey, event);
           result.added += 1;
         }
       } catch (error) {
@@ -190,7 +201,7 @@ async function main(): Promise<void> {
       }
 
       console.log(
-        `${progress} ${source.name} - ${result.status} (found ${result.found}, added ${result.added})`,
+        `${progress} ${source.name} - ${result.status} (found ${result.found}, added ${result.added}, backfilled ${result.backfilled})`,
       );
       results.push(result);
     }
@@ -215,7 +226,7 @@ function printSummary(results: SourceResult[], dryRun: boolean): void {
     const line =
       r.status === "skipped-yearly"
         ? `  [${r.status.padEnd(14)}] ${r.source} - already covered for this year`
-        : `  [${r.status.padEnd(14)}] ${r.source} - found ${r.found}, added ${r.added}, skipped ${r.skippedDuplicate}`;
+        : `  [${r.status.padEnd(14)}] ${r.source} - found ${r.found}, added ${r.added}, backfilled ${r.backfilled}, skipped ${r.skippedDuplicate}`;
     console.log(r.error ? `${line} (${r.error})` : line);
   }
 
@@ -224,10 +235,11 @@ function printSummary(results: SourceResult[], dryRun: boolean): void {
   const failed = results.filter((r) => r.status === "failed").length;
   const skippedYearly = results.filter((r) => r.status === "skipped-yearly").length;
   const totalAdded = results.reduce((sum, r) => sum + r.added, 0);
+  const totalBackfilled = results.reduce((sum, r) => sum + r.backfilled, 0);
   const totalSkipped = results.reduce((sum, r) => sum + r.skippedDuplicate, 0);
 
   console.log(
-    `\n${succeeded} ok, ${noEvents} no-events, ${failed} failed, ${skippedYearly} skipped-yearly | ${totalAdded} events added, ${totalSkipped} duplicates skipped\n`,
+    `\n${succeeded} ok, ${noEvents} no-events, ${failed} failed, ${skippedYearly} skipped-yearly | ${totalAdded} events added, ${totalBackfilled} backfilled, ${totalSkipped} duplicates skipped\n`,
   );
 }
 

@@ -9,6 +9,7 @@ interface CliArgs {
   type: string;
   modality: string;
   date: string;
+  time: string | null;
   description: string;
   paid: boolean;
   url: string;
@@ -26,6 +27,7 @@ function parseCliArgs(argv: string[]): CliArgs {
   const type = get("type");
   const modality = get("modality");
   const date = get("date");
+  const time = get("time");
   const description = get("description");
   const paidRaw = get("paid");
   const url = get("url");
@@ -33,12 +35,16 @@ function parseCliArgs(argv: string[]): CliArgs {
   if (!title || !region || !type || !modality || !date || !description || !paidRaw || !url) {
     throw new Error(
       "Usage: add-event --title=<title> --region=<region> --type=<type> --modality=<modality> " +
-        "--date=<YYYY-MM-DD> --description=<description> --paid=<true|false> --url=<url>",
+        "--date=<YYYY-MM-DD> [--time=<HH:mm>] --description=<description> --paid=<true|false> --url=<url>",
     );
   }
 
   if (!isValidDate(date)) {
     throw new Error(`Invalid date "${date}": expected format YYYY-MM-DD`);
+  }
+
+  if (time !== undefined && !/^([01]\d|2[0-3]):[0-5]\d$/.test(time)) {
+    throw new Error(`Invalid time "${time}": expected 24h format HH:mm`);
   }
 
   if (paidRaw !== "true" && paidRaw !== "false") {
@@ -51,7 +57,7 @@ function parseCliArgs(argv: string[]): CliArgs {
     throw new Error(`Invalid url "${url}"`);
   }
 
-  return { title, region, type, modality, date, description, paid: paidRaw === "true", url };
+  return { title, region, type, modality, date, time: time ?? null, description, paid: paidRaw === "true", url };
 }
 
 function main(): void {
@@ -78,6 +84,7 @@ function main(): void {
     type: args.type,
     modality: args.modality,
     date: args.date,
+    time: args.time,
     description: args.description,
     paid: args.paid,
     url: args.url,

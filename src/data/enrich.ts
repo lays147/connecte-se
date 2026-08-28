@@ -1,5 +1,6 @@
 import type { EnrichedEvent, TechEvent } from "../types";
 
+// Fallback only, used when a source didn't state a real start time.
 const TIME_BY_TYPE: Record<string, string> = {
   Meetup: "19:00",
   "Meetup Online": "20:00",
@@ -165,7 +166,7 @@ function cityOf(ev: TechEvent): string | null {
 export function enrichEvent(e: TechEvent): EnrichedEvent {
   return {
     ...e,
-    time: TIME_BY_TYPE[e.type] || "19:00",
+    time: e.time || TIME_BY_TYPE[e.type] || "19:00",
     community: communityOf(e),
     city: cityOf(e),
   };

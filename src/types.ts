@@ -5,6 +5,7 @@ export interface TechEvent {
   type: string;
   modality: string;
   date: string;
+  time: string | null;
   description: string;
   paid: boolean;
   url: string;

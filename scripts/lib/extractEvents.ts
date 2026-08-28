@@ -18,6 +18,10 @@ function buildExtractedEventSchema(year: number) {
       .string()
       .regex(new RegExp(`^${year}-\\d{2}-\\d{2}$`), `date must be an ISO YYYY-MM-DD date in ${year}`)
       .refine((value) => !Number.isNaN(new Date(value).getTime()), "date must be a valid calendar date"),
+    time: z
+      .string()
+      .regex(/^([01]\d|2[0-3]):[0-5]\d$/, "time must be a 24h HH:mm string")
+      .nullable(),
     description: z.string().min(1),
     paid: z.boolean(),
     url: z.string().url(),
@@ -64,6 +68,7 @@ Instructions:
 - For "region", infer the Brazilian macro-region from the city/state mentioned (e.g. São Paulo/Rio de Janeiro/Belo Horizonte -> Sudeste, Porto Alegre/Curitiba/Florianópolis -> Sul, Recife/Salvador/Fortaleza -> Nordeste, Brasília/Goiânia -> Centro-Oeste, Manaus/Belém -> Norte). If you cannot reasonably infer the region, omit that event entirely.
 - "type" should be a short free-text label matching the style "Conferência", "Meetup", "Summit", etc.
 - "modality" must be one of "Presencial", "Online", "Híbrido", or "Não informado". Determine it from the page text (words like "presencial", "online", "virtual", "híbrido", a physical venue/address block, or a video-call link for remote attendance). If the page does not make this clear, use "Não informado" rather than guessing.
+- "time" should be the event's actual stated start time, converted to 24h "HH:mm" in Brazil local time for that event's location. Only set it when the page (or a specific event link's own page content, if visible in the provided text) explicitly states a start time. Never guess or default it from the event type or typical conventions — use null when no explicit time is stated.
 - "description" should be a 1-2 sentence description written in Portuguese.
 - "paid" should reflect actual ticket/pricing information when present in the text; otherwise infer a reasonable default from the event's apparent scale (large multi-day conferences are usually paid, community meetups are usually free).
 - "url" must be a single, clean, well-formed URL identifying that SPECIFIC event/edition, not the generic source page. A "Links found on the page" list is provided below with each link's visible text and its target address — when a Brazil edition corresponds to one of those links (e.g. the link text names that city or that edition), use that link's exact href as "url". Only fall back to the source url given above when no specific per-edition link can be matched. Never concatenate multiple links, paths, or URL fragments into one string.
