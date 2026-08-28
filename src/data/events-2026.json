@@ -90,7 +90,8 @@
       "date": "2026-03-06",
       "description": "Edição especial do Cloud Native São Paulo dedicada ao tema OpenTelemetry (OTel), realizada no Bradesco Núcleo Alphaville.",
       "paid": false,
-      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/fgqj8m8"
+      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/fgqj8m8",
+      "time": "13:00"
     },
     {
       "id": "2026-03-118-meetup-aws-ug-sp-genai-em-escala-serverless-na-pratica",
@@ -290,7 +291,8 @@
       "date": "2026-04-18",
       "description": "Meetup do chapter Cloud Native São Paulo realizado nas instalações do Nubank, reunindo a comunidade local de tecnologias cloud native.",
       "paid": false,
-      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/w664esc"
+      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/w664esc",
+      "time": "08:30"
     },
     {
       "id": "2026-04-desbloqueando-o-poder-do-kiro-muito-alem-da-sugestao-de-codigo",
@@ -626,7 +628,8 @@
       "date": "2026-07-03",
       "description": "Encontro presencial do chapter Cloud Native São Paulo realizado na sede da IBM em São Paulo, com temas de Kubernetes, Observability e Cloud Native.",
       "paid": false,
-      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/2n73r2z"
+      "url": "https://ocgroups.dev/cncf/group/67qq48e/event/2n73r2z",
+      "time": "17:30"
     },
     {
       "id": "2026-07-google-extended-i-o-rio-de-janeiro",
@@ -682,6 +685,18 @@
       "description": "Evento do GDG Brasília discutindo recrutamento e carreira profissional no contexto da era das inteligências artificiais.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-brasilia/"
+    },
+    {
+      "id": "2026-07-csbc-2026-congresso-da-sociedade-brasileira-de-computacao",
+      "title": "CSBC 2026 - Congresso da Sociedade Brasileira de Computação",
+      "region": "Sul",
+      "type": "Congresso",
+      "modality": "Presencial",
+      "date": "2026-07-19",
+      "time": null,
+      "description": "46ª edição do maior congresso de Computação e TI da América Latina, reunindo milhares de participantes em Gramado (RS) sob o tema 'Transformação Digital para um Mundo em Emergência Climática'.",
+      "paid": true,
+      "url": "https://csbc.sbc.org.br/"
     },
     {
       "id": "2026-07-tdc-floripa-2026",
@@ -825,6 +840,19 @@
       "modality": "Presencial",
       "date": "2026-08-14",
       "description": "Evento de tecnologia e inovação em Maceió (AL), reunindo desenvolvedores, líderes, startups e comunidades tech em duas arenas de conteúdo, palestras e mentorias. 5ª edição do Roga DX, realizada no Centro de Convenções de Maceió.",
+      "paid": true,
+      "url": "https://doity.com.br/rogadx26",
+      "time": "08:30"
+    },
+    {
+      "id": "2026-08-roga-dx-26-dia-2",
+      "title": "Roga DX 26 - Dia 2",
+      "region": "Nordeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-08-15",
+      "time": null,
+      "description": "Segundo dia da 5ª edição do Roga DX, evento de tecnologia e inovação realizado no Centro de Convenções de Maceió, reunindo mais de 2000 participantes, 55+ palestrantes e empresas tech.",
       "paid": true,
       "url": "https://doity.com.br/rogadx26"
     },
@@ -991,7 +1019,8 @@
       "date": "2026-08-26",
       "description": "O Startup Summit 2026 reúne mais de 10 mil participantes, 200+ palestrantes e investidores em Florianópolis para três dias de conteúdo, rodadas de negócios e uma feira de startups.",
       "paid": true,
-      "url": "https://www.startupsummit.com.br"
+      "url": "https://www.startupsummit.com.br",
+      "time": "13:45"
     },
     {
       "id": "2026-08-curitiba-meetup-codecon-21",
@@ -1169,7 +1198,8 @@
       "date": "2026-09-03",
       "description": "Evento gratuito de um dia em São Paulo com sessões técnicas, keynote e workshops sobre inovações em nuvem e IA da AWS.",
       "paid": false,
-      "url": "https://aws.amazon.com/pt/events/summits/sao-paulo/"
+      "url": "https://aws.amazon.com/pt/events/summits/sao-paulo/",
+      "time": "08:00"
     },
     {
       "id": "2026-09-hacktown-2026",
@@ -1224,7 +1254,8 @@
       "date": "2026-09-08",
       "description": "O CBSoft é o principal congresso brasileiro que agrega os simpósios da área de software, reunindo pesquisadores e profissionais em São Paulo. A edição de 2026 ocorre no Instituto de Matemática, Estatística e Ciência da Computação (IME-USP), de 8 a 11 de setembro.",
       "paid": true,
-      "url": "https://cbsoft.sbc.org.br/2026/pt/cbsoft/location"
+      "url": "https://cbsoft.sbc.org.br/2026/pt/cbsoft/location",
+      "time": "09:00"
     },
     {
       "id": "2026-09-golang-sp-me-ia-116",
@@ -1282,6 +1313,18 @@
       "url": "https://events.datadoghq.com/pt/summits/datadog-summit-saopaulo/"
     },
     {
+      "id": "2026-09-datadog-summit-sao-paulo-2026",
+      "title": "Datadog Summit São Paulo 2026",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "time": null,
+      "description": "Evento gratuito da Datadog em São Paulo com um dia de aprendizado prático, demonstrações de produtos e networking sobre observabilidade e IA.",
+      "paid": false,
+      "url": "https://www.datadoghq.com/events-webinars/?language=pt"
+    },
+    {
       "id": "2026-09-aws-community-day-brasil-sul-curitiba",
       "title": "AWS Community Day Brasil - Sul (Curitiba)",
       "region": "Sul",
@@ -1334,7 +1377,8 @@
       "date": "2026-09-23",
       "description": "Edição principal do The Developers Conference em São Paulo, reunindo desenvolvedores e profissionais de tecnologia por três dias de palestras e workshops.",
       "paid": true,
-      "url": "https://thedevconf.com/tdc/2026/datas-e-locais"
+      "url": "https://thedevconf.com/tdc/2026/datas-e-locais",
+      "time": "09:00"
     },
     {
       "id": "2026-09-linuxtips-local-campo-grande",
@@ -1367,7 +1411,8 @@
       "date": "2026-09-24",
       "description": "Maior evento de Inteligência Artificial e tecnologia do Brasil, reunindo mais de 1.300 profissionais no Centro de Convenções Frei Caneca em São Paulo, com palestras, mentorias e networking sobre IA.",
       "paid": true,
-      "url": "https://www.sympla.com.br/evento/ia-conference-brasil-2026/3269443"
+      "url": "https://www.sympla.com.br/evento/ia-conference-brasil-2026/3269443",
+      "time": "08:00"
     },
     {
       "id": "2026-09-linuxtips-local-belo-horizonte",
@@ -1471,6 +1516,18 @@
       "url": "https://phpconference.com.br"
     },
     {
+      "id": "2026-10-php-conference-brasil-2026-dias-presenciais",
+      "title": "PHP Conference Brasil 2026 - Dias Presenciais",
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-10-23",
+      "time": "09:00",
+      "description": "Dias presenciais da PHP Conference Brasil 2026, realizados na UNICESUMAR em Maringá-PR, com palestras técnicas e atividades das 9h às 18h.",
+      "paid": true,
+      "url": "https://phpconference.com.br"
+    },
+    {
       "id": "2026-10-devopsdays-florianopolis",
       "title": "DevOpsDays Florianópolis",
       "region": "Sul",
@@ -1558,7 +1615,8 @@
       "date": "2026-11-14",
       "description": "Evento presencial da Codecon em São Paulo no STATE Innovation Center, reunindo profissionais de tecnologia para palestras e experiências selecionadas.",
       "paid": true,
-      "url": "https://codecon.dev/select"
+      "url": "https://codecon.dev/select",
+      "time": "09:00"
     },
     {
       "id": "2026-11-front-in-floripa-2026",
@@ -1569,7 +1627,8 @@
       "date": "2026-11-28",
       "description": "A 12ª edição do maior evento front-end do Brasil, com foco em AI driven development, LLMs, DX, design e cases reais, realizado no ACM em Florianópolis.",
       "paid": true,
-      "url": "https://www.sympla.com.br/evento/front-in-floripa-2026/3540781"
+      "url": "https://www.sympla.com.br/evento/front-in-floripa-2026/3540781",
+      "time": "08:00"
     }
   ],
   "Dezembro": [
