@@ -1,5 +1,6 @@
 import type { EnrichedEvent } from "../types";
 import { toCardViewModel } from "./card";
+import { openEventModal } from "./eventModal";
 import { modalityBadge } from "./theme";
 
 const MONTHS_SHORT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
@@ -51,7 +52,8 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
   dateBlock.append(wd, day, mon);
 
   const info = document.createElement("div");
-  info.className = "flex min-w-0 flex-1 flex-col justify-center gap-2 pr-0 md:pr-10";
+  info.className = "flex min-w-0 flex-1 cursor-pointer flex-col justify-center gap-2 pr-0 md:pr-10";
+  info.addEventListener("click", () => openEventModal(event, today));
 
   const badgeRow = document.createElement("div");
   badgeRow.className = "flex items-center gap-2.5";

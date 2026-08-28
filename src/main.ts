@@ -3,6 +3,7 @@ import { loadAllEnrichedEvents } from "./data/allEvents";
 import { renderCommunityShelves, buildCommunityTally, buildShelves } from "./render/communityShelves";
 import { mountConsentBanner } from "./render/consentBanner";
 import { renderCtaBand } from "./render/ctaBand";
+import { mountEventModal } from "./render/eventModal";
 import { buildFeaturedList, renderFeaturedCarousel } from "./render/featured";
 import { renderFilterBar } from "./render/filterBar";
 import { renderFooter } from "./render/footer";
@@ -21,6 +22,7 @@ import { keepScroll } from "./state/scroll";
 
 applyStoredConsent();
 mountConsentBanner();
+mountEventModal();
 
 const allEvents = loadAllEnrichedEvents();
 const state = createInitialState();

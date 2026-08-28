@@ -1,4 +1,5 @@
 import type { EnrichedEvent } from "../types";
+import { openEventModal } from "./eventModal";
 import { priceStyle, typeStyle } from "./theme";
 
 const MONTHS_SHORT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
@@ -60,7 +61,11 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
 
   const card = document.createElement("article");
   card.className =
-    "flex flex-col overflow-hidden rounded-2xl border border-brand-200 bg-white transition-colors hover:border-brand-400";
+    "flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-brand-200 bg-white transition-colors hover:border-brand-400";
+  card.addEventListener("click", (e) => {
+    if ((e.target as HTMLElement).closest("a")) return;
+    openEventModal(event, today);
+  });
 
   const strip = document.createElement("div");
   strip.className = `h-0.75 ${vm.style.dot}`;
