@@ -151,6 +151,10 @@ sources:
     url: https://www.meetup.com/pt-BR/datadog-user-group-brasil/
     type: community
     frequency: occasionally
+  - name: Datadog Webnars
+    url: https://www.datadoghq.com/events-webinars/?language=pt
+    type: community
+    frequency: occasionally
   - name: Dev Paraná
     url: https://www.meetup.com/developerparana
     type: community
