@@ -7,6 +7,7 @@ export interface AppState {
   carousel: number;
   openPast: Set<string>;
   collapsedYears: Record<number, boolean>;
+  showCurrentMonthPast: boolean;
 }
 
 export function createInitialState(): AppState {
@@ -16,5 +17,6 @@ export function createInitialState(): AppState {
     carousel: 0,
     openPast: new Set(),
     collapsedYears: {},
+    showCurrentMonthPast: false,
   };
 }

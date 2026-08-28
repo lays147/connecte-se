@@ -5,7 +5,16 @@ export function monthSectionId(year: number, monthIndex: number): string {
   return `month-${year}-${String(monthIndex + 1).padStart(2, "0")}`;
 }
 
-export function renderMonthSection(bucket: MonthBucket, today: Date): HTMLElement {
+export interface MonthSectionHandlers {
+  onToggleCurrentMonthPast: () => void;
+}
+
+export function renderMonthSection(
+  bucket: MonthBucket,
+  today: Date,
+  showCurrentMonthPast: boolean,
+  handlers: MonthSectionHandlers,
+): HTMLElement {
   const section = document.createElement("section");
   section.id = monthSectionId(bucket.year, bucket.monthIndex);
   section.className = "flex scroll-mt-4 flex-col";
@@ -47,6 +56,29 @@ export function renderMonthSection(bucket: MonthBucket, today: Date): HTMLElemen
     grid.appendChild(renderCard(event, today));
   }
   section.appendChild(grid);
+
+  if (bucket.isCurrent && !bucket.opened && bucket.hasPast) {
+    const toggleRow = document.createElement("div");
+    toggleRow.className = "px-(--spacing-gutter) pb-5";
+
+    const toggleBtn = document.createElement("button");
+    toggleBtn.type = "button";
+    toggleBtn.className =
+      "flex items-center gap-1.5 rounded-lg border border-brand-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-brand-700 cursor-pointer hover:border-brand-400";
+    toggleBtn.textContent = showCurrentMonthPast ? "Ocultar eventos anteriores" : "Ver eventos anteriores deste mês";
+    toggleBtn.addEventListener("click", handlers.onToggleCurrentMonthPast);
+    toggleRow.appendChild(toggleBtn);
+    section.appendChild(toggleRow);
+
+    if (showCurrentMonthPast && bucket.past.length > 0) {
+      const pastGrid = document.createElement("div");
+      pastGrid.className = "grid grid-cols-1 gap-4 px-(--spacing-gutter) pb-5 opacity-70 sm:grid-cols-2 lg:grid-cols-3";
+      for (const event of bucket.past) {
+        pastGrid.appendChild(renderCard(event, today));
+      }
+      section.appendChild(pastGrid);
+    }
+  }
 
   return section;
 }

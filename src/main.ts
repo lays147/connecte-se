@@ -86,8 +86,8 @@ function render(): void {
   );
 
   if (state.groupBy === "data") {
-    const buckets = buildMonthBuckets(filtered, today, state.openPast);
-    const visibleBuckets = buckets.filter((b) => (!b.isPast || b.opened) && b.list.length > 0);
+    const buckets = buildMonthBuckets(filtered, today, state.openPast, state.showCurrentMonthPast);
+    const visibleBuckets = buckets.filter((b) => (!b.isPast || b.opened) && (b.list.length > 0 || b.hasPast));
     const yearNav = buildYearNav(buckets, state.collapsedYears, today);
 
     const row = document.createElement("div");
@@ -97,7 +97,12 @@ function render(): void {
     monthList.className = "flex min-w-0 flex-1 flex-col";
     const sectionEls: HTMLElement[] = [];
     for (const bucket of visibleBuckets) {
-      const section = renderMonthSection(bucket, today);
+      const section = renderMonthSection(bucket, today, state.showCurrentMonthPast, {
+        onToggleCurrentMonthPast: () => {
+          state.showCurrentMonthPast = !state.showCurrentMonthPast;
+          render();
+        },
+      });
       sectionEls.push(section);
       monthList.appendChild(section);
     }

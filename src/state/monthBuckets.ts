@@ -15,13 +15,20 @@ export interface MonthBucket {
   order: number;
   all: EnrichedEvent[];
   list: EnrichedEvent[];
+  past: EnrichedEvent[];
+  hasPast: boolean;
   isPast: boolean;
   isCurrent: boolean;
   opened: boolean;
   label: string;
 }
 
-export function buildMonthBuckets(events: EnrichedEvent[], today: Date, openPast: Set<string>): MonthBucket[] {
+export function buildMonthBuckets(
+  events: EnrichedEvent[],
+  today: Date,
+  openPast: Set<string>,
+  showCurrentMonthPast = false,
+): MonthBucket[] {
   const todayIso = iso(today);
   const curOrd = ord(today.getFullYear(), today.getMonth());
 
@@ -39,6 +46,8 @@ export function buildMonthBuckets(events: EnrichedEvent[], today: Date, openPast
         order: ord(y, monthIndex),
         all: [],
         list: [],
+        past: [],
+        hasPast: false,
         isPast: false,
         isCurrent: false,
         opened: false,
@@ -55,7 +64,16 @@ export function buildMonthBuckets(events: EnrichedEvent[], today: Date, openPast
     b.isPast = b.order < curOrd;
     b.isCurrent = b.order === curOrd;
     b.opened = openPast.has(b.key);
-    b.list = b.isCurrent && !b.opened ? b.all.filter((e) => e.date >= todayIso) : b.all;
+    if (b.isCurrent && !b.opened) {
+      b.list = b.all.filter((e) => e.date >= todayIso);
+      const pastEvents = b.all.filter((e) => e.date < todayIso);
+      b.hasPast = pastEvents.length > 0;
+      b.past = showCurrentMonthPast ? pastEvents : [];
+    } else {
+      b.list = b.all;
+      b.past = [];
+      b.hasPast = false;
+    }
   }
 
   return bucketList;
