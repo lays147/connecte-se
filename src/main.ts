@@ -20,7 +20,6 @@ import { defaultFilterState, filterOptions, matchesFilters } from "./state/filte
 import { buildMonthBuckets, buildYearNav } from "./state/monthBuckets";
 import { keepScroll } from "./state/scroll";
 import { readParams, writeParams } from "./state/urlState";
-import type { EnrichedEvent } from "./types";
 
 applyStoredConsent();
 mountConsentBanner();
@@ -33,20 +32,26 @@ const params = readParams();
 const defaults = defaultFilterState();
 const options = filterOptions(allEvents);
 const regionParam = params.get("regiao");
+const cityParam = params.get("cidade");
 const typeParam = params.get("tipo");
 const paidParam = params.get("pago");
+const queryParam = params.get("busca");
 state.filters = {
   region: regionParam && options.region.includes(regionParam) ? regionParam : defaults.region,
+  city: cityParam && options.city.includes(cityParam) ? cityParam : defaults.city,
   type: typeParam && options.type.includes(typeParam) ? typeParam : defaults.type,
   paid: paidParam && options.paid.includes(paidParam) ? paidParam : defaults.paid,
+  query: queryParam ?? defaults.query,
 };
 if (params.get("agrupar") === "comunidade") state.groupBy = "comunidade";
 
 function syncUrl(): void {
   writeParams({
     regiao: state.filters.region === defaults.region ? null : state.filters.region,
+    cidade: state.filters.city === defaults.city ? null : state.filters.city,
     tipo: state.filters.type === defaults.type ? null : state.filters.type,
     pago: state.filters.paid === defaults.paid ? null : state.filters.paid,
+    busca: state.filters.query === defaults.query ? null : state.filters.query,
     agrupar: state.groupBy === "data" ? null : state.groupBy,
   });
 }
@@ -59,11 +64,16 @@ function todayIso(): string {
 
 let featuredCount = 0;
 let stopObservingActiveMonth: () => void = () => {};
-let currentUpcoming: EnrichedEvent[] = [];
 const featuredHost = document.createElement("div");
 
+// Featured carousel always draws from the full unfiltered event list — the
+// search box and filters below narrow the listing, not the highlights.
+const allUpcoming = allEvents
+  .filter((e) => e.date >= todayIso())
+  .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+
 function renderCarousel(): void {
-  const featuredList = buildFeaturedList(currentUpcoming);
+  const featuredList = buildFeaturedList(allUpcoming);
   featuredCount = featuredList.length;
   const featured = renderFeaturedCarousel(featuredList, state.carousel, {
     onPrev: () => {
@@ -91,15 +101,21 @@ function scrollToMonthKey(key: string): void {
 
 function render(): void {
   stopObservingActiveMonth();
+
+  const active = document.activeElement;
+  const restoreFocus =
+    active instanceof HTMLInputElement && active.type === "search" && main.contains(active)
+      ? { selectionStart: active.selectionStart, selectionEnd: active.selectionEnd }
+      : null;
+
   main.replaceChildren();
 
   const filtered = allEvents.filter((e) => matchesFilters(e, state.filters));
   const upcoming = filtered.filter((e) => e.date >= todayIso()).sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
-  currentUpcoming = upcoming;
 
   // Featured carousel — rendered into a stable host so its own auto-advance
-  // timer never has to rebuild the rest of the page.
-  renderCarousel();
+  // timer never has to rebuild the rest of the page. It draws from
+  // allUpcoming (unfiltered), so search/filters never change the highlights.
   main.appendChild(featuredHost);
 
   // Filter bar
@@ -186,6 +202,14 @@ function render(): void {
     const shelves = buildShelves(tally, upcoming);
     main.appendChild(renderCommunityShelves(shelves, today));
   }
+
+  if (restoreFocus) {
+    const input = main.querySelector<HTMLInputElement>('input[type="search"]');
+    if (input) {
+      input.focus();
+      input.setSelectionRange(restoreFocus.selectionStart, restoreFocus.selectionEnd);
+    }
+  }
 }
 
 const header = renderHeader({
@@ -200,6 +224,7 @@ const header = renderHeader({
 const { shell, main } = mountLayout(header);
 shell.append(renderCtaBand(), renderFooter());
 
+renderCarousel();
 render();
 
 startCarousel(
