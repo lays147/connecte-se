@@ -8,19 +8,25 @@ export function getStoredConsent(): ConsentChoice | null {
   return value === "accepted" || value === "declined" ? value : null;
 }
 
+type GtagWindow = typeof window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
+
 function loadGtag(): void {
   const script = document.createElement("script");
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`;
   document.head.appendChild(script);
 
-  const win = window as typeof window & { dataLayer?: unknown[] };
+  const win = window as GtagWindow;
   win.dataLayer = win.dataLayer || [];
-  function gtag(...args: unknown[]): void {
-    win.dataLayer!.push(args);
-  }
-  gtag("js", new Date());
-  gtag("config", GTAG_ID);
+  // gtag.js looks for a global window.gtag to queue calls onto dataLayer, both
+  // its own internal calls after it loads and any later calls from this app.
+  win.gtag =
+    win.gtag ||
+    function gtag(...args: unknown[]): void {
+      win.dataLayer!.push(args);
+    };
+  win.gtag("js", new Date());
+  win.gtag("config", GTAG_ID);
 }
 
 export function applyStoredConsent(): void {
