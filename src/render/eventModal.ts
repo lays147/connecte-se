@@ -1,4 +1,5 @@
 import type { EnrichedEvent } from "../types";
+import { trackAnalyticsEvent } from "../state/consent";
 import { toCardViewModel } from "./card";
 
 let overlay: HTMLElement | null = null;
@@ -26,6 +27,11 @@ export function mountEventModal(): void {
 export function openEventModal(event: EnrichedEvent, today: Date): void {
   close();
   lastFocused = document.activeElement as HTMLElement | null;
+  trackAnalyticsEvent("event_card_open", {
+    event_id: event.id,
+    event_title: event.title,
+    event_type: event.type,
+  });
 
   const vm = toCardViewModel(event, today);
 
@@ -113,6 +119,13 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   cta.href = vm.url;
   cta.target = "_blank";
   cta.rel = "noopener";
+  cta.addEventListener("click", () => {
+    trackAnalyticsEvent("event_subscribe_click", {
+      event_id: event.id,
+      event_title: event.title,
+      event_type: event.type,
+    });
+  });
   cta.className =
     "block w-full rounded-lg bg-brand-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-600";
   cta.textContent = "Inscrever-se";

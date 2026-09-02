@@ -1,4 +1,5 @@
 import type { EnrichedEvent } from "../types";
+import { trackAnalyticsEvent } from "../state/consent";
 import { toCardViewModel } from "./card";
 import { openEventModal } from "./eventModal";
 import { modalityBadge } from "./theme";
@@ -125,6 +126,13 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
   cta.href = vm.url;
   cta.target = "_blank";
   cta.rel = "noopener";
+  cta.addEventListener("click", () => {
+    trackAnalyticsEvent("event_subscribe_click", {
+      event_id: event.id,
+      event_title: event.title,
+      event_type: event.type,
+    });
+  });
   cta.className = "whitespace-nowrap rounded-xl bg-white px-5 py-3.5 text-sm font-semibold text-brand-950";
   cta.textContent = "Inscrever-se";
   actions.appendChild(cta);

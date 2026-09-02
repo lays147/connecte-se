@@ -1,4 +1,5 @@
 import type { EnrichedEvent } from "../types";
+import { trackAnalyticsEvent } from "../state/consent";
 import { openEventModal } from "./eventModal";
 import { priceStyle, typeStyle } from "./theme";
 
@@ -139,6 +140,13 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
   cta.href = vm.url;
   cta.target = "_blank";
   cta.rel = "noopener";
+  cta.addEventListener("click", () => {
+    trackAnalyticsEvent("event_subscribe_click", {
+      event_id: event.id,
+      event_title: event.title,
+      event_type: event.type,
+    });
+  });
   cta.className =
     "shrink-0 whitespace-nowrap rounded-lg bg-brand-700 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-brand-600";
   cta.textContent = "Inscrever-se";

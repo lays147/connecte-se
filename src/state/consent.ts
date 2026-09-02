@@ -10,6 +10,12 @@ export function getStoredConsent(): ConsentChoice | null {
 
 type GtagWindow = typeof window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
 
+export function trackAnalyticsEvent(name: string, params: Record<string, string | boolean>): void {
+  const win = window as GtagWindow;
+  if (getStoredConsent() !== "accepted" || typeof win.gtag !== "function") return;
+  win.gtag("event", name, params);
+}
+
 function loadGtag(): void {
   const script = document.createElement("script");
   script.async = true;
