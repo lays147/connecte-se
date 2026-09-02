@@ -26,6 +26,12 @@ function loadGtag(): void {
       win.dataLayer!.push(args);
     };
   win.gtag("js", new Date());
+  // GA4's Consent Mode defaults analytics_storage to "denied" for visitors in
+  // regulated regions (incl. Brazil/LGPD) until told otherwise, which
+  // silently drops every hit even after our own cookie banner is accepted.
+  // Grant it explicitly here since acceptance already gated loadGtag().
+  win.gtag("consent", "default", { analytics_storage: "denied" });
+  win.gtag("consent", "update", { analytics_storage: "granted" });
   win.gtag("config", GTAG_ID);
 }
 
