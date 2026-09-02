@@ -103,7 +103,7 @@ export function renderFooter(): HTMLElement {
   const copyBtn = document.createElement("button");
   copyBtn.type = "button";
   copyBtn.className =
-    "shrink-0 cursor-pointer rounded-lg border-0 bg-[oklch(0.85_0.15_155)] px-2.5 py-2 text-xs font-semibold text-brand-950";
+    "shrink-0 cursor-pointer rounded-lg border-0 bg-modality-online-bg px-2.5 py-2 text-xs font-semibold text-brand-950";
   copyBtn.textContent = "Copiar";
   copyBtn.addEventListener("click", () => {
     if (navigator.clipboard) {

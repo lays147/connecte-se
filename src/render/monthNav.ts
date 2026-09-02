@@ -39,7 +39,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
       "flex w-full items-baseline gap-2 rounded-lg px-2 py-1.5 text-left cursor-pointer hover:bg-brand-100/60";
 
     const chevron = document.createElement("span");
-    chevron.className = "font-mono-label text-label-xs text-brand-400";
+    chevron.className = "font-mono-label text-label-xs text-brand-500";
     chevron.textContent = group.open ? "▾" : "▸";
     yearBtn.appendChild(chevron);
 
@@ -50,7 +50,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
 
     const total = group.months.reduce((n, m) => n + m.count, 0);
     const yearCount = document.createElement("span");
-    yearCount.className = "font-mono-label text-label-xs text-brand-400";
+    yearCount.className = "font-mono-label text-label-xs text-brand-500";
     yearCount.textContent = total + (total === 1 ? " evento" : " eventos");
     yearBtn.appendChild(yearCount);
 
@@ -110,7 +110,7 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
             "flex w-full items-baseline gap-2 rounded-lg py-2 pl-5.5 pr-2.5 text-left cursor-pointer hover:bg-brand-100/60";
 
           const label = document.createElement("span");
-          label.className = "flex-1 text-sm font-medium capitalize text-brand-400";
+          label.className = "flex-1 text-sm font-medium capitalize text-brand-500";
           label.textContent = m.label;
           btn.appendChild(label);
 

@@ -106,14 +106,14 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   legendRow.className = "-mt-1.5 flex flex-wrap items-center gap-3.5 px-2 sm:px-3";
 
   const legendLess = document.createElement("span");
-  legendLess.className = "font-mono-label text-label-sm text-brand-400";
+  legendLess.className = "font-mono-label text-label-sm text-brand-500";
   legendLess.textContent = "menos";
 
   const legendSwatches = document.createElement("div");
   legendSwatches.className = "flex gap-0.75";
 
   const legendMore = document.createElement("span");
-  legendMore.className = "font-mono-label text-label-sm text-brand-400";
+  legendMore.className = "font-mono-label text-label-sm text-brand-500";
   legendMore.textContent = "mais eventos";
 
   const legendScale = document.createElement("div");
@@ -125,7 +125,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   const emptySwatch = document.createElement("span");
   emptySwatch.className = "size-3.25 rounded-card-4 border border-brand-100 bg-map-empty";
   const emptyLabel = document.createElement("span");
-  emptyLabel.className = "text-label-sm text-brand-400";
+  emptyLabel.className = "text-label-sm text-brand-500";
   emptyLabel.textContent = "nenhum evento na lista";
   legendEmpty.append(emptySwatch, emptyLabel);
 
@@ -141,7 +141,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   const rankHeader = document.createElement("div");
   rankHeader.className = "flex items-baseline justify-between gap-2.5 px-4.5 pb-2 pt-3.5";
   const rankLabel = document.createElement("span");
-  rankLabel.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-400";
+  rankLabel.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-500";
   rankLabel.textContent = "Ranking por estado";
   const clearBtn = document.createElement("button");
   clearBtn.type = "button";
@@ -341,7 +341,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
         const cell = document.createElement("div");
         cell.className = "flex flex-col gap-1 bg-white px-4.5 py-3.5";
         const kEl = document.createElement("span");
-        kEl.className = "font-mono-label text-label-2xs font-semibold uppercase tracking-widest text-brand-400";
+        kEl.className = "font-mono-label text-label-2xs font-semibold uppercase tracking-widest text-brand-500";
         kEl.textContent = String(k);
         const vEl = document.createElement("span");
         vEl.className = "font-display text-heading-lg font-bold text-brand-950";
@@ -358,7 +358,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     rankList.replaceChildren();
     if (ranked.length === 0) {
       const empty = document.createElement("p");
-      empty.className = "m-2 text-xs leading-relaxed text-brand-400";
+      empty.className = "m-2 text-xs leading-relaxed text-brand-500";
       empty.textContent = "Nenhum evento presencial nesse período.";
       rankList.appendChild(empty);
     }
@@ -427,7 +427,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       labelEl.className = "text-xs font-semibold text-brand-950";
       labelEl.textContent = label;
       const hintEl = document.createElement("span");
-      hintEl.className = "text-label-xs text-brand-400";
+      hintEl.className = "text-label-xs text-brand-500";
       hintEl.textContent = hint;
       left.append(labelEl, hintEl);
 
@@ -473,7 +473,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       const wrap = document.createElement("div");
       wrap.className = "flex flex-col gap-1.5";
       const label = document.createElement("span");
-      label.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-400";
+      label.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-500";
       label.textContent = "Explore o mapa";
       const hint = document.createElement("span");
       hint.className = "max-w-xl text-sm leading-relaxed text-brand-700";
@@ -515,7 +515,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
 
     if (list.length === 0) {
       const empty = document.createElement("span");
-      empty.className = "text-body-sm text-brand-400";
+      empty.className = "text-body-sm text-brand-500";
       empty.textContent = "Nenhum evento nesse período.";
       rows.appendChild(empty);
     }
@@ -534,13 +534,13 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       const dateCol = document.createElement("span");
       dateCol.className = "flex w-13 shrink-0 flex-col items-center gap-0.5";
       const wd = document.createElement("span");
-      wd.className = "font-mono-label text-label-2xs uppercase text-brand-400";
+      wd.className = "font-mono-label text-label-2xs uppercase text-brand-500";
       wd.textContent = WD[dt.getDay()];
       const dayNum = document.createElement("span");
       dayNum.className = "font-display text-xl font-bold leading-none text-brand-950";
       dayNum.textContent = String(dt.getDate());
       const mon = document.createElement("span");
-      mon.className = "font-mono-label text-label-2xs uppercase text-brand-400";
+      mon.className = "font-mono-label text-label-2xs uppercase text-brand-500";
       mon.textContent = MONTHS_SHORT[dt.getMonth()];
       dateCol.append(wd, dayNum, mon);
 

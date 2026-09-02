@@ -31,7 +31,7 @@ export function mountConsentBanner(): void {
   const acceptBtn = document.createElement("button");
   acceptBtn.type = "button";
   acceptBtn.className =
-    "cursor-pointer rounded-lg border-0 bg-[oklch(0.85_0.15_155)] px-3.5 py-2 text-xs font-semibold text-brand-950";
+    "cursor-pointer rounded-lg border-0 bg-modality-online-bg px-3.5 py-2 text-xs font-semibold text-brand-950";
   acceptBtn.textContent = "Aceitar";
 
   function dismiss(): void {

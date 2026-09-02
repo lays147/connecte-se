@@ -29,7 +29,7 @@ export function renderMonthSection(
   dot.className = `size-1.75 rounded-full ${bucket.isPast ? "bg-brand-300" : "bg-brand-700"}`;
   heading.appendChild(dot);
 
-  const label = document.createElement("h4");
+  const label = document.createElement("h2");
   label.className = "font-display text-heading-sm font-semibold capitalize text-brand-950";
   label.textContent = `${bucket.label} ${bucket.year}`;
   heading.appendChild(label);

@@ -67,7 +67,7 @@ export function renderCommunityShelves(shelves: CommunityShelf[], today: Date): 
     avatar.className = `inline-flex size-7.5 items-center justify-center rounded-card-9 font-display text-xs font-semibold ${shelf.bg} ${shelf.text}`;
     avatar.textContent = shelf.initials;
 
-    const name = document.createElement("span");
+    const name = document.createElement("h2");
     name.className = "font-display text-base font-semibold text-brand-950";
     name.textContent = shelf.name;
 

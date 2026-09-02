@@ -68,7 +68,7 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
   destaque.textContent = "Em destaque";
   badgeRow.appendChild(destaque);
 
-  const title = document.createElement("h3");
+  const title = document.createElement("p");
   title.className = "line-clamp-2 font-display text-heading-xl font-bold leading-tight tracking-tight text-white";
   title.textContent = vm.title;
 
@@ -139,16 +139,21 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
     positionRow.appendChild(position);
 
     const dots = document.createElement("div");
-    dots.className = "flex items-center gap-1.5";
+    dots.className = "flex items-center";
     list.forEach((_, i) => {
       const dotBtn = document.createElement("button");
       dotBtn.type = "button";
-      dotBtn.setAttribute("aria-label", "Ir para destaque");
+      dotBtn.setAttribute("aria-label", `Ir para destaque ${i + 1} de ${list.length}`);
       const active = i === idx;
-      dotBtn.className = [
-        "h-1.75 cursor-pointer rounded-full border-0 p-0 transition-[width]",
+      dotBtn.className = "flex h-6 w-6 cursor-pointer items-center justify-center border-0 bg-transparent p-0";
+
+      const dot = document.createElement("span");
+      dot.className = [
+        "h-1.75 rounded-full transition-[width]",
         active ? "w-5.5 bg-white" : "w-1.75 bg-brand-600",
       ].join(" ");
+      dotBtn.appendChild(dot);
+
       dotBtn.addEventListener("click", () => handlers.onSelect(i));
       dots.appendChild(dotBtn);
     });

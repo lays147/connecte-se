@@ -20,6 +20,7 @@ import { defaultFilterState, filterOptions, matchesFilters } from "./state/filte
 import { buildMonthBuckets, buildYearNav } from "./state/monthBuckets";
 import { keepScroll } from "./state/scroll";
 import { readParams, writeParams } from "./state/urlState";
+import type { EnrichedEvent } from "./types";
 
 applyStoredConsent();
 mountConsentBanner();
@@ -58,6 +59,28 @@ function todayIso(): string {
 
 let featuredCount = 0;
 let stopObservingActiveMonth: () => void = () => {};
+let currentUpcoming: EnrichedEvent[] = [];
+const featuredHost = document.createElement("div");
+
+function renderCarousel(): void {
+  const featuredList = buildFeaturedList(currentUpcoming);
+  featuredCount = featuredList.length;
+  const featured = renderFeaturedCarousel(featuredList, state.carousel, {
+    onPrev: () => {
+      state.carousel -= 1;
+      renderCarousel();
+    },
+    onNext: () => {
+      state.carousel += 1;
+      renderCarousel();
+    },
+    onSelect: (index) => {
+      state.carousel = index;
+      renderCarousel();
+    },
+  });
+  featuredHost.replaceChildren(...(featured ? [featured] : []));
+}
 
 function scrollToMonthKey(key: string): void {
   const [year, monthIndex] = key.split("-").map(Number);
@@ -72,25 +95,12 @@ function render(): void {
 
   const filtered = allEvents.filter((e) => matchesFilters(e, state.filters));
   const upcoming = filtered.filter((e) => e.date >= todayIso()).sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+  currentUpcoming = upcoming;
 
-  // Featured carousel
-  const featuredList = buildFeaturedList(upcoming);
-  featuredCount = featuredList.length;
-  const featured = renderFeaturedCarousel(featuredList, state.carousel, {
-    onPrev: () => {
-      state.carousel -= 1;
-      render();
-    },
-    onNext: () => {
-      state.carousel += 1;
-      render();
-    },
-    onSelect: (index) => {
-      state.carousel = index;
-      render();
-    },
-  });
-  if (featured) main.appendChild(featured);
+  // Featured carousel — rendered into a stable host so its own auto-advance
+  // timer never has to rebuild the rest of the page.
+  renderCarousel();
+  main.appendChild(featuredHost);
 
   // Filter bar
   main.appendChild(
@@ -196,6 +206,6 @@ startCarousel(
   () => featuredCount,
   () => {
     state.carousel += 1;
-    render();
+    renderCarousel();
   },
 );

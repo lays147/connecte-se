@@ -33,7 +33,7 @@ test("filter bar has exactly the region, type, and paid selects", async ({ page 
 
 test("current month renders first with its capped card grid and overflow note", async ({ page }) => {
   await page.goto("/");
-  const augustSection = page.locator("section", { has: page.locator("h4", { hasText: "Agosto 2026" }) });
+  const augustSection = page.locator("section", { has: page.locator("h2", { hasText: "Agosto 2026" }) });
   await expect(augustSection).toBeVisible();
   await expect(augustSection.locator("article")).toHaveCount(9, { timeout: 10000 });
   await expect(augustSection.getByText("+ 2 eventos neste mês")).toBeVisible();
@@ -41,14 +41,14 @@ test("current month renders first with its capped card grid and overflow note", 
 
 test("group-by toggle switches between month sections and community shelves", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator("h4", { hasText: "Agosto 2026" })).toBeVisible();
+  await expect(page.locator("h2", { hasText: "Agosto 2026" })).toBeVisible();
 
   await page.getByRole("button", { name: "Por comunidade" }).click();
-  await expect(page.locator("h4", { hasText: "Agosto 2026" })).toHaveCount(0);
+  await expect(page.locator("h2", { hasText: "Agosto 2026" })).toHaveCount(0);
   await expect(page.getByText("Seguir comunidade").first()).toBeVisible();
 
   await page.getByRole("button", { name: "Data", exact: true }).click();
-  await expect(page.locator("h4", { hasText: "Agosto 2026" })).toBeVisible();
+  await expect(page.locator("h2", { hasText: "Agosto 2026" })).toBeVisible();
   await expect(page.getByText("Seguir comunidade")).toHaveCount(0);
 });
 
@@ -60,7 +60,7 @@ test("clicking the header Comunidades link switches to the community view", asyn
 
 test("locked past months load on click and insert a real section", async ({ page }) => {
   await page.goto("/");
-  const julySection = page.locator("h4", { hasText: "Julho 2026" });
+  const julySection = page.locator("h2", { hasText: "Julho 2026" });
   await expect(julySection).toHaveCount(0);
 
   await page.getByRole("button", { name: /^Julho \+\d+$/ }).click();

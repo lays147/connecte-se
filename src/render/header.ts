@@ -40,7 +40,7 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   name.className = "font-display text-body-md font-bold tracking-tight text-brand-950";
   name.innerHTML = `Conecte-se <span class="text-brand-500">Brasil</span>`;
   const tagline = document.createElement("span");
-  tagline.className = "font-mono-label text-label-xs uppercase tracking-widest text-brand-400";
+  tagline.className = "font-mono-label text-label-xs uppercase tracking-widest text-brand-500";
   tagline.textContent = "eventos de tecnologia";
   lockup.append(name, tagline);
 

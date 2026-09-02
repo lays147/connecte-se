@@ -87,7 +87,7 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
   pricePill.textContent = vm.price.label;
   topRow.appendChild(pricePill);
 
-  const title = document.createElement("h4");
+  const title = document.createElement("h3");
   title.className = "line-clamp-2 font-display text-heading-sm font-semibold leading-snug text-brand-950";
   title.textContent = vm.title;
 

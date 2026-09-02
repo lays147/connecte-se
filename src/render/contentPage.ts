@@ -158,7 +158,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     num.className = "font-display text-heading-lg font-bold text-brand-950";
     num.textContent = String(n);
     const lbl = document.createElement("span");
-    lbl.className = "font-mono-label text-label-sm uppercase tracking-wider text-brand-400";
+    lbl.className = "font-mono-label text-label-sm uppercase tracking-wider text-brand-500";
     lbl.textContent = label;
     col.append(num, lbl);
     tallies.appendChild(col);
@@ -206,7 +206,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
   const groupWrap = document.createElement("div");
   groupWrap.className = "flex shrink-0 items-center gap-2";
   const groupLabel = document.createElement("span");
-  groupLabel.className = "font-mono-label text-label-sm uppercase tracking-wider text-brand-400";
+  groupLabel.className = "font-mono-label text-label-sm uppercase tracking-wider text-brand-500";
   groupLabel.textContent = "Agrupar";
   const groupTabs = document.createElement("div");
   groupTabs.className = "flex gap-0.5 rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
@@ -262,7 +262,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     heading.appendChild(label);
 
     const count = document.createElement("span");
-    count.className = "text-xs font-medium text-brand-400";
+    count.className = "text-xs font-medium text-brand-500";
     count.textContent = section.items.length + (section.items.length === 1 ? " indicação" : " indicações");
     heading.appendChild(count);
 
