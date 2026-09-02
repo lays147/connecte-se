@@ -1302,17 +1302,6 @@
       "url": "https://www.mindthesec.com.br/inscreva-se"
     },
     {
-      "id": "2026-09-datadog-summit",
-      "title": "Datadog Summit",
-      "region": "Sudeste",
-      "type": "Summit",
-      "modality": "Presencial",
-      "date": "2026-09-15",
-      "description": "Datadog Summit SP",
-      "paid": false,
-      "url": "https://events.datadoghq.com/pt/summits/datadog-summit-saopaulo/"
-    },
-    {
       "id": "2026-09-datadog-summit-sao-paulo-2026",
       "title": "Datadog Summit São Paulo 2026",
       "region": "Sudeste",
