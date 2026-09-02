@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="100" viewBox="0 0 120 100">
+  <rect width="120" height="100" rx="20" fill="white"/>
+  <g fill="none" stroke-linecap="round">
+    <g stroke="oklch(0.5 0.17 292)" stroke-width="6.5"><path d="M14 68A22 26 0 0 1 58 68"></path><path d="M62 68A22 26 0 0 1 106 68"></path></g>
+    <path d="M6 68h108" stroke="oklch(0.7 0.16 300)" stroke-width="7.5"></path>
+    <g stroke="oklch(0.7 0.16 300)" stroke-width="5.5" opacity="0.9"><path d="M17 72v20M60 72v24M103 72v20"></path></g>
+  </g>
+</svg>
