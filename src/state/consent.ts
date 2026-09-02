@@ -22,8 +22,8 @@ function loadGtag(): void {
   // its own internal calls after it loads and any later calls from this app.
   win.gtag =
     win.gtag ||
-    function gtag(...args: unknown[]): void {
-      win.dataLayer!.push(args);
+    function gtag(): void {
+      win.dataLayer!.push(arguments);
     };
   win.gtag("js", new Date());
   // GA4's Consent Mode defaults analytics_storage to "denied" for visitors in
