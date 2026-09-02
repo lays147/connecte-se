@@ -1347,6 +1347,17 @@
       "url": "https://www.sympla.com.br/evento/linuxtips-local-rio-branco/3439933"
     },
     {
+      "id":"2026-09-cbctq",
+      "title": "Congresso Brasileiro de Ciências e Tecnologias Quânticas (CBCTQ)",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-09-21",
+      "description": "Congresso Brasileiro de Ciências e Tecnologias Quânticas, reunindo pesquisadores, profissionais e estudantes para discutir avanços em computação quântica, criptografia quântica e aplicações emergentes.",
+      "paid": true,
+      "url": "https://www.even3.com.br/cbctq2026-689055/"
+    },
+    {
       "id": "2026-09-linuxtips-local-salvador",
       "title": "LINUXtips.local Salvador",
       "region": "Nordeste",
