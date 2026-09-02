@@ -4,7 +4,7 @@ import type { EnrichedEvent } from "../types";
 function buildSelect(label: string, options: string[], value: string, onChange: (value: string) => void): HTMLElement {
   const wrapper = document.createElement("label");
   wrapper.className =
-    "flex min-w-0 flex-1 basis-36 items-center gap-1.5 border-brand-100 px-3.5 py-2.5 first:pl-4 last:pr-4 sm:border-l sm:first:border-l-0";
+    "flex min-w-0 flex-1 basis-full items-center gap-1.5 border-brand-100 px-3.5 py-2.5 border-b sm:basis-36 sm:border-b-0 sm:border-l sm:first:border-l-0 sm:first:border-b-0";
 
   const labelText = document.createElement("span");
   labelText.className = "shrink-0 text-label-sm font-medium text-brand-500";
@@ -70,7 +70,7 @@ export function renderFilterBar(
 
   const searchConsole = document.createElement("div");
   searchConsole.className =
-    "flex w-full max-w-3xl flex-col divide-y divide-brand-100 rounded-2xl border border-brand-200 bg-white shadow-sm focus-within:ring-2 focus-within:ring-brand-400";
+    "flex w-full flex-col divide-y divide-brand-100 rounded-2xl border border-brand-200 bg-white shadow-sm focus-within:ring-2 focus-within:ring-brand-400 sm:max-w-3xl";
 
   const searchInput = buildSearchInput(state.query, (query) => onChange({ ...state, query }));
 
