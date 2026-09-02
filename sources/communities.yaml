@@ -263,6 +263,10 @@ sources:
     url: https://hacktown.com.br
     type: event
     frequency: yearly
+  - name: Hacktoberfest
+    url: https://hacktoberfest.com
+    type: event
+    frequency: yearly
   - name: IA Conference Brasil
     url: https://www.iaconferencebrasil.com.br/
     type: event
@@ -299,6 +303,10 @@ sources:
     url: https://nodebr.org
     type: community
     frequency: occasionally
+  - name: Oktobercloud
+    url: https://www.oktobercloud.com.br/
+    type: event
+    frequency: yearly
   - name: ParaibaJS
     url: https://linktr.ee/paraibajs
     type: community

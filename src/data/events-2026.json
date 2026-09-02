@@ -1439,6 +1439,17 @@
   ],
   "Outubro": [
     {
+      "id": "2026-10-hacktoberfest",
+      "title": "Hacktoberfest",
+      "region": "Nacional",
+      "type": "Evento",
+      "modality": "Online",
+      "date": "2026-10-01",
+      "description": "Hacktoberfest é um evento global de código aberto que incentiva a contribuição para projetos open source durante o mês de outubro, promovido pela DigitalOcean e GitHub.",
+      "paid": false,
+      "url": "https://hacktoberfest.com/"
+    },
+    {
       "id": "2026-10-cbie-2026-congresso-brasileiro-de-informatica-na-educacao",
       "title": "CBIE 2026 - Congresso Brasileiro de Informática na Educação",
       "region": "Centro-Oeste",
@@ -1448,6 +1459,18 @@
       "description": "O CBIE 2026 é a 15ª edição do Congresso Brasileiro de Informática na Educação, promovido pela Sociedade Brasileira de Computação, reunindo pesquisadores e profissionais da área em Goiânia.",
       "paid": true,
       "url": "https://cbie.sbc.org.br"
+    },
+    {
+      "id": "2026-10-oktobercloud-2026",
+      "title": "Oktobercloud 2026",
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-10-08",
+      "time": "08:00",
+      "description": "O maior evento de cloud do Sul do Brasil, reunindo profissionais de cloud, dados e inteligência artificial no Teatro Carlos Gomes em Blumenau/SC.",
+      "paid": true,
+      "url": "https://www.sympla.com.br/evento/oktobercloud-2026-congresso/3473334?share_id=copiarlink"
     },
     {
       "id": "2026-10-aws-community-day-brasil-nordeste-salvador",
