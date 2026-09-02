@@ -30,8 +30,8 @@ export const UF_NAME: Record<string, string> = {
   TO: "Tocantins",
 };
 
-// Keyed on the already-resolved EnrichedEvent.city (post PLACE_ALIASES in enrich.ts).
-const CITY_UF: Record<string, string> = {
+// Keyed on the normalized city stored in each event.
+export const CITY_UF: Record<string, string> = {
   "São José dos Campos": "SP",
   "São José do Rio Preto": "SP",
   "Rio de Janeiro": "RJ",
@@ -71,6 +71,7 @@ const CITY_UF: Record<string, string> = {
   Londrina: "PR",
   Niterói: "RJ",
   Blumenau: "SC",
+  Gramado: "RS",
   Aracaju: "SE",
   Palmas: "TO",
   Tupaciguara: "MG",
@@ -83,27 +84,14 @@ const CITY_UF: Record<string, string> = {
   Seridó: "RN",
 };
 
-const UF_TOKENS = Object.keys(UF_NAME);
-
-function norm(s: string): string {
-  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-}
-
-// Falls back to scanning the raw text for a bare UF sigla (e.g. "Meetup SP")
-// when the curated city whitelist in enrich.ts didn't already resolve a city.
-function ufFromText(e: EnrichedEvent): string | null {
-  const hay = " " + e.title + " " + (e.description || "") + " ";
-  for (const t of UF_TOKENS) {
-    if (new RegExp("[\\s,(/-]" + t + "[\\s,.)/-]").test(hay)) return t;
-  }
-  return null;
+export function stateFromCity(city: string | null): string | null {
+  return city ? CITY_UF[city] ?? null : null;
 }
 
 export function ufOf(e: EnrichedEvent): string | null {
-  if (e.city && CITY_UF[e.city]) return CITY_UF[e.city];
-  return ufFromText(e);
+  return e.state;
 }
 
 export function isOnline(e: EnrichedEvent): boolean {
-  return norm(e.modality) === "online";
+  return e.modality.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase() === "online";
 }

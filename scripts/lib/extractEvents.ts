@@ -11,6 +11,8 @@ const REGIONS = ["Sudeste", "Sul", "Nordeste", "Centro-Oeste", "Norte"] as const
 function buildExtractedEventSchema(year: number) {
   return z.object({
     title: z.string().min(1),
+    city: z.string().min(1).nullable(),
+    state: z.string().regex(/^[A-Z]{2}$/).nullable(),
     region: z.enum(REGIONS),
     type: z.string().min(1),
     modality: z.enum(["Presencial", "Online", "Híbrido", "Não informado"]),
@@ -66,6 +68,8 @@ Instructions:
 - If the page is a global index/listing page whose links point to separate per-city pages, and a Brazil edition's own date/details are not directly visible in this page's text, return an empty array rather than guessing at what that sub-page might say.
 - If the page contains no discoverable concrete Brazil event details (dates, locations) at all, return an empty array.
 - For "region", infer the Brazilian macro-region from the city/state mentioned (e.g. São Paulo/Rio de Janeiro/Belo Horizonte -> Sudeste, Porto Alegre/Curitiba/Florianópolis -> Sul, Recife/Salvador/Fortaleza -> Nordeste, Brasília/Goiânia -> Centro-Oeste, Manaus/Belém -> Norte). If you cannot reasonably infer the region, omit that event entirely.
+- "city" must be the Brazilian city where the event takes place, or null for online events or when no city can be determined from the event details. Never use a region, state, venue, or community name as the city.
+- "state" must be the two-letter Brazilian UF explicitly stated for the event location, or null when the source does not state it. Never infer it from the macro-region, city name, community name, or event title.
 - "type" should be a short free-text label matching the style "Conferência", "Meetup", "Summit", etc.
 - "modality" must be one of "Presencial", "Online", "Híbrido", or "Não informado". Determine it from the page text (words like "presencial", "online", "virtual", "híbrido", a physical venue/address block, or a video-call link for remote attendance). If the page does not make this clear, use "Não informado" rather than guessing.
 - "time" should be the event's actual stated start time, converted to 24h "HH:mm" in Brazil local time for that event's location. Only set it when the page (or a specific event link's own page content, if visible in the provided text) explicitly states a start time. Never guess or default it from the event type or typical conventions — use null when no explicit time is stated.

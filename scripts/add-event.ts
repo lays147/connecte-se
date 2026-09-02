@@ -5,6 +5,8 @@ import { buildEventId, isValidDate, monthNameFromDate, sortEventsByMonth, type E
 
 interface CliArgs {
   title: string;
+  city: string | null;
+  state: string | null;
   region: string;
   type: string;
   modality: string;
@@ -23,6 +25,8 @@ function parseCliArgs(argv: string[]): CliArgs {
   };
 
   const title = get("title");
+  const city = get("city");
+  const state = get("state");
   const region = get("region");
   const type = get("type");
   const modality = get("modality");
@@ -32,9 +36,9 @@ function parseCliArgs(argv: string[]): CliArgs {
   const paidRaw = get("paid");
   const url = get("url");
 
-  if (!title || !region || !type || !modality || !date || !description || !paidRaw || !url) {
+  if (!title || city === undefined || state === undefined || !region || !type || !modality || !date || !description || !paidRaw || !url) {
     throw new Error(
-      "Usage: add-event --title=<title> --region=<region> --type=<type> --modality=<modality> " +
+      "Usage: add-event --title=<title> --city=<city|null> --state=<UF|null> --region=<region> --type=<type> --modality=<modality> " +
         "--date=<YYYY-MM-DD> [--time=<HH:mm>] --description=<description> --paid=<true|false> --url=<url>",
     );
   }
@@ -57,7 +61,12 @@ function parseCliArgs(argv: string[]): CliArgs {
     throw new Error(`Invalid url "${url}"`);
   }
 
-  return { title, region, type, modality, date, time: time ?? null, description, paid: paidRaw === "true", url };
+  const normalizedState = state === "null" ? null : state;
+  if (normalizedState !== null && !/^[A-Z]{2}$/.test(normalizedState)) {
+    throw new Error(`Invalid state "${state}": expected a two-letter UF or "null"`);
+  }
+
+  return { title, city: city === "null" ? null : city, state: normalizedState, region, type, modality, date, time: time ?? null, description, paid: paidRaw === "true", url };
 }
 
 function main(): void {
@@ -80,6 +89,8 @@ function main(): void {
   const event: TechEvent = {
     id,
     title: args.title,
+    city: args.city,
+    state: args.state,
     region: args.region,
     type: args.type,
     modality: args.modality,

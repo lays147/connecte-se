@@ -69,7 +69,7 @@ const PLACES = [
   "Florianópolis", "Brasília", "Fortaleza", "Curitiba", "Salvador", "Campinas",
   "Joinville", "Sorocaba", "Goiânia", "Belém", "Recife", "Santos", "Natal", "Manaus",
   "Vitória", "Maceió", "Teresina", "Cuiabá", "Londrina", "Niterói", "Blumenau",
-  "Aracaju", "Palmas", "Tupaciguara", "Uberlândia", "Triângulo Mineiro",
+  "Aracaju", "Palmas", "Tupaciguara", "Uberlândia", "Gramado", "Triângulo Mineiro",
   "Vale do Paraíba", "Alto Tietê", "Baixada Santista", "Circuito das Águas Paulista",
   "Seridó", "Floripa",
 ];
@@ -78,6 +78,7 @@ const PLACE_ALIASES: Record<string, string> = {
   Floripa: "Florianópolis",
   SP: "São Paulo",
   BH: "Belo Horizonte",
+  Rio: "Rio de Janeiro",
 };
 
 const CONNECTORS = ["do", "da", "dos", "das", "de", "e"];
@@ -145,11 +146,31 @@ function communityOf(ev: TechEvent): string | null {
 }
 
 // Whitelist match against title, then meetup slug. Null when unknown — never the region.
+export function cityFromTitle(title: string): string | null {
+  const hay = norm(title);
+  let best: string | null = null;
+  for (const place of PLACES) {
+    if (hay.includes(norm(place)) && (!best || place.length > best.length)) best = place;
+  }
+  if (best) return PLACE_ALIASES[best] || best;
+
+  const bareHay = " " + title + " ";
+  for (const abbrev of Object.keys(PLACE_ALIASES)) {
+    if (new RegExp("[\\s,(/-]" + abbrev + "[\\s,.)/-]", "i").test(bareHay)) return PLACE_ALIASES[abbrev];
+  }
+  return null;
+}
+
 function cityOf(ev: TechEvent): string | null {
+  if (ev.city !== undefined) return ev.city;
+
   const slug = slugOf(ev);
   if (slug && SLUG_CITY[slug]) return SLUG_CITY[slug];
 
-  const hay = norm(ev.title + " " + (slug ?? "").replace(/-/g, " ") + " " + (ev.description || ""));
+  const titleCity = cityFromTitle(ev.title);
+  if (titleCity) return titleCity;
+
+  const hay = norm((slug ?? "").replace(/-/g, " ") + " " + (ev.description || ""));
   let best: string | null = null;
   for (const place of PLACES) {
     if (hay.includes(norm(place)) && (!best || place.length > best.length)) best = place;

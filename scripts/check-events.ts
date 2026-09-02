@@ -4,11 +4,12 @@ import { join } from "node:path";
 import type { EventsByMonth } from "../src/types.ts";
 import { checkUrl } from "./lib/checkUrl.ts";
 
-const CURRENT_YEAR = new Date().getFullYear();
 const DATA_DIR = fileURLToPath(new URL("../src/data", import.meta.url));
 
 interface EventUrlEntry {
   eventTitle: string;
+  city: string | null;
+  state: string | null;
   url: string;
 }
 
@@ -19,17 +20,21 @@ function loadEventUrls(filePath: string): EventUrlEntry[] {
   const entries: EventUrlEntry[] = [];
   for (const bucket of Object.values(events)) {
     for (const event of bucket ?? []) {
-      entries.push({ eventTitle: event.title, url: event.url });
+      if (!("city" in event) || (event.city !== null && typeof event.city !== "string") ||
+          !("state" in event) || (event.state !== null && !/^[A-Z]{2}$/.test(event.state))) {
+        throw new Error(`Event "${event.title}" is missing a valid city or state value`);
+      }
+      entries.push({ eventTitle: event.title, city: event.city, state: event.state, url: event.url });
     }
   }
   return entries;
 }
 
 async function main(): Promise<void> {
-  const files = globSync(`events-${CURRENT_YEAR}.json`, { cwd: DATA_DIR });
+  const files = globSync("events-*.json", { cwd: DATA_DIR });
 
   if (files.length === 0) {
-    console.log(`No events-${CURRENT_YEAR}.json file found in src/data - nothing to check.`);
+    console.log("No event JSON files found in src/data - nothing to check.");
     return;
   }
 

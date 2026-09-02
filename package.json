@@ -10,6 +10,7 @@
     "typecheck": "tsc -b --noEmit",
     "test:e2e": "playwright test",
     "scrape": "node --env-file-if-exists=.env scripts/scrape-events.ts",
+    "backfill:cities": "node scripts/backfill-event-cities.ts",
     "check:sources": "node scripts/check-sources.ts",
     "check:events": "node scripts/check-events.ts",
     "check:content": "node scripts/check-content.ts",

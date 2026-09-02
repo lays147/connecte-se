@@ -1,6 +1,8 @@
 export interface TechEvent {
   id: string;
   title: string;
+  city: string | null;
+  state: string | null;
   region: string;
   type: string;
   modality: string;

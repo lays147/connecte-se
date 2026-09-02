@@ -7,6 +7,14 @@ on:
         description: "Event title"
         required: true
         type: string
+      city:
+        description: "City (use null for online or unknown location)"
+        required: true
+        type: string
+      state:
+        description: "Brazilian state UF (use null when not explicitly known)"
+        required: true
+        type: string
       region:
         description: "Region"
         required: true
@@ -85,6 +93,8 @@ jobs:
       - name: Add event
         env:
           EVENT_TITLE: ${{ inputs.title }}
+          EVENT_CITY: ${{ inputs.city }}
+          EVENT_STATE: ${{ inputs.state }}
           EVENT_REGION: ${{ inputs.region }}
           EVENT_TYPE: ${{ inputs.event_type }}
           EVENT_MODALITY: ${{ inputs.modality }}
@@ -102,6 +112,8 @@ jobs:
 
           ARGS=(
             --title="$EVENT_TITLE"
+            --city="$EVENT_CITY"
+            --state="$EVENT_STATE"
             --region="$EVENT_REGION"
             --type="$EVENT_TYPE"
             --modality="$EVENT_MODALITY"
@@ -126,6 +138,8 @@ jobs:
             Adds a new event via the "Add Event" workflow, triggered by @${{ github.actor }}.
 
             - **Title:** ${{ inputs.title }}
+            - **City:** ${{ inputs.city }}
+            - **State:** ${{ inputs.state }}
             - **Date:** ${{ inputs.date }}
             - **Time:** ${{ inputs.time }}
             - **Region:** ${{ inputs.region }}
