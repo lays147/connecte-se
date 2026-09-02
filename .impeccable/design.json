@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-02T13:19:08Z",
+  "title": "Design System: Conecte-se Brasil",
+  "extensions": {
+    "colorMeta": {
+      "brand-700": { "role": "primary", "displayName": "Signal Purple", "canonical": "#501cca", "tonalRamp": ["#1e0b4c", "#32117d", "#4016a1", "#501cca", "#591fe0", "#6d3ae4", "#8e67ea", "#b69cf1"] },
+      "accent-blue-700": { "role": "secondary", "displayName": "Signal Blue", "canonical": "oklch(0.5 0.16 255)", "tonalRamp": ["oklch(0.3 0.14 255)", "oklch(0.4 0.15 255)", "oklch(0.5 0.16 255)", "oklch(0.6 0.14 255)", "oklch(0.7 0.1 255)", "oklch(0.8 0.06 255)", "oklch(0.9 0.03 255)", "oklch(0.96 0.02 255)"] },
+      "accent-teal-700": { "role": "secondary", "displayName": "Signal Teal", "canonical": "oklch(0.5 0.12 195)", "tonalRamp": ["oklch(0.3 0.1 195)", "oklch(0.4 0.11 195)", "oklch(0.5 0.12 195)", "oklch(0.6 0.1 195)", "oklch(0.7 0.07 195)", "oklch(0.8 0.05 195)", "oklch(0.9 0.03 195)", "oklch(0.96 0.02 195)"] },
+      "accent-coral-700": { "role": "secondary", "displayName": "Signal Coral", "canonical": "oklch(0.55 0.16 25)", "tonalRamp": ["oklch(0.32 0.14 25)", "oklch(0.42 0.15 25)", "oklch(0.55 0.16 25)", "oklch(0.65 0.13 25)", "oklch(0.75 0.09 25)", "oklch(0.85 0.05 25)", "oklch(0.92 0.03 25)", "oklch(0.96 0.02 25)"] },
+      "brand-950": { "role": "neutral", "displayName": "Ink Purple", "canonical": "#1e0b4c" },
+      "brand-100": { "role": "neutral", "displayName": "Hairline Purple", "canonical": "#ebe4fb" },
+      "page": { "role": "neutral", "displayName": "Page Wash", "canonical": "#f2f0f7" },
+      "price-paid-bg": { "role": "semantic", "displayName": "Paid Amber", "canonical": "oklch(0.95 0.04 75)" },
+      "price-free-bg": { "role": "semantic", "displayName": "Free Green", "canonical": "oklch(0.94 0.05 160)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page H1s, hero titles, section headlines. Space Grotesk." },
+      "body": { "displayName": "Body", "purpose": "Descriptions, nav links, footer copy. IBM Plex Sans." },
+      "label": { "displayName": "Label / Mono", "purpose": "Event-type tags, eyebrows, counts, dates. IBM Plex Mono, uppercase, wide tracking. Never used for prose." }
+    },
+    "shadows": [
+      { "name": "modal-elevation", "value": "shadow-xl (Tailwind default)", "purpose": "Event detail modal only — the sole surface that leaves page flow." },
+      { "name": "active-toggle-elevation", "value": "shadow-sm (Tailwind default)", "purpose": "Selected segment of the group-by toggle, to read as physically raised against its tinted track." }
+    ],
+    "motion": [
+      { "name": "color-transition", "value": "transition-colors", "purpose": "Default hover feedback on buttons and cards (background/border color shift, no scale or shadow)." },
+      { "name": "view-transition", "value": "0.22s ease-out (view-transition pseudo-elements)", "purpose": "Cross-page navigation transitions; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA — event sign-up, submit-to-GitHub actions.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Inscrever-se</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; border-radius: 8px; background: #501cca; color: #fff; padding: 8px 14px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 0.2s; } .ds-btn-primary:hover { background: #591fe0; } .ds-btn-primary:focus-visible { outline: 2px solid #8e67ea; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined alternative action, e.g. 'Cadastrar comunidade'.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Cadastrar comunidade</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; border-radius: 10px; background: #fff; border: 1px solid #d4c5f7; color: #501cca; padding: 12px 16px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color 0.2s; } .ds-btn-secondary:hover { border-color: #8e67ea; }"
+    },
+    {
+      "name": "Event Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Primary content unit: a colored top strip encodes event type, price pill, title, community avatar, description, date/place, CTA.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-strip\"></div><div class=\"ds-card-body\"><div class=\"ds-card-top\"><span class=\"ds-card-type\">CONFERÊNCIA</span><span class=\"ds-card-price\">Pago</span></div><h4 class=\"ds-card-title\">GopherCon Latam 2026</h4><p class=\"ds-card-desc\">A maior conferência de Go da América Latina.</p><div class=\"ds-card-footer\"><span class=\"ds-card-when\">qua, 2 set · 09:00</span><a class=\"ds-btn-primary\" href=\"#\">Inscrever-se</a></div></div></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; overflow: hidden; border-radius: 16px; border: 1px solid #d4c5f7; background: #fff; transition: border-color 0.2s; font-family: 'IBM Plex Sans', system-ui, sans-serif; } .ds-card:hover { border-color: #8e67ea; } .ds-card-strip { height: 3px; background: oklch(0.5 0.16 255); } .ds-card-body { display: flex; flex-direction: column; gap: 10px; padding: 16px; } .ds-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; } .ds-card-type { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(0.5 0.16 255); } .ds-card-price { border-radius: 9999px; padding: 4px 8px; font-size: 12px; font-weight: 500; background: oklch(0.95 0.04 75); color: oklch(0.45 0.1 60); } .ds-card-title { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 17px; font-weight: 600; line-height: 1.3; color: #1e0b4c; } .ds-card-desc { font-size: 12px; line-height: 1.6; color: #501cca; } .ds-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #ebe4fb; padding-top: 12px; } .ds-card-when { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: #32117d; }"
+    },
+    {
+      "name": "Type Filter Select",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Filter-bar select control for region/type/paid filters.",
+      "html": "<label class=\"ds-field\">Região<select class=\"ds-select\"><option>Todos</option></select></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; font-size: 11px; font-weight: 500; color: #6d3ae4; font-family: 'IBM Plex Sans', system-ui, sans-serif; } .ds-select { appearance: none; border-radius: 8px; border: 1px solid #d4c5f7; background: #fff; padding: 10px 12px; font-size: 14px; font-weight: 500; color: #1e0b4c; cursor: pointer; }"
+    },
+    {
+      "name": "Group Toggle",
+      "kind": "custom",
+      "description": "Segmented control for grouping mode; active segment gets shadow-sm to read as raised.",
+      "html": "<div class=\"ds-toggle\"><button class=\"ds-toggle-btn ds-toggle-btn--active\">Data</button><button class=\"ds-toggle-btn\">Por comunidade</button></div>",
+      "css": ".ds-toggle { display: inline-flex; gap: 2px; border-radius: 10px; border: 1px solid #ebe4fb; background: rgba(212,197,247,0.6); padding: 2px; } .ds-toggle-btn { border: none; background: transparent; border-radius: 8px; padding: 8px 14px; font-size: 12px; font-weight: 600; color: #6d3ae4; cursor: pointer; font-family: 'IBM Plex Sans', system-ui, sans-serif; } .ds-toggle-btn--active { background: #fff; color: #1e0b4c; box-shadow: 0 1px 2px rgba(30,11,76,0.08); }"
+    },
+    {
+      "name": "Price Pill",
+      "kind": "chip",
+      "refersTo": "chip-price",
+      "description": "Paid/free status badge shown on cards and modal.",
+      "html": "<span class=\"ds-pill-free\">Gratuito</span>",
+      "css": ".ds-pill-free { border-radius: 9999px; padding: 4px 8px; font-size: 12px; font-weight: 500; background: oklch(0.94 0.05 160); color: oklch(0.44 0.1 160); font-family: 'IBM Plex Sans', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "description": "Header nav links with active pill state and hover tint.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Eventos</a><a class=\"ds-nav-link\" href=\"#\">Mapa</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 6px; font-family: 'IBM Plex Sans', system-ui, sans-serif; } .ds-nav-link { border-radius: 8px; padding: 10px 12px; font-size: 14px; font-weight: 500; color: #6d3ae4; text-decoration: none; } .ds-nav-link:hover { background: #f5f2fd; } .ds-nav-link--active { background: #f5f2fd; font-weight: 600; color: #1e0b4c; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signal Board",
+    "overview": "Conecte-se Brasil reads like a confident, information-dense departures board for Brazilian tech culture, not a marketing site. Deep, saturated purple is the signal color — the one thing the eye is always drawn to first, on the hero band, the CTA buttons, the primary nav state. Uppercase monospace labels behave like ticker language: event types, taxonomy tags, \"MESES,\" \"CANAIS,\" section counters — small, spaced-out, always doing classification work rather than decoration. Flat colored strips along the top edge of every card are the at-a-glance category-coding device, the same move a schedule board makes with colored route lines.\n\nThe system deliberately avoids the generic \"friendly SaaS\" look: no soft pastel gradients, no rounded blob illustrations, no oversized decorative whitespace. Density is a feature — the job is helping someone scan dozens of real events fast, so padding stays tight and the type scale stays compact, but the bold display face and the strong purple keep it from reading as merely utilitarian. It has a voice; that voice is just economical with its space.",
+    "keyCharacteristics": [
+      "Deep, confident electric purple (brand-700/brand-950) as the one true signal color; every other hue is functional taxonomy, never decorative.",
+      "Uppercase, letter-spaced monospace labels for anything classificatory (type tags, section counters, badges).",
+      "Flat colored top-strips on cards as the category-coding device, echoed by the type-family accent colors (blue/teal/coral).",
+      "Dense, compact component padding — built for scanning volume, not for luxurious breathing room.",
+      "Flat at rest almost everywhere; elevation is reserved for the event modal and the active state of the group toggle."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Purple is the only color allowed to mean \"act on this\" (primary buttons, active nav, active toggle). The accent family (blue/teal/coral) may only classify, never call to action.", "section": "colors" },
+      { "name": "The Mono-Means-Metadata Rule", "body": "IBM Plex Mono is reserved exclusively for classificatory or timestamp text (type tags, counts, dates/times, section eyebrows). It never appears in a sentence of prose.", "section": "typography" }
+    ],
+    "dos": [
+      "Do keep purple (brand-700/brand-950) as the only color that means \"primary action\" or \"active state\" — everything else classifies, never commands.",
+      "Do render any classificatory, timestamp, or eyebrow text in uppercase IBM Plex Mono with wide tracking (tracking-widest).",
+      "Do keep cards and containers flat at rest, using border-brand-200/border-brand-100 hairlines and a hover:border-brand-400 state instead of introducing shadows.",
+      "Do keep padding and type scale compact; density is the point, not a compromise."
+    ],
+    "donts": [
+      "Don't introduce soft pastel gradients, rounded blob illustrations, or other generic \"friendly SaaS\" landing-page motifs — the confirmed anti-reference for this system.",
+      "Don't add drop shadows to cards, nav, or buttons at rest; shadow is reserved for the modal and the active group-toggle segment only.",
+      "Don't use the accent family (blue/teal/coral) for anything other than event-type classification — they must never appear as a CTA or an active-state color.",
+      "Don't center content in a fixed-max-width container; use the shared --spacing-gutter full-bleed pattern instead."
+    ]
+  }
+}
