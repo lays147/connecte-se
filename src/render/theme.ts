@@ -46,7 +46,14 @@ export interface ModalityBadge {
 }
 
 export function modalityBadge(modality: string): ModalityBadge {
-  return modality === "Online"
-    ? { label: "Online", bg: "bg-modality-online-bg" }
-    : { label: "Presencial", bg: "bg-modality-presencial-bg" };
+  switch (modality) {
+    case "Online":
+      return { label: "Online", bg: "bg-modality-online-bg" };
+    case "Híbrido":
+      return { label: "Híbrido", bg: "bg-modality-presencial-bg" };
+    case "Presencial":
+      return { label: "Presencial", bg: "bg-modality-presencial-bg" };
+    default:
+      return { label: modality || "Não informado", bg: "bg-modality-presencial-bg" };
+  }
 }

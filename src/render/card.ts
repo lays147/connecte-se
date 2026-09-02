@@ -10,6 +10,17 @@ function parseIso(s: string): Date {
   return new Date(y, m - 1, d);
 }
 
+// Uses a Unicode-aware iterator (not raw string indexing) so multi-byte
+// characters like emoji never get split mid-codepoint, and skips leading
+// punctuation (e.g. ".NET São Paulo") so the avatar always shows a letter.
+export function initialsOf(name: string): string {
+  const letters = name
+    .split(/\s+/)
+    .map((w) => [...w].find((ch) => /\p{L}|\p{N}/u.test(ch)))
+    .filter((ch): ch is string => Boolean(ch));
+  return letters.slice(0, 2).join("").toUpperCase();
+}
+
 export interface CardViewModel {
   title: string;
   url: string;
@@ -43,12 +54,7 @@ export function toCardViewModel(e: EnrichedEvent, today: Date): CardViewModel {
     type: e.type,
     description: e.description,
     community,
-    initials: community
-      .split(/\s+/)
-      .map((w) => w[0])
-      .join("")
-      .slice(0, 2)
-      .toUpperCase(),
+    initials: initialsOf(community),
     place: e.city ? e.city + ", " + e.region : e.region,
     when,
     price: priceStyle(e.paid),
@@ -100,7 +106,7 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
   communityRow.appendChild(avatar);
 
   const communityName = document.createElement("span");
-  communityName.className = "min-w-0 truncate text-xs font-medium text-brand-800";
+  communityName.className = "min-w-0 flex-1 truncate text-xs font-medium text-brand-800";
   communityName.textContent = vm.community;
   communityRow.appendChild(communityName);
 

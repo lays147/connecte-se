@@ -1,5 +1,5 @@
 import type { EnrichedEvent } from "../types";
-import { renderCard } from "./card";
+import { initialsOf, renderCard } from "./card";
 
 const PALETTE = [
   { text: "text-brand-700", bg: "bg-brand-100" },
@@ -36,12 +36,7 @@ export function buildShelves(tally: Map<string, number>, upcoming: EnrichedEvent
     return {
       name,
       count: tally.get(name) ?? 0,
-      initials: name
-        .split(/\s+/)
-        .map((w) => w[0])
-        .join("")
-        .slice(0, 2)
-        .toUpperCase(),
+      initials: initialsOf(name),
       text: palette.text,
       bg: palette.bg,
       followUrl: events[0]?.url ?? null,
@@ -68,7 +63,7 @@ export function renderCommunityShelves(shelves: CommunityShelf[], today: Date): 
     avatar.textContent = shelf.initials;
 
     const name = document.createElement("h2");
-    name.className = "font-display text-base font-semibold text-brand-950";
+    name.className = "min-w-0 flex-1 truncate font-display text-base font-semibold text-brand-950";
     name.textContent = shelf.name;
 
     const count = document.createElement("span");
