@@ -19,6 +19,8 @@ const TYPE_STYLE: Record<string, TypeStyle> = {
   Workshop: TEAL,
   "Community Day": CORAL,
   Festival: CORAL,
+  "Festival de tecnologia": CORAL,
+  "Corrida corporativa": TEAL,
   Evento: NEUTRAL,
 };
 

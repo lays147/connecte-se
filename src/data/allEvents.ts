@@ -6,6 +6,9 @@ export function loadAllEnrichedEvents(): EnrichedEvent[] {
   return availableYears().flatMap((year) => {
     const yearData = loadYear(year);
     if (!yearData) return [];
-    return Object.values(yearData).flat().map(enrichEvent);
+    return Object.values(yearData)
+      .flat()
+      .filter((e) => e.title !== "placeholder" && e.type !== "placeholder")
+      .map(enrichEvent);
   });
 }

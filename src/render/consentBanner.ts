@@ -7,6 +7,14 @@ export function mountConsentBanner(): void {
   banner.className =
     "fixed inset-x-0 bottom-0 z-50 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 bg-brand-950 px-(--spacing-gutter) py-4 shadow-[0_-4px_16px_rgba(0,0,0,0.15)]";
 
+  function reserveSpace(): void {
+    document.body.style.paddingBottom = `${banner.getBoundingClientRect().height}px`;
+  }
+
+  function releaseSpace(): void {
+    document.body.style.paddingBottom = "";
+  }
+
   const text = document.createElement("p");
   text.className = "max-w-2xl flex-1 basis-60 text-xs leading-relaxed text-brand-200";
   text.textContent =
@@ -26,17 +34,26 @@ export function mountConsentBanner(): void {
     "cursor-pointer rounded-lg border-0 bg-[oklch(0.85_0.15_155)] px-3.5 py-2 text-xs font-semibold text-brand-950";
   acceptBtn.textContent = "Aceitar";
 
+  function dismiss(): void {
+    releaseSpace();
+    window.removeEventListener("resize", reserveSpace);
+    banner.remove();
+  }
+
   declineBtn.addEventListener("click", () => {
     declineConsent();
-    banner.remove();
+    dismiss();
   });
 
   acceptBtn.addEventListener("click", () => {
     grantConsent();
-    banner.remove();
+    dismiss();
   });
 
   actions.append(declineBtn, acceptBtn);
   banner.append(text, actions);
   document.body.appendChild(banner);
+
+  reserveSpace();
+  window.addEventListener("resize", reserveSpace);
 }

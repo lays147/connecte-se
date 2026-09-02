@@ -16,9 +16,10 @@ import { observeActiveMonth } from "./state/activeMonth";
 import { createInitialState } from "./state/appState";
 import { startCarousel } from "./state/carousel";
 import { applyStoredConsent } from "./state/consent";
-import { matchesFilters } from "./state/filters";
+import { defaultFilterState, filterOptions, matchesFilters } from "./state/filters";
 import { buildMonthBuckets, buildYearNav } from "./state/monthBuckets";
 import { keepScroll } from "./state/scroll";
+import { readParams, writeParams } from "./state/urlState";
 
 applyStoredConsent();
 mountConsentBanner();
@@ -26,6 +27,28 @@ mountEventModal();
 
 const allEvents = loadAllEnrichedEvents();
 const state = createInitialState();
+
+const params = readParams();
+const defaults = defaultFilterState();
+const options = filterOptions(allEvents);
+const regionParam = params.get("regiao");
+const typeParam = params.get("tipo");
+const paidParam = params.get("pago");
+state.filters = {
+  region: regionParam && options.region.includes(regionParam) ? regionParam : defaults.region,
+  type: typeParam && options.type.includes(typeParam) ? typeParam : defaults.type,
+  paid: paidParam && options.paid.includes(paidParam) ? paidParam : defaults.paid,
+};
+if (params.get("agrupar") === "comunidade") state.groupBy = "comunidade";
+
+function syncUrl(): void {
+  writeParams({
+    regiao: state.filters.region === defaults.region ? null : state.filters.region,
+    tipo: state.filters.type === defaults.type ? null : state.filters.type,
+    pago: state.filters.paid === defaults.paid ? null : state.filters.paid,
+    agrupar: state.groupBy === "data" ? null : state.groupBy,
+  });
+}
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -73,6 +96,7 @@ function render(): void {
   main.appendChild(
     renderFilterBar(allEvents, upcoming.length, state.filters, (next) => {
       state.filters = next;
+      syncUrl();
       render();
     }),
   );
@@ -81,6 +105,7 @@ function render(): void {
   main.appendChild(
     renderGroupToggle(state.groupBy, (next: GroupBy) => {
       state.groupBy = next;
+      syncUrl();
       render();
     }),
   );
@@ -157,6 +182,7 @@ const header = renderHeader({
   active: "eventos",
   onNavCommunities: () => {
     state.groupBy = "comunidade";
+    syncUrl();
     render();
   },
 });

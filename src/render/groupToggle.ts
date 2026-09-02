@@ -16,7 +16,7 @@ export function renderGroupToggle(groupBy: GroupBy, onChange: (value: GroupBy) =
     btn.type = "button";
     const active = groupBy === value;
     btn.className = [
-      "rounded-lg px-3.5 py-2 text-xs font-semibold cursor-pointer",
+      "rounded-lg px-3.5 py-2 text-xs font-semibold cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400",
       active ? "bg-white text-brand-950 shadow-sm" : "bg-transparent text-brand-500",
     ].join(" ");
     btn.textContent = text;

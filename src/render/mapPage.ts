@@ -3,6 +3,7 @@ import * as topojson from "topojson-client";
 import type { EnrichedEvent } from "../types";
 import { isOnline, UF_NAME, ufOf } from "../data/cityUf";
 import topology from "../data/br-uf-topo.json";
+import { readParams, writeParams } from "../state/urlState";
 
 const MONTHS_SHORT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 const WD = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
@@ -45,7 +46,16 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     return { ...e, uf, online: isOnline(e) };
   });
 
-  const state: MapState = { selected: null, scope: "all" };
+  const params = readParams();
+  const uf = params.get("uf");
+  const state: MapState = {
+    selected: uf && (uf === "online" || uf === "unknown" || uf in UF_NAME) ? uf : null,
+    scope: params.get("periodo") === "next" ? "next" : "all",
+  };
+
+  function syncUrl(): void {
+    writeParams({ uf: state.selected, periodo: state.scope === "all" ? null : state.scope });
+  }
 
   const root = document.createElement("div");
   root.className = "flex flex-col";
@@ -68,7 +78,8 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   function segButton(text: string, value: Scope): HTMLButtonElement {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "cursor-pointer rounded-lg border-0 px-3.5 py-2 text-xs font-semibold";
+    btn.className =
+      "cursor-pointer rounded-lg border-0 px-3.5 py-2 text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
     btn.textContent = text;
     btn.addEventListener("click", () => {
       state.scope = value;
@@ -282,6 +293,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     .style("display", "inline-block");
 
   function update(): void {
+    syncUrl();
     const scoped = events.filter((e) => inScope(e, state.scope));
     counts = {};
     for (const e of scoped) if (e.uf) counts[e.uf] = (counts[e.uf] || 0) + 1;
@@ -353,7 +365,11 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     for (const r of ranked) {
       const on = state.selected === r.uf;
       const row = document.createElement("div");
-      row.className = `flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-2.5 ${on ? "bg-brand-50" : "bg-transparent"}`;
+      row.className = `flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 ${on ? "bg-brand-50" : "bg-transparent"}`;
+      row.setAttribute("role", "button");
+      row.tabIndex = 0;
+      row.setAttribute("aria-pressed", String(on));
+      row.setAttribute("aria-label", `${UF_NAME[r.uf]}, ${r.n} ${r.n === 1 ? "evento" : "eventos"}`);
 
       const sig = document.createElement("span");
       sig.className = `w-7.5 shrink-0 rounded-md py-1 text-center font-mono-label text-label-sm font-semibold ${on ? "bg-brand-200 text-brand-950" : "bg-brand-50 text-brand-500"}`;
@@ -376,9 +392,16 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       count.textContent = String(r.n);
 
       row.append(sig, name, barTrack, count);
-      row.addEventListener("click", () => {
+      const selectUf = () => {
         state.selected = state.selected === r.uf ? null : r.uf;
         update();
+      };
+      row.addEventListener("click", selectUf);
+      row.addEventListener("keydown", (ev) => {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          selectUf();
+        }
       });
       rankList.appendChild(row);
     }
@@ -392,7 +415,11 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       if (n <= 0) continue;
       const on = state.selected === key;
       const row = document.createElement("div");
-      row.className = `flex cursor-pointer items-center justify-between gap-2.5 rounded-card-10 border px-2.5 py-2.5 ${on ? "border-brand-300 bg-brand-50" : "border-brand-100 bg-white"}`;
+      row.className = `flex cursor-pointer items-center justify-between gap-2.5 rounded-card-10 border px-2.5 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 ${on ? "border-brand-300 bg-brand-50" : "border-brand-100 bg-white"}`;
+      row.setAttribute("role", "button");
+      row.tabIndex = 0;
+      row.setAttribute("aria-pressed", String(on));
+      row.setAttribute("aria-label", `${label}, ${n}`);
 
       const left = document.createElement("span");
       left.className = "flex flex-col gap-0.5";
@@ -409,9 +436,16 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       countEl.textContent = String(n);
 
       row.append(left, countEl);
-      row.addEventListener("click", () => {
+      const selectKey = () => {
         state.selected = state.selected === key ? null : key;
         update();
+      };
+      row.addEventListener("click", selectKey);
+      row.addEventListener("keydown", (ev) => {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          selectKey();
+        }
       });
       extra.appendChild(row);
     }

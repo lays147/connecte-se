@@ -29,7 +29,7 @@ function segButton(text: string, active: boolean, onClick: () => void): HTMLButt
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = [
-    "cursor-pointer whitespace-nowrap rounded-lg px-2.5 py-1.5 text-xs font-semibold",
+    "cursor-pointer whitespace-nowrap rounded-lg px-2.5 py-1.5 text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400",
     active ? "bg-white text-brand-950 shadow-sm" : "bg-transparent text-brand-500",
   ].join(" ");
   btn.textContent = text;
@@ -41,7 +41,7 @@ function chipButton(text: string, active: boolean, onClick: () => void): HTMLBut
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = [
-    "cursor-pointer whitespace-nowrap rounded-card-9 px-2.5 py-1.5 text-xs font-medium",
+    "cursor-pointer whitespace-nowrap rounded-card-9 px-2.5 py-1.5 text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400",
     active ? "border border-brand-400 bg-brand-50 text-brand-700" : "border border-brand-100 bg-white text-brand-500",
   ].join(" ");
   btn.textContent = text;
@@ -172,7 +172,8 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
     "sticky top-0 z-5 flex flex-wrap items-center gap-3.5 border-b border-brand-100 bg-brand-50/40 px-(--spacing-gutter) py-3";
 
   const searchBox = document.createElement("div");
-  searchBox.className = "flex h-9 max-w-85 flex-1 basis-64 items-center gap-2 rounded-card-10 border border-brand-100 bg-white px-3";
+  searchBox.className =
+    "flex h-9 max-w-85 flex-1 basis-64 items-center gap-2 rounded-card-10 border border-brand-100 bg-white px-3 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-400";
   searchBox.innerHTML = `<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--color-icon-muted)" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.6"></circle><path d="M10.5 10.5 14 14"></path></svg>`;
 
   const searchInput = document.createElement("input");
@@ -180,7 +181,12 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
   searchInput.placeholder = "Buscar por nome, tema ou assunto";
   searchInput.value = state.query;
   searchInput.className = "w-full border-0 bg-transparent p-0 text-body-sm text-brand-950 outline-none";
-  searchInput.addEventListener("input", () => onChange({ ...state, query: searchInput.value }));
+  let searchDebounce: ReturnType<typeof setTimeout> | undefined;
+  searchInput.addEventListener("input", () => {
+    clearTimeout(searchDebounce);
+    const query = searchInput.value;
+    searchDebounce = setTimeout(() => onChange({ ...state, query }), 200);
+  });
   searchBox.appendChild(searchInput);
 
   const formatTabs = document.createElement("div");

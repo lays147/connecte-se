@@ -51,8 +51,8 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   closeBtn.type = "button";
   closeBtn.setAttribute("aria-label", "Fechar");
   closeBtn.className =
-    "absolute right-4 top-4 flex size-8 cursor-pointer items-center justify-center rounded-full text-brand-500 hover:bg-brand-100 hover:text-brand-900";
-  closeBtn.textContent = "×";
+    "absolute right-4 top-4 flex size-8 cursor-pointer items-center justify-center rounded-full text-brand-500 hover:bg-brand-100 hover:text-brand-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
+  closeBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1.5 1.5l11 11M12.5 1.5l-11 11"></path></svg>`;
   closeBtn.addEventListener("click", close);
   dialog.appendChild(closeBtn);
 
