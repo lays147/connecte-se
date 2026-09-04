@@ -142,7 +142,7 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
   heroText.append(eyebrow, h1, heroDesc);
 
   const tallies = document.createElement("div");
-  tallies.className = "flex items-center gap-5";
+  tallies.className = "flex flex-wrap items-center gap-x-5 gap-y-3";
 
   const tallyItems: [string, number][] = [
     ["no total", CURATED_CONTENT.length],
@@ -190,7 +190,8 @@ export function renderContentPage(state: ContentPageState, onChange: (next: Cont
   searchBox.appendChild(searchInput);
 
   const formatTabs = document.createElement("div");
-  formatTabs.className = "flex shrink-0 gap-0.5 rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
+  formatTabs.className =
+    "flex max-w-full shrink-0 gap-0.5 overflow-x-auto rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
   formatTabs.appendChild(segButton("Tudo", state.format === "todos", () => onChange({ ...state, format: "todos" })));
   for (const fmt of FORMAT_ORDER) {
     formatTabs.appendChild(segButton(fmt, state.format === fmt, () => onChange({ ...state, format: fmt })));

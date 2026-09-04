@@ -168,7 +168,7 @@ export function renderCommunitiesPage(
   heroText.append(eyebrow, h1, heroDesc);
 
   const tallies = document.createElement("div");
-  tallies.className = "flex items-center gap-5";
+  tallies.className = "flex flex-wrap items-center gap-x-5 gap-y-3";
 
   const tallyItems: [string, number][] = [
     ["no total", ALL_SOURCES.length],
@@ -214,7 +214,8 @@ export function renderCommunitiesPage(
   searchBox.appendChild(searchInput);
 
   const typeTabs = document.createElement("div");
-  typeTabs.className = "flex shrink-0 gap-0.5 rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
+  typeTabs.className =
+    "flex max-w-full shrink-0 gap-0.5 overflow-x-auto rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
   typeTabs.appendChild(segButton("Tudo", state.type === "todos", () => onChange({ ...state, type: "todos" })));
   typeTabs.appendChild(segButton("Comunidades", state.type === "community", () => onChange({ ...state, type: "community" })));
   typeTabs.appendChild(segButton("Eventos recorrentes", state.type === "event", () => onChange({ ...state, type: "event" })));

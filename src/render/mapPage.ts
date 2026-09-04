@@ -97,7 +97,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   body.className = "flex flex-wrap items-stretch";
 
   const mapCol = document.createElement("div");
-  mapCol.className = "min-w-95 flex-1 basis-155 px-2 pb-5 pt-4 sm:px-4";
+  mapCol.className = "min-w-0 flex-1 basis-155 px-2 pb-5 pt-4 sm:min-w-95 sm:px-4";
 
   const mapHost = document.createElement("div");
   mapHost.className = "relative";
