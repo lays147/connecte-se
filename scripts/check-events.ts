@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 import type { EventsByMonth } from "../src/types.ts";
 import { checkUrl } from "./lib/checkUrl.ts";
+import { diffByUrl, readFileAtRef } from "./lib/gitDiff.ts";
 
 const DATA_DIR = fileURLToPath(new URL("../src/data", import.meta.url));
 
@@ -13,8 +14,7 @@ interface EventUrlEntry {
   url: string;
 }
 
-function loadEventUrls(filePath: string): EventUrlEntry[] {
-  const raw = readFileSync(filePath, "utf-8");
+function parseEventUrls(raw: string): EventUrlEntry[] {
   const events = JSON.parse(raw) as EventsByMonth;
 
   const entries: EventUrlEntry[] = [];
@@ -30,7 +30,12 @@ function loadEventUrls(filePath: string): EventUrlEntry[] {
   return entries;
 }
 
+function loadEventUrls(filePath: string): EventUrlEntry[] {
+  return parseEventUrls(readFileSync(filePath, "utf-8"));
+}
+
 async function main(): Promise<void> {
+  const baseRef = process.env.CHECK_BASE_REF;
   const files = globSync("events-*.json", { cwd: DATA_DIR });
 
   if (files.length === 0) {
@@ -42,7 +47,18 @@ async function main(): Promise<void> {
 
   for (const file of files) {
     const filePath = join(DATA_DIR, file);
-    const entries = loadEventUrls(filePath);
+    let entries = loadEventUrls(filePath);
+
+    if (baseRef) {
+      const baseRaw = readFileAtRef(baseRef, `src/data/${file}`);
+      const baseEntries = baseRaw ? parseEventUrls(baseRaw) : [];
+      entries = diffByUrl(baseEntries, entries);
+
+      if (entries.length === 0) {
+        console.log(`\nNo new or changed event URLs in ${file} - skipping.`);
+        continue;
+      }
+    }
 
     const seen = new Map<string, EventUrlEntry[]>();
     for (const entry of entries) {

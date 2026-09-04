@@ -45,6 +45,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -56,6 +58,8 @@ jobs:
         run: npm ci
 
       - name: Check source URLs
+        env:
+          CHECK_BASE_REF: origin/${{ github.event.pull_request.base.ref }}
         run: npm run check:sources
 
   check-events:
@@ -65,6 +69,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -76,6 +82,8 @@ jobs:
         run: npm ci
 
       - name: Check event URLs
+        env:
+          CHECK_BASE_REF: origin/${{ github.event.pull_request.base.ref }}
         run: npm run check:events
 
   check-content:
@@ -85,6 +93,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -96,4 +106,6 @@ jobs:
         run: npm ci
 
       - name: Check content URLs
+        env:
+          CHECK_BASE_REF: origin/${{ github.event.pull_request.base.ref }}
         run: npm run check:content

@@ -1,5 +1,9 @@
-import { loadSources } from "../src/data/sources.ts";
+import { parseSources, type EventSource } from "../src/data/sources.ts";
 import { checkUrl } from "./lib/checkUrl.ts";
+import { diffByUrl, readFileAtRef } from "./lib/gitDiff.ts";
+import { parse } from "yaml";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 
 interface CheckResult {
   name: string;
@@ -9,8 +13,27 @@ interface CheckResult {
   error?: string;
 }
 
+const SOURCES_RELATIVE_PATH = "sources/communities.yaml";
+const SOURCES_PATH = fileURLToPath(new URL("../sources/communities.yaml", import.meta.url));
+
+function loadSourcesToCheck(baseRef: string | undefined): EventSource[] {
+  const current = parseSources(parse(readFileSync(SOURCES_PATH, "utf-8")));
+  if (!baseRef) return current;
+
+  const baseRaw = readFileAtRef(baseRef, SOURCES_RELATIVE_PATH);
+  const base = baseRaw ? parseSources(parse(baseRaw)) : [];
+  return diffByUrl(base, current);
+}
+
 async function main(): Promise<void> {
-  const sources = loadSources();
+  const baseRef = process.env.CHECK_BASE_REF;
+  const sources = loadSourcesToCheck(baseRef);
+
+  if (baseRef && sources.length === 0) {
+    console.log("No new or changed sources compared to base ref - nothing to check.");
+    return;
+  }
+
   const results: CheckResult[] = [];
 
   for (const source of sources) {
