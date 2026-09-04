@@ -31,6 +31,20 @@
   ],
   "Agosto": [
     {
+      "id": "2027-08-devopsdays-curitiba",
+      "title": "DevOpsDays Curitiba",
+      "city": "Curitiba",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2027-08-21",
+      "time": "09:00",
+      "description": "Quarta edição do DevOpsDays Curitiba, no Auditório Eny Caldeira - UFPR Rebouças.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2027-curitiba"
+    },
+    {
       "id": "2027-08-rio-innovation-week-2027",
       "title": "Rio Innovation Week 2027",
       "region": "Sudeste",

@@ -43,6 +43,10 @@ sources:
     url: https://www.meetup.com/awscampinas
     type: community
     frequency: occasionally
+  - name: AWS User Group Castanhal
+    url: https://www.meetup.com/aws-user-group-castanhal
+    type: community
+    frequency: occasionally
   - name: AWS User Group Circuito das Águas Paulista
     url: https://www.meetup.com/aws-user-group-circuito-das-aguas-paulista
     type: community
@@ -65,6 +69,10 @@ sources:
     frequency: occasionally
   - name: AWS User Group Montes Claros
     url: https://www.meetup.com/aws-user-group-montes-claros
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Parauapebas
+    url: https://www.meetup.com/aws-user-group-parauapebas
     type: community
     frequency: occasionally
   - name: AWS User Group Rio
@@ -93,6 +101,10 @@ sources:
     frequency: occasionally
   - name: AWS User Group Triângulo Mineiro
     url: https://www.meetup.com/aws-user-group-triangulo-mineiro
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Tucuruí
+    url: https://www.meetup.com/pt-br/aws-user-group-tucurui
     type: community
     frequency: occasionally
   - name: AWS User Group Vale do Paraíba
@@ -171,6 +183,10 @@ sources:
     url: https://devopsdays.org
     type: event
     frequency: yearly
+  - name: DevsNorte
+    url: https://comunidade.devsnorte.com
+    type: community
+    frequency: occasionally
   - name: Django Girls Brasil
     url: https://djangogirls.org
     type: community
@@ -355,6 +371,10 @@ sources:
     url: https://rustlang.com.br
     type: community
     frequency: occasionally
+  - name: SECOMP UFPA
+    url: https://secomp.ufpa.br
+    type: event
+    frequency: yearly
   - name: ServerlessDays
     url: https://www.serverlessdays.io
     type: event

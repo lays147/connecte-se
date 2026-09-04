@@ -702,6 +702,20 @@
       "state": null
     },
     {
+      "id": "2026-06-gamedev-talk-jabuti-estudio",
+      "title": "GameDev Talk Jabuti Estúdio",
+      "city": null,
+      "state": null,
+      "region": "Norte",
+      "type": "Meetup Online",
+      "modality": "Online",
+      "date": "2026-06-20",
+      "time": "10:00",
+      "description": "Conversa com a dupla por trás do Jabuti Estúdio sobre desenvolvimento de jogos.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/gamedev-talk-jabuti-estudio-312"
+    },
+    {
       "id": "2026-06-workshop-criando-um-jogo-com-kiro-do-conceito-ao-codigo",
       "title": "Workshop: Criando um jogo com Kiro, do conceito ao código!",
       "region": "Sudeste",
@@ -744,6 +758,34 @@
       "state": "SP"
     },
     {
+      "id": "2026-07-antes-do-framework-o-que-todo-desenvolvedor-php-precisa-aprender",
+      "title": "Antes do Framework: O que todo desenvolvedor PHP precisa aprender",
+      "city": null,
+      "state": null,
+      "region": "Norte",
+      "type": "Meetup Online",
+      "modality": "Online",
+      "date": "2026-07-04",
+      "time": "19:00",
+      "description": "Live com Murilo Gomes sobre a importância de dominar os fundamentos da linguagem antes de depender de frameworks, promovida pela comunidade PHP Manaus.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/antes-do-framework-o-que-todo-desenvolvedor-php-precisa-374"
+    },
+    {
+      "id": "2026-07-conectando-comunidades-php",
+      "title": "Conectando Comunidades PHP",
+      "city": null,
+      "state": null,
+      "region": "Norte",
+      "type": "Meetup Online",
+      "modality": "Online",
+      "date": "2026-07-06",
+      "time": "20:00",
+      "description": "Bate-papo entre as comunidades PHP Manaus e PHP Belém sobre desafios, conquistas e como a colaboração entre comunidades fortalece o ecossistema PHP na região Norte.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/conectando-comunidades-php-compartilhando-experiencias-375"
+    },
+    {
       "id": "2026-07-google-extended-i-o-rio-de-janeiro",
       "title": "Google Extended I/O Rio de Janeiro",
       "region": "Sudeste",
@@ -757,6 +799,34 @@
       "state": "RJ"
     },
     {
+      "id": "2026-07-workshop-ia-e-transformacao-digital",
+      "title": "Workshop IA e Transformação Digital",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Workshop",
+      "modality": "Presencial",
+      "date": "2026-07-07",
+      "time": "14:30",
+      "description": "Workshop sobre oportunidades para inovar, crescer e competir com IA e transformação digital, no PCT Guamá.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/startup/workshop-ia-e-transformacao-digital-oportunidades-para-378"
+    },
+    {
+      "id": "2026-07-ai-agents-in-enterprise-software-development",
+      "title": "AI Agents in Enterprise Software Development",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Evento",
+      "modality": "Online",
+      "date": "2026-07-10",
+      "time": "14:50",
+      "description": "Seminário do PPGCOMP sobre agentes de IA no desenvolvimento de software corporativo, com Ezequiel Sosa (Mercado Libre, CONICET).",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/ai-agents-in-enterprise-software-development-395"
+    },
+    {
       "id": "2026-07-build-with-ai-iii",
       "title": "Build with AI III",
       "region": "Sul",
@@ -768,6 +838,34 @@
       "url": "https://gdg.community.dev/gdg-curitiba/",
       "city": null,
       "state": null
+    },
+    {
+      "id": "2026-07-cbn-startups-entrevista-professora-tatiana-para",
+      "title": "CBN Startups entrevista Professora Tatiana Pará",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Evento",
+      "modality": "Online",
+      "date": "2026-07-14",
+      "time": "09:30",
+      "description": "Entrevista com Tatiana Pará, professora, pesquisadora e fundadora do Meninas da Geo, referência nacional em tecnologias espaciais e do solo, transmitida pela CBN Amazônia.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/cbn-startups-entrevitsta-professora-tatiana-para-409"
+    },
+    {
+      "id": "2026-07-curso-de-qgis-online",
+      "title": "Curso de QGIS - online",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Workshop",
+      "modality": "Híbrido",
+      "date": "2026-07-15",
+      "time": "18:00",
+      "description": "Curso prático de três dias de QGIS, do básico ao intermediário, com mapas ambientais, de saúde e de segurança pública usando dados reais.",
+      "paid": true,
+      "url": "https://www.sympla.com.br/evento-online/curso-inedito-de-qgis-em-belem-online-remoto-sincrono/3494805"
     },
     {
       "id": "2026-07-esquenta-aws-community-day-sudeste",
@@ -862,6 +960,20 @@
       "state": "SP"
     },
     {
+      "id": "2026-07-php-talks-belem-php-ia-e-product-thinking",
+      "title": "PHP Talks Belém | PHP, IA e Product Thinking",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Meetup Online",
+      "modality": "Online",
+      "date": "2026-07-27",
+      "time": "19:30",
+      "description": "Live sobre como transformar side projects em produtos rentáveis, unindo PHP, inteligência artificial e mentalidade indie hacker, com Mário Lucas (CEO da Lawify).",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/php-talks-belem-php-ia-e-product-thinking-419"
+    },
+    {
       "id": "2026-07-11-jornada-cloud-na-softexpert",
       "title": "#11 - Jornada Cloud na SoftExpert",
       "region": "Sul",
@@ -886,6 +998,20 @@
       "url": "https://www.meetup.com/aws-user-group-triangulo-mineiro",
       "city": "Triângulo Mineiro",
       "state": "MG"
+    },
+    {
+      "id": "2026-07-1-meetup-do-aws-user-group-tucurui",
+      "title": "1º Meetup do AWS User Group Tucuruí",
+      "city": "Tucuruí",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Meetup Online",
+      "modality": "Online",
+      "date": "2026-07-29",
+      "time": "19:00",
+      "description": "Meetup inaugural do AWS User Group Tucuruí, apresentando a proposta, objetivos e próximas atividades da comunidade de nuvem local.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-br/aws-user-group-tucurui/events/315708897/"
     },
     {
       "id": "2026-07-meetup-4-e-se-o-seu-agente",
@@ -916,6 +1042,20 @@
       "state": "MG"
     },
     {
+      "id": "2026-08-aws-ug-parauapebas-evento-inaugural",
+      "title": "AWS UG Parauapebas - Evento Inaugural",
+      "city": "Parauapebas",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Meetup Online",
+      "modality": "Online",
+      "date": "2026-08-03",
+      "time": "19:00",
+      "description": "Evento inaugural do AWS User Group Parauapebas sobre como a IA já integrou o dia a dia dos profissionais de tecnologia antes mesmo de entrar nos currículos formais.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-parauapebas/events/315959760/"
+    },
+    {
       "id": "2026-08-s3-files-o-novo-file-system-gerenciado-da-aws-que-voce-precisa-conhecer",
       "title": "S3 Files: O Novo File System Gerenciado da AWS que Você Precisa Conhecer",
       "region": "Sul",
@@ -940,6 +1080,34 @@
       "url": "https://thedevconf.com/tdc/2026/datas-e-locais",
       "city": "Rio de Janeiro",
       "state": "RJ"
+    },
+    {
+      "id": "2026-08-edg-expo-dev-games-2026-em-belem",
+      "title": "Edg - Expo Dev Games 2026 em Belém",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-08-08",
+      "time": "08:00",
+      "description": "Expo de desenvolvimento de jogos em Belém, no Ponto BB.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/edg---expo-dev-games-2026-em-belem-ponto-bb-424"
+    },
+    {
+      "id": "2026-08-3-aws-user-group-castanhal-de-volta-aos-bugs",
+      "title": "#3 AWS User Group Castanhal - De Volta aos Bugs",
+      "city": "Castanhal",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-08-08",
+      "time": "09:00",
+      "description": "Terceiro encontro presencial do AWS User Group Castanhal, com networking, troca de experiências e conteúdo técnico sobre arquitetura de sistemas distribuídos na AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-castanhal/events/315804099/"
     },
     {
       "id": "2026-08-o-fim-do-clickops-acelerando-infraestrutura-aws-com-claude",
@@ -1007,6 +1175,20 @@
       "url": "https://doity.com.br/rogadx26",
       "city": null,
       "state": null
+    },
+    {
+      "id": "2026-08-devopsdays-rio-de-janeiro",
+      "title": "DevOpsDays Rio de Janeiro",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-08-15",
+      "time": "09:00",
+      "description": "DevOpsDays chega ao Rio de Janeiro, na FIAP Botafogo.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-rio-de-janeiro"
     },
     {
       "id": "2026-08-61-aws-meetup-esquenta-aws-community-day-bh",
@@ -1085,6 +1267,20 @@
       "url": "https://www.meetup.com/awsusergroupbh",
       "city": null,
       "state": null
+    },
+    {
+      "id": "2026-08-devopsdays-curitiba",
+      "title": "DevOpsDays Curitiba",
+      "city": "Curitiba",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-08-22",
+      "time": "09:00",
+      "description": "DevOpsDays Curitiba, no Auditório Eny Caldeira do Campus Rebouças da UFPR.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-curitiba"
     },
     {
       "id": "2026-08-febraban-tech-2026",
@@ -1205,6 +1401,34 @@
       "state": null
     },
     {
+      "id": "2026-08-hackathon-2026-zpe-barcarena",
+      "title": "Hackathon 2026 ZPE Barcarena",
+      "city": "Barcarena",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-08-26",
+      "time": "08:00",
+      "description": "Hackathon de dois dias voltado à qualificação de empreendedores e incubação/aceleração de startups na região amazônica, promovido pela StartarBR.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/hackathon-2026-zpe-barcarena-446"
+    },
+    {
+      "id": "2026-08-secomp-ufpa",
+      "title": "SECOMP UFPA",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Congresso",
+      "modality": "Presencial",
+      "date": "2026-08-26",
+      "time": null,
+      "description": "Congresso acadêmico de computação da UFPA com palestras, workshops e competições sobre IA, engenharia de software e temas emergentes em computação.",
+      "paid": false,
+      "url": "https://secomp.ufpa.br"
+    },
+    {
       "id": "2026-08-curitiba-meetup-codecon-21",
       "title": "Curitiba - Meetup Codecon #21",
       "region": "Sul",
@@ -1257,6 +1481,20 @@
       "state": "RJ"
     },
     {
+      "id": "2026-08-pmi-am-em-belem-pa",
+      "title": "PMI AM em Belém-PA",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-08-27",
+      "time": "18:30",
+      "description": "Encontro do PMI Amazônia para conexão, aprendizado e troca entre profissionais de gerenciamento de projetos na região Norte, na FIEPA.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/pmi-am-em-belem-pa-422"
+    },
+    {
       "id": "2026-08-imersao-cloud-ia-do-zero-ao-primeiro-deploy-na-aws",
       "title": "Imersão Cloud & IA: Do Zero ao Primeiro Deploy na AWS",
       "region": "Sudeste",
@@ -1268,6 +1506,20 @@
       "url": "https://www.meetup.com/aws-user-group-alto-tiete",
       "city": null,
       "state": null
+    },
+    {
+      "id": "2026-08-manas-game-jam-2026",
+      "title": "Manas Game Jam 2026",
+      "city": null,
+      "state": null,
+      "region": "Norte",
+      "type": "Festival de tecnologia",
+      "modality": "Online",
+      "date": "2026-08-28",
+      "time": "16:00",
+      "description": "Game jam online de três dias voltada a desenvolvedoras de jogos da região Norte do Brasil, com abertura, submissão e apresentação dos jogos.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/manas-game-jam-2026-437"
     },
     {
       "id": "2026-08-women-tech-bh",
@@ -1333,6 +1585,20 @@
       "url": "https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/",
       "city": null,
       "state": null
+    },
+    {
+      "id": "2026-08-2-meetup-ai-ml-aws-sbg-uepa",
+      "title": "2º MEETUP - AI&ML - AWS SBG UEPA",
+      "city": "Ananindeua",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-08-29",
+      "time": "09:00",
+      "description": "Encontro presencial sobre cloud computing e inteligência artificial com abordagem prática e voltada ao mercado, na UEPA Campus XXII.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/2º-meetup---aiml---aws-sbg-uepa-452"
     },
     {
       "id": "2026-08-meetup-03-inovacao-inteligencia-artificial-e-agilidade",
@@ -1572,6 +1838,20 @@
       "url": "https://eventos.codecon.dev/eventos/staff-experience",
       "city": null,
       "state": null
+    },
+    {
+      "id": "2026-09-xibesec-2026",
+      "title": "XibéSec 2026",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-09-19",
+      "time": "09:00",
+      "description": "4ª edição do evento de segurança da informação XibéSec, no Bristol Marambaia Hotel em Belém.",
+      "paid": true,
+      "url": "https://www.sympla.com.br/evento/xibesec-2026/3470128"
     },
     {
       "id": "2026-09-linuxtips-local-rio-branco",
@@ -1932,6 +2212,20 @@
       "time": "09:00",
       "city": "São Paulo",
       "state": "SP"
+    },
+    {
+      "id": "2026-11-devopsdays-belem",
+      "title": "DevOpsDays Belém",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-11-14",
+      "time": "09:00",
+      "description": "DevOpsDays volta a Belém para espalhar a cultura DevOps, fortalecer conexões e trocar experiências entre profissionais de tecnologia.",
+      "paid": true,
+      "url": "https://devopsdays.org/events/2026-belem"
     },
     {
       "id": "2026-11-front-in-floripa-2026",
