@@ -7,6 +7,14 @@ sources:
     url: https://agiletrendsbr.com/
     type: event
     frequency: yearly
+  - name: AI Devs SP
+    url: https://www.meetup.com/pt-BR/ai-devs-sp/
+    type: community
+    frequency: occasionally
+  - name: Craft & Code Club
+    url: https://www.meetup.com/pt-BR/craftcodeclub/
+    type: community
+    frequency: occasionally
   - name: AWS Community Day Brasil
     url: https://awscommunityday.com.br
     type: event
@@ -61,6 +69,10 @@ sources:
     frequency: occasionally
   - name: AWS User Group Interior SP
     url: https://www.meetup.com/aws-user-group-interior-sp
+    type: community
+    frequency: occasionally
+  - name: AWS User Group João Pessoa
+    url: https://www.meetup.com/pt-BR/aws-user-group-joao-pessoa/
     type: community
     frequency: occasionally
   - name: AWS User Group Joinville
@@ -121,6 +133,10 @@ sources:
     frequency: occasionally
   - name: Azure Talks
     url: https://www.meetup.com/azure-talks
+    type: community
+    frequency: occasionally
+  - name: Belo Horizonte WordPress Group
+    url: https://www.meetup.com/pt-BR/wordpressbelohorizonte/
     type: community
     frequency: occasionally
   - name: BrazilJS
@@ -369,6 +385,10 @@ sources:
     frequency: yearly
   - name: Rust Brasil
     url: https://rustlang.com.br
+    type: community
+    frequency: occasionally
+  - name: São Paulo AI Developer Group
+    url: https://www.meetup.com/pt-BR/aidev-saopaulo/
     type: community
     frequency: occasionally
   - name: SECOMP UFPA
