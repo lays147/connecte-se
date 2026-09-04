@@ -1,4 +1,52 @@
 {
+  "Janeiro": [
+    {
+      "id": "2027-01-united-hacks-v8",
+      "title": "United Hacks V8",
+      "city": null,
+      "state": null,
+      "region": "Nacional",
+      "type": "Evento",
+      "modality": "Online",
+      "date": "2027-01-08",
+      "time": null,
+      "description": "Oitava edição do hackathon online da Hack United, para estudantes a partir de 13 anos. A cerimônia de abertura é em 8 de janeiro e as submissões vão até 10 de janeiro.",
+      "paid": false,
+      "url": "https://unitedhacksv8.devpost.com/"
+    }
+  ],
+  "Março": [
+    {
+      "id": "2027-03-gitex-ai-latam",
+      "title": "GITEX AI LATAM",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2027-03-16",
+      "time": null,
+      "description": "Feira e conferência de tecnologia com foco em IA, nuvem, cibersegurança e inovação para a América Latina.",
+      "paid": true,
+      "url": "https://www.gitexlatam.com"
+    }
+  ],
+  "Abril": [
+    {
+      "id": "2027-04-women-in-tech-global-summit-2027",
+      "title": "Women in Tech Global Summit 2027",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2027-04-27",
+      "time": null,
+      "description": "Está pronta para fazer parte do futuro da inovação? 🚀",
+      "paid": false,
+      "url": "https://lu.ma/43nowtci"
+    }
+  ],
   "Maio": [
     {
       "id": "2027-05-gramado-summit-2027",
@@ -29,6 +77,22 @@
       "state": "RJ"
     }
   ],
+  "Julho": [
+    {
+      "id": "2027-07-codecon-summit-27",
+      "title": "Codecon Summit 27",
+      "city": "Pinhais",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2027-07-23",
+      "time": "09:00",
+      "description": "A Codecon Summit é um festival que reunirá inovação, tecnologia, código e diversão. O evento conta com conteúdos direcionados à carreira de pessoas desenvolvedoras, tanto para quem está começando na área, quanto para quem já está no mercado ou com a carreira estabilizada.",
+      "paid": true,
+      "url": "https://eventos.codecon.dev/eventos/codecon-summit-27"
+    }
+  ],
   "Agosto": [
     {
       "id": "2027-08-devopsdays-curitiba",
@@ -56,6 +120,22 @@
       "url": "https://rioinnovationweek.com.br/",
       "city": "Rio de Janeiro",
       "state": "RJ"
+    }
+  ],
+  "Setembro": [
+    {
+      "id": "2027-09-healthtech-ai-deeptechs-industria-4-0-e-empreendedorismo-inovador-na-saude",
+      "title": "Healthtech AI: Deeptechs, Indústria 4.0 e Empreendedorismo Inovador na Saúde",
+      "city": "Brasília",
+      "state": "DF",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2027-09-08",
+      "time": null,
+      "description": "(Inscrições gratuitas e vagas limitadas)Onde quem decide, encontra quem entrega.",
+      "paid": false,
+      "url": "https://lu.ma/sa38yk1r"
     }
   ]
 }

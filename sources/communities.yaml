@@ -399,6 +399,10 @@ sources:
     url: https://www.startupsummit.com.br
     type: event
     frequency: yearly
+  - name: TecnoUpdate
+    url: https://www.tecnoupdate.com.br
+    type: event
+    frequency: yearly
   - name: The Developers Conference
     url: https://thedevconf.com/tdc/2026/datas-e-locais
     type: event

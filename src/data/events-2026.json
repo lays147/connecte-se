@@ -78,7 +78,7 @@
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-alto-tiete",
       "city": "Mogi das Cruzes",
-      "state": null
+      "state": "SP"
     }
   ],
   "Março": [
@@ -145,8 +145,8 @@
       "description": "Primeiro encontro do ano da iniciativa GDGirls em Porto Alegre, voltado para mulheres na área de tecnologia.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-porto-alegre/",
-      "city": null,
-      "state": null
+      "city": "Porto Alegre",
+      "state": "RS"
     },
     {
       "id": "2026-03-o-quadrante-da-eficiencia-unindo-dados-seguranca-devops-e-comunidade-na-aws",
@@ -158,8 +158,8 @@
       "description": "Encontro presencial do AWS User Group Circuito das Águas Paulista em Amparo-SP, unindo temas de dados, segurança, DevOps e comunidade dentro do ecossistema AWS.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-circuito-das-aguas-paulista",
-      "city": null,
-      "state": null
+      "city": "Águas de Lindóia",
+      "state": "SP"
     },
     {
       "id": "2026-03-8-acelerando-o-desenvolvimento-com-uso-de-serverless-na-aws",
@@ -171,8 +171,8 @@
       "description": "Encontro presencial do AWS User Group Joinville focado em acelerar o desenvolvimento de aplicações utilizando tecnologias serverless da AWS.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-joinville",
-      "city": null,
-      "state": null
+      "city": "Joinville",
+      "state": "SC"
     },
     {
       "id": "2026-03-21-meetup-presencial-aws-user-group-triangulo-mineiro",
@@ -197,23 +197,23 @@
       "description": "Evento paralelo ao South Summit Brazil, a corrida reuniu empreendedores, investidores e profissionais em Porto Alegre, unindo bem-estar e networking através de uma experiência esportiva com modalidade de caminhada inédita.",
       "paid": true,
       "url": "https://www.southsummit.io/e/brazil/en",
-      "city": null,
-      "state": null
+      "city": "Porto Alegre",
+      "state": "RS"
     }
   ],
   "Abril": [
     {
       "id": "2026-04-gdg-talks-2-build-with-ai-edition-ia-na-construcao-de-software-e-melhores-praticas-de-ciberseguranca",
       "title": "GDG Talks 2 - Build with AI edition: IA na construção de software e melhores práticas de Cibersegurança",
-      "region": "Sul",
+      "region": "Norte",
       "type": "Meetup",
       "modality": "Presencial",
       "date": "2026-04-01",
       "description": "Evento colaborativo entre GDG Belém e GDG Floripa sobre construção de software com IA e melhores práticas de cibersegurança.",
       "paid": false,
       "url": "https://gdg.community.dev/events/details/google-gdg-belem-presents-gdg-talks-2-build-with-ai-edition-ia-na-construcao-de-software-e-melhores-praticas-de-ciberseguranca/cohost-gdg-floripa",
-      "city": null,
-      "state": null
+      "city": "Belém",
+      "state": "PA"
     },
     {
       "id": "2026-04-armazenamento-na-aws",
@@ -225,8 +225,8 @@
       "description": "Meetup presencial sobre soluções de armazenamento na AWS, com palestras e networking em Mogi das Cruzes, SP.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-alto-tiete",
-      "city": null,
-      "state": null
+      "city": "Mogi das Cruzes",
+      "state": "SP"
     },
     {
       "id": "2026-04-meetup-29-aws-networking-a-conexao-importa",
@@ -238,8 +238,8 @@
       "description": "Meetup da comunidade AWS de Belo Horizonte com foco em conceitos e práticas de networking na nuvem.",
       "paid": false,
       "url": "https://www.meetup.com/awsusergroupbh",
-      "city": null,
-      "state": null
+      "city": "Belo Horizonte",
+      "state": "MG"
     },
     {
       "id": "2026-04-gdgirls-talks-building-quality",
@@ -251,8 +251,8 @@
       "description": "Encontro do GDGirls em Porto Alegre com palestras sobre qualidade de software, parte da iniciativa de inclusão de mulheres na tecnologia.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-porto-alegre/",
-      "city": null,
-      "state": null
+      "city": "Porto Alegre",
+      "state": "RS"
     },
     {
       "id": "2026-04-09-de-zero-a-producao-seu-primeiro-agent-de-ia-em-escala-com-aws",
@@ -264,8 +264,8 @@
       "description": "Evento da comunidade AWS User Group Joinville sobre como levar um agente de inteligência artificial da concepção até a produção em escala usando serviços AWS.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-joinville",
-      "city": null,
-      "state": null
+      "city": "Joinville",
+      "state": "SC"
     },
     {
       "id": "2026-04-community-build-iniciativa-hands-on-01-2026",
@@ -277,8 +277,8 @@
       "description": "Encontro prático da comunidade AWS User Group São Lourenço com atividades hands-on sobre serviços e arquiteturas da AWS.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-sao-lourenco",
-      "city": null,
-      "state": null
+      "city": "São Lourenço",
+      "state": "MG"
     },
     {
       "id": "2026-04-22-meetup-presencial-edicao-tupaciguara-aws-user-group-triangulo-mineiro",
@@ -290,7 +290,7 @@
       "description": "Edição especial do meetup presencial da comunidade AWS realizada na cidade de Tupaciguara, Minas Gerais, com foco em compartilhamento de conhecimento sobre AWS e nuvem.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-triangulo-mineiro",
-      "city": "Triângulo Mineiro",
+      "city": "Tupaciguara",
       "state": "MG"
     },
     {
@@ -303,8 +303,8 @@
       "description": "Workshop colaborativo entre GDG Porto Alegre, Alura, Fiap e FOF Poa sobre o processo de transformar designs do Figma em código.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-porto-alegre/",
-      "city": null,
-      "state": null
+      "city": "Porto Alegre",
+      "state": "RS"
     },
     {
       "id": "2026-04-build-with-ai-2026",
@@ -316,8 +316,8 @@
       "description": "Evento inaugural da série Build with AI do GDG Curitiba em 2026, com foco em desenvolvimento com inteligência artificial.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-curitiba/",
-      "city": null,
-      "state": null
+      "city": "Curitiba",
+      "state": "PR"
     },
     {
       "id": "2026-04-busca-semantica-rag-com-jina",
@@ -329,8 +329,8 @@
       "description": "Meetup da comunidade Elastic Rio de Janeiro sobre busca semântica e RAG (Retrieval-Augmented Generation) usando Jina, realizado no espaço Impulso.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/rio-de-janeiro-elastic-fantastics/",
-      "city": null,
-      "state": null
+      "city": "Rio de Janeiro",
+      "state": "RJ"
     },
     {
       "id": "2026-04-cloud-native-sao-paulo-meetup-37-no-nubank",
@@ -356,8 +356,8 @@
       "description": "Meetup da comunidade AWS em Curitiba explorando o Kiro e suas capacidades além da simples sugestão de código, realizado no espaço da EBANX.",
       "paid": false,
       "url": "https://www.meetup.com/aws-curitiba-user-group",
-      "city": null,
-      "state": null
+      "city": "Curitiba",
+      "state": "PR"
     },
     {
       "id": "2026-04-de-montes-claros-para-o-mundo-caminhos-para-carreira-internacional-em-cloud",
@@ -421,8 +421,8 @@
       "description": "Encontro da comunidade Docker Rio de Janeiro para celebrar o aniversário do Docker com talks e networking sobre containers e tecnologias relacionadas.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/docker-rio-de-janeiro",
-      "city": null,
-      "state": null
+      "city": "Rio de Janeiro",
+      "state": "RJ"
     },
     {
       "id": "2026-04-vibe-coding-spec-driven-com-kiro",
@@ -434,8 +434,8 @@
       "description": "Evento da comunidade AWS sobre desenvolvimento orientado a especificações usando a ferramenta Kiro, com foco em boas práticas de codificação.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-alto-tiete",
-      "city": null,
-      "state": null
+      "city": "Mogi das Cruzes",
+      "state": "SP"
     }
   ],
   "Maio": [
@@ -449,8 +449,8 @@
       "description": "Evento realizado na UEPB em Patos, Paraíba, sobre como acelerar o desenvolvimento de software utilizando Inteligência Artificial, conectando universidade e mercado de trabalho.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-serido-e-sabugy",
-      "city": null,
-      "state": null
+      "city": "Patos",
+      "state": "PB"
     },
     {
       "id": "2026-05-build-com-ai-recife-explorando-o-futuro-da-tecnologia-com-inteligencia-artificial",
@@ -488,8 +488,8 @@
       "description": "Churrasco e confraternização da comunidade AWS User Group Rio em Niterói, reunindo entusiastas de nuvem para troca de experiências.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-rio",
-      "city": null,
-      "state": null
+      "city": "Niterói",
+      "state": "RJ"
     },
     {
       "id": "2026-05-hands-on-primeiros-passos-na-aws-do-zero-a-implantacao-em-nuvem",
@@ -501,8 +501,8 @@
       "description": "Evento prático presencial em Montes Claros para iniciantes que desejam aprender a implantar aplicações na nuvem AWS do zero.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-montes-claros",
-      "city": null,
-      "state": null
+      "city": "Montes Claros",
+      "state": "MG"
     },
     {
       "id": "2026-05-datadog-user-group-meetup-sao-paulo-4-edicao",
@@ -527,8 +527,8 @@
       "description": "Meetup do AWS User Group Joinville abordando arquiteturas serverless na AWS, com palestras e troca de experiências entre profissionais de cloud.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-joinville",
-      "city": null,
-      "state": null
+      "city": "Joinville",
+      "state": "SC"
     },
     {
       "id": "2026-05-build-with-ai-rio-de-janeiro-2026",
@@ -579,8 +579,8 @@
       "description": "Segunda edição do evento Build with AI do GDG Curitiba, com inscrição gratuita.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-curitiba/",
-      "city": null,
-      "state": null
+      "city": "Curitiba",
+      "state": "PR"
     },
     {
       "id": "2026-05-beyond-apis-arquiteturas-desacopladas-event-driven-com-eks",
@@ -605,8 +605,8 @@
       "description": "Meetup do GDG Brasília sobre mudanças no cenário de estudos e carreira e estratégias de adaptação para desenvolvedores.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-brasilia/",
-      "city": null,
-      "state": null
+      "city": "Brasília",
+      "state": "DF"
     },
     {
       "id": "2026-05-120-meetup-aws-ug-sp-engenharia-de-harness-invisible-security",
@@ -631,8 +631,8 @@
       "description": "Meetup sobre estratégias e serviços de rede na AWS, promovido pela comunidade AWS User Group Alto Tietê em Mogi das Cruzes, SP.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-alto-tiete",
-      "city": null,
-      "state": null
+      "city": "Mogi das Cruzes",
+      "state": "SP"
     },
     {
       "id": "2026-05-workshop-oficial-amazon-sagemaker-ai-modelops-da-ideia-a-producao",
@@ -644,8 +644,8 @@
       "description": "Workshop oficial da AWS sobre ModelOps com Amazon SageMaker, cobrindo o ciclo completo da ideia até a produção de modelos de IA.",
       "paid": false,
       "url": "https://www.meetup.com/awscampinas",
-      "city": null,
-      "state": null
+      "city": "Campinas",
+      "state": "SP"
     },
     {
       "id": "2026-05-hack-night-rio-copa-do-mundo-edition-elastic-ai-agents",
@@ -685,8 +685,8 @@
       "description": "Encontro do AWS User Group Curitiba sobre como a inteligência artificial está transformando o trabalho de desenvolvimento de software.",
       "paid": false,
       "url": "https://www.meetup.com/aws-curitiba-user-group",
-      "city": null,
-      "state": null
+      "city": "Curitiba",
+      "state": "PR"
     },
     {
       "id": "2026-06-caravana-bwai-gdg-rec-hands-on-com-google-cloud",
@@ -698,8 +698,8 @@
       "description": "Evento prático (hands-on) sobre Google Cloud promovido pelo GDG Recife como parte da iniciativa Build with AI.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-recife/",
-      "city": null,
-      "state": null
+      "city": "Recife",
+      "state": "PE"
     },
     {
       "id": "2026-06-gamedev-talk-jabuti-estudio",
@@ -725,8 +725,8 @@
       "description": "Workshop prático mostrando como criar um jogo utilizando a ferramenta Kiro, do conceito inicial até o código final.",
       "paid": false,
       "url": "https://www.meetup.com/awscampinas",
-      "city": null,
-      "state": null
+      "city": "Campinas",
+      "state": "SP"
     },
     {
       "id": "2026-06-aws-community-day-brasil-centro-oeste-brasilia",
@@ -836,8 +836,8 @@
       "description": "Terceira edição do evento Build with AI promovido pelo GDG Curitiba, focado em inteligência artificial.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-curitiba/",
-      "city": null,
-      "state": null
+      "city": "Curitiba",
+      "state": "PR"
     },
     {
       "id": "2026-07-cbn-startups-entrevista-professora-tatiana-para",
@@ -877,8 +877,8 @@
       "description": "Encontro preparatório e de networking antes do AWS Community Day Sudeste, promovido pelo AWS User Group Belo Horizonte.",
       "paid": false,
       "url": "https://www.meetup.com/awsusergroupbh",
-      "city": null,
-      "state": null
+      "city": "Belo Horizonte",
+      "state": "MG"
     },
     {
       "id": "2026-07-quando-programacao-reativa-realmente-faz-diferenca-em-microsservicos-na-aws",
@@ -890,8 +890,8 @@
       "description": "Palestra e discussão sobre o uso de programação reativa em arquiteturas de microsserviços na nuvem AWS.",
       "paid": false,
       "url": "https://www.meetup.com/awscampinas",
-      "city": null,
-      "state": null
+      "city": "Campinas",
+      "state": "SP"
     },
     {
       "id": "2026-07-recrutamento-e-carreira-na-era-das-ias",
@@ -903,8 +903,8 @@
       "description": "Evento do GDG Brasília discutindo recrutamento e carreira profissional no contexto da era das inteligências artificiais.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-brasilia/",
-      "city": null,
-      "state": null
+      "city": "Brasília",
+      "state": "DF"
     },
     {
       "id": "2026-07-csbc-2026-congresso-da-sociedade-brasileira-de-computacao",
@@ -917,8 +917,8 @@
       "description": "46ª edição do maior congresso de Computação e TI da América Latina, reunindo milhares de participantes em Gramado (RS) sob o tema 'Transformação Digital para um Mundo em Emergência Climática'.",
       "paid": true,
       "url": "https://csbc.sbc.org.br/",
-      "city": null,
-      "state": null
+      "city": "Gramado",
+      "state": "RS"
     },
     {
       "id": "2026-07-tdc-floripa-2026",
@@ -983,8 +983,8 @@
       "description": "Encontro do AWS User Group Joinville sobre a jornada de adoção de nuvem na SoftExpert, com discussões técnicas e networking.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-joinville",
-      "city": null,
-      "state": null
+      "city": "Joinville",
+      "state": "SC"
     },
     {
       "id": "2026-07-23-meetup-online-zoom-aws-user-group-triangulo-mineiro",
@@ -1132,8 +1132,8 @@
       "description": "Encontro da comunidade AWS User Group Seridó e Sabugy na Escola Estadual João Vilar da Cunha, em Santana do Seridó, discutindo como iniciar na área de TI.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-serido-e-sabugy",
-      "city": null,
-      "state": null
+      "city": "Santana do Seridó",
+      "state": "RN"
     },
     {
       "id": "2026-08-da-preparacao-a-uma-carreira-relevante",
@@ -1145,8 +1145,8 @@
       "description": "Meetup do GDG Brasília sobre preparação e desenvolvimento de carreira relevante na área de tecnologia.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-brasilia/",
-      "city": null,
-      "state": null
+      "city": "Brasília",
+      "state": "DF"
     },
     {
       "id": "2026-08-roga-dx-26",
@@ -1159,8 +1159,8 @@
       "paid": true,
       "url": "https://doity.com.br/rogadx26",
       "time": "08:30",
-      "city": null,
-      "state": null
+      "city": "Maceió",
+      "state": "AL"
     },
     {
       "id": "2026-08-roga-dx-26-dia-2",
@@ -1169,12 +1169,12 @@
       "type": "Conferência",
       "modality": "Presencial",
       "date": "2026-08-15",
-      "time": null,
+      "time": "08:00",
       "description": "Segundo dia da 5ª edição do Roga DX, evento de tecnologia e inovação realizado no Centro de Convenções de Maceió, reunindo mais de 2000 participantes, 55+ palestrantes e empresas tech.",
       "paid": true,
       "url": "https://doity.com.br/rogadx26",
-      "city": null,
-      "state": null
+      "city": "Maceió",
+      "state": "AL"
     },
     {
       "id": "2026-08-devopsdays-rio-de-janeiro",
@@ -1239,8 +1239,8 @@
       "description": "Encontro do GDG Curitiba sobre serving layer para features de modelos de Machine Learning em tempo real.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-curitiba/",
-      "city": null,
-      "state": null
+      "city": "Curitiba",
+      "state": "PR"
     },
     {
       "id": "2026-08-aws-community-day-brasil-sudeste-belo-horizonte",
@@ -1265,8 +1265,8 @@
       "description": "Evento comunitário de grande porte reunindo profissionais de tecnologia AWS na região Sudeste, realizado em Belo Horizonte.",
       "paid": true,
       "url": "https://www.meetup.com/awsusergroupbh",
-      "city": null,
-      "state": null
+      "city": "Belo Horizonte",
+      "state": "MG"
     },
     {
       "id": "2026-08-devopsdays-curitiba",
@@ -1292,8 +1292,8 @@
       "description": "O maior evento de tecnologia e inovação do setor financeiro, reunindo líderes de bancos, tecnologia e inovação no Distrito Anhembi, em São Paulo, com painéis, palestras e área de exposição.",
       "paid": true,
       "url": "https://www.febrabantech.com/",
-      "city": null,
-      "state": null
+      "city": "São Paulo",
+      "state": "SP"
     },
     {
       "id": "2026-08-edicao-especial-cloud-conversa-comunidade",
@@ -1305,8 +1305,8 @@
       "description": "Encontro especial da comunidade AWS User Group Campinas para trocar experiências sobre cloud computing em um ambiente descontraído.",
       "paid": false,
       "url": "https://www.meetup.com/awscampinas",
-      "city": null,
-      "state": null
+      "city": "Campinas",
+      "state": "SP"
     },
     {
       "id": "2026-08-open-source-de-a-a-z-projetos-dicas-possibilidades-31a-ed",
@@ -1331,8 +1331,8 @@
       "description": "Encontro híbrido do AWS User Group Baixada Santista realizado na USP Leste, em São Paulo, com foco na construção de uma aplicação cloud-native na AWS para um sistema de feedback.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-baixada-santista",
-      "city": null,
-      "state": null
+      "city": "Santos",
+      "state": "SP"
     },
     {
       "id": "2026-08-cafe-e-inteligencia-artificial-na-pratica-experiencias-do-cotidiano",
@@ -1344,8 +1344,8 @@
       "description": "Encontro da comunidade GDG Floripa para compartilhar experiências práticas do uso de Inteligência Artificial no dia a dia.",
       "paid": false,
       "url": "https://gdg.community.dev/gdg-floripa/",
-      "city": null,
-      "state": null
+      "city": "Florianópolis",
+      "state": "SC"
     },
     {
       "id": "2026-08-brasilia-meetup-codecon-4",
@@ -1397,8 +1397,8 @@
       "paid": true,
       "url": "https://www.startupsummit.com.br",
       "time": "13:45",
-      "city": null,
-      "state": null
+      "city": "Florianópolis",
+      "state": "SC"
     },
     {
       "id": "2026-08-hackathon-2026-zpe-barcarena",
@@ -1504,8 +1504,8 @@
       "description": "Imersão prática sobre computação em nuvem e inteligência artificial, guiando participantes do zero até o primeiro deploy na AWS, realizada na Unifal em Alfenas, MG.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-alto-tiete",
-      "city": null,
-      "state": null
+      "city": "Mogi das Cruzes",
+      "state": "SP"
     },
     {
       "id": "2026-08-manas-game-jam-2026",
@@ -1544,8 +1544,8 @@
       "description": "Encontro da comunidade AWS User Group São Roque para discutir o impacto das certificações AWS no mercado de trabalho, com a participação do profissional Roberto Hindrikson. O evento acontece na FATEC São Roque, SP.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-sao-roque",
-      "city": null,
-      "state": null
+      "city": "São Roque",
+      "state": "SP"
     },
     {
       "id": "2026-08-maratona-de-programacao",
@@ -1557,8 +1557,8 @@
       "description": "Maratona de programação promovida pela AWS User Group São Lourenço, reunindo estudantes, desenvolvedores e entusiastas de tecnologia para resolver desafios em equipe e trocar experiências.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-sao-lourenco",
-      "city": null,
-      "state": null
+      "city": "São Lourenço",
+      "state": "MG"
     },
     {
       "id": "2026-08-django-girls-novo-hamburgo",
@@ -1570,8 +1570,8 @@
       "description": "Workshop gratuito de um dia para mulheres aprenderem programação com Python e Django, promovido pela comunidade Django Girls em Novo Hamburgo (RS).",
       "paid": false,
       "url": "https://djangogirls.org",
-      "city": null,
-      "state": null
+      "city": "Novo Hamburgo",
+      "state": "RS"
     },
     {
       "id": "2026-08-cloud-weekend-2026-nuvem-containers-azure-ia-kubernetes",
@@ -1583,8 +1583,8 @@
       "description": "Evento presencial e gratuito em São Paulo-SP sobre computação em nuvem, Azure, Kubernetes, containers e Inteligência Artificial, realizado em parceria entre .NET São Paulo, Azure na Prática e a Escola SENAI Suíço-Brasileira.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/",
-      "city": null,
-      "state": null
+      "city": "São Paulo",
+      "state": "SP"
     },
     {
       "id": "2026-08-2-meetup-ai-ml-aws-sbg-uepa",
@@ -1610,8 +1610,8 @@
       "description": "Terceiro encontro do grupo AWS SBG na Univali, discutindo inovação, inteligência artificial e agilidade em formato híbrido em Itajaí, SC.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-alto-tiete",
-      "city": null,
-      "state": null
+      "city": "Itajaí",
+      "state": "SC"
     },
     {
       "id": "2026-08-kubernetes-dicas-e-truques-para-o-dia-a-dia-21a-edicao",
@@ -1721,6 +1721,48 @@
       "state": "MG"
     },
     {
+      "id": "2026-09-desvendando-o-poder-do-genie-one",
+      "title": "Desvendando o poder do Genie One",
+      "city": null,
+      "state": null,
+      "region": "Nacional",
+      "type": "Evento",
+      "modality": "Online",
+      "date": "2026-09-04",
+      "time": "10:30",
+      "description": "Junte-se a nós para explorar o Genie One, o revolucionário colaborador de IA para dados, e aprenda como ele pode transformar a dinâmica na sua empresa. Nossos especialistas irão apresentar casos de uso práticos e discutir como integrar essa tecnologia de maneira eficaz ao seu dia a dia. Venha descobrir por que sua equipe ainda não está aproveitando todo o potencial do Genie One. Participe e con...",
+      "paid": false,
+      "url": "https://usergroups.databricks.com/events/details/databricks-user-groups-espirito-santo-databricks-user-group-presents-desvendando-o-poder-do-genie-one/cohost-espirito-santo-databricks-user-group/"
+    },
+    {
+      "id": "2026-09-como-a-tecnologia-esta-redefinindo-profissoes-e-carreiras-1-ano-de-trilha-pos",
+      "title": "Como a tecnologia está redefinindo profissões e carreiras - 1 ano de Trilha Pós",
+      "city": "Recife",
+      "state": "PE",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-04",
+      "time": "18:30",
+      "description": "Como a tecnologia está redefinindo profissões e carreiras O mercado de trabalho está mudando. Novas tecnologias estão transformando profissões, criando novas oportunidades e exigindo que profissionais repensem constantemente suas habilidades e seus próximos passos.",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/como-a-tecnologia-esta-redefinindo-profissoes-e-carreiras-1-ano-de-trilha-pos/3559034"
+    },
+    {
+      "id": "2026-09-blockchain-sem-moage",
+      "title": "Blockchain sem Moage",
+      "city": "Cuiabá",
+      "state": "MT",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-04",
+      "time": "13:30",
+      "description": "⛓️ Blockchain sem Moage | Web3, Rust, IA & Networking",
+      "paid": false,
+      "url": "https://lu.ma/58psbp21"
+    },
+    {
       "id": "2026-09-devopsdays-feira-de-santana",
       "title": "DevOpsDays Feira de Santana",
       "region": "Nordeste",
@@ -1732,6 +1774,48 @@
       "url": "https://devopsdays.org/events/2026-feira-de-santana",
       "city": "Feira de Santana",
       "state": "BA"
+    },
+    {
+      "id": "2026-09-devconverge-2026-sp-o-futuro-do-codigo-devs-ias",
+      "title": "DevConverge 2026 SP – O Futuro do Código: Devs + IAs",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-05",
+      "time": null,
+      "description": "​DevConverge - A IA não substituiu o Dev, alavancou!",
+      "paid": false,
+      "url": "https://luma.com/gmrjgn41"
+    },
+    {
+      "id": "2026-09-devopsdays-feira-de-santana-2026",
+      "title": "DevOpsDays Feira de Santana 2026",
+      "city": "Feira de Santana",
+      "state": "BA",
+      "region": "Nordeste",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-09-05",
+      "time": null,
+      "description": "DEVOPSDAYS Feira de Santana - 2026",
+      "paid": true,
+      "url": "https://dodfsa2026.eventize.com.br/"
+    },
+    {
+      "id": "2026-09-pie-ai-goiania-papers-club",
+      "title": "Pie & AI: Goiânia - Papers Club",
+      "city": "Goiânia",
+      "state": "GO",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-05",
+      "time": "09:00",
+      "description": "DescriptionMost of the AI we use today was born in academic papers that almost nobody outside research ever reads. The Pie & AI Papers Club exists to close that gap in Goiânia.",
+      "paid": false,
+      "url": "https://lu.ma/9zdao5rq"
     },
     {
       "id": "2026-09-cbsoft-2026-congresso-brasileiro-de-software-teoria-e-pratica",
@@ -1746,6 +1830,90 @@
       "time": "09:00",
       "city": "São Paulo",
       "state": "SP"
+    },
+    {
+      "id": "2026-09-databricks-devconnect-sao-paulo-2026",
+      "title": "Databricks DevConnect São Paulo 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-08",
+      "time": "18:00",
+      "description": "DotHub - Deloitte - 7th Floor, Golden Tower - Av. Dr. Chucri Zaidan, 1240, , Chacara Santo Antonio, Sao Paulo",
+      "paid": false,
+      "url": "https://events.databricks.com/devconnect-saopaulo-26/waitlist"
+    },
+    {
+      "id": "2026-09-iniciacao-agentica",
+      "title": "Iniciação Agêntica",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Híbrido",
+      "date": "2026-09-08",
+      "time": "18:30",
+      "description": "Crescimento, Conexões e Oportunidades para Quem Quer Ir Mais Longe.O Arca Hub by Sai do Papel é muito mais do que um espaço de trabalho ou uma agenda de eventos. É um ecossistema de desenvolvimento, um club de inovação, relacionamento e geração de oportunidades criado para empresários, startups, líderes, profissionais e empresas que desejam acelerar resultados e ampliar suas possibilidades de c...",
+      "paid": false,
+      "url": "https://lu.ma/uav5anur"
+    },
+    {
+      "id": "2026-09-desenvolvendo-data-centers-como-ativo-estrategico",
+      "title": "Desenvolvendo Data Centers como Ativo Estratégico",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-09",
+      "time": "08:45",
+      "description": "A expansão da inteligência artificial, da computação em nuvem e dos serviços digitais está mudando a escala e a complexidade dos data centers. Já não basta oferecer capacidade de processamento. Esses empreendimentos precisam responder, ao mesmo tempo, a exigências de desempenho, confiabilidade, eficiência, disponibilidade de recursos e velocidade de implantação.",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/desenvolvendo-data-centers-como-ativo-estrategico/3535888"
+    },
+    {
+      "id": "2026-09-erro-404-melanina-nao-encontrada-racismo-e-reconhecimento-facial",
+      "title": "Erro 404: Melanina não encontrada - racismo e reconhecimento facial",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-09",
+      "time": "14:30",
+      "description": "Mesa-redonda promovida pelo Grupo de Pesquisa VITRINA - Visualidades, Informação, Tecnologias e Representações em Ambientes Digitais/UFRJ. Data: 9 de setembro de 2026 Horário: 14h30 Local: Biblioteca José de Alencar – Faculdade de Letras/UFRJ",
+      "paid": false,
+      "url": "https://doity.com.br/erro-404-melanina-nao-encontrada--racismo-e-reconhecimento-facial"
+    },
+    {
+      "id": "2026-09-meetup-custodia-redteam-ia-e-q-a-sobre-bitcoin",
+      "title": "Meetup: Custódia, RedTeam, IA e Q&A sobre Bitcoin",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-09",
+      "time": null,
+      "description": "No dia 9 de setembro, a sede da OranjeBTC recebe um meetup dedicado a Bitcoin, autocustódia e segurança, em parceria com a Vinteum.",
+      "paid": false,
+      "url": "https://lu.ma/jli3wpfg"
+    },
+    {
+      "id": "2026-09-cafe-cursor-recife",
+      "title": "Cafe Cursor Recife",
+      "city": "Recife",
+      "state": "PE",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-09",
+      "time": "10:00",
+      "description": "O Cursor Café não é uma palestra. Não tem palco, não tem slides, não tem programação engessada.",
+      "paid": false,
+      "url": "https://lu.ma/cursor-n2so"
     },
     {
       "id": "2026-09-golang-sp-me-ia-116",
@@ -1763,7 +1931,7 @@
     {
       "id": "2026-09-claude-na-aws",
       "title": "Claude na AWS",
-      "region": "Sudeste",
+      "region": "Nacional",
       "type": "Meetup",
       "modality": "Online",
       "date": "2026-09-10",
@@ -1772,6 +1940,104 @@
       "url": "https://events.zoom.us/ev/An9ltso3z2GSOg62l9V07O8wplBYmH57gyydi8DU-f0I9PbRgBgq~AmuVifrYs1qoZiQVLxmI8LKBd0Bf46X-4qn404mieo6TOgO-g3OE5UZHanTYnfRbjY-OYIiRtq3DZOZS1vCu1MQ1RA",
       "city": null,
       "state": null
+    },
+    {
+      "id": "2026-09-phpsp-pub-setembro",
+      "title": "PHPSP Pub - Setembro",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-10",
+      "time": "19:00",
+      "description": "O PHPSP Pub é o evento mais antigo da comunidade e acontece no formato presencial há mais de 10 anos sempre na segunda quinta-feira do mês com a proposta de reunir a descontração de um pub e o conhecimento da comunidade.",
+      "paid": false,
+      "url": "https://www.meetup.com/php-sp/events/315882282/"
+    },
+    {
+      "id": "2026-09-google-ai-meetup-series",
+      "title": "Google AI Meetup Series",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-10",
+      "time": null,
+      "description": "Participe do primeiro encontro exclusivo desenhado para quem quer ir além da teoria e dominar as ferramentas de Inteligência Artificial mais avançadas do mercado.",
+      "paid": false,
+      "url": "https://rsvp.withgoogle.com/events/google-ai-meetup-series/home"
+    },
+    {
+      "id": "2026-09-sap-now-ai-tour-brazil-dia-2",
+      "title": "SAP NOW AI Tour Brazil - Dia 2",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-10",
+      "time": null,
+      "description": "Junte-se a líderes, executivos e profissionais da indústria e da SAP nesta edição brasileira de um dos nossos principais eventos globais. Conheça a nova e audaciosa visão de IA da SAP e vivencie uma experiência transformadora da Joule.",
+      "paid": true,
+      "url": "https://www.sap.com/brazil/events/sapnowbrazil.html"
+    },
+    {
+      "id": "2026-09-automacao-a-realidade-que-chegou-para-ficar-treinamento-tecnico-garen",
+      "title": "AUTOMAÇÃO: A REALIDADE QUE CHEGOU PARA FICAR | TREINAMENTO TÉCNICO GAREN",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-10",
+      "time": "10:00",
+      "description": "TREINAMENTO TÉCNICO GARENAutomação: a realidade que chegou para ficarA automação já faz parte do presente. E quem entende de tecnologia, instalação e soluções inteligentes sai na frente. Nos dias 10 e 11 de setembro, a Baixada Net e a Garen se unem para trazer um treinamento técnico pensado para quem quer aprender, se atualizar e elevar o nível do seu conhecimento em automação. Durante o treina...",
+      "paid": false,
+      "url": "https://doity.com.br/automao-a-realidade-que-chegou-para-ficar-treinamento-tcnico-garen"
+    },
+    {
+      "id": "2026-09-diversidade-e-tecnologia-na-perspectiva-de-mulheres-negras",
+      "title": "Diversidade e Tecnologia na Perspectiva de Mulheres Negras",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "region": "Sul",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-10",
+      "time": "18:00",
+      "description": "A tecnologia transforma mercados, relações e a forma como construímos o futuro. Mas quem participa dessa construção? Quais perspectivas estão presentes nos espaços de inovação, liderança e tomada de decisão?",
+      "paid": false,
+      "url": "https://lu.ma/k5fcfp0l"
+    },
+    {
+      "id": "2026-09-ceos-founders-in-ai-dinner-florian-hagenbuch-canary-10-de-setembro",
+      "title": "CEOs & Founders in AI Dinner | Florian Hagenbuch (Canary) | 10 de Setembro",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-10",
+      "time": "19:30",
+      "description": "CEOs & Founders in AI Dinner",
+      "paid": false,
+      "url": "https://lu.ma/comp-ceofounder-dinner-agosto"
+    },
+    {
+      "id": "2026-09-comp-ai-lab-11-de-setembro",
+      "title": "Comp AI Lab | 11 de Setembro",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-11",
+      "time": "08:30",
+      "description": "Comp AI Lab: Hackathon CHRO AI-Native",
+      "paid": false,
+      "url": "https://lu.ma/comp-ai-lab-setembro"
     },
     {
       "id": "2026-09-paraibajs-meetup",
@@ -1784,7 +2050,161 @@
       "paid": false,
       "url": "https://www.sympla.com.br/evento/paraibajs/3494354",
       "city": "Cabedelo",
-      "state": null
+      "state": "PB"
+    },
+    {
+      "id": "2026-09-it-works-on-my-machine",
+      "title": "IT WORKS ON MY MACHINE",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": "10:00",
+      "description": "IT WORKS ON MY MACHINE Programmer's Day Edition Se você já falou “mas na minha máquina funciona”, passou horas procurando um bug que era uma vírgula ou transformou café em código… esse evento é para você.",
+      "paid": true,
+      "url": "https://www.sympla.com.br/evento/it-works-on-my-machine/3534079"
+    },
+    {
+      "id": "2026-09-tech-summit-setembro-1-edicao",
+      "title": "Tech Summit Setembro 1 Edição",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": null,
+      "description": "Sobre o Evento Tech Summit | Café em Código",
+      "paid": false,
+      "url": "https://recrutatech.com.br/ingresso/tech-summit-setembro-1-edicao"
+    },
+    {
+      "id": "2026-09-domain-modeling-in-the-age-of-ai",
+      "title": "Domain Modeling in the Age of AI",
+      "city": "Salvador",
+      "state": "BA",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": "09:00",
+      "description": "As Trilhas Formativas são uma ação de formação continuada promovida pelo QuIIN, realizada mensalmente com o objetivo de ampliar o acesso ao conhecimento em tecnologias quânticas e áreas estratégicas relacionadas à inovação, segurança da informação e computação avançada.",
+      "paid": false,
+      "url": "https://doity.com.br/domain-modeling-in-the-age-of-ai"
+    },
+    {
+      "id": "2026-09-code-island-cloud-2026",
+      "title": "Code Island Cloud 2026",
+      "city": "Florianópolis",
+      "state": "SC",
+      "region": "Sul",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": "08:30",
+      "description": "O Code Island Cloud 2026 chega à sua nova edição reunindo alguns dos principais profissionais da área para discutir os desafios e as tendências que estão moldando o futuro da tecnologia.",
+      "paid": true,
+      "url": "https://tech.floripa.br/eventos/code-island-cloud-2026/"
+    },
+    {
+      "id": "2026-09-cafe-com-ia-pinda",
+      "title": "Café com IA - Pinda",
+      "city": "Pindamonhangaba",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": "09:00",
+      "description": "Café com IA em Pindamonhangaba! ☕💻",
+      "paid": false,
+      "url": "https://lu.ma/mtqd4y0d"
+    },
+    {
+      "id": "2026-09-eag-global-buildathon-florianopolis-brazil",
+      "title": "EAG Global Buildathon · Florianópolis, Brazil",
+      "city": "Florianópolis",
+      "state": "SC",
+      "region": "Sul",
+      "type": "Hackathon",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": "08:00",
+      "description": "EAG Global Buildathon · Florianópolis, Brazil",
+      "paid": false,
+      "url": "https://lu.ma/5fbmh4p9"
+    },
+    {
+      "id": "2026-09-somos-day-2026",
+      "title": "SomoS Day 2026",
+      "city": "Brasília",
+      "state": "DF",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "modality": "Híbrido",
+      "date": "2026-09-12",
+      "time": "09:00",
+      "description": "O SomoS Day está de volta — e a 3ª edição promete ser a maior de todas.",
+      "paid": false,
+      "url": "https://doity.com.br/somos-day-2026"
+    },
+    {
+      "id": "2026-09-hack-for-humanity-sao-paulo",
+      "title": "Hack for Humanity: São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": "09:00",
+      "description": "HACK FOR HUMANITY: SÃO PAULO 2026",
+      "paid": false,
+      "url": "https://lu.ma/h4h-sao-paulo"
+    },
+    {
+      "id": "2026-09-shiva-hack-7-gama-house",
+      "title": "Shiva Hack #7 @ Gama House",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": "09:30",
+      "description": "Tem informação nova sobre IA saindo mais rápido do que dá pra acompanhar. É frustrante salvar 10 ferramentas novas e nunca ter tempo de testá-las. Nós sentimos tudo isso. Decidimos criar um espaço onde todo mundo coloca a mão na massa e aprende sobre AI dando vida às suas ideias.",
+      "paid": false,
+      "url": "https://lu.ma/fsk8rw28"
+    },
+    {
+      "id": "2026-09-lovable-meetup-with-oracle-sao-paulo",
+      "title": "Lovable Meetup with Oracle São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-14",
+      "time": null,
+      "description": "Meetup da Lovable com a Oracle São Paulo",
+      "paid": false,
+      "url": "https://lu.ma/lovable-sp-3"
+    },
+    {
+      "id": "2026-09-sptw-founders-kickoff",
+      "title": "SPTW Founders Kickoff",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-14",
+      "time": "10:00",
+      "description": "​SPTW Founders Kickoff ​Welcome to São Paulo. Welcome to SPTW. 🇧🇷🚀",
+      "paid": false,
+      "url": "https://luma.com/cnj0keiq"
     },
     {
       "id": "2026-09-mind-the-sec-2026",
@@ -1812,6 +2232,328 @@
       "url": "https://www.datadoghq.com/events-webinars/?language=pt",
       "city": "São Paulo",
       "state": "SP"
+    },
+    {
+      "id": "2026-09-women-s-brunch-sp-tech-week",
+      "title": "Women's Brunch - SP Tech Week",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "time": null,
+      "description": "Join us for a special edition of our Women's Brunch during SP Tech Week!",
+      "paid": false,
+      "url": "https://lu.ma/hr8wal2o"
+    },
+    {
+      "id": "2026-09-inteligencia-artificial-para-transformar-grandes-metropoles",
+      "title": "Inteligência Artificial para transformar grandes metrópoles",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "time": "08:30",
+      "description": "A Inteligência Artificial está criando novas possibilidades para a forma como grandes cidades planejam, operam e se relacionam com seus cidadãos. Em metrópoles cada vez mais complexas, conectadas e dinâmicas, a tecnologia pode se tornar uma importante aliada para enfrentar desafios urbanos, ampliar a eficiência dos serviços públicos e apoiar decisões mais rápidas e inteligentes.O Cidades do Fut...",
+      "paid": false,
+      "url": "https://lu.ma/j8bhpz26"
+    },
+    {
+      "id": "2026-09-datadog-summit-sao-paulo",
+      "title": "Datadog Summit São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "time": "09:30",
+      "description": "Conheça em primeira mão as novidades em observabilidade, segurança, monitoramento de performance e IA, direto dos engenheiros que desenvolvem as soluções e dos profissionais que as utilizam em larga escala.",
+      "paid": false,
+      "url": "https://events.datadoghq.com/pt/summits/datadog-summit-saopaulo"
+    },
+    {
+      "id": "2026-09-pitch-day-solucoes-de-ia-para-dados",
+      "title": "Pitch Day | Soluções de IA para Dados",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "time": null,
+      "description": "Em um cenário em que dados se tornaram ativos estratégicos das organizações, traduzi-los em inteligência para impulsionar decisões, inovação e crescimento é o real desafio.",
+      "paid": false,
+      "url": "https://lu.ma/PDDataSolutions"
+    },
+    {
+      "id": "2026-09-devin-meetup-sao-paulo-setembro",
+      "title": "Devin Meetup São Paulo - Setembro",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "time": "18:00",
+      "description": "Um encontro que começa do jeito certo: networking de qualidade, happy hour e uma imersão direta com a Cognition, que está redefinindo como desenvolvemos código com IA.",
+      "paid": false,
+      "url": "https://luma.com/devin-sp-2"
+    },
+    {
+      "id": "2026-09-roadshow-sap-b1-financeiro-recife",
+      "title": "Roadshow SAP B1 Financeiro (Recife)",
+      "city": "Recife",
+      "state": "PE",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "time": "08:00",
+      "description": "No dia 15 de setembro, a Ramo e a Invent Software convidam você para uma edição exclusiva do Roadshow SAP Business One Financeiro em Recife.",
+      "paid": false,
+      "url": "https://lu.ma/yk83wzn0"
+    },
+    {
+      "id": "2026-09-cursor-meetup-3-poa",
+      "title": "Cursor Meetup #3 POA",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-15",
+      "time": "19:00",
+      "description": "A comunidade do Cursor de Porto Alegre/RS continua crescendo! 🚀",
+      "paid": false,
+      "url": "https://lu.ma/v6eq90a2"
+    },
+    {
+      "id": "2026-09-ai-market-access-brazil",
+      "title": "AI & Market Access Brazil",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-16",
+      "time": "09:30",
+      "description": "SPTW | AI & Market Access Brazil",
+      "paid": false,
+      "url": "https://lu.ma/egwbww0t"
+    },
+    {
+      "id": "2026-09-tractian-inside-the-future-of-industrial-intelligence",
+      "title": "Tractian: Inside the Future of Industrial Intelligence",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-16",
+      "time": "15:00",
+      "description": "Ahead of Norte Day 2026, we’re inviting a small group of friends inside Tractian for a closer look at how one of Latin America’s most ambitious industrial technology companies is being built.",
+      "paid": false,
+      "url": "https://lu.ma/xk80cx53"
+    },
+    {
+      "id": "2026-09-trilhas-formativas",
+      "title": "TRILHAS FORMATIVAS",
+      "city": "Salvador",
+      "state": "BA",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-16",
+      "time": "15:00",
+      "description": "As Trilhas Formativas são uma ação de formação continuada promovida pelo QuIIN, realizada mensalmente com o objetivo de ampliar o acesso ao conhecimento em tecnologias quânticas e áreas estratégicas relacionadas à inovação, segurança da informação e computação avançada.",
+      "paid": false,
+      "url": "https://doity.com.br/trilhas-formativas-quiin"
+    },
+    {
+      "id": "2026-09-techgrid-2026",
+      "title": "TechGrid 2026",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-16",
+      "time": "13:30",
+      "description": "Infraestrutura para Escalar a Inteligência Artificial",
+      "paid": false,
+      "url": "https://lu.ma/1tygpl8b"
+    },
+    {
+      "id": "2026-09-roadshow-sap-b1-financeiro-fortaleza",
+      "title": "Roadshow SAP B1 Financeiro (Fortaleza)",
+      "city": "Fortaleza",
+      "state": "CE",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": "08:00",
+      "description": "No dia 17 de setembro, a Ramo e a Invent Software convidam você para uma edição exclusiva do Roadshow SAP Business One Financeiro em Fortaleza.",
+      "paid": false,
+      "url": "https://lu.ma/nztyuxsa"
+    },
+    {
+      "id": "2026-09-rewire-cmo-s",
+      "title": "Rewire CMO's",
+      "city": "Itapevi",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": null,
+      "description": "Na primeira edição do Rewire CMO's, Monday.com e Signal & Cipher estão juntos em um evento desenhado para líderes que precisam tomar decisões estratégicas sobre como suas organizações vão operar em um mundo cada vez mais AI-native 🤖",
+      "paid": false,
+      "url": "https://lu.ma/lsw8qn4z"
+    },
+    {
+      "id": "2026-09-governo-na-inovacao-governo-e-empresas-inovando-juntos",
+      "title": "GOVERNO NA INOVAÇÃO Governo e empresas inovando juntos",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": "14:00",
+      "description": "Uma programação para aproximar gestores públicos, instrumentos de contratação, políticas centradas no cidadão e soluções desenvolvidas por empresas e GovTechs.",
+      "paid": false,
+      "url": "https://lu.ma/g1nraiv0"
+    },
+    {
+      "id": "2026-09-physical-ai-summit-year-one-of-humanoids",
+      "title": "Physical AI Summit | Year One of Humanoids",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": null,
+      "description": "The robots are coming. Not to our screens, but to our farms, our factories, our streets, and our homes.",
+      "paid": false,
+      "url": "https://lu.ma/q879q4ma"
+    },
+    {
+      "id": "2026-09-maturiday-salvador",
+      "title": "MaturiDay Salvador",
+      "city": "Salvador",
+      "state": "BA",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": "14:00",
+      "description": "MaturiDay Salvador Geração Conectada: Empreendedorismo 45+ e Inteligência Artificial",
+      "paid": false,
+      "url": "https://lu.ma/3iedmiyx"
+    },
+    {
+      "id": "2026-09-tech-leadership-circle-5",
+      "title": "Tech Leadership Circle #5",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": null,
+      "description": "O Tech Leadership Circle chega à sua 5ª edição em um novo formato e em sua maior versão até aqui.",
+      "paid": false,
+      "url": "https://lu.ma/s6xzytrm"
+    },
+    {
+      "id": "2026-09-ai-devs-sp-ia-aplicada-no-sdlc",
+      "title": "AI Devs SP — IA aplicada no SDLC",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": "18:30",
+      "description": "Tem um novo dev chegando a São Paulo. Em breve você conhecerá como sua jornada de desenvolvimento pode mudar de patamar! Novidades em breve!",
+      "paid": false,
+      "url": "https://www.meetup.com/ai-devs-sp/events/315552083"
+    },
+    {
+      "id": "2026-09-meetup-ia-adapcon",
+      "title": "MEETUP IA - ADAPCON",
+      "city": "Jaraguá do Sul",
+      "state": "SC",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": null,
+      "description": "IA NA PRÁTICA. SEM ENROLAÇÃO.",
+      "paid": false,
+      "url": "https://lu.ma/7vujhuln"
+    },
+    {
+      "id": "2026-09-go-rn-devfest-natal-2026",
+      "title": "GO!RN + DevFest Natal 2026",
+      "city": "Natal",
+      "state": "RN",
+      "region": "Nordeste",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-09-18",
+      "time": null,
+      "description": "O GO!RN é a maior feira de empreendedorismo, tecnologia e inovação do Rio Grande do Norte, promovida pelo SEBRAE RN e realizada em Natal. Em dois dias de evento, reunimos palestras, oficinas, painéis, rodadas de negócios e experiências interativas, sendo ponto de encontro para startups, empresas, estudantes, investidores e profissionais de diversas áreas compartilharem conhecimentos, discutirem...",
+      "paid": false,
+      "url": "https://gorn.com.br/"
+    },
+    {
+      "id": "2026-09-porto-hack-santos-2026",
+      "title": "Porto Hack Santos 2026",
+      "city": "Santos",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Híbrido",
+      "date": "2026-09-18",
+      "time": null,
+      "description": "Hackathon universitário organizado pela ABTRA com maratona online seguida de final presencial em Santos, desafiando equipes a propor soluções para o novo processo de importação (DUIMP).",
+      "paid": false,
+      "url": "https://portohacksantos.com.br/"
+    },
+    {
+      "id": "2026-09-ai-second-02-imersao-umode",
+      "title": "AI Second #02 - Imersão uMode",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-18",
+      "time": "08:30",
+      "description": "Bem-vindo à Imersão uMode.",
+      "paid": false,
+      "url": "https://lu.ma/pkh9tfsf"
+    },
+    {
+      "id": "2026-09-observability-day",
+      "title": "Observability Day",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-18",
+      "time": "09:30",
+      "description": "​Onde quem constrói sistemas confiáveis se encontra. ​Um dia inteiro de palestras, painéis e networking de alto nível, conectando profissionais, marcas e tecnologia em torno de observabilidade, confiabilidade e IA.",
+      "paid": false,
+      "url": "https://luma.com/observability-day-2026"
     },
     {
       "id": "2026-09-aws-community-day-brasil-sul-curitiba",
@@ -1854,6 +2596,20 @@
       "url": "https://www.sympla.com.br/evento/xibesec-2026/3470128"
     },
     {
+      "id": "2026-09-hackathon-start-no-futuro-2026",
+      "title": "Hackathon Start no Futuro 2026",
+      "city": "Canaã dos Carajás",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Hackathon",
+      "modality": "Híbrido",
+      "date": "2026-09-19",
+      "time": null,
+      "description": "Hackathon promovido pela Prefeitura de Canaã dos Carajás em parceria com a UFPA (projeto Smart City), com fases online e evento presencial final voltado a estudantes, programadores e empreendedores.",
+      "paid": false,
+      "url": "https://carajasojornal.com.br/canaa-dos-carajas-abre-inscricoes-para-hackathon-start-no-futuro-2026/"
+    },
+    {
       "id": "2026-09-linuxtips-local-rio-branco",
       "title": "LINUXtips.local Rio Branco",
       "region": "Norte",
@@ -1893,6 +2649,76 @@
       "state": "BA"
     },
     {
+      "id": "2026-09-workshop-chatgpt-work-codex",
+      "title": "Workshop: ChatGPT Work + Codex",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Workshop",
+      "modality": "Presencial",
+      "date": "2026-09-22",
+      "time": null,
+      "description": "Que tal elevar definitivamente a forma como você trabalha e produz?",
+      "paid": false,
+      "url": "https://lu.ma/WorkshopGPTWorkCodex"
+    },
+    {
+      "id": "2026-09-fiap-meetup-next-women-da-universidade-ao-mundo-corporativo",
+      "title": "FIAP Meetup | NEXT WOMEN: da universidade ao mundo corporativo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-22",
+      "time": "19:00",
+      "description": "Participe de um meetup especial para mulheres que estão construindo suas carreiras em um mercado cada vez mais transformado pela tecnologia e pela Inteligência Artificial.",
+      "paid": false,
+      "url": "https://www.meetup.com/fiapmeetups/events/316267266/"
+    },
+    {
+      "id": "2026-09-abrindo-a-portera-em-sao-paulo",
+      "title": "Abrindo a Portera em São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-22",
+      "time": "19:30",
+      "description": "Conectando pessoas, carreiras e oportunidades! A Portera Tech e a Vagas UX se unem para trazer o Abrindo a Portera para São Paulo!",
+      "paid": false,
+      "url": "https://www.sympla.com.br/evento/abrindo-a-portera-em-sao-paulo/3534647"
+    },
+    {
+      "id": "2026-09-decidir-com-ia-entre-o-risco-e-o-resultado-ws-e-palestra",
+      "title": "Decidir com IA: entre o Risco e o Resultado | WS e Palestra",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-22",
+      "time": null,
+      "description": "Que critérios definem uma boa estratégia com IA?",
+      "paid": false,
+      "url": "https://lu.ma/4yc3vhj7"
+    },
+    {
+      "id": "2026-09-google-agents-in-production-for-enterprises-virtual-ep-1",
+      "title": "Google Agents in Production for Enterprises (Virtual) - Ep 1",
+      "city": null,
+      "state": null,
+      "region": "Nacional",
+      "type": "Evento",
+      "modality": "Online",
+      "date": "2026-09-22",
+      "time": "13:00",
+      "description": "Sessão virtual com engenheiros do Google Cloud sobre arquiteturas de IA agêntica em produção, demos e code labs, promovida pelo São Paulo AI Developer Group.",
+      "paid": false,
+      "url": "https://www.meetup.com/aidev-saopaulo/events/315935947/"
+    },
+    {
       "id": "2026-09-tdc-sao-paulo-2026",
       "title": "TDC São Paulo 2026",
       "region": "Sudeste",
@@ -1918,6 +2744,48 @@
       "url": "https://www.sympla.com.br/evento/linuxtips-local-campo-grande/3439909",
       "city": "Campo Grande",
       "state": "MS"
+    },
+    {
+      "id": "2026-09-roadshow-sap-b1-financeiro-salvador",
+      "title": "Roadshow SAP B1 Financeiro (Salvador)",
+      "city": "Salvador",
+      "state": "BA",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-23",
+      "time": "08:00",
+      "description": "No dia 23 de setembro, a Ramo e a Invent Software convidam você para uma edição exclusiva do Roadshow SAP Business One Financeiro em Salvador.",
+      "paid": false,
+      "url": "https://lu.ma/clntc0dg"
+    },
+    {
+      "id": "2026-09-do-dado-a-decisao-construindo-um-lakehouse-com-ia-na-pratica",
+      "title": "Do dado à decisão: construindo um Lakehouse com IA na prática",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-23",
+      "time": "08:00",
+      "description": "Como transformar dados dispersos em inteligência capaz de apoiar decisões reais de negócio?",
+      "paid": false,
+      "url": "https://lu.ma/iytld6st"
+    },
+    {
+      "id": "2026-09-brazil-tokenization-report-2026",
+      "title": "Brazil Tokenization Report 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-23",
+      "time": null,
+      "description": "[SAVE THE DATE - Brazil Tokenization Report 3° edição]",
+      "paid": false,
+      "url": "https://lu.ma/9snf48zy"
     },
     {
       "id": "2026-09-linuxtips-local-porto-alegre",
@@ -1947,6 +2815,76 @@
       "state": "SP"
     },
     {
+      "id": "2026-09-rewire-rh",
+      "title": "Rewire RH",
+      "city": "Itapevi",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-24",
+      "time": null,
+      "description": "Na segunda edição do Rewire RH, iFood Benefícios e ÚnicoSkill estão juntos em um evento desenhado para líderes que precisam tomar decisões estratégicas sobre como suas organizações vão operar em um mundo cada vez mais AI-native 🤖",
+      "paid": false,
+      "url": "https://lu.ma/nhyu1jg4"
+    },
+    {
+      "id": "2026-09-google-cloud-summit-brasil-2026",
+      "title": "Google Cloud Summit Brasil 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-09-24",
+      "time": null,
+      "description": "Não fique de fora do Google Cloud Summit Brasil 2026",
+      "paid": false,
+      "url": "https://cloudonair.withgoogle.com/events/google-cloud-summit-brasil-2026-1"
+    },
+    {
+      "id": "2026-09-programmatic-day-2026",
+      "title": "Programmatic Day 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-24",
+      "time": null,
+      "description": "Programmatic Day 2026",
+      "paid": false,
+      "url": "https://lu.ma/h1ek9day"
+    },
+    {
+      "id": "2026-09-bemagro-summit-2026-inteligencia-satelital-para-monitoramento-de-daninhas-em-larga-escala",
+      "title": "BemAgro SUMMIT 2026: inteligência satelital para monitoramento de daninhas em larga escala",
+      "city": "Ribeirão Preto",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-09-24",
+      "time": null,
+      "description": "PT | SAVE THE DATE | 24 de setembro de 2026",
+      "paid": false,
+      "url": "https://lu.ma/gr9w4e1i"
+    },
+    {
+      "id": "2026-09-meetup-java-sao-paulo-45-mongodb-edition",
+      "title": "Meetup Java São Paulo (45) - MongoDB Edition",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-24",
+      "time": "18:30",
+      "description": "Meetup Java São Paulo - MongoDB Edition (45)",
+      "paid": false,
+      "url": "https://www.meetup.com/sao-paulo-java-meetup/events/316227210"
+    },
+    {
       "id": "2026-09-linuxtips-local-belo-horizonte",
       "title": "LINUXtips.local Belo Horizonte",
       "region": "Sudeste",
@@ -1958,6 +2896,34 @@
       "url": "https://www.sympla.com.br/evento/linuxtips-local-belo-horizonte/3439899",
       "city": "Belo Horizonte",
       "state": "MG"
+    },
+    {
+      "id": "2026-09-techstars-startup-weekend-martech-sao-paulo",
+      "title": "Techstars Startup Weekend Martech São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-25",
+      "time": "18:00",
+      "description": "O Techstars Startup Weekend Martech São Paulo é uma imersão prática de 54 horas para quem quer tirar ideias do papel, testar soluções reais e aprender, na prática, como construir uma startup.",
+      "paid": true,
+      "url": "https://lu.ma/jxei6r3t"
+    },
+    {
+      "id": "2026-09-coppe-made-in-rio-hackathon-opening-day",
+      "title": "COPPE & Made in Rio Hackathon: Opening Day",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Hackathon",
+      "modality": "Presencial",
+      "date": "2026-09-25",
+      "time": "14:00",
+      "description": "Brazil's Only AI Hackathon for the Energy Transition.",
+      "paid": false,
+      "url": "https://lu.ma/hackathonrio"
     },
     {
       "id": "2026-09-devopsdays-belo-horizonte",
@@ -1984,6 +2950,118 @@
       "url": "https://community.cncf.io/kcd-brasil/",
       "city": "São Paulo",
       "state": "SP"
+    },
+    {
+      "id": "2026-09-cursor-meetup-sao-paulo",
+      "title": "Cursor Meetup São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-26",
+      "time": null,
+      "description": "A Inteligência Artificial continua abrindo novas possibilidades, e chegou a hora de explorarmos juntos o Grokbot.",
+      "paid": false,
+      "url": "https://lu.ma/t02rngjx"
+    },
+    {
+      "id": "2026-09-hackbahia-2026",
+      "title": "HackBahia 2026",
+      "city": "Salvador",
+      "state": "BA",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-26",
+      "time": "08:30",
+      "description": "O HackBahia é um evento que visa difundir conhecimento sobre a área de segurança da informação para profissionais e estudantes, principalmente para aqueles que estejam começando ou interessados em ingressar na área. Somos motivados pela vontade de disseminação do conhecimento e por isso prezamos por realizar um evento estritamente técnico, abrindo um espaço para estudantes e profissionais mostr...",
+      "paid": true,
+      "url": "https://doity.com.br/hackbahia-2026"
+    },
+    {
+      "id": "2026-09-b3-career-summit-2026",
+      "title": "B3 Career Summit 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Híbrido",
+      "date": "2026-09-26",
+      "time": "08:30",
+      "description": "**UM EVENTO FEITO PARA POTENCIALIZAR O FUTURO DE JOVENS TALENTOS**",
+      "paid": false,
+      "url": "https://content.b3.com.br/career-summit-2026/"
+    },
+    {
+      "id": "2026-09-grok-bot-meetup-florianopolis",
+      "title": "Grok Bot Meetup Florianópolis",
+      "city": "Florianópolis",
+      "state": "SC",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-26",
+      "time": null,
+      "description": "First Grok Bot meetup in Florianópolis.",
+      "paid": false,
+      "url": "https://lu.ma/c293hlgc"
+    },
+    {
+      "id": "2026-09-devin-meetup-rio-de-janeiro",
+      "title": "Devin Meetup Rio de Janeiro",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-26",
+      "time": "09:00",
+      "description": "Junte-se a desenvolvedores da sua região para fazer networking, aprender e construir projetos com o Devin.",
+      "paid": false,
+      "url": "https://lu.ma/l2f11j2p"
+    },
+    {
+      "id": "2026-09-native-26",
+      "title": "NATIVE'26",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-28",
+      "time": "17:30",
+      "description": "AI-Native HR: a fronteira já está em produção.",
+      "paid": false,
+      "url": "https://lu.ma/kicyn9ju"
+    },
+    {
+      "id": "2026-09-lideranca-transformadora",
+      "title": "Liderança Transformadora",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-09-29",
+      "time": null,
+      "description": "A liderança do futuro é construída com dados, propósito e inovação. Neste workshop prático e interativo, você vai mergulhar nas trilhas de Liderança do Distrito e aprender como aplicar a Inteligência Artificial para otimizar processos e guiar sua equipe rumo a resultados exponenciais.",
+      "paid": false,
+      "url": "https://lu.ma/LiderancaTransformadora"
+    },
+    {
+      "id": "2026-09-tecnoupdate-2026",
+      "title": "TecnoUpdate 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-09-29",
+      "time": "09:00",
+      "description": "17ª edição da TecnoUpdate, conferência e evento de networking para software houses, reunindo líderes, founders e CTOs para conteúdo estratégico sobre reforma tributária, inovação e inteligência artificial.",
+      "paid": true,
+      "url": "https://www.tecnoupdate.com.br"
     }
   ],
   "Outubro": [
@@ -2001,6 +3079,34 @@
       "state": null
     },
     {
+      "id": "2026-10-lancamento-secops-summit-2027",
+      "title": "Lançamento SecOps Summit 2027",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "region": "Sul",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-10-01",
+      "time": null,
+      "description": "O maior evento de Cibersegurança e Operações de TI do Sul do Brasil está de volta para a sua 4ª edição, ainda maior e mais transformador!",
+      "paid": false,
+      "url": "https://lu.ma/46uougkl"
+    },
+    {
+      "id": "2026-10-forgehacks-online-2026",
+      "title": "ForgeHacks Online 2026",
+      "city": null,
+      "state": null,
+      "region": "Nacional",
+      "type": "Evento",
+      "modality": "Online",
+      "date": "2026-10-03",
+      "time": "12:00",
+      "description": "Hackathon online organizado por um time de estudantes, com trilhas temáticas e prêmios em créditos de plataformas de IA. Aberto a estudantes de todos os países.",
+      "paid": false,
+      "url": "https://forgehacks.vercel.app/"
+    },
+    {
       "id": "2026-10-cbie-2026-congresso-brasileiro-de-informatica-na-educacao",
       "title": "CBIE 2026 - Congresso Brasileiro de Informática na Educação",
       "region": "Centro-Oeste",
@@ -2012,6 +3118,34 @@
       "url": "https://cbie.sbc.org.br",
       "city": "Goiânia",
       "state": "GO"
+    },
+    {
+      "id": "2026-10-ctts-2-em-recife-ai-employees-na-pratica",
+      "title": "CTTS #2 em Recife: AI Employees na prática",
+      "city": "Recife",
+      "state": "PE",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-06",
+      "time": "18:30",
+      "description": "CTTS #2 - Recife em parceria com a Hostinger e a FIAP de Recife",
+      "paid": false,
+      "url": "https://lu.ma/78ytjlto"
+    },
+    {
+      "id": "2026-10-the-new-agro-2026",
+      "title": "The New Agro 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-06",
+      "time": "13:30",
+      "description": "O agora tem pressa e tem nome: The New Agro 2026.É o maior encontro de inteligência, inovação e negócios do mercado de grãos. Um evento exclusivo da Grão Direto que conecta quem está liderando a transformação do setor e redefinindo o agro. 2025 foi incrível. 2026 será memorável.PROGRAMAÇÃO08h — Credenciamento & Coffee09h — Trilhas Especializadas Duas trilhas de conteúdo acontecendo ao mesmo tem...",
+      "paid": true,
+      "url": "https://lu.ma/uurzve2l"
     },
     {
       "id": "2026-10-oktobercloud-2026",
@@ -2067,6 +3201,48 @@
       "state": "PR"
     },
     {
+      "id": "2026-10-build-ai-first-applications-fast-scalable-autonomous",
+      "title": "Build AI-First Applications: Fast, Scalable & Autonomous",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-14",
+      "time": null,
+      "description": "Jornada de desenvolvimento completa: da infraestrutura até a Aplicação",
+      "paid": true,
+      "url": "https://lu.ma/7bkembbl"
+    },
+    {
+      "id": "2026-10-ai-conf-roll",
+      "title": "AI CONF'ROLL",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "2026-10-15",
+      "time": null,
+      "description": "O AI Conf'Roll é uma experiência criada para conectar tecnologia, criatividade humana e negócios reais em torno da Inteligência Artificial com palestras de alto impacto dos maiores providers de AI do mundo e com Música!",
+      "paid": true,
+      "url": "https://lu.ma/dilv1b4d"
+    },
+    {
+      "id": "2026-10-lovable-day-sao-paulo",
+      "title": "Lovable Day São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-16",
+      "time": "09:00",
+      "description": "O maior evento presencial da Lovable no mundo, pela segunda vez em São Paulo, e pela primeira vez, com mais de 1000 Lovable Builders reunidos em um só local. Será um dia inteiro imerso no universo de Vibe Coding, com palestras inspiradoras, painéis interativos e casos de uso reais da plataforma que está transformando times que têm ideias em que constroem.",
+      "paid": true,
+      "url": "https://lu.ma/2bekyxsb"
+    },
+    {
       "id": "2026-10-devopsdays-juiz-de-fora",
       "title": "DevOpsDays Juiz de Fora",
       "region": "Sudeste",
@@ -2080,6 +3256,20 @@
       "state": "MG"
     },
     {
+      "id": "2026-10-code-pajamas",
+      "title": "☁️ Code & Pajamas",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-17",
+      "time": "17:00",
+      "description": "☁️ Code & Pajamas",
+      "paid": true,
+      "url": "https://gdg.community.dev/events/details/google-gdg-cloud-sao-paulo-presents-code-amp-pajamas/"
+    },
+    {
       "id": "2026-10-php-conference-brasil-2026",
       "title": "PHP Conference Brasil 2026",
       "region": "Sul",
@@ -2089,8 +3279,64 @@
       "description": "A 20ª edição do maior e mais longevo evento de PHP da América Latina, com dias online (19 a 22 de outubro) e dias presenciais na UNICESUMAR em Maringá-PR (23 e 24 de outubro).",
       "paid": true,
       "url": "https://phpconference.com.br",
-      "city": null,
-      "state": null
+      "city": "Maringá",
+      "state": "PR"
+    },
+    {
+      "id": "2026-10-18th-brazilian-symposium-in-information-and-human-language-technology-stil-2026",
+      "title": "18th Brazilian Symposium in Information and Human Language Technology (STIL 2026)",
+      "city": "Cuiabá",
+      "state": "MT",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-19",
+      "time": null,
+      "description": "Simpósio brasileiro de tecnologia da informação e da linguagem humana (processamento de linguagem natural), realizado em conjunto com o BRACIS 2026, no Centro de Eventos do UniSENAI, em Cuiabá.",
+      "paid": true,
+      "url": "https://bracis.sbc.org.br/2026"
+    },
+    {
+      "id": "2026-10-inteligencia-summit",
+      "title": "Inteligência Summit",
+      "city": "Ponta Grossa",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-10-19",
+      "time": null,
+      "description": "Um dia inteiro com os maiores nomes do Brasil em liderança, cultura organizacional e inteligência artificial. Realizado pela Inbix e Unimed Ponta Grossa, o Inteligência Summit reúne líderes, gestores e profissionais de RH para debater o que realmente importa: gente e o futuro das organizações.",
+      "paid": false,
+      "url": "https://lu.ma/b83y6ilx"
+    },
+    {
+      "id": "2026-10-dia-do-profissional-de-informatica",
+      "title": "Dia do profissional de informática",
+      "city": "Luziânia",
+      "state": "GO",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-19",
+      "time": "08:00",
+      "description": "No Dia do Profissional da Informática, celebramos os especialistas que transformam linhas de código, redes e dados em soluções essenciais para o nosso cotidiano. Com dedicação e raciocínio lógico, esses profissionais sustentam a infraestrutura digital do mundo moderno, otimizando processos, garantindo a segurança da informação e impulsionando a inovação tecnológica em todos os setores. Mais do...",
+      "paid": false,
+      "url": "https://doity.com.br/dia-do-profissional-de-informatica"
+    },
+    {
+      "id": "2026-10-23-encontro-nacional-de-inteligencia-artificial-e-computacional-eniac-2026",
+      "title": "23º Encontro Nacional de Inteligência Artificial e Computacional (ENIAC 2026)",
+      "city": "Cuiabá",
+      "state": "MT",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-19",
+      "time": null,
+      "description": "Encontro nacional de inteligência artificial e computacional, realizado em conjunto com o BRACIS 2026, no Centro de Eventos do UniSENAI, em Cuiabá.",
+      "paid": true,
+      "url": "https://bracis.sbc.org.br/2026/eniac/"
     },
     {
       "id": "2026-10-php-conference-brasil-2026-dias-presenciais",
@@ -2104,7 +3350,7 @@
       "paid": true,
       "url": "https://phpconference.com.br",
       "city": "Maringá",
-      "state": null
+      "state": "PR"
     },
     {
       "id": "2026-10-devopsdays-florianopolis",
@@ -2118,6 +3364,62 @@
       "url": "https://devopsdays.org/events/2026-florianopolis",
       "city": "Florianópolis",
       "state": "SC"
+    },
+    {
+      "id": "2026-10-afya-uninovafapi-tech",
+      "title": "AFYA UNINOVAFAPI TECH",
+      "city": "Teresina",
+      "state": "PI",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-27",
+      "time": "17:00",
+      "description": "O AFYA UNINOVAFAPI TECH – Tecnologia, Inovação e Futuro é uma experiência criada para conectar estudantes, profissionais e empresas em torno das principais transformações do universo da tecnologia.De 27 a 29 de outubro de 2026, a Afya Uninovafapi será palco de uma programação que combina conhecimento, prática, inovação e conexão com o mercado, com palestras sobre temas emergentes, minicursos pr...",
+      "paid": true,
+      "url": "https://doity.com.br/afya-tech"
+    },
+    {
+      "id": "2026-10-ai-brasil-experience",
+      "title": "AI BRASIL Experience",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-10-28",
+      "time": "08:00",
+      "description": "Nos dias 28 e 29 de outubro, o Distrito Anhembi – Pavilhão EXPO 03 e 04, em São Paulo, será palco do AI Brasil Experience, um dos maiores eventos do país dedicados à Inteligência Artificial. Promovido pela comunidade AIBRASIL.AI, o encontro tem como missão democratizar o acesso à IA, descomplicando conceitos e promovendo conexões entre pessoas, empresas e tecnologia.",
+      "paid": true,
+      "url": "https://doity.com.br/ai-brasil-experience"
+    },
+    {
+      "id": "2026-10-devin-meetup-sao-paulo-outubro",
+      "title": "Devin Meetup São Paulo - Outubro",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-10-28",
+      "time": "18:00",
+      "description": "​Um encontro que começa do jeito certo: networking de qualidade, happy hour e uma imersão direta com a Cognition, que está redefinindo como desenvolvemos código com IA.",
+      "paid": false,
+      "url": "https://luma.com/devin-sp-3"
+    },
+    {
+      "id": "2026-10-link-festival-digital-de-acessibilidade-9-edicao",
+      "title": "Link: festival digital de acessibilidade | 9ª edição",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Festival de tecnologia",
+      "modality": "Presencial",
+      "date": "2026-10-30",
+      "time": "10:00",
+      "description": "O maior Festival de Acessibilidade Digital da América Latina vem aí! Idealizado pela Hand Talk, startup brasileira reconhecida por suas soluções inovadoras com tradução automática para Línguas de Sinais, o festival reúne especialistas, empresas e líderes que estão transformando a forma como pessoas, marcas e organizações se conectam. Chegando em sua 9ª edição, o evento acontecerá no dia 30 de o...",
+      "paid": false,
+      "url": "https://doity.com.br/linkfestival2026"
     },
     {
       "id": "2026-10-aws-community-day-brasil-norte-belem",
@@ -2157,9 +3459,149 @@
       "url": "https://gdg.community.dev/events/details/google-gdg-porto-alegre-presents-devfestpoa26/cohost-gdg-porto-alegre",
       "city": "Porto Alegre",
       "state": "RS"
+    },
+    {
+      "id": "2026-10-devin-meetup-manaus-1",
+      "title": "Devin Meetup Manaus #1",
+      "city": "Manaus",
+      "state": "AM",
+      "region": "Norte",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-10-31",
+      "time": "08:30",
+      "description": "Junte-se a desenvolvedores da sua região para fazer networking, aprender e construir projetos com o Devin.",
+      "paid": false,
+      "url": "https://lu.ma/yeajl4kq"
+    },
+    {
+      "id": "2026-10-devfest-triangulo-2026",
+      "title": "DevFest Triângulo 2026",
+      "city": "Uberlândia",
+      "state": "MG",
+      "region": "Sudeste",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-10-31",
+      "time": "08:00",
+      "description": "O maior encontro da comunidade de tecnologia do Triângulo Mineiro está de volta! O DevFest Triângulo 2026 é um evento de tecnologia organizado pela comunidade Google Developer Groups Uberlândia (GDG Uberlândia). Um encontro criado para conectar pessoas, compartilhar conhecimento e fortalecer o ecossistema de tecnologia da nossa região.",
+      "paid": true,
+      "url": "https://doity.com.br/devfest-triangulo-2026"
+    },
+    {
+      "id": "2026-10-devfest-belo-horizonte",
+      "title": "DevFest Belo Horizonte",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "region": "Sudeste",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-10-31",
+      "time": "11:00",
+      "description": "O DevFest Belo Horizonte 2026 será o maior evento de tecnologia da história da comunidade. Realizado pelo GDG Belo Horizonte, o evento reunirá 1.100 participantes no Minas Centro em um dia inteiro dedicado ao aprendizado, à inovação e às conexões que movimentam o ecossistema tech.",
+      "paid": true,
+      "url": "https://gdg.community.dev/events/details/google-gdg-belo-horizonte-presents-devfest-belo-horizonte-2/"
+    },
+    {
+      "id": "2026-10-devfest-porto-alegre",
+      "title": "DevFest Porto Alegre",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "region": "Sul",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-10-31",
+      "time": "09:00",
+      "description": "O DevFestPoa26 não é só mais uma conferência de tecnologia. É o encontro anual das comunidades GDG Porto Alegre e GDG Caxias do Sul — feito por quem programa, projeta, lidera e aprende no dia a dia, para quem quer fazer parte disso.",
+      "paid": true,
+      "url": "https://www.devfestportoalegre.com.br/"
     }
   ],
   "Novembro": [
+    {
+      "id": "2026-11-xv-simposio-brasileiro-de-tecnologia-da-informacao",
+      "title": "XV Simpósio Brasileiro de Tecnologia da Informação",
+      "city": "Recife",
+      "state": "PE",
+      "region": "Nordeste",
+      "type": "Congresso",
+      "modality": "Presencial",
+      "date": "2026-11-03",
+      "time": "08:30",
+      "description": "Simpósio Brasileiro de Tecnologia da Informação - 15a Edição",
+      "paid": true,
+      "url": "https://doity.com.br/xv-simposio-brasileiro-de-tecnologia-da-informacao"
+    },
+    {
+      "id": "2026-11-dia-do-acbr-2026",
+      "title": "Dia do ACBr 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-05",
+      "time": "08:30",
+      "description": "Não é apenas um congresso, nem somente uma feira: É uma combinação equilibrada entre os dois, com um toque de celebração do grande encontro de nossa comunidade. É o Dia do ACBr!",
+      "paid": true,
+      "url": "https://doity.com.br/diadoacbr2026"
+    },
+    {
+      "id": "2026-11-frontier-ai-governance-in-a-global-context",
+      "title": "Frontier AI Governance in a Global Context",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-05",
+      "time": "09:45",
+      "description": "The RECSAI Conference 2026 brings together renowned experts from academia, industry, and policy to address the latest advancements and regulatory challenges in emerging technologies, with a particular focus on the learnings and contrasts between Global North and South/Majority World settings. The conference will feature keynote speeches, expert panels on AI governance, and regulatory frameworks...",
+      "paid": false,
+      "url": "https://lu.ma/kbk2mz6j"
+    },
+    {
+      "id": "2026-11-the-developer-s-life-weekend-edicao-campo-mourao",
+      "title": "The Developer's Life Weekend - Edição Campo Mourão",
+      "city": "Campo Mourão",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-06",
+      "time": null,
+      "description": "Join us for the first GDG Campo Mourão event, 'The Developer's Life Weekend - Kickoff Edition', a celebration of technology, innovation, and collaboration! Originally established as the PHP Weekend in Maringá, this event has evolved over the years to cover a wide range of topics in the tech world. Previously hosted in Maringá, Curitiba, and Campo Mourão, our events have gathered nearly 1000 tec...",
+      "paid": false,
+      "url": "https://gdg.community.dev/events/details/google-gdg-campo-mourao-presents-the-developers-life-weekend-edicao-campo-mourao/"
+    },
+    {
+      "id": "2026-11-platformcon-live-day-sao-paulo",
+      "title": "PlatformCon Live Day - São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-07",
+      "time": null,
+      "description": "A conferência de engenharia de plataformas #1 na America Latina",
+      "paid": true,
+      "url": "https://lu.ma/8nmknjda"
+    },
+    {
+      "id": "2026-11-red-hat-summit-connect-2026-sao-paulo",
+      "title": "Red Hat Summit: Connect 2026 São Paulo",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-11-10",
+      "time": "08:00",
+      "description": "O poder de escolha Liderar na era da IA com soberania e autonomia A inteligência artificial e a soberania de dados abrem um universo de possibilidades, mas o verdadeiro diferencial está em preservar a liberdade de escolha sobre como inovar. O Red Hat Summit: Connect 2026 São Paulo é o espaço onde a liberdade do open source e a inovação tecnológica se encontram para guiar essa evolução. Junte-se...",
+      "paid": false,
+      "url": "https://www.redhat.com/pt-br/summit/connect/latam/sao-paulo-2026"
+    },
     {
       "id": "2026-11-tdc-experience-recife-rec-n-play-2026",
       "title": "TDC Experience Recife | Rec'n'Play 2026",
@@ -2172,6 +3614,76 @@
       "url": "https://thedevconf.com/tdc/2026/datas-e-locais",
       "city": "Recife",
       "state": "PE"
+    },
+    {
+      "id": "2026-11-pre-inscricao-tdc-stage-rec-n-play",
+      "title": "Pré-inscrição TDC Stage + Rec'n'play",
+      "city": "Recife",
+      "state": "PE",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-11",
+      "time": null,
+      "description": "🚀 TDC Stage no REC’n’Play 2026 | Lista de Interesse & Comunidade",
+      "paid": false,
+      "url": "https://lu.ma/7ot453yl"
+    },
+    {
+      "id": "2026-11-rec-n-play-2026",
+      "title": "REC'n'Play 2026",
+      "city": "Recife",
+      "state": "PE",
+      "region": "Nordeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-11",
+      "time": null,
+      "description": "Festival de tecnologia, inovação, economia criativa e empreendedorismo.",
+      "paid": false,
+      "url": "https://recnplay.pe/"
+    },
+    {
+      "id": "2026-11-londrisoft-camp-2026",
+      "title": "Londrisoft Camp 2026",
+      "city": "Cambé",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-11",
+      "time": null,
+      "description": "O maior evento de tecnologia e inteligência artificial para contabilidade e gestão empresarial de Londrina.",
+      "paid": true,
+      "url": "https://lu.ma/bb8nunzg"
+    },
+    {
+      "id": "2026-11-quantum-business-roadshow-embrapii",
+      "title": "Quantum Business - Roadshow Embrapii",
+      "city": "Brasília",
+      "state": "DF",
+      "region": "Centro-Oeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-11",
+      "time": "08:00",
+      "description": "À medida que as tecnologias quânticas avançam e ampliam seu potencial de impacto em áreas estratégicas, como segurança digital, telecomunicações, defesa, infraestrutura crítica e indústria, torna-se cada vez mais importante fortalecer a articulação entre os diferentes atores responsáveis pelo desenvolvimento, financiamento, regulamentação e adoção dessas soluções.",
+      "paid": false,
+      "url": "https://doity.com.br/qbroadshow"
+    },
+    {
+      "id": "2026-11-agile-brazil-2026",
+      "title": "Agile Brazil 2026",
+      "city": "Foz do Iguaçu",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-12",
+      "time": "08:00",
+      "description": "Conferência brasileira sobre agilidade, produtos, organizações e desenvolvimento de software.",
+      "paid": true,
+      "url": "https://www.even3.com.br/agilebrazil2026-746128?even3_orig=online_category"
     },
     {
       "id": "2026-11-devopsdays-brasilia",
@@ -2228,6 +3740,76 @@
       "url": "https://devopsdays.org/events/2026-belem"
     },
     {
+      "id": "2026-11-sao-paulo-2026-venture-capital-world-summit",
+      "title": "São Paulo 2026 Venture Capital World Summit",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-11-16",
+      "time": null,
+      "description": "Venture Capital World Summit, World Series Seasons of Investment Conferences",
+      "paid": false,
+      "url": "https://lu.ma/3d9fz28p"
+    },
+    {
+      "id": "2026-11-expocreati-2026",
+      "title": "EXPOCREATI 2026",
+      "city": "Manaus",
+      "state": "AM",
+      "region": "Norte",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-17",
+      "time": null,
+      "description": "Exposição de criatividade, tecnologia e inovação na educação municipal.",
+      "paid": false,
+      "url": "https://sites.google.com/semed.manaus.am.gov.br/expocreati/home"
+    },
+    {
+      "id": "2026-11-devfest-joao-pessoa",
+      "title": "Devfest João Pessoa",
+      "city": "Cabedelo",
+      "state": "PB",
+      "region": "Nordeste",
+      "type": "Community Day",
+      "modality": "Híbrido",
+      "date": "2026-11-20",
+      "time": "08:00",
+      "description": "Devfest João Pessoa",
+      "paid": true,
+      "url": "https://doity.com.br/devfest-joao-pessoa"
+    },
+    {
+      "id": "2026-11-devin-meetup-sao-paulo-novembro",
+      "title": "Devin Meetup São Paulo - Novembro",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-11-25",
+      "time": "18:00",
+      "description": "​Meetup da Cognition em São Paulo​ ​Um encontro que começa do jeito certo: networking de qualidade, happy hour e uma imersão direta com a Cognition, que está redefinindo como desenvolvemos código com IA.",
+      "paid": false,
+      "url": "https://luma.com/devin-sp-4"
+    },
+    {
+      "id": "2026-11-venha-visitar-o-tractian-ai-lab",
+      "title": "Venha visitar o Tractian AI Lab",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-26",
+      "time": null,
+      "description": "Nós QUEBRAMOS máquinas com o objetivo de VALIDAR nossos próprios modelos.Venha conhecer o Tractian Lab, dentro do Tractian AI Center: Mundo real, falhas reais.",
+      "paid": false,
+      "url": "https://lu.ma/zcorw3rh"
+    },
+    {
       "id": "2026-11-front-in-floripa-2026",
       "title": "Front in Floripa 2026",
       "region": "Sul",
@@ -2240,6 +3822,62 @@
       "time": "08:00",
       "city": "Florianópolis",
       "state": "SC"
+    },
+    {
+      "id": "2026-11-devfest-cerrado-2026",
+      "title": "DevFest Cerrado 2026",
+      "city": "Goiânia",
+      "state": "GO",
+      "region": "Centro-Oeste",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-11-28",
+      "time": "07:30",
+      "description": "Prepare-se para viver um dia histórico ao lado de mais de 800 pessoas apaixonadas por tecnologia! Realizado desde 2014, o DevFest Cerrado se consolidou como uma das principais conferências de tecnologia do Brasil organizadas 100% por comunidades.Organizado voluntariamente e sem fins lucrativos pela comunidade Google Developer Group Goiânia, o evento combina conteúdo técnico de alto nível, netwo...",
+      "paid": true,
+      "url": "https://doity.com.br/devfest-cerrado-2026"
+    },
+    {
+      "id": "2026-11-jsconf-brasil",
+      "title": "JSConf Brasil",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-28",
+      "time": "08:00",
+      "description": "JSConf Brazil é a conferência de JavaScript mais importante ao redor do mundo que agora será realizada no Brazil, feita pela comunidade, para a comunidade.",
+      "paid": true,
+      "url": "https://guild.host/events/jsconf-brasil-vdc8dh/"
+    },
+    {
+      "id": "2026-11-gambiconf-6-edicao",
+      "title": "GambiConf - 6ª Edição",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-28",
+      "time": null,
+      "description": "Na GambiConf, nós celebramos o genuíno espírito hacker.",
+      "paid": true,
+      "url": "https://www.tickettailor.com/events/gambiconf/2226768"
+    },
+    {
+      "id": "2026-11-xix-brazilian-symposium-on-bioinformatics-bsb-2026",
+      "title": "XIX Brazilian Symposium on Bioinformatics (BSB 2026)",
+      "city": "Ribeirão Preto",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-11-30",
+      "time": "08:30",
+      "description": "Simpósio brasileiro de bioinformática da SBC, reunindo pesquisa em biologia computacional, genômica e algoritmos aplicados às ciências da vida.",
+      "paid": true,
+      "url": "https://www.sbc.org.br/bsb2026"
     }
   ],
   "Dezembro": [
@@ -2294,6 +3932,34 @@
       "url": "https://thedevconf.com/tdc/2026/datas-e-locais",
       "city": "Porto Alegre",
       "state": "RS"
+    },
+    {
+      "id": "2026-12-tdc-experience-porto-alegre",
+      "title": "TDC Experience Porto Alegre",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "region": "Sul",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "2026-12-09",
+      "time": null,
+      "description": "Para quem é o TDC Experience Porto Alegre? O TDC Experience Porto Alegre é um evento técnico de tecnologia focado nas pessoas que constroem a tecnologia no dia a dia, trazendo conteúdos construídos pela comunidade e para a comunidade. Profissionais de TI Desenvolvedores, analistas e arquitetos encontrarão conteúdo relevante.",
+      "paid": false,
+      "url": "https://promo.thedevconf.com/tdc-experience-porto-alegre-2026#rd-box-mnmhs0di"
+    },
+    {
+      "id": "2026-12-google-devfest-agreste-26-build-secure-and-scale-in-the-agentic-era",
+      "title": "Google DevFest Agreste'26 - BUILD, SECURE AND SCALE IN THE AGENTIC ERA.",
+      "city": "Arapiraca",
+      "state": "AL",
+      "region": "Nordeste",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "2026-12-11",
+      "time": "19:30",
+      "description": "O DevFest Agreste 2026 acontecerá nos dias 11 e 12 de dezembro de 2026, em Arapiraca, Alagoas, reunindo desenvolvedores, builders, estudantes, profissionais, empreendedores e entusiastas de tecnologia para dois dias de conhecimento, inovação, conexão e experiências práticas.",
+      "paid": false,
+      "url": "https://doity.com.br/google-devfest-agreste26--build-secure-and-scale-in-the-agentic-era"
     },
     {
       "id": "2026-12-devopsdays-recife",
