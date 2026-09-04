@@ -39,6 +39,23 @@ test("current month renders first with its capped card grid and overflow note", 
   await expect(augustSection.getByText("+ 2 eventos neste mês")).toBeVisible();
 });
 
+test("clicking a month heading collapses its card grid and the chevron rotates", async ({ page }) => {
+  await page.goto("/");
+  const section = page.locator("section").first();
+  const heading = section.locator("button").first();
+
+  await expect(section.locator("article").first()).toBeVisible();
+  await expect(heading).toHaveAttribute("aria-expanded", "true");
+
+  await heading.click();
+  await expect(section.locator("article")).toHaveCount(0);
+  await expect(heading).toHaveAttribute("aria-expanded", "false");
+
+  await heading.click();
+  await expect(section.locator("article").first()).toBeVisible();
+  await expect(heading).toHaveAttribute("aria-expanded", "true");
+});
+
 test("clicking the header Comunidades link navigates to the communities directory", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("link", { name: "Comunidades" }).click();

@@ -8,12 +8,14 @@ export function monthSectionId(year: number, monthIndex: number): string {
 
 export interface MonthSectionHandlers {
   onToggleCurrentMonthPast: () => void;
+  onToggleCollapsed: () => void;
 }
 
 export function renderMonthSection(
   bucket: MonthBucket,
   today: Date,
   showCurrentMonthPast: boolean,
+  collapsed: boolean,
   handlers: MonthSectionHandlers,
   nearMe: Coords | null = null,
 ): HTMLElement {
@@ -21,11 +23,14 @@ export function renderMonthSection(
   section.id = monthSectionId(bucket.year, bucket.monthIndex);
   section.className = "flex scroll-mt-4 flex-col";
 
-  const heading = document.createElement("div");
+  const heading = document.createElement("button");
+  heading.type = "button";
   heading.className = [
-    "flex items-baseline gap-2.5 border-b border-brand-100 px-(--spacing-gutter) py-4",
+    "flex cursor-pointer items-baseline gap-2.5 border-b border-brand-100 px-(--spacing-gutter) py-4 text-left hover:bg-brand-50/50",
     bucket.isPast ? "bg-brand-50/30" : "bg-white",
   ].join(" ");
+  heading.setAttribute("aria-expanded", String(!collapsed));
+  heading.addEventListener("click", handlers.onToggleCollapsed);
 
   const dot = document.createElement("span");
   dot.className = `size-1.75 rounded-full ${bucket.isPast ? "bg-brand-300" : "bg-brand-700"}`;
@@ -41,6 +46,13 @@ export function renderMonthSection(
   count.textContent = bucket.list.length + (bucket.list.length === 1 ? " evento" : " eventos");
   heading.appendChild(count);
 
+  const chevron = document.createElement("span");
+  chevron.setAttribute("aria-hidden", "true");
+  chevron.className = `text-brand-400 transition-transform ${collapsed ? "-rotate-90" : ""}`;
+  chevron.innerHTML =
+    '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  heading.appendChild(chevron);
+
   if (bucket.isPast && bucket.opened) {
     const badge = document.createElement("span");
     badge.className =
@@ -50,6 +62,10 @@ export function renderMonthSection(
   }
 
   section.appendChild(heading);
+
+  if (collapsed) {
+    return section;
+  }
 
   const grid = document.createElement("div");
   grid.className = "grid grid-cols-1 gap-4 px-(--spacing-gutter) py-5 sm:grid-cols-2 lg:grid-cols-3";

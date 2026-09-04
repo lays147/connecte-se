@@ -140,10 +140,24 @@ function render(): void {
       bucket,
       today,
       state.showCurrentMonthPast,
+      state.collapsedMonths.has(bucket.key),
       {
         onToggleCurrentMonthPast: () => {
           state.showCurrentMonthPast = !state.showCurrentMonthPast;
           render();
+        },
+        onToggleCollapsed: () => {
+          const next = new Set(state.collapsedMonths);
+          if (next.has(bucket.key)) {
+            next.delete(bucket.key);
+          } else {
+            next.add(bucket.key);
+          }
+          state.collapsedMonths = next;
+          render();
+          document
+            .getElementById(monthSectionId(bucket.year, bucket.monthIndex))
+            ?.scrollIntoView({ behavior: "instant" as ScrollBehavior, block: "start" });
         },
       },
       state.filters.nearMe,
