@@ -14,16 +14,57 @@ function keyToId(key: string): string {
 }
 
 export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNavHandlers): HTMLElement {
+  const currentMonth = yearGroups.flatMap((g) => g.months).find((m) => m.isCurrent);
+
+  const details = document.createElement("details");
+  details.className =
+    "w-full shrink-0 self-stretch border-t border-brand-100 bg-brand-50/40 lg:w-54 lg:border-t-0 lg:border-l lg:[&_nav]:!block";
+
+  const isDesktop = window.matchMedia("(min-width: 64rem)");
+  details.open = isDesktop.matches;
+  const syncOpenToViewport = (): void => {
+    if (!details.isConnected) {
+      isDesktop.removeEventListener("change", syncOpenToViewport);
+      return;
+    }
+    details.open = isDesktop.matches;
+  };
+  isDesktop.addEventListener("change", syncOpenToViewport);
+
+  const summary = document.createElement("summary");
+  summary.className =
+    "flex cursor-pointer list-none items-baseline gap-2.5 px-4 py-3.5 marker:hidden lg:hidden [&::-webkit-details-marker]:hidden";
+
+  const summaryLabel = document.createElement("span");
+  summaryLabel.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-500";
+  summaryLabel.textContent = "Meses";
+  summary.appendChild(summaryLabel);
+
+  if (currentMonth) {
+    const summaryCurrent = document.createElement("span");
+    summaryCurrent.className = "flex-1 text-sm font-semibold capitalize text-brand-950";
+    summaryCurrent.textContent = `${currentMonth.label} · ${currentMonth.count}`;
+    summary.appendChild(summaryCurrent);
+  }
+
+  const chevron = document.createElement("span");
+  chevron.setAttribute("aria-hidden", "true");
+  chevron.className = "text-brand-400 transition-transform [details[open]_&]:-rotate-180";
+  chevron.innerHTML =
+    '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  summary.appendChild(chevron);
+
+  details.appendChild(summary);
+
   const nav = document.createElement("nav");
-  nav.className =
-    "w-full shrink-0 self-stretch border-t border-brand-100 bg-brand-50/40 p-4 lg:w-54 lg:border-t-0 lg:border-l";
+  nav.className = "p-4";
   nav.setAttribute("aria-label", "Navegação por mês e ano");
 
   const sticky = document.createElement("div");
   sticky.className = "flex flex-col gap-2.5 lg:sticky lg:top-4";
 
   const heading = document.createElement("span");
-  heading.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-500";
+  heading.className = "hidden font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-500 lg:block";
   heading.textContent = "Meses";
   sticky.appendChild(heading);
 
@@ -99,6 +140,9 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
               target.scrollIntoView({ behavior: "smooth", block: "start" });
               history.replaceState(null, "", `#${id}`);
             }
+            if (window.matchMedia("(max-width: 63.9975rem)").matches) {
+              details.open = false;
+            }
           });
 
           yearBlock.appendChild(link);
@@ -149,5 +193,6 @@ export function renderMonthNavRail(yearGroups: YearNavGroup[], handlers: MonthNa
   }
 
   nav.appendChild(sticky);
-  return nav;
+  details.appendChild(nav);
+  return details;
 }
