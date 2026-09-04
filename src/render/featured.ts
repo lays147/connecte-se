@@ -112,20 +112,22 @@ export function renderFeaturedCarousel(
     const navRow = document.createElement("div");
     navRow.className = "flex gap-1.5";
 
+    const navBtnClass =
+      "flex h-11 w-11 -m-1.5 cursor-pointer items-center justify-center rounded-lg font-body text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60";
+    const navBtnInnerClass = "flex h-8 w-8 items-center justify-center rounded-lg border border-brand-700 group-hover:bg-brand-900";
+
     const prevBtn = document.createElement("button");
     prevBtn.type = "button";
     prevBtn.setAttribute("aria-label", "Destaque anterior");
-    prevBtn.className =
-      "h-8 w-8 cursor-pointer rounded-lg border border-brand-700 bg-transparent font-body text-sm text-white hover:bg-brand-900";
-    prevBtn.textContent = "‹";
+    prevBtn.className = `group ${navBtnClass}`;
+    prevBtn.innerHTML = `<span class="${navBtnInnerClass}">‹</span>`;
     prevBtn.addEventListener("click", handlers.onPrev);
 
     const nextBtn = document.createElement("button");
     nextBtn.type = "button";
     nextBtn.setAttribute("aria-label", "Próximo destaque");
-    nextBtn.className =
-      "h-8 w-8 cursor-pointer rounded-lg border border-brand-700 bg-transparent font-body text-sm text-white hover:bg-brand-900";
-    nextBtn.textContent = "›";
+    nextBtn.className = `group ${navBtnClass}`;
+    nextBtn.innerHTML = `<span class="${navBtnInnerClass}">›</span>`;
     nextBtn.addEventListener("click", handlers.onNext);
 
     navRow.append(prevBtn, nextBtn);
@@ -163,7 +165,8 @@ export function renderFeaturedCarousel(
       dotBtn.type = "button";
       dotBtn.setAttribute("aria-label", `Ir para destaque ${i + 1} de ${list.length}`);
       const active = i === idx;
-      dotBtn.className = "flex h-6 w-6 cursor-pointer items-center justify-center border-0 bg-transparent p-0";
+      dotBtn.className =
+        "flex h-11 w-11 -m-2.5 cursor-pointer items-center justify-center border-0 bg-transparent p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60";
 
       const dot = document.createElement("span");
       dot.className = [

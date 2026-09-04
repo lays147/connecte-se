@@ -52,8 +52,8 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
     const a = document.createElement("a");
     a.href = href;
     a.className = active
-      ? "rounded-lg bg-brand-50 px-3 py-2.5 text-body-sm font-semibold text-brand-950"
-      : "rounded-lg bg-transparent px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
+      ? "flex min-h-11 items-center rounded-lg bg-brand-50 px-3 py-2.5 text-body-sm font-semibold text-brand-950"
+      : "flex min-h-11 items-center rounded-lg bg-transparent px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
     a.textContent = text;
     return a;
   }
@@ -70,7 +70,8 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   submit.href = "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml";
   submit.target = "_blank";
   submit.rel = "noopener";
-  submit.className = "rounded-lg px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
+  submit.className =
+    "flex min-h-11 items-center rounded-lg px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
   submit.textContent = "Enviar evento";
 
   const divider = document.createElement("span");
@@ -83,7 +84,7 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   github.title = "Ver o repositório no GitHub";
   github.setAttribute("aria-label", "Ver o repositório no GitHub");
   github.className =
-    "inline-flex items-center gap-2 rounded-lg border border-brand-200 py-2 pl-2.5 pr-3 text-xs font-semibold text-brand-950 hover:border-brand-400";
+    "inline-flex min-h-11 items-center gap-2 rounded-lg border border-brand-200 py-2 pl-2.5 pr-3 text-xs font-semibold text-brand-950 hover:border-brand-400";
   github.innerHTML = `${githubIconSvg()}GitHub`;
 
   nav.append(eventos, mapa, conteudos, comunidades, submit, divider, github);

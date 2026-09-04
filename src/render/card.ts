@@ -73,9 +73,18 @@ export function renderCard(event: EnrichedEvent, today: Date, nearMe: Coords | n
 
   const card = document.createElement("article");
   card.className =
-    "flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-brand-200 bg-white transition-colors hover:border-brand-400";
+    "flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-brand-200 bg-white transition-colors hover:border-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-label", `Ver detalhes de ${vm.title}`);
   card.addEventListener("click", (e) => {
     if ((e.target as HTMLElement).closest("a")) return;
+    openEventModal(event, today);
+  });
+  card.addEventListener("keydown", (e) => {
+    if ((e.target as HTMLElement).closest("a")) return;
+    if (e.key !== "Enter" && e.key !== " ") return;
+    e.preventDefault();
     openEventModal(event, today);
   });
 

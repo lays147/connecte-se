@@ -29,8 +29,32 @@ function close(): void {
   closingDialog.addEventListener("animationend", () => closingOverlay.remove(), { once: true });
 }
 
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function trapFocus(e: KeyboardEvent): void {
+  if (!dialog || e.key !== "Tab") return;
+  const focusable = Array.from(dialog.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR));
+  if (focusable.length === 0) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  const current = document.activeElement;
+
+  if (e.shiftKey && current === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && current === last) {
+    e.preventDefault();
+    first.focus();
+  }
+}
+
 function onKeydown(e: KeyboardEvent): void {
-  if (e.key === "Escape") close();
+  if (e.key === "Escape") {
+    close();
+    return;
+  }
+  trapFocus(e);
 }
 
 export function mountEventModal(): void {
@@ -57,6 +81,7 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   dialog = document.createElement("div");
   dialog.setAttribute("role", "dialog");
   dialog.setAttribute("aria-modal", "true");
+  dialog.setAttribute("aria-labelledby", "event-modal-title");
   dialog.className =
     "modal-dialog-enter relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-white shadow-xl";
 
@@ -90,6 +115,7 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   topRow.appendChild(pricePill);
 
   const title = document.createElement("h3");
+  title.id = "event-modal-title";
   title.className = "font-display text-heading-lg font-semibold leading-snug text-brand-950";
   title.textContent = vm.title;
 

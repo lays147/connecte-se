@@ -1,19 +1,6 @@
 {
   "Janeiro": [
     {
-      "id": "2026-01-placeholder",
-      "title": "placeholder",
-      "region": "Sudeste",
-      "type": "placeholder",
-      "modality": "Presencial",
-      "date": "2026-01-01",
-      "description": "placeholder",
-      "paid": false,
-      "url": "https://cbie.sbc.org.br",
-      "city": null,
-      "state": null
-    },
-    {
       "id": "2026-01-python-brasil-meetup",
       "title": "Python Brasil Meetup SP",
       "region": "Sudeste",
