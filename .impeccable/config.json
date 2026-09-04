@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "space grotesk",
+        "createdAt": "2026-09-04T17:01:03.598Z",
+        "reason": "pre-existing site-wide brand font declared in vite.config.ts shared head, not introduced by this session's changes"
+      }
+    ]
+  }
+}
