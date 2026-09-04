@@ -57,7 +57,7 @@ function renderItemCard(item: CuratedContent): HTMLElement {
   card.target = "_blank";
   card.rel = "noopener";
   card.className =
-    "flex flex-col gap-1.5 rounded-card-13 border border-brand-100 bg-white p-3.5 text-inherit no-underline hover:border-brand-300 hover:bg-brand-50/30";
+    "flex flex-col gap-1.5 rounded-card-13 border border-brand-100 bg-white p-3.5 text-inherit no-underline hover:border-brand-300 hover:bg-brand-50/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
 
   const topRow = document.createElement("div");
   topRow.className = "flex items-center gap-2";

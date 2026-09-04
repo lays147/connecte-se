@@ -1,4 +1,5 @@
 import { ALL_SOURCES, hostOf, type CommunitySource, type SourceType } from "../data/communitiesList";
+import { initialsOf } from "./card";
 
 export interface CommunitiesPageState {
   query: string;
@@ -41,15 +42,30 @@ function segButton(text: string, active: boolean, onClick: () => void): HTMLButt
   return btn;
 }
 
-function initialsOf(name: string): string {
-  const letters = name
-    .split(/\s+/)
-    .map((w) => [...w].find((ch) => /\p{L}|\p{N}/u.test(ch)))
-    .filter((ch): ch is string => Boolean(ch));
-  return letters.slice(0, 2).join("").toUpperCase();
+const TYPE_STRIP: Record<SourceType, string> = {
+  community: "bg-brand-700",
+  event: "bg-accent-blue-700",
+};
+
+// Sources that share a multi-word org prefix (e.g. 24 "AWS User Group X"
+// chapters) render as visually near-identical cards; find the longest shared
+// prefix among a source's siblings of the same type so the differentiating
+// suffix (the city/topic) can be emphasized instead of the repeated prefix.
+function sharedPrefixWord(source: CommunitySource, siblings: CommunitySource[]): string {
+  const words = source.name.split(" ");
+  let boundary = 0;
+  for (let len = words.length - 1; len >= 2; len--) {
+    const prefix = words.slice(0, len).join(" ");
+    const matches = siblings.filter((s) => s !== source && s.name.startsWith(prefix + " "));
+    if (matches.length >= 2) {
+      boundary = len;
+      break;
+    }
+  }
+  return boundary > 0 ? words.slice(0, boundary).join(" ") + " " : "";
 }
 
-function renderSourceCard(source: CommunitySource): HTMLElement {
+function renderSourceCard(source: CommunitySource, siblings: CommunitySource[]): HTMLElement {
   const accent = TYPE_ACCENT[source.type];
 
   const card = document.createElement("a");
@@ -57,7 +73,14 @@ function renderSourceCard(source: CommunitySource): HTMLElement {
   card.target = "_blank";
   card.rel = "noopener";
   card.className =
-    "flex flex-col gap-2.5 rounded-card-13 border border-brand-100 bg-white p-3.5 text-inherit no-underline hover:border-brand-300 hover:bg-brand-50/30";
+    "flex flex-col overflow-hidden rounded-card-13 border border-brand-100 bg-white text-inherit no-underline hover:border-brand-300 hover:bg-brand-50/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
+
+  const strip = document.createElement("div");
+  strip.className = `h-0.75 ${TYPE_STRIP[source.type]}`;
+  card.appendChild(strip);
+
+  const body = document.createElement("div");
+  body.className = "flex flex-1 flex-col gap-2.5 p-3.5";
 
   const topRow = document.createElement("div");
   topRow.className = "flex items-center gap-2.5";
@@ -69,10 +92,19 @@ function renderSourceCard(source: CommunitySource): HTMLElement {
 
   const name = document.createElement("span");
   name.className = "min-w-0 flex-1 truncate font-display text-body-md font-semibold tracking-tight text-brand-950";
-  name.textContent = source.name;
+  const prefix = sharedPrefixWord(source, siblings);
+  if (prefix) {
+    const prefixSpan = document.createElement("span");
+    prefixSpan.className = "font-medium text-brand-500";
+    prefixSpan.textContent = prefix;
+    name.appendChild(prefixSpan);
+    name.appendChild(document.createTextNode(source.name.slice(prefix.length)));
+  } else {
+    name.textContent = source.name;
+  }
   topRow.appendChild(name);
 
-  card.appendChild(topRow);
+  body.appendChild(topRow);
 
   const bottomRow = document.createElement("div");
   bottomRow.className = "flex flex-wrap items-center gap-1.5";
@@ -92,7 +124,8 @@ function renderSourceCard(source: CommunitySource): HTMLElement {
   hostLink.innerHTML = `${hostOf(source.url)}${externalLinkIconSvg()}`;
   bottomRow.appendChild(hostLink);
 
-  card.appendChild(bottomRow);
+  body.appendChild(bottomRow);
+  card.appendChild(body);
   return card;
 }
 
@@ -188,18 +221,53 @@ export function renderCommunitiesPage(
 
   filterBar.append(searchBox, typeTabs);
 
-  // ---- grid
-  const countLabel = document.createElement("div");
-  countLabel.className = "px-(--spacing-gutter) pt-4 text-xs font-medium text-brand-500";
-  countLabel.textContent = filtered.length + (filtered.length === 1 ? " resultado" : " resultados");
+  // ---- sections (grouped by type so 100+ entries don't render as one flat wall)
+  const sectionsWrap = document.createElement("div");
+  sectionsWrap.className = "flex flex-col";
 
-  const grid = document.createElement("div");
-  grid.className = "grid grid-cols-1 gap-2.5 px-(--spacing-gutter) py-4 sm:grid-cols-2 lg:grid-cols-3";
-  for (const source of filtered) {
-    grid.appendChild(renderSourceCard(source));
+  const sectionTypes: SourceType[] = state.type === "todos" ? ["community", "event"] : [state.type];
+  const SECTION_LABEL: Record<SourceType, string> = {
+    community: "Comunidades",
+    event: "Eventos recorrentes",
+  };
+
+  for (const type of sectionTypes) {
+    const items = filtered.filter((s) => s.type === type);
+    if (items.length === 0) continue;
+
+    const sectionEl = document.createElement("div");
+    sectionEl.className = "flex flex-col";
+
+    const heading = document.createElement("div");
+    heading.className = "flex items-baseline gap-2.5 border-y border-brand-50 bg-brand-50/40 px-(--spacing-gutter) py-4";
+
+    const dot = document.createElement("span");
+    dot.className = `size-1.75 rounded-full ${TYPE_STRIP[type]}`;
+    heading.appendChild(dot);
+
+    const label = document.createElement("h2");
+    label.className = "font-display text-heading-sm font-semibold text-brand-950";
+    label.textContent = SECTION_LABEL[type];
+    heading.appendChild(label);
+
+    const count = document.createElement("span");
+    count.className = "text-xs font-medium text-brand-500";
+    count.textContent = items.length + (items.length === 1 ? " resultado" : " resultados");
+    heading.appendChild(count);
+
+    sectionEl.appendChild(heading);
+
+    const grid = document.createElement("div");
+    grid.className = "grid grid-cols-1 gap-2.5 px-(--spacing-gutter) py-4 sm:grid-cols-2 lg:grid-cols-3";
+    for (const source of items) {
+      grid.appendChild(renderSourceCard(source, items));
+    }
+    sectionEl.appendChild(grid);
+
+    sectionsWrap.appendChild(sectionEl);
   }
 
-  root.append(hero, filterBar, countLabel, grid);
+  root.append(hero, filterBar, sectionsWrap);
 
   if (filtered.length === 0) {
     const empty = document.createElement("div");
@@ -209,7 +277,14 @@ export function renderCommunitiesPage(
     emptyTitle.textContent = "Nada encontrado para esse filtro";
     const emptyDesc = document.createElement("span");
     emptyDesc.className = "text-body-sm text-brand-500";
-    emptyDesc.textContent = "Tente outro termo ou limpe a busca.";
+    emptyDesc.textContent = "Tente outro termo ou ";
+    const clearLink = document.createElement("button");
+    clearLink.type = "button";
+    clearLink.className = "cursor-pointer font-semibold text-brand-700 underline hover:text-brand-600";
+    clearLink.textContent = "limpe a busca";
+    clearLink.addEventListener("click", () => onChange({ query: "", type: "todos" }));
+    emptyDesc.appendChild(clearLink);
+    emptyDesc.appendChild(document.createTextNode("."));
     empty.append(emptyTitle, emptyDesc);
     root.appendChild(empty);
   }
