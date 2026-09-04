@@ -176,9 +176,39 @@ function render(): void {
     monthList.appendChild(section);
   }
   if (visibleBuckets.length === 0) {
-    const empty = document.createElement("p");
-    empty.className = "px-6 py-10 text-center text-sm text-brand-500";
-    empty.textContent = "Nenhum evento encontrado.";
+    const hasActiveFilters =
+      JSON.stringify(state.filters) !== JSON.stringify({ ...defaults, nearMe: state.filters.nearMe });
+
+    const empty = document.createElement("div");
+    empty.className = "flex flex-col items-center gap-1.5 px-6 py-16 text-center";
+
+    const emptyTitle = document.createElement("span");
+    emptyTitle.className = "font-display text-heading-sm font-semibold text-brand-950";
+    emptyTitle.textContent = "Nenhum evento com esses filtros";
+
+    const emptyDesc = document.createElement("span");
+    emptyDesc.className = "text-body-sm text-brand-500";
+
+    if (hasActiveFilters) {
+      const otherCount = allUpcoming.length;
+      const otherLabel = otherCount === 1 ? "1 outro evento está a caminho" : `${otherCount} outros eventos estão a caminho`;
+      emptyDesc.appendChild(document.createTextNode(`${otherLabel} — tente outro termo ou `));
+      const clearLink = document.createElement("button");
+      clearLink.type = "button";
+      clearLink.className = "cursor-pointer font-semibold text-brand-700 underline hover:text-brand-600";
+      clearLink.textContent = "limpe os filtros";
+      clearLink.addEventListener("click", () => {
+        state.filters = { ...defaultFilterState(), nearMe: state.filters.nearMe };
+        syncUrl();
+        render();
+      });
+      emptyDesc.appendChild(clearLink);
+      emptyDesc.appendChild(document.createTextNode("."));
+    } else {
+      emptyDesc.textContent = "Novos eventos chegam toda semana — volte em breve.";
+    }
+
+    empty.append(emptyTitle, emptyDesc);
     monthList.appendChild(empty);
   }
 
