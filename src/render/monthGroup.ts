@@ -11,6 +11,9 @@ export interface MonthSectionHandlers {
   onToggleCollapsed: () => void;
 }
 
+const CARD_STAGGER_MS = 20;
+const CARD_STAGGER_CAP = 9;
+
 export function renderMonthSection(
   bucket: MonthBucket,
   today: Date,
@@ -18,6 +21,7 @@ export function renderMonthSection(
   collapsed: boolean,
   handlers: MonthSectionHandlers,
   nearMe: Coords | null = null,
+  justExpanded = false,
 ): HTMLElement {
   const section = document.createElement("section");
   section.id = monthSectionId(bucket.year, bucket.monthIndex);
@@ -68,11 +72,19 @@ export function renderMonthSection(
   }
 
   const grid = document.createElement("div");
-  grid.className = "grid grid-cols-1 gap-4 px-(--spacing-gutter) py-5 sm:grid-cols-2 lg:grid-cols-3";
+  grid.className = [
+    "grid grid-cols-1 gap-4 px-(--spacing-gutter) py-5 sm:grid-cols-2 lg:grid-cols-3",
+    justExpanded ? "month-grid-enter" : "",
+  ].join(" ");
 
-  for (const event of bucket.list) {
-    grid.appendChild(renderCard(event, today, nearMe));
-  }
+  bucket.list.forEach((event, i) => {
+    const card = renderCard(event, today, nearMe);
+    if (justExpanded && i < CARD_STAGGER_CAP) {
+      card.classList.add("card-settle-enter");
+      card.style.animationDelay = `${i * CARD_STAGGER_MS}ms`;
+    }
+    grid.appendChild(card);
+  });
   section.appendChild(grid);
 
   if (bucket.isCurrent && !bucket.opened && bucket.hasPast) {

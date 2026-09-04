@@ -3,7 +3,7 @@ import { loadAllEnrichedEvents } from "./data/allEvents";
 import { mountConsentBanner } from "./render/consentBanner";
 import { renderCtaBand } from "./render/ctaBand";
 import { mountEventModal } from "./render/eventModal";
-import { buildFeaturedList, renderFeaturedCarousel } from "./render/featured";
+import { buildFeaturedList, renderFeaturedCarousel, type CarouselDirection } from "./render/featured";
 import { renderFilterBar } from "./render/filterBar";
 import { renderFooter } from "./render/footer";
 import { renderHeader } from "./render/header";
@@ -62,6 +62,7 @@ function todayIso(): string {
 
 let featuredCount = 0;
 let stopObservingActiveMonth: () => void = () => {};
+let justExpandedMonthKey: string | null = null;
 const featuredHost = document.createElement("div");
 
 // Featured carousel always draws from the full unfiltered event list — the
@@ -70,23 +71,30 @@ const allUpcoming = allEvents
   .filter((e) => e.date >= todayIso())
   .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
 
-function renderCarousel(): void {
+function renderCarousel(direction: CarouselDirection = "fade"): void {
   const featuredList = buildFeaturedList(allUpcoming);
   featuredCount = featuredList.length;
-  const featured = renderFeaturedCarousel(featuredList, state.carousel, {
-    onPrev: () => {
-      state.carousel -= 1;
-      renderCarousel();
+  const featured = renderFeaturedCarousel(
+    featuredList,
+    state.carousel,
+    {
+      onPrev: () => {
+        state.carousel -= 1;
+        renderCarousel("prev");
+      },
+      onNext: () => {
+        state.carousel += 1;
+        renderCarousel("next");
+      },
+      onSelect: (index) => {
+        const goingForward = ((index - state.carousel) % featuredCount + featuredCount) % featuredCount;
+        const goingBackward = featuredCount - goingForward;
+        state.carousel = index;
+        renderCarousel(goingForward <= goingBackward ? "next" : "prev");
+      },
     },
-    onNext: () => {
-      state.carousel += 1;
-      renderCarousel();
-    },
-    onSelect: (index) => {
-      state.carousel = index;
-      renderCarousel();
-    },
-  });
+    direction,
+  );
   featuredHost.replaceChildren(...(featured ? [featured] : []));
 }
 
@@ -150,6 +158,7 @@ function render(): void {
           const next = new Set(state.collapsedMonths);
           if (next.has(bucket.key)) {
             next.delete(bucket.key);
+            justExpandedMonthKey = bucket.key;
           } else {
             next.add(bucket.key);
           }
@@ -161,6 +170,7 @@ function render(): void {
         },
       },
       state.filters.nearMe,
+      bucket.key === justExpandedMonthKey,
     );
     sectionEls.push(section);
     monthList.appendChild(section);
@@ -205,6 +215,7 @@ function render(): void {
   row.append(monthList, nav);
   main.appendChild(row);
   stopObservingActiveMonth = observeActiveMonth(sectionEls, nav);
+  justExpandedMonthKey = null;
 
   if (restoreFocus) {
     const input = main.querySelector<HTMLInputElement>('input[type="search"]');
@@ -227,6 +238,6 @@ startCarousel(
   () => featuredCount,
   () => {
     state.carousel += 1;
-    renderCarousel();
+    renderCarousel("next");
   },
 );

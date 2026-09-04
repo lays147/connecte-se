@@ -7,13 +7,26 @@ let dialog: HTMLElement | null = null;
 let lastFocused: HTMLElement | null = null;
 
 function close(): void {
-  if (!overlay) return;
-  overlay.remove();
+  if (!overlay || !dialog) return;
+  const closingOverlay = overlay;
+  const closingDialog = dialog;
   overlay = null;
   dialog = null;
   document.body.classList.remove("overflow-hidden");
   lastFocused?.focus();
   lastFocused = null;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) {
+    closingOverlay.remove();
+    return;
+  }
+  closingOverlay.style.pointerEvents = "none";
+  closingOverlay.classList.remove("modal-overlay-enter");
+  closingDialog.classList.remove("modal-dialog-enter");
+  closingOverlay.classList.add("modal-overlay-exit");
+  closingDialog.classList.add("modal-dialog-exit");
+  closingDialog.addEventListener("animationend", () => closingOverlay.remove(), { once: true });
 }
 
 function onKeydown(e: KeyboardEvent): void {
@@ -36,7 +49,7 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   const vm = toCardViewModel(event, today);
 
   overlay = document.createElement("div");
-  overlay.className = "fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4";
+  overlay.className = "modal-overlay-enter fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4";
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) close();
   });
@@ -44,7 +57,8 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   dialog = document.createElement("div");
   dialog.setAttribute("role", "dialog");
   dialog.setAttribute("aria-modal", "true");
-  dialog.className = "relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-white shadow-xl";
+  dialog.className =
+    "modal-dialog-enter relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-white shadow-xl";
 
   const strip = document.createElement("div");
   strip.className = `h-1 shrink-0 ${vm.style.dot}`;

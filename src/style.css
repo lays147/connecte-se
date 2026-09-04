@@ -96,3 +96,130 @@ html {
     animation: none;
   }
 }
+
+/* Event modal: arrives from a slight rise, leaves faster than it entered. */
+@keyframes modal-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modal-dialog-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+.modal-overlay-enter {
+  animation: modal-overlay-in 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.modal-dialog-enter {
+  animation: modal-dialog-in 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.modal-overlay-exit {
+  animation: modal-overlay-out 140ms ease-in both;
+}
+
+.modal-dialog-exit {
+  animation: modal-dialog-out 140ms ease-in both;
+}
+
+/* Month grid: unfolds open, cards settle in with a capped stagger. */
+@keyframes month-grid-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.month-grid-enter {
+  animation: month-grid-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes card-settle-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.card-settle-enter {
+  animation: card-settle-in 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Featured carousel: directional crossfade tied to prev/next/select. */
+@keyframes carousel-slide-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+
+@keyframes carousel-slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+}
+
+@keyframes carousel-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.carousel-enter-next {
+  animation: carousel-slide-from-right 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.carousel-enter-prev {
+  animation: carousel-slide-from-left 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.carousel-enter-fade {
+  animation: carousel-fade-in 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay-enter,
+  .modal-dialog-enter,
+  .modal-overlay-exit,
+  .modal-dialog-exit,
+  .month-grid-enter,
+  .card-settle-enter,
+  .carousel-enter-next,
+  .carousel-enter-prev,
+  .carousel-enter-fade {
+    animation: none;
+  }
+}

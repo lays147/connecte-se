@@ -22,7 +22,14 @@ export interface FeaturedHandlers {
   onSelect: (index: number) => void;
 }
 
-export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, handlers: FeaturedHandlers): HTMLElement | null {
+export type CarouselDirection = "next" | "prev" | "fade";
+
+export function renderFeaturedCarousel(
+  list: EnrichedEvent[],
+  index: number,
+  handlers: FeaturedHandlers,
+  direction: CarouselDirection = "fade",
+): HTMLElement | null {
   if (list.length === 0) return null;
 
   const today = new Date();
@@ -33,9 +40,12 @@ export function renderFeaturedCarousel(list: EnrichedEvent[], index: number, han
   const badge = modalityBadge(event.modality);
   const d = parseIso(event.date);
 
+  const enterClass =
+    direction === "next" ? "carousel-enter-next" : direction === "prev" ? "carousel-enter-prev" : "carousel-enter-fade";
+
   const wrap = document.createElement("div");
   wrap.className =
-    "relative flex flex-col items-stretch gap-4 bg-brand-950 px-(--spacing-gutter) py-5 sm:gap-7 sm:py-6.5 md:min-h-42 md:flex-row";
+    `${enterClass} relative flex flex-col items-stretch gap-4 bg-brand-950 px-(--spacing-gutter) py-5 sm:gap-7 sm:py-6.5 md:min-h-42 md:flex-row`;
 
   const dateBlock = document.createElement("div");
   dateBlock.className =
