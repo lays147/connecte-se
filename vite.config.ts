@@ -27,6 +27,7 @@ export default defineConfig({
         main: resolve(import.meta.dirname, "index.html"),
         mapa: resolve(import.meta.dirname, "mapa.html"),
         conteudos: resolve(import.meta.dirname, "conteudos.html"),
+        comunidades: resolve(import.meta.dirname, "comunidades.html"),
       },
     },
   },

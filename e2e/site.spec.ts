@@ -39,23 +39,11 @@ test("current month renders first with its capped card grid and overflow note", 
   await expect(augustSection.getByText("+ 2 eventos neste mês")).toBeVisible();
 });
 
-test("group-by toggle switches between month sections and community shelves", async ({ page }) => {
+test("clicking the header Comunidades link navigates to the communities directory", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator("h2", { hasText: "Agosto 2026" })).toBeVisible();
-
-  await page.getByRole("button", { name: "Por comunidade" }).click();
-  await expect(page.locator("h2", { hasText: "Agosto 2026" })).toHaveCount(0);
-  await expect(page.getByText("Seguir comunidade").first()).toBeVisible();
-
-  await page.getByRole("button", { name: "Data", exact: true }).click();
-  await expect(page.locator("h2", { hasText: "Agosto 2026" })).toBeVisible();
-  await expect(page.getByText("Seguir comunidade")).toHaveCount(0);
-});
-
-test("clicking the header Comunidades link switches to the community view", async ({ page }) => {
-  await page.goto("/");
-  await page.getByRole("button", { name: "Comunidades" }).click();
-  await expect(page.getByText("Seguir comunidade").first()).toBeVisible();
+  await page.getByRole("link", { name: "Comunidades" }).click();
+  await expect(page).toHaveURL(/\/comunidades\.html$/);
+  await expect(page.locator("h1")).toHaveText("Comunidades e organizadores de tecnologia");
 });
 
 test("locked past months load on click and insert a real section", async ({ page }) => {
@@ -93,4 +81,21 @@ test("CTA band links point to the add-event and add-source workflows", async ({ 
     "href",
     "https://github.com/lays147/connecte-se/actions/workflows/add-source.yml",
   );
+});
+
+test("communities page lists all registered sources and filters by type and search", async ({ page }) => {
+  await page.goto("/comunidades.html");
+  await expect(page.locator("h1")).toHaveText("Comunidades e organizadores de tecnologia");
+
+  const cardsBefore = await page.locator("a.rounded-card-13").count();
+  expect(cardsBefore).toBeGreaterThan(50);
+
+  await page.getByRole("button", { name: "Eventos recorrentes" }).click();
+  const eventCards = await page.locator("a.rounded-card-13").count();
+  expect(eventCards).toBeLessThan(cardsBefore);
+  expect(eventCards).toBeGreaterThan(0);
+
+  await page.getByRole("button", { name: "Tudo" }).click();
+  await page.getByPlaceholder("Buscar por nome").fill("AWS User Group Belo Horizonte");
+  await expect(page.locator("a.rounded-card-13")).toHaveCount(1);
 });

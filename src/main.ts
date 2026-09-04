@@ -1,13 +1,11 @@
 import "./style.css";
 import { loadAllEnrichedEvents } from "./data/allEvents";
-import { renderCommunityShelves, buildCommunityTally, buildShelves } from "./render/communityShelves";
 import { mountConsentBanner } from "./render/consentBanner";
 import { renderCtaBand } from "./render/ctaBand";
 import { mountEventModal } from "./render/eventModal";
 import { buildFeaturedList, renderFeaturedCarousel } from "./render/featured";
 import { renderFilterBar } from "./render/filterBar";
 import { renderFooter } from "./render/footer";
-import { renderGroupToggle, type GroupBy } from "./render/groupToggle";
 import { renderHeader } from "./render/header";
 import { mountLayout } from "./render/layout";
 import { renderMonthSection, monthSectionId } from "./render/monthGroup";
@@ -45,7 +43,6 @@ state.filters = {
   query: queryParam ?? defaults.query,
   nearMe: getStoredLocation(),
 };
-if (params.get("agrupar") === "comunidade") state.groupBy = "comunidade";
 
 function syncUrl(): void {
   writeParams({
@@ -54,7 +51,6 @@ function syncUrl(): void {
     tipo: state.filters.type === defaults.type ? null : state.filters.type,
     pago: state.filters.paid === defaults.paid ? null : state.filters.paid,
     busca: state.filters.query === defaults.query ? null : state.filters.query,
-    agrupar: state.groupBy === "data" ? null : state.groupBy,
   });
 }
 
@@ -129,87 +125,72 @@ function render(): void {
     }),
   );
 
-  // Group-by toggle
-  main.appendChild(
-    renderGroupToggle(state.groupBy, (next: GroupBy) => {
-      state.groupBy = next;
-      syncUrl();
-      render();
-    }),
-  );
+  const buckets = buildMonthBuckets(filtered, today, state.openPast, state.showCurrentMonthPast);
+  const visibleBuckets = buckets.filter((b) => (!b.isPast || b.opened) && (b.list.length > 0 || b.hasPast));
+  const yearNav = buildYearNav(buckets, state.collapsedYears, today);
 
-  if (state.groupBy === "data") {
-    const buckets = buildMonthBuckets(filtered, today, state.openPast, state.showCurrentMonthPast);
-    const visibleBuckets = buckets.filter((b) => (!b.isPast || b.opened) && (b.list.length > 0 || b.hasPast));
-    const yearNav = buildYearNav(buckets, state.collapsedYears, today);
+  const row = document.createElement("div");
+  row.className = "flex flex-col items-stretch gap-6 lg:flex-row lg:items-start lg:gap-0";
 
-    const row = document.createElement("div");
-    row.className = "flex flex-col items-stretch gap-6 lg:flex-row lg:items-start lg:gap-0";
-
-    const monthList = document.createElement("div");
-    monthList.className = "flex min-w-0 flex-1 flex-col";
-    const sectionEls: HTMLElement[] = [];
-    for (const bucket of visibleBuckets) {
-      const section = renderMonthSection(
-        bucket,
-        today,
-        state.showCurrentMonthPast,
-        {
-          onToggleCurrentMonthPast: () => {
-            state.showCurrentMonthPast = !state.showCurrentMonthPast;
-            render();
-          },
+  const monthList = document.createElement("div");
+  monthList.className = "flex min-w-0 flex-1 flex-col";
+  const sectionEls: HTMLElement[] = [];
+  for (const bucket of visibleBuckets) {
+    const section = renderMonthSection(
+      bucket,
+      today,
+      state.showCurrentMonthPast,
+      {
+        onToggleCurrentMonthPast: () => {
+          state.showCurrentMonthPast = !state.showCurrentMonthPast;
+          render();
         },
-        state.filters.nearMe,
-      );
-      sectionEls.push(section);
-      monthList.appendChild(section);
-    }
-    if (visibleBuckets.length === 0) {
-      const empty = document.createElement("p");
-      empty.className = "px-6 py-10 text-center text-sm text-brand-500";
-      empty.textContent = "Nenhum evento encontrado.";
-      monthList.appendChild(empty);
-    }
+      },
+      state.filters.nearMe,
+    );
+    sectionEls.push(section);
+    monthList.appendChild(section);
+  }
+  if (visibleBuckets.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "px-6 py-10 text-center text-sm text-brand-500";
+    empty.textContent = "Nenhum evento encontrado.";
+    monthList.appendChild(empty);
+  }
 
-    const nav = renderMonthNavRail(yearNav, {
-      onToggleYear: (year) => {
-        const currentlyOpen = yearNav.find((g) => g.year === year)?.open ?? true;
-        state.collapsedYears = { ...state.collapsedYears, [year]: currentlyOpen };
-        keepScroll(render);
-      },
-      onLoadMonth: (key) => {
-        state.openPast = new Set(state.openPast).add(key);
-        render();
-        scrollToMonthKey(key);
-      },
-      onLoadYear: (year) => {
-        const group = yearNav.find((g) => g.year === year);
-        if (!group) return;
+  const nav = renderMonthNavRail(yearNav, {
+    onToggleYear: (year) => {
+      const currentlyOpen = yearNav.find((g) => g.year === year)?.open ?? true;
+      state.collapsedYears = { ...state.collapsedYears, [year]: currentlyOpen };
+      keepScroll(render);
+    },
+    onLoadMonth: (key) => {
+      state.openPast = new Set(state.openPast).add(key);
+      render();
+      scrollToMonthKey(key);
+    },
+    onLoadYear: (year) => {
+      const group = yearNav.find((g) => g.year === year);
+      if (!group) return;
+      const next = new Set(state.openPast);
+      for (const key of group.lockedKeys) next.add(key);
+      state.openPast = next;
+      render();
+      if (group.lockedKeys.length > 0) scrollToMonthKey(group.lockedKeys[0]);
+    },
+    onLoadAllPast: () => {
+      keepScroll(() => {
         const next = new Set(state.openPast);
-        for (const key of group.lockedKeys) next.add(key);
+        for (const b of buckets) next.add(b.key);
         state.openPast = next;
         render();
-        if (group.lockedKeys.length > 0) scrollToMonthKey(group.lockedKeys[0]);
-      },
-      onLoadAllPast: () => {
-        keepScroll(() => {
-          const next = new Set(state.openPast);
-          for (const b of buckets) next.add(b.key);
-          state.openPast = next;
-          render();
-        });
-      },
-    });
+      });
+    },
+  });
 
-    row.append(monthList, nav);
-    main.appendChild(row);
-    stopObservingActiveMonth = observeActiveMonth(sectionEls, nav);
-  } else {
-    const tally = buildCommunityTally(filtered);
-    const shelves = buildShelves(tally, upcoming);
-    main.appendChild(renderCommunityShelves(shelves, today, state.filters.nearMe));
-  }
+  row.append(monthList, nav);
+  main.appendChild(row);
+  stopObservingActiveMonth = observeActiveMonth(sectionEls, nav);
 
   if (restoreFocus) {
     const input = main.querySelector<HTMLInputElement>('input[type="search"]');
@@ -220,14 +201,7 @@ function render(): void {
   }
 }
 
-const header = renderHeader({
-  active: "eventos",
-  onNavCommunities: () => {
-    state.groupBy = "comunidade";
-    syncUrl();
-    render();
-  },
-});
+const header = renderHeader({ active: "eventos" });
 
 const { shell, main } = mountLayout(header);
 shell.append(renderCtaBand(), renderFooter());

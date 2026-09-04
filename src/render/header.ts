@@ -1,8 +1,7 @@
-export type HeaderPage = "eventos" | "mapa" | "conteudos";
+export type HeaderPage = "eventos" | "mapa" | "conteudos" | "comunidades";
 
 export interface HeaderHandlers {
   active: HeaderPage;
-  onNavCommunities?: () => void;
 }
 
 function logoMarkSvg(): string {
@@ -65,17 +64,7 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
 
   const conteudos = navLink("Conteúdos", "/conteudos.html", handlers.active === "conteudos");
 
-  const comunidades = document.createElement("button");
-  comunidades.type = "button";
-  comunidades.className = "cursor-pointer rounded-lg bg-transparent px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
-  comunidades.textContent = "Comunidades";
-  if (handlers.onNavCommunities) {
-    comunidades.addEventListener("click", handlers.onNavCommunities);
-  } else {
-    comunidades.addEventListener("click", () => {
-      window.location.href = "/index.html#top";
-    });
-  }
+  const comunidades = navLink("Comunidades", "/comunidades.html", handlers.active === "comunidades");
 
   const submit = document.createElement("a");
   submit.href = "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml";
