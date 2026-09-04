@@ -1,4 +1,8 @@
 import type { EnrichedEvent } from "../types";
+import { cityCoordsOf, haversineKm } from "../data/cityCoords";
+import type { Coords } from "./geolocation";
+
+export const NEAR_ME_RADIUS_KM = 100;
 
 export interface FilterState {
   region: string;
@@ -6,12 +10,19 @@ export interface FilterState {
   type: string;
   paid: string;
   query: string;
+  nearMe: Coords | null;
 }
 
 const ALL = "Todos";
 
 export function defaultFilterState(): FilterState {
-  return { region: ALL, city: ALL, type: ALL, paid: ALL, query: "" };
+  return { region: ALL, city: ALL, type: ALL, paid: ALL, query: "", nearMe: null };
+}
+
+export function distanceKm(event: EnrichedEvent, from: Coords): number | null {
+  const coords = cityCoordsOf(event.city);
+  if (!coords) return null;
+  return haversineKm([from.lat, from.lng], coords);
 }
 
 function normalize(value: string): string {
@@ -27,6 +38,10 @@ export function matchesFilters(event: EnrichedEvent, state: FilterState): boolea
   if (state.type !== ALL && event.type !== state.type) return false;
   if (state.paid === "Pago" && !event.paid) return false;
   if (state.paid === "Gratuito" && event.paid) return false;
+  if (state.nearMe) {
+    const km = distanceKm(event, state.nearMe);
+    if (km === null || km > NEAR_ME_RADIUS_KM) return false;
+  }
   const query = state.query.trim();
   if (query) {
     const needle = normalize(query);

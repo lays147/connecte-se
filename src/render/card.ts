@@ -1,5 +1,7 @@
 import type { EnrichedEvent } from "../types";
 import { trackAnalyticsEvent } from "../state/consent";
+import { distanceKm } from "../state/filters";
+import type { Coords } from "../state/geolocation";
 import { openEventModal } from "./eventModal";
 import { priceStyle, typeStyle } from "./theme";
 
@@ -33,9 +35,10 @@ export interface CardViewModel {
   when: string;
   price: ReturnType<typeof priceStyle>;
   style: ReturnType<typeof typeStyle>;
+  distanceLabel: string | null;
 }
 
-export function toCardViewModel(e: EnrichedEvent, today: Date): CardViewModel {
+export function toCardViewModel(e: EnrichedEvent, today: Date, nearMe: Coords | null = null): CardViewModel {
   const d = parseIso(e.date);
   const when =
     WD_SUN[d.getDay()] +
@@ -48,6 +51,7 @@ export function toCardViewModel(e: EnrichedEvent, today: Date): CardViewModel {
     e.time;
 
   const community = e.community || "Organizador não informado";
+  const km = nearMe ? distanceKm(e, nearMe) : null;
 
   return {
     title: e.title,
@@ -60,11 +64,12 @@ export function toCardViewModel(e: EnrichedEvent, today: Date): CardViewModel {
     when,
     price: priceStyle(e.paid),
     style: typeStyle(e.type),
+    distanceLabel: km === null ? null : km < 1 ? "menos de 1 km" : `${Math.round(km)} km`,
   };
 }
 
-export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
-  const vm = toCardViewModel(event, today);
+export function renderCard(event: EnrichedEvent, today: Date, nearMe: Coords | null = null): HTMLElement {
+  const vm = toCardViewModel(event, today, nearMe);
 
   const card = document.createElement("article");
   card.className =
@@ -89,10 +94,22 @@ export function renderCard(event: EnrichedEvent, today: Date): HTMLElement {
   typeLabel.textContent = vm.type;
   topRow.appendChild(typeLabel);
 
+  const pillGroup = document.createElement("div");
+  pillGroup.className = "flex items-center gap-1.5";
+
+  if (vm.distanceLabel) {
+    const distancePill = document.createElement("span");
+    distancePill.className = "rounded-full bg-brand-50 px-2 py-1 text-xs font-medium text-brand-700";
+    distancePill.textContent = vm.distanceLabel;
+    pillGroup.appendChild(distancePill);
+  }
+
   const pricePill = document.createElement("span");
   pricePill.className = `rounded-full px-2 py-1 text-xs font-medium ${vm.price.bg} ${vm.price.text}`;
   pricePill.textContent = vm.price.label;
-  topRow.appendChild(pricePill);
+  pillGroup.appendChild(pricePill);
+
+  topRow.appendChild(pillGroup);
 
   const title = document.createElement("h3");
   title.className = "line-clamp-2 font-display text-heading-sm font-semibold leading-snug text-brand-950";

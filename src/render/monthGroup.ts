@@ -1,3 +1,4 @@
+import type { Coords } from "../state/geolocation";
 import type { MonthBucket } from "../state/monthBuckets";
 import { renderCard } from "./card";
 
@@ -14,6 +15,7 @@ export function renderMonthSection(
   today: Date,
   showCurrentMonthPast: boolean,
   handlers: MonthSectionHandlers,
+  nearMe: Coords | null = null,
 ): HTMLElement {
   const section = document.createElement("section");
   section.id = monthSectionId(bucket.year, bucket.monthIndex);
@@ -53,7 +55,7 @@ export function renderMonthSection(
   grid.className = "grid grid-cols-1 gap-4 px-(--spacing-gutter) py-5 sm:grid-cols-2 lg:grid-cols-3";
 
   for (const event of bucket.list) {
-    grid.appendChild(renderCard(event, today));
+    grid.appendChild(renderCard(event, today, nearMe));
   }
   section.appendChild(grid);
 
@@ -74,7 +76,7 @@ export function renderMonthSection(
       const pastGrid = document.createElement("div");
       pastGrid.className = "grid grid-cols-1 gap-4 px-(--spacing-gutter) pb-5 opacity-70 sm:grid-cols-2 lg:grid-cols-3";
       for (const event of bucket.past) {
-        pastGrid.appendChild(renderCard(event, today));
+        pastGrid.appendChild(renderCard(event, today, nearMe));
       }
       section.appendChild(pastGrid);
     }

@@ -17,6 +17,7 @@ import { createInitialState } from "./state/appState";
 import { startCarousel } from "./state/carousel";
 import { applyStoredConsent } from "./state/consent";
 import { defaultFilterState, filterOptions, matchesFilters } from "./state/filters";
+import { getStoredLocation } from "./state/geolocation";
 import { buildMonthBuckets, buildYearNav } from "./state/monthBuckets";
 import { keepScroll } from "./state/scroll";
 import { readParams, writeParams } from "./state/urlState";
@@ -42,6 +43,7 @@ state.filters = {
   type: typeParam && options.type.includes(typeParam) ? typeParam : defaults.type,
   paid: paidParam && options.paid.includes(paidParam) ? paidParam : defaults.paid,
   query: queryParam ?? defaults.query,
+  nearMe: getStoredLocation(),
 };
 if (params.get("agrupar") === "comunidade") state.groupBy = "comunidade";
 
@@ -148,12 +150,18 @@ function render(): void {
     monthList.className = "flex min-w-0 flex-1 flex-col";
     const sectionEls: HTMLElement[] = [];
     for (const bucket of visibleBuckets) {
-      const section = renderMonthSection(bucket, today, state.showCurrentMonthPast, {
-        onToggleCurrentMonthPast: () => {
-          state.showCurrentMonthPast = !state.showCurrentMonthPast;
-          render();
+      const section = renderMonthSection(
+        bucket,
+        today,
+        state.showCurrentMonthPast,
+        {
+          onToggleCurrentMonthPast: () => {
+            state.showCurrentMonthPast = !state.showCurrentMonthPast;
+            render();
+          },
         },
-      });
+        state.filters.nearMe,
+      );
       sectionEls.push(section);
       monthList.appendChild(section);
     }
@@ -200,7 +208,7 @@ function render(): void {
   } else {
     const tally = buildCommunityTally(filtered);
     const shelves = buildShelves(tally, upcoming);
-    main.appendChild(renderCommunityShelves(shelves, today));
+    main.appendChild(renderCommunityShelves(shelves, today, state.filters.nearMe));
   }
 
   if (restoreFocus) {

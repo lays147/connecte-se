@@ -1,3 +1,4 @@
+import type { Coords } from "../state/geolocation";
 import type { EnrichedEvent } from "../types";
 import { initialsOf, renderCard } from "./card";
 
@@ -47,7 +48,7 @@ export function buildShelves(tally: Map<string, number>, upcoming: EnrichedEvent
   return shelves.filter((s) => s.events.length > 0);
 }
 
-export function renderCommunityShelves(shelves: CommunityShelf[], today: Date): HTMLElement {
+export function renderCommunityShelves(shelves: CommunityShelf[], today: Date, nearMe: Coords | null = null): HTMLElement {
   const container = document.createElement("div");
   container.className = "flex flex-col";
 
@@ -91,7 +92,7 @@ export function renderCommunityShelves(shelves: CommunityShelf[], today: Date): 
     const grid = document.createElement("div");
     grid.className = "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3";
     for (const event of shelf.events) {
-      grid.appendChild(renderCard(event, today));
+      grid.appendChild(renderCard(event, today, nearMe));
     }
     row.appendChild(grid);
 

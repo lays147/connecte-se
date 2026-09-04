@@ -1,4 +1,5 @@
-import { filterOptions, type FilterState } from "../state/filters";
+import { filterOptions, NEAR_ME_RADIUS_KM, type FilterState } from "../state/filters";
+import { requestLocation, type LocationError } from "../state/geolocation";
 import type { EnrichedEvent } from "../types";
 
 function buildSelect(label: string, options: string[], value: string, onChange: (value: string) => void): HTMLElement {
@@ -49,6 +50,49 @@ function buildSearchInput(value: string, onChange: (value: string) => void): HTM
   return wrapper;
 }
 
+const LOCATION_ERROR_MESSAGE: Record<LocationError, string> = {
+  unsupported: "Seu navegador não suporta geolocalização.",
+  denied: "Permissão de localização negada. Habilite nas configurações do navegador para usar este filtro.",
+  unavailable: "Não foi possível obter sua localização agora. Tente novamente.",
+};
+
+function buildNearMeToggle(state: FilterState, onChange: (state: FilterState) => void): HTMLElement {
+  const wrapper = document.createElement("div");
+  wrapper.className =
+    "flex min-w-0 shrink-0 items-center gap-1.5 border-brand-100 px-3.5 py-2.5 border-t sm:border-t-0 sm:border-l";
+
+  const button = document.createElement("button");
+  button.type = "button";
+  const active = Boolean(state.nearMe);
+  button.className = active
+    ? "flex items-center gap-1.5 whitespace-nowrap rounded-full bg-brand-700 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-brand-600"
+    : "flex items-center gap-1.5 whitespace-nowrap rounded-full border border-brand-200 px-3 py-1.5 text-xs font-medium text-brand-700 transition-colors hover:border-brand-400";
+  button.innerHTML = `<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 14.5s5-4.2 5-8.2a5 5 0 1 0-10 0c0 4 5 8.2 5 8.2Z"/><circle cx="8" cy="6.3" r="1.8"/></svg>`;
+  const label = document.createElement("span");
+  label.textContent = active ? `Perto de mim (${NEAR_ME_RADIUS_KM} km)` : "Perto de mim";
+  button.appendChild(label);
+
+  button.addEventListener("click", async () => {
+    if (active) {
+      onChange({ ...state, nearMe: null });
+      return;
+    }
+    button.disabled = true;
+    label.textContent = "Localizando…";
+    try {
+      const coords = await requestLocation();
+      onChange({ ...state, nearMe: coords });
+    } catch (err) {
+      button.disabled = false;
+      label.textContent = "Perto de mim";
+      alert(LOCATION_ERROR_MESSAGE[err as LocationError] ?? LOCATION_ERROR_MESSAGE.unavailable);
+    }
+  });
+
+  wrapper.appendChild(button);
+  return wrapper;
+}
+
 export function renderFilterBar(
   allEvents: EnrichedEvent[],
   upcomingCount: number,
@@ -89,6 +133,8 @@ export function renderFilterBar(
   addonsRow.appendChild(
     buildSelect("Pago?", options.paid, state.paid, (value) => onChange({ ...state, paid: value })),
   );
+
+  addonsRow.appendChild(buildNearMeToggle(state, onChange));
 
   searchConsole.append(searchInput, addonsRow);
 
