@@ -1,5 +1,5 @@
 import { filterOptions, NEAR_ME_RADIUS_KM, type FilterState } from "../state/filters";
-import { requestLocation, type LocationError } from "../state/geolocation";
+import { clearStoredLocation, requestLocation, type LocationError } from "../state/geolocation";
 import type { EnrichedEvent } from "../types";
 
 function buildSelect(label: string, options: string[], value: string, onChange: (value: string) => void): HTMLElement {
@@ -74,6 +74,7 @@ function buildNearMeToggle(state: FilterState, onChange: (state: FilterState) =>
 
   button.addEventListener("click", async () => {
     if (active) {
+      clearStoredLocation();
       onChange({ ...state, nearMe: null });
       return;
     }
