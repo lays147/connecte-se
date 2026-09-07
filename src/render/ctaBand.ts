@@ -27,7 +27,7 @@ export function renderCtaBand(): HTMLElement {
   actions.className = "flex shrink-0 flex-wrap items-center gap-2.5";
 
   const submitEvent = document.createElement("a");
-  submitEvent.href = "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml";
+  submitEvent.href = "https://github.com/lays147/connecte-se/issues/new?template=add-event.yml";
   submitEvent.target = "_blank";
   submitEvent.rel = "noopener";
   submitEvent.className =

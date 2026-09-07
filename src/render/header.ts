@@ -109,7 +109,7 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   const comunidades = navLink("Comunidades", "/comunidades.html", handlers.active === "comunidades");
 
   const submit = document.createElement("a");
-  submit.href = "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml";
+  submit.href = "https://github.com/lays147/connecte-se/issues/new?template=add-event.yml";
   submit.target = "_blank";
   submit.rel = "noopener";
   submit.className =

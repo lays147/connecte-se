@@ -96,7 +96,7 @@ test("CTA band links point to the add-event and add-source workflows", async ({ 
   await page.goto("/");
   await expect(page.getByRole("link", { name: "Enviar um evento" }).first()).toHaveAttribute(
     "href",
-    "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml",
+    "https://github.com/lays147/connecte-se/issues/new?template=add-event.yml",
   );
   await expect(page.getByRole("link", { name: "Cadastrar comunidade" }).first()).toHaveAttribute(
     "href",

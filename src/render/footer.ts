@@ -55,7 +55,7 @@ export function renderFooter(): HTMLElement {
   repoLink.innerHTML = `${githubIconSvg()}lays147/connecte-se`;
 
   const submitEventLink = document.createElement("a");
-  submitEventLink.href = "https://github.com/lays147/connecte-se/actions/workflows/add-event.yml";
+  submitEventLink.href = "https://github.com/lays147/connecte-se/issues/new?template=add-event.yml";
   submitEventLink.target = "_blank";
   submitEventLink.rel = "noopener";
   submitEventLink.className = "text-body-sm font-medium text-brand-100";
