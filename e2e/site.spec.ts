@@ -104,6 +104,35 @@ test("CTA band links point to the add-event and add-source workflows", async ({ 
   );
 });
 
+test("theme toggle switches to dark mode and persists across reload", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+
+  await page.getByRole("button", { name: "Usar tema escuro" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page.getByRole("button", { name: "Usar tema claro" })).toBeVisible();
+});
+
+test("featured carousel content is keyboard-operable and can be paused", async ({ page }) => {
+  await page.goto("/");
+
+  const infoRegion = page.getByRole("button", { name: /^Ver detalhes de /i }).filter({ hasText: "Em destaque" });
+
+  await infoRegion.focus();
+  await infoRegion.press("Enter");
+  await expect(page.getByRole("dialog")).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+
+  const pauseBtn = page.getByRole("button", { name: "Pausar avanço automático" });
+  await expect(pauseBtn).toBeVisible();
+  await pauseBtn.click();
+  await expect(page.getByRole("button", { name: "Retomar avanço automático" })).toBeVisible();
+});
+
 test("communities page lists all registered sources and filters by type and search", async ({ page }) => {
   await page.goto("/comunidades.html");
   await expect(page.locator("h1")).toHaveText("Comunidades e organizadores de tecnologia");
