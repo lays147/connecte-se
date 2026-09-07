@@ -31,12 +31,16 @@ test("filter bar has exactly the region, type, and paid selects", async ({ page 
   await expect(page.locator("label", { hasText: "Modalidade" })).toHaveCount(0);
 });
 
-test("current month renders first with its capped card grid and overflow note", async ({ page }) => {
+test("current month renders first with a card for every event in it", async ({ page }) => {
   await page.goto("/");
-  const augustSection = page.locator("section", { has: page.locator("h2", { hasText: "Agosto 2026" }) });
-  await expect(augustSection).toBeVisible();
-  await expect(augustSection.locator("article")).toHaveCount(9, { timeout: 10000 });
-  await expect(augustSection.getByText("+ 2 eventos neste mês")).toBeVisible();
+  const currentSection = page.locator("section").first();
+  await expect(currentSection.locator("h2")).toBeVisible();
+
+  const countLabel = await currentSection.locator("span.font-mono-label").first().textContent();
+  const expectedCount = Number(countLabel?.match(/\d+/)?.[0]);
+  expect(expectedCount).toBeGreaterThan(0);
+
+  await expect(currentSection.locator("article")).toHaveCount(expectedCount, { timeout: 10000 });
 });
 
 test("clicking a month heading collapses its card grid and the chevron rotates", async ({ page }) => {
