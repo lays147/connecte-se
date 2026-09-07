@@ -110,7 +110,7 @@ async function main(): Promise<void> {
     for (const event of bucket ?? []) {
       existingById.set(event.id, event);
       existingByUrlDateKey.set(`${event.url}|${event.date}`, event);
-      existingUrlsByYear.add(`${event.url}|${event.date.slice(0, 4)}`);
+      existingUrlsByYear.add(`${event.url}|${event.date.slice(6, 10)}`);
     }
   }
 

@@ -1,7 +1,8 @@
 import { MONTH_NAMES, type EnrichedEvent } from "../types";
+import { eventDateKey } from "../lib/date";
 
-function iso(d: Date): string {
-  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+function dateKeyOf(d: Date): string {
+  return d.getFullYear() + String(d.getMonth() + 1).padStart(2, "0") + String(d.getDate()).padStart(2, "0");
 }
 
 function ord(y: number, m: number): number {
@@ -29,12 +30,12 @@ export function buildMonthBuckets(
   openPast: Set<string>,
   showCurrentMonthPast = false,
 ): MonthBucket[] {
-  const todayIso = iso(today);
+  const todayKey = dateKeyOf(today);
   const curOrd = ord(today.getFullYear(), today.getMonth());
 
   const buckets = new Map<string, MonthBucket>();
   for (const e of events) {
-    const [y, m] = e.date.split("-").map(Number);
+    const [, m, y] = e.date.split("/").map(Number);
     const monthIndex = m - 1;
     const key = y + "-" + monthIndex;
     let bucket = buckets.get(key);
@@ -60,13 +61,13 @@ export function buildMonthBuckets(
 
   const bucketList = [...buckets.values()].sort((a, b) => a.order - b.order);
   for (const b of bucketList) {
-    b.all.sort((x, y) => x.date.localeCompare(y.date) || x.time.localeCompare(y.time));
+    b.all.sort((x, y) => eventDateKey(x.date).localeCompare(eventDateKey(y.date)) || x.time.localeCompare(y.time));
     b.isPast = b.order < curOrd;
     b.isCurrent = b.order === curOrd;
     b.opened = openPast.has(b.key);
     if (b.isCurrent && !b.opened) {
-      b.list = b.all.filter((e) => e.date >= todayIso);
-      const pastEvents = b.all.filter((e) => e.date < todayIso);
+      b.list = b.all.filter((e) => eventDateKey(e.date) >= todayKey);
+      const pastEvents = b.all.filter((e) => eventDateKey(e.date) < todayKey);
       b.hasPast = pastEvents.length > 0;
       b.past = showCurrentMonthPast ? pastEvents : [];
     } else {

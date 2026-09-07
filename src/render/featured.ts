@@ -1,4 +1,5 @@
 import type { EnrichedEvent } from "../types";
+import { parseEventDate } from "../lib/date";
 import { trackAnalyticsEvent } from "../state/consent";
 import { toCardViewModel } from "./card";
 import { openEventModal } from "./eventModal";
@@ -6,11 +7,6 @@ import { modalityBadge } from "./theme";
 
 const MONTHS_SHORT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 const WD_SUN = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
-
-function parseIso(s: string): Date {
-  const [y, m, d] = s.split("-").map(Number);
-  return new Date(y, m - 1, d);
-}
 
 export function buildFeaturedList(upcoming: EnrichedEvent[]): EnrichedEvent[] {
   return upcoming.filter((e) => e.modality === "Online").slice(0, 3);
@@ -38,7 +34,7 @@ export function renderFeaturedCarousel(
   const event = list[idx];
   const vm = toCardViewModel(event, today);
   const badge = modalityBadge(event.modality);
-  const d = parseIso(event.date);
+  const d = parseEventDate(event.date);
 
   const enterClass =
     direction === "next" ? "carousel-enter-next" : direction === "prev" ? "carousel-enter-prev" : "carousel-enter-fade";

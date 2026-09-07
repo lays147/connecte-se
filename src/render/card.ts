@@ -1,4 +1,5 @@
 import type { EnrichedEvent } from "../types";
+import { parseEventDate } from "../lib/date";
 import { trackAnalyticsEvent } from "../state/consent";
 import { distanceKm } from "../state/filters";
 import type { Coords } from "../state/geolocation";
@@ -7,11 +8,6 @@ import { priceStyle, typeStyle } from "./theme";
 
 const MONTHS_SHORT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 const WD_SUN = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
-
-function parseIso(s: string): Date {
-  const [y, m, d] = s.split("-").map(Number);
-  return new Date(y, m - 1, d);
-}
 
 // Uses a Unicode-aware iterator (not raw string indexing) so multi-byte
 // characters like emoji never get split mid-codepoint, and skips leading
@@ -39,7 +35,7 @@ export interface CardViewModel {
 }
 
 export function toCardViewModel(e: EnrichedEvent, today: Date, nearMe: Coords | null = null): CardViewModel {
-  const d = parseIso(e.date);
+  const d = parseEventDate(e.date);
   const when =
     WD_SUN[d.getDay()] +
     ", " +

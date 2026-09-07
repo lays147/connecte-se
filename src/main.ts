@@ -19,6 +19,7 @@ import { getStoredLocation } from "./state/geolocation";
 import { buildMonthBuckets, buildYearNav } from "./state/monthBuckets";
 import { keepScroll } from "./state/scroll";
 import { readParams, writeParams } from "./state/urlState";
+import { eventDateKey } from "./lib/date";
 
 applyStoredConsent();
 mountConsentBanner();
@@ -56,8 +57,8 @@ function syncUrl(): void {
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
-function todayIso(): string {
-  return today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
+function todayKey(): string {
+  return today.getFullYear() + String(today.getMonth() + 1).padStart(2, "0") + String(today.getDate()).padStart(2, "0");
 }
 
 let featuredCount = 0;
@@ -68,8 +69,8 @@ const featuredHost = document.createElement("div");
 // Featured carousel always draws from the full unfiltered event list — the
 // search box and filters below narrow the listing, not the highlights.
 const allUpcoming = allEvents
-  .filter((e) => e.date >= todayIso())
-  .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+  .filter((e) => eventDateKey(e.date) >= todayKey())
+  .sort((a, b) => eventDateKey(a.date).localeCompare(eventDateKey(b.date)) || a.time.localeCompare(b.time));
 
 function renderCarousel(direction: CarouselDirection = "fade"): void {
   const featuredList = buildFeaturedList(allUpcoming);
@@ -117,7 +118,9 @@ function render(): void {
   main.replaceChildren();
 
   const filtered = allEvents.filter((e) => matchesFilters(e, state.filters));
-  const upcoming = filtered.filter((e) => e.date >= todayIso()).sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+  const upcoming = filtered
+    .filter((e) => eventDateKey(e.date) >= todayKey())
+    .sort((a, b) => eventDateKey(a.date).localeCompare(eventDateKey(b.date)) || a.time.localeCompare(b.time));
 
   // Featured carousel — rendered into a stable host so its own auto-advance
   // timer never has to rebuild the rest of the page. It draws from

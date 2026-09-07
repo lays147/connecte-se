@@ -6,6 +6,7 @@ export interface TechEvent {
   region: string;
   type: string;
   modality: string;
+  /** Brazilian format "DD/MM/YYYY" — parse with parseEventDate/eventDateKey, never compare as a raw string. */
   date: string;
   time: string | null;
   description: string;

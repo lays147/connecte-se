@@ -30,7 +30,7 @@ Você também pode sugerir um evento específico sem editar os arquivos JSON man
    - **title**: título do evento.
    - **region**: selecione a região do evento (`Sudeste`, `Sul`, `Nordeste`, `Norte` ou `Centro-Oeste`).
    - **event_type**: selecione o tipo do evento (`Meetup`, `Meetup Online`, `Conferência`, `Congresso`, `Workshop`, `Summit`, `Festival`, `Community Day` ou `Evento`).
-   - **date**: data do evento no formato `YYYY-MM-DD`.
+   - **date**: data do evento no formato `DD/MM/YYYY`.
    - **description**: uma breve descrição do evento.
    - **paid**: marque caso o evento seja pago.
    - **url**: URL do evento.

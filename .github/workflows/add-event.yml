@@ -104,11 +104,10 @@ jobs:
           EVENT_PAID: ${{ inputs.paid }}
           EVENT_URL: ${{ inputs.url }}
         run: |
-          if [[ ! "$EVENT_DATE" =~ ^([0-3][0-9])/([0-1][0-9])/([0-9]{4})$ ]]; then
+          if [[ ! "$EVENT_DATE" =~ ^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$ ]]; then
             echo "Data inválida \"$EVENT_DATE\": o formato esperado é DD/MM/AAAA" >&2
             exit 1
           fi
-          ISO_DATE="${BASH_REMATCH[3]}-${BASH_REMATCH[2]}-${BASH_REMATCH[1]}"
 
           ARGS=(
             --title="$EVENT_TITLE"
@@ -117,7 +116,7 @@ jobs:
             --region="$EVENT_REGION"
             --type="$EVENT_TYPE"
             --modality="$EVENT_MODALITY"
-            --date="$ISO_DATE"
+            --date="$EVENT_DATE"
             --description="$EVENT_DESCRIPTION"
             --paid="$EVENT_PAID"
             --url="$EVENT_URL"

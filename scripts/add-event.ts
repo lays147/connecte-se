@@ -39,12 +39,12 @@ function parseCliArgs(argv: string[]): CliArgs {
   if (!title || city === undefined || state === undefined || !region || !type || !modality || !date || !description || !paidRaw || !url) {
     throw new Error(
       "Usage: add-event --title=<title> --city=<city|null> --state=<UF|null> --region=<region> --type=<type> --modality=<modality> " +
-        "--date=<YYYY-MM-DD> [--time=<HH:mm>] --description=<description> --paid=<true|false> --url=<url>",
+        "--date=<DD/MM/YYYY> [--time=<HH:mm>] --description=<description> --paid=<true|false> --url=<url>",
     );
   }
 
   if (!isValidDate(date)) {
-    throw new Error(`Invalid date "${date}": expected format YYYY-MM-DD`);
+    throw new Error(`Invalid date "${date}": expected format DD/MM/YYYY`);
   }
 
   if (time !== undefined && !/^([01]\d|2[0-3]):[0-5]\d$/.test(time)) {
@@ -71,7 +71,7 @@ function parseCliArgs(argv: string[]): CliArgs {
 
 function main(): void {
   const args = parseCliArgs(process.argv.slice(2));
-  const year = args.date.slice(0, 4);
+  const year = args.date.slice(6, 10);
   const eventsPath = fileURLToPath(new URL(`../data/events-${year}.json`, import.meta.url));
 
   const events = JSON.parse(readFileSync(eventsPath, "utf-8")) as EventsByMonth;

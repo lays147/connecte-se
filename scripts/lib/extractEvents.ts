@@ -18,8 +18,13 @@ function buildExtractedEventSchema(year: number) {
     modality: z.enum(["Presencial", "Online", "Híbrido", "Não informado"]),
     date: z
       .string()
-      .regex(new RegExp(`^${year}-\\d{2}-\\d{2}$`), `date must be an ISO YYYY-MM-DD date in ${year}`)
-      .refine((value) => !Number.isNaN(new Date(value).getTime()), "date must be a valid calendar date"),
+      .regex(/^\d{2}\/\d{2}\/\d{4}$/, `date must be in Brazilian DD/MM/${year} format`)
+      .refine((value) => value.endsWith(`/${year}`), `date must be in ${year}`)
+      .refine((value) => {
+        const [day, month, y] = value.split("/").map(Number);
+        const d = new Date(y, month - 1, day);
+        return d.getFullYear() === y && d.getMonth() === month - 1 && d.getDate() === day;
+      }, "date must be a valid calendar date"),
     time: z
       .string()
       .regex(/^([01]\d|2[0-3]):[0-5]\d$/, "time must be a 24h HH:mm string")
@@ -63,7 +68,7 @@ Source context:
 - frequency: ${source.frequency}
 
 Instructions:
-- Only extract events that will actually take place in Brazil during calendar year ${year}. Never invent or guess a date — if you cannot determine a specific, real ${year} date for an event, omit it.
+- Only extract events that will actually take place in Brazil during calendar year ${year}. Never invent or guess a date — if you cannot determine a specific, real ${year} date for an event, omit it. Format "date" as Brazilian "DD/MM/${year}" (e.g. "15/03/${year}"), not ISO.
 - Many of these sources (e.g. DevOpsDays, ServerlessDays, Web Summit, AWS Summit-style events) run many international editions/chapters. Scan the ENTIRE page for every listed edition or chapter, identify which ones are located in Brazil (by Brazilian city/state name, "Brasil"/"Brazil" labeling, or .br links), and extract ONLY those. Ignore every non-Brazil edition, even if it is the most prominent one on the page.
 - If the page is a global index/listing page whose links point to separate per-city pages, and a Brazil edition's own date/details are not directly visible in this page's text, return an empty array rather than guessing at what that sub-page might say.
 - If the page contains no discoverable concrete Brazil event details (dates, locations) at all, return an empty array.

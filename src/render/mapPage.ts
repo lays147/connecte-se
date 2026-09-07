@@ -3,6 +3,7 @@ import * as topojson from "topojson-client";
 import type { EnrichedEvent } from "../types";
 import { isOnline, UF_NAME, ufOf } from "../data/cityUf";
 import topology from "../../data/br-uf-topo.json";
+import { eventDateKey, parseEventDate } from "../lib/date";
 import { readParams, writeParams } from "../state/urlState";
 
 const MONTHS_SHORT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
@@ -31,13 +32,13 @@ interface MapState {
   scope: Scope;
 }
 
-function todayIso(): string {
+function todayKey(): string {
   const d = new Date();
-  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  return d.getFullYear() + String(d.getMonth() + 1).padStart(2, "0") + String(d.getDate()).padStart(2, "0");
 }
 
 function inScope(e: MapEvent, scope: Scope): boolean {
-  return scope === "all" || e.date >= todayIso();
+  return scope === "all" || eventDateKey(e.date) >= todayKey();
 }
 
 export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
@@ -495,7 +496,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       list = scoped.filter((e) => e.uf === state.selected);
       title = UF_NAME[state.selected];
     }
-    list = [...list].sort((a, b) => a.date.localeCompare(b.date));
+    list = [...list].sort((a, b) => eventDateKey(a.date).localeCompare(eventDateKey(b.date)));
 
     const head = document.createElement("div");
     head.className = "mb-3.5 flex flex-wrap items-baseline justify-between gap-4";
@@ -521,8 +522,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     }
 
     for (const e of list) {
-      const [y, m, d] = e.date.split("-").map(Number);
-      const dt = new Date(y, m - 1, d);
+      const dt = parseEventDate(e.date);
 
       const row = document.createElement("a");
       row.href = e.url;

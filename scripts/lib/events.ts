@@ -1,4 +1,5 @@
 import { MONTH_NAMES, type EventsByMonth, type MonthName, type TechEvent } from "../../src/types.ts";
+import { eventDateKey, isValidEventDate } from "../../src/lib/date.ts";
 
 export function slugify(title: string): string {
   return title
@@ -10,12 +11,12 @@ export function slugify(title: string): string {
 }
 
 export function buildEventId(date: string, title: string): string {
-  const [year, month] = date.split("-");
+  const [, month, year] = date.split("/");
   return `${year}-${month}-${slugify(title)}`;
 }
 
 export function monthNameFromDate(date: string): MonthName {
-  const monthIndex = Number(date.split("-")[1]) - 1;
+  const monthIndex = Number(date.split("/")[1]) - 1;
   return MONTH_NAMES[monthIndex];
 }
 
@@ -24,14 +25,14 @@ export function sortEventsByMonth(events: EventsByMonth): EventsByMonth {
   for (const month of MONTH_NAMES) {
     const bucket = events[month];
     if (bucket && bucket.length > 0) {
-      ordered[month] = [...bucket].sort((a, b) => a.date.localeCompare(b.date));
+      ordered[month] = [...bucket].sort((a, b) => eventDateKey(a.date).localeCompare(eventDateKey(b.date)));
     }
   }
   return ordered;
 }
 
 export function isValidDate(date: string): boolean {
-  return /^\d{4}-\d{2}-\d{2}$/.test(date) && !Number.isNaN(Date.parse(date));
+  return isValidEventDate(date);
 }
 
 export type { EventsByMonth, MonthName, TechEvent };
