@@ -2166,6 +2166,20 @@
       "url": "https://lu.ma/fsk8rw28"
     },
     {
+      "id": "2026-09-workshop-enterprise-genai-com-java-construindo-arquiteturas-rag-em-larga-escala",
+      "title": "Workshop: Enterprise GenAI com Java: Construindo Arquiteturas RAG em Larga Escala",
+      "city": "Brasília",
+      "state": null,
+      "region": "Centro-Oeste",
+      "type": "Workshop",
+      "modality": "Presencial",
+      "date": "2026-09-12",
+      "time": null,
+      "description": "Workshop presencial sobre desenvolvimento de aplicações com GenAI e Java, explorando arquiteturas RAG em larga escala, com foco em ferramentas como VSCode e Docker. Evento realizado no IFB - Taguatinga Norte, incluindo certificado e sorteios de prêmios.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-brasilia/"
+    },
+    {
       "id": "2026-09-lovable-meetup-with-oracle-sao-paulo",
       "title": "Lovable Meetup with Oracle São Paulo",
       "city": "São Paulo",
@@ -2485,6 +2499,20 @@
       "description": "IA NA PRÁTICA. SEM ENROLAÇÃO.",
       "paid": false,
       "url": "https://lu.ma/7vujhuln"
+    },
+    {
+      "id": "2026-09-meetup-entre-o-deploy-e-hype-dentsu-world-services-gdgpoa",
+      "title": "[meetup] Entre o deploy e hype | dentsu world services & gdgpoa",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "2026-09-17",
+      "time": null,
+      "description": "Meetup do GDG Porto Alegre em parceria com a Dentsu World Services sobre aplicações reais de IA generativa em tecnologia, realizado no Intercity Hotel.",
+      "paid": false,
+      "url": "https://gdg.community.dev/events/details/google-gdg-porto-alegre-presents-meetup-entre-o-deploy-e-hype-dentsu-world-services-amp-gdgpoa/cohost-gdg-porto-alegre"
     },
     {
       "id": "2026-09-go-rn-devfest-natal-2026",
@@ -3502,6 +3530,20 @@
       "description": "O DevFestPoa26 não é só mais uma conferência de tecnologia. É o encontro anual das comunidades GDG Porto Alegre e GDG Caxias do Sul — feito por quem programa, projeta, lidera e aprende no dia a dia, para quem quer fazer parte disso.",
       "paid": true,
       "url": "https://www.devfestportoalegre.com.br/"
+    },
+    {
+      "id": "2026-10-aws-community-day-brasil-edicao-norte",
+      "title": "AWS Community Day Brasil - Edição Norte",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "2026-10-31",
+      "time": null,
+      "description": "Evento da comunidade AWS que reúne participantes da Amazônia e de todo o Brasil em Belém/PA para um dia de aprendizado, networking e troca de experiências.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/aws-community-day-brasil---edicao-norte-377"
     }
   ],
   "Novembro": [
