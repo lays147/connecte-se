@@ -3530,20 +3530,6 @@
       "description": "O DevFestPoa26 não é só mais uma conferência de tecnologia. É o encontro anual das comunidades GDG Porto Alegre e GDG Caxias do Sul — feito por quem programa, projeta, lidera e aprende no dia a dia, para quem quer fazer parte disso.",
       "paid": true,
       "url": "https://www.devfestportoalegre.com.br/"
-    },
-    {
-      "id": "2026-10-aws-community-day-brasil-edicao-norte",
-      "title": "AWS Community Day Brasil - Edição Norte",
-      "city": "Belém",
-      "state": "PA",
-      "region": "Norte",
-      "type": "Summit",
-      "modality": "Presencial",
-      "date": "2026-10-31",
-      "time": null,
-      "description": "Evento da comunidade AWS que reúne participantes da Amazônia e de todo o Brasil em Belém/PA para um dia de aprendizado, networking e troca de experiências.",
-      "paid": false,
-      "url": "https://comunidade.devsnorte.com/eventos/aws-community-day-brasil---edicao-norte-377"
     }
   ],
   "Novembro": [
