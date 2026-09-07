@@ -133,6 +133,24 @@ test("featured carousel content is keyboard-operable and can be paused", async (
   await expect(page.getByRole("button", { name: "Retomar avanço automático" })).toBeVisible();
 });
 
+test("map zoom controls scale the map and reset returns to the original view", async ({ page }) => {
+  await page.goto("/mapa.html");
+
+  const svg = page.getByRole("img");
+  const zoomLayer = svg.locator("> g").first();
+
+  const resetBtn = page.getByRole("button", { name: "Redefinir zoom do mapa" });
+  await expect(resetBtn).toBeDisabled();
+
+  await page.getByRole("button", { name: "Aproximar o mapa" }).click();
+  await expect(zoomLayer).toHaveAttribute("transform", /scale\(1\.6\)/);
+  await expect(resetBtn).toBeEnabled();
+
+  await resetBtn.click();
+  await expect(zoomLayer).toHaveAttribute("transform", /scale\(1\)/);
+  await expect(resetBtn).toBeDisabled();
+});
+
 test("communities page lists all registered sources and filters by type and search", async ({ page }) => {
   await page.goto("/comunidades.html");
   await expect(page.locator("h1")).toHaveText("Comunidades e organizadores de tecnologia");

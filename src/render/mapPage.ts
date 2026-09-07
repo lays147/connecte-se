@@ -103,6 +103,23 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   const mapHost = document.createElement("div");
   mapHost.className = "relative touch-manipulation";
 
+  const zoomControls = document.createElement("div");
+  zoomControls.className = "absolute right-2 top-2 z-1 flex flex-col overflow-hidden rounded-lg border border-hairline-strong bg-surface shadow-sm";
+  function zoomControlButton(label: string, glyph: string): HTMLButtonElement {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.setAttribute("aria-label", label);
+    btn.className =
+      "flex size-11 cursor-pointer items-center justify-center text-lg font-semibold text-ink-soft hover:bg-tint-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 [&:not(:last-child)]:border-b [&:not(:last-child)]:border-hairline";
+    btn.textContent = glyph;
+    return btn;
+  }
+  const zoomInBtn = zoomControlButton("Aproximar o mapa", "+");
+  const zoomOutBtn = zoomControlButton("Afastar o mapa", "−");
+  const zoomResetBtn = zoomControlButton("Redefinir zoom do mapa", "⟲");
+  zoomControls.append(zoomInBtn, zoomOutBtn, zoomResetBtn);
+  mapHost.appendChild(zoomControls);
+
   const legendRow = document.createElement("div");
   legendRow.className = "-mt-1.5 flex flex-wrap items-center gap-3.5 px-2 sm:px-3";
 
@@ -134,7 +151,8 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
 
   const mobileHint = document.createElement("p");
   mobileHint.className = "px-2 pt-3 text-label-sm text-ink-soft sm:hidden";
-  mobileHint.textContent = "Estados pequenos são difíceis de tocar no mapa — use o ranking ao lado para navegar por estado.";
+  mobileHint.textContent =
+    "Estados pequenos? Toque em + para ampliar o mapa, ou use o ranking abaixo para navegar por estado.";
 
   mapCol.append(mapHost, legendRow, mobileHint);
 
@@ -191,7 +209,13 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     .attr("viewBox", "0 0 " + W + " " + H)
     .attr("width", "100%")
     .style("display", "block")
-    .style("max-height", "620px");
+    .style("max-height", "620px")
+    .style("touch-action", "none");
+
+  // Small states (DF, SE, AL...) can't clear a real touch-target size at 1x —
+  // pinch/wheel/button zoom lets a visitor open them up before tapping,
+  // rather than trying to fake a bigger hit area on the SVG shapes.
+  const zoomLayer = svg.append("g");
 
   const tip = document.createElement("div");
   tip.className =
@@ -235,7 +259,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   let max = 1;
   let color = d3.scaleSequentialSqrt(d3.interpolateRgb(MAP_SCALE_START, MAP_SCALE_END)).domain([0, 1]);
 
-  const ufPaths = svg
+  const ufPaths = zoomLayer
     .append("g")
     .selectAll<SVGPathElement, d3.ExtendedFeature>("path")
     .data((fc as unknown as { features: d3.ExtendedFeature[] }).features)
@@ -262,7 +286,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       update();
     });
 
-  svg
+  const meshPath = zoomLayer
     .append("path")
     .attr(
       "d",
@@ -275,11 +299,12 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     .attr("stroke-width", 1)
     .attr("pointer-events", "none");
 
-  const lg = svg.append("g").attr("pointer-events", "none");
+  const lg = zoomLayer.append("g").attr("pointer-events", "none");
   const labels = (fc as unknown as { features: d3.ExtendedFeature[] }).features.map((d) => {
     const c = proj(d3.geoCentroid(d) as [number, number]) as [number, number];
     const id = d.id as string;
     const off = LABEL_OFFSET[id] || [0, 0];
+    const anchor: [number, number] = [c[0] + off[0], c[1] + off[1]];
     const g = lg.append("g");
     if (off[0] || off[1]) {
       g.append("line")
@@ -292,13 +317,48 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     }
     const t = g
       .append("text")
-      .attr("x", c[0] + off[0])
-      .attr("y", c[1] + off[1] + 4)
+      .attr("x", anchor[0])
+      .attr("y", anchor[1] + 4)
       .attr("text-anchor", "middle")
       .style("font", "600 11px/1 'IBM Plex Mono', monospace")
       .text(id);
-    return { id, g, text: t };
+    return { id, g, text: t, anchor };
   });
+
+  // Pinch/wheel/button zoom so small, tightly-clustered states (DF, SE, AL...)
+  // can be opened up to a real touch-target size before tapping. Labels and
+  // strokes are counter-scaled around their own anchor point so they read at
+  // a constant size, in the same place, at any zoom level.
+  let currentZoomK = 1;
+  const ZOOM_EXTENT: [number, number] = [1, 6];
+  const zoom = d3
+    .zoom<SVGSVGElement, unknown>()
+    .scaleExtent(ZOOM_EXTENT)
+    .translateExtent([
+      [0, 0],
+      [W, H],
+    ])
+    .on("zoom", (ev: d3.D3ZoomEvent<SVGSVGElement, unknown>) => {
+      const { transform } = ev;
+      currentZoomK = transform.k;
+      zoomLayer.attr("transform", transform.toString());
+      const invK = 1 / transform.k;
+      ufPaths.attr("stroke-width", (d) => (state.selected === d.id ? 2.2 : 0.9) * invK);
+      meshPath.attr("stroke-width", invK);
+      for (const l of labels) {
+        const [ax, ay] = l.anchor;
+        l.g.attr("transform", `translate(${ax},${ay}) scale(${invK}) translate(${-ax},${-ay})`);
+      }
+      zoomResetBtn.disabled = transform.k === 1;
+      zoomResetBtn.classList.toggle("opacity-40", transform.k === 1);
+    });
+
+  svg.call(zoom);
+  zoomInBtn.addEventListener("click", () => svg.transition().duration(200).call(zoom.scaleBy, 1.6));
+  zoomOutBtn.addEventListener("click", () => svg.transition().duration(200).call(zoom.scaleBy, 1 / 1.6));
+  zoomResetBtn.addEventListener("click", () => svg.transition().duration(200).call(zoom.transform, d3.zoomIdentity));
+  zoomResetBtn.disabled = true;
+  zoomResetBtn.classList.add("opacity-40");
 
   const LEGEND_STOPS = [0.08, 0.3, 0.52, 0.74, 1];
   d3.select(legendSwatches)
@@ -321,7 +381,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     ufPaths
       .attr("fill", (d) => (counts[d.id as string] ? color(counts[d.id as string]) : MAP_EMPTY))
       .attr("stroke", (d) => (state.selected === d.id ? MAP_SELECTED_STROKE : MAP_STROKE))
-      .attr("stroke-width", (d) => (state.selected === d.id ? 2.2 : 0.9))
+      .attr("stroke-width", (d) => ((state.selected === d.id ? 2.2 : 0.9) / currentZoomK))
       .attr("opacity", (d) => (state.selected && state.selected !== d.id ? 0.55 : 1));
 
     for (const l of labels) {
