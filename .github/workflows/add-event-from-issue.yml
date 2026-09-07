@@ -1,0 +1,160 @@
+name: Add Event From Issue
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  add-event:
+    if: contains(github.event.issue.labels.*.name, 'add-event')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Parse issue form
+        id: parse
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const body = context.payload.issue.body ?? "";
+
+            const fields = {
+              "Título do evento": "title",
+              "Cidade": "city",
+              "UF do estado": "state",
+              "Região": "region",
+              "Tipo de evento": "event_type",
+              "Modalidade do evento": "modality",
+              "Data do evento": "date",
+              "Horário do evento": "time",
+              "Descrição curta do evento": "description",
+              "O evento é pago?": "paid",
+              "URL do evento": "url",
+            };
+
+            const sections = body.split(/^### /m).slice(1);
+            const values = {};
+            for (const section of sections) {
+              const newlineIndex = section.indexOf("\n");
+              const label = section.slice(0, newlineIndex).trim();
+              const key = fields[label];
+              if (!key) continue;
+              const value = section.slice(newlineIndex + 1).trim();
+              values[key] = value === "_No response_" ? "" : value;
+            }
+
+            const normalize = (v) => (!v || v.toLowerCase() === "null" ? "null" : v);
+
+            core.setOutput("title", values.title ?? "");
+            core.setOutput("city", normalize(values.city));
+            core.setOutput("state", normalize(values.state));
+            core.setOutput("region", values.region ?? "");
+            core.setOutput("event_type", values.event_type ?? "");
+            core.setOutput("modality", values.modality ?? "");
+            core.setOutput("date", values.date ?? "");
+            core.setOutput("time", values.time ?? "");
+            core.setOutput("description", values.description ?? "");
+            core.setOutput("paid", values.paid ?? "false");
+            core.setOutput("url", values.url ?? "");
+
+      - name: Add event
+        id: add_event
+        env:
+          EVENT_TITLE: ${{ steps.parse.outputs.title }}
+          EVENT_CITY: ${{ steps.parse.outputs.city }}
+          EVENT_STATE: ${{ steps.parse.outputs.state }}
+          EVENT_REGION: ${{ steps.parse.outputs.region }}
+          EVENT_TYPE: ${{ steps.parse.outputs.event_type }}
+          EVENT_MODALITY: ${{ steps.parse.outputs.modality }}
+          EVENT_DATE: ${{ steps.parse.outputs.date }}
+          EVENT_TIME: ${{ steps.parse.outputs.time }}
+          EVENT_DESCRIPTION: ${{ steps.parse.outputs.description }}
+          EVENT_PAID: ${{ steps.parse.outputs.paid }}
+          EVENT_URL: ${{ steps.parse.outputs.url }}
+        run: |
+          if [[ ! "$EVENT_DATE" =~ ^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$ ]]; then
+            echo "Data inválida \"$EVENT_DATE\": o formato esperado é DD/MM/AAAA" >&2
+            exit 1
+          fi
+
+          ARGS=(
+            --title="$EVENT_TITLE"
+            --city="$EVENT_CITY"
+            --state="$EVENT_STATE"
+            --region="$EVENT_REGION"
+            --type="$EVENT_TYPE"
+            --modality="$EVENT_MODALITY"
+            --date="$EVENT_DATE"
+            --description="$EVENT_DESCRIPTION"
+            --paid="$EVENT_PAID"
+            --url="$EVENT_URL"
+          )
+          if [[ -n "$EVENT_TIME" ]]; then
+            ARGS+=(--time="$EVENT_TIME")
+          fi
+
+          npm run add:event -- "${ARGS[@]}"
+
+      - name: Open pull request
+        if: success()
+        id: create_pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "feat: add ${{ steps.parse.outputs.title }} event"
+          branch: add-event/issue-${{ github.event.issue.number }}
+          title: "feat: add ${{ steps.parse.outputs.title }} event"
+          body: |
+            Adiciona um novo evento a partir da issue #${{ github.event.issue.number }}, enviada por @${{ github.event.issue.user.login }}.
+
+            - **Título:** ${{ steps.parse.outputs.title }}
+            - **Cidade:** ${{ steps.parse.outputs.city }}
+            - **Estado:** ${{ steps.parse.outputs.state }}
+            - **Data:** ${{ steps.parse.outputs.date }}
+            - **Horário:** ${{ steps.parse.outputs.time }}
+            - **Região:** ${{ steps.parse.outputs.region }}
+            - **Tipo:** ${{ steps.parse.outputs.event_type }}
+            - **Modalidade:** ${{ steps.parse.outputs.modality }}
+            - **Pago:** ${{ steps.parse.outputs.paid }}
+            - **URL:** ${{ steps.parse.outputs.url }}
+
+            Closes #${{ github.event.issue.number }}
+          add-paths: data/events-*.json
+
+      - name: Comment on success
+        if: success()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Obrigado pela sugestão! Abri o pull request #${{ steps.create_pr.outputs.pull-request-number }} com os dados enviados para revisão.`,
+            });
+
+      - name: Comment on failure
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Não consegui processar automaticamente os dados dessa issue. Um mantenedor vai revisar manualmente. Confira os logs do workflow para mais detalhes.",
+            });

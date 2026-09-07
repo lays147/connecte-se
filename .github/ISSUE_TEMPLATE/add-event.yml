@@ -1,0 +1,122 @@
+name: "📅 Adicionar evento"
+description: "Envie um evento de tecnologia para ser adicionado ao site"
+title: "[Evento] "
+labels:
+  - "add-event"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preencha os campos abaixo para sugerir um novo evento. Depois de enviado, um workflow
+        automático vai validar os dados e abrir um pull request para revisão.
+
+  - type: input
+    id: title
+    attributes:
+      label: Título do evento
+      placeholder: "Ex: DevOpsDays São Paulo"
+    validations:
+      required: true
+
+  - type: input
+    id: city
+    attributes:
+      label: Cidade
+      description: 'Deixe em branco ou escreva "null" para online ou local desconhecido'
+      placeholder: "Ex: São Paulo"
+    validations:
+      required: false
+
+  - type: input
+    id: state
+    attributes:
+      label: UF do estado
+      description: 'Ex: RJ, SP, MG. Deixe em branco ou escreva "null" quando não souber ao certo'
+      placeholder: "Ex: SP"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: region
+    attributes:
+      label: Região
+      options:
+        - Sudeste
+        - Sul
+        - Nordeste
+        - Norte
+        - Centro-Oeste
+    validations:
+      required: true
+
+  - type: dropdown
+    id: event_type
+    attributes:
+      label: Tipo de evento
+      options:
+        - Meetup
+        - Meetup Online
+        - Conferência
+        - Congresso
+        - Workshop
+        - Summit
+        - Festival
+        - Community Day
+        - Evento
+    validations:
+      required: true
+
+  - type: dropdown
+    id: modality
+    attributes:
+      label: Modalidade do evento
+      options:
+        - Presencial
+        - Online
+        - Híbrido
+        - Não informado
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Data do evento
+      description: "Formato DD/MM/AAAA"
+      placeholder: "Ex: 15/03/2026"
+    validations:
+      required: true
+
+  - type: input
+    id: time
+    attributes:
+      label: Horário do evento
+      description: "Formato HH:mm, 24h (opcional)"
+      placeholder: "Ex: 19:00"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição curta do evento
+    validations:
+      required: true
+
+  - type: dropdown
+    id: paid
+    attributes:
+      label: O evento é pago?
+      options:
+        - "false"
+        - "true"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL do evento
+      placeholder: "https://..."
+    validations:
+      required: true

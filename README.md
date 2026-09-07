@@ -22,7 +22,13 @@ Você pode sugerir uma nova comunidade ou evento sem precisar editar o YAML manu
 
 ### Adicionando um novo evento
 
-Você também pode sugerir um evento específico sem editar os arquivos JSON manualmente:
+A forma mais simples de sugerir um evento é abrir uma issue usando o formulário guiado:
+
+1. Vá até a aba **Issues** do repositório e clique em **New issue**.
+2. Escolha o template **📅 Adicionar evento** e preencha os campos do formulário.
+3. Ao enviar a issue, um workflow automático valida os dados, adiciona o evento em `data/events-<ano>.json`, abre um Pull Request com a alteração e comenta na própria issue com o link do PR.
+
+Se preferir (ou se você é mantenedor do repositório), também é possível disparar o mesmo fluxo manualmente:
 
 1. Vá até a aba **Actions** do repositório.
 2. Selecione o workflow **Add Event**.
