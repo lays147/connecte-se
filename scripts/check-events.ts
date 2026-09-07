@@ -5,7 +5,7 @@ import type { EventsByMonth } from "../src/types.ts";
 import { checkUrl } from "./lib/checkUrl.ts";
 import { diffByUrl, readFileAtRef } from "./lib/gitDiff.ts";
 
-const DATA_DIR = fileURLToPath(new URL("../src/data", import.meta.url));
+const DATA_DIR = fileURLToPath(new URL("../data", import.meta.url));
 
 interface EventUrlEntry {
   eventTitle: string;
@@ -39,7 +39,7 @@ async function main(): Promise<void> {
   const files = globSync("events-*.json", { cwd: DATA_DIR });
 
   if (files.length === 0) {
-    console.log("No event JSON files found in src/data - nothing to check.");
+    console.log("No event JSON files found in data - nothing to check.");
     return;
   }
 
@@ -50,7 +50,7 @@ async function main(): Promise<void> {
     let entries = loadEventUrls(filePath);
 
     if (baseRef) {
-      const baseRaw = readFileAtRef(baseRef, `src/data/${file}`);
+      const baseRaw = readFileAtRef(baseRef, `data/${file}`);
       const baseEntries = baseRaw ? parseEventUrls(baseRaw) : [];
       entries = diffByUrl(baseEntries, entries);
 

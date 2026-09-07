@@ -6,7 +6,7 @@ on:
     paths:
       - "sources/communities.yaml"
       - "sources/content.yaml"
-      - "src/data/events-*.json"
+      - "data/events-*.json"
 
 permissions:
   contents: read
@@ -34,7 +34,7 @@ jobs:
             sources:
               - 'sources/communities.yaml'
             events:
-              - 'src/data/events-*.json'
+              - 'data/events-*.json'
             content:
               - 'sources/content.yaml'
 

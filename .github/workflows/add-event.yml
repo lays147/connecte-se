@@ -147,4 +147,4 @@ jobs:
             - **Modality:** ${{ inputs.modality }}
             - **Paid:** ${{ inputs.paid }}
             - **URL:** ${{ inputs.url }}
-          add-paths: src/data/events-*.json
+          add-paths: data/events-*.json

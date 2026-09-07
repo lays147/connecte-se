@@ -1,6 +1,6 @@
 import type { EventsByMonth } from "../types";
 
-const modules = import.meta.glob<EventsByMonth>("./events-*.json", { eager: true, import: "default" });
+const modules = import.meta.glob<EventsByMonth>("../../data/events-*.json", { eager: true, import: "default" });
 
 const eventsByYear: Record<number, EventsByMonth> = {};
 for (const [path, data] of Object.entries(modules)) {

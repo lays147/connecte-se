@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import * as topojson from "topojson-client";
 import type { EnrichedEvent } from "../types";
 import { isOnline, UF_NAME, ufOf } from "../data/cityUf";
-import topology from "../data/br-uf-topo.json";
+import topology from "../../data/br-uf-topo.json";
 import { readParams, writeParams } from "../state/urlState";
 
 const MONTHS_SHORT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];

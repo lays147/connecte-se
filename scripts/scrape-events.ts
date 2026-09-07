@@ -7,7 +7,7 @@ import { extractEventsFromPage, type ExtractedEvent } from "./lib/extractEvents.
 import { buildEventId, monthNameFromDate, sortEventsByMonth } from "./lib/events.ts";
 
 function eventsPathForYear(year: number): string {
-  return fileURLToPath(new URL(`../src/data/events-${year}.json`, import.meta.url));
+  return fileURLToPath(new URL(`../data/events-${year}.json`, import.meta.url));
 }
 
 const PAGE_TEXT_LIMIT = 15000;

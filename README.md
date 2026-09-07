@@ -34,4 +34,4 @@ Você também pode sugerir um evento específico sem editar os arquivos JSON man
    - **description**: uma breve descrição do evento.
    - **paid**: marque caso o evento seja pago.
    - **url**: URL do evento.
-4. Ao rodar, o workflow adiciona o novo evento em `src/data/events-<ano>.json` e abre automaticamente um Pull Request com a alteração.
+4. Ao rodar, o workflow adiciona o novo evento em `data/events-<ano>.json` e abre automaticamente um Pull Request com a alteração.

@@ -67,4 +67,4 @@ jobs:
           title: "feat: scrape new events"
           body: |
             Automated scrape run (${{ github.event_name == 'schedule' && github.event.schedule || format('manual, frequency={0}', inputs.frequency) }}), triggered by @${{ github.actor }}.
-          add-paths: src/data/events-*.json
+          add-paths: data/events-*.json

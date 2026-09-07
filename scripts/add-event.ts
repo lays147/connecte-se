@@ -72,7 +72,7 @@ function parseCliArgs(argv: string[]): CliArgs {
 function main(): void {
   const args = parseCliArgs(process.argv.slice(2));
   const year = args.date.slice(0, 4);
-  const eventsPath = fileURLToPath(new URL(`../src/data/events-${year}.json`, import.meta.url));
+  const eventsPath = fileURLToPath(new URL(`../data/events-${year}.json`, import.meta.url));
 
   const events = JSON.parse(readFileSync(eventsPath, "utf-8")) as EventsByMonth;
 

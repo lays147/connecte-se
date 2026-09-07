@@ -21,7 +21,7 @@ The completeness and the openness are the same claim, not two separate ones: the
 ## Operating Context
 
 - Three static pages: the landing/events page (`index.html`), the map view (`mapa.html`), and the content library (`conteudos.html`).
-- Event and community data is scraped on a best-effort basis from source URLs (`npm run scrape`, via `scripts/scrape-events.ts`) and stored in `sources/communities.yaml`, `sources/content.yaml`, and `src/data/events-<year>.json`.
+- Event and community data is scraped on a best-effort basis from source URLs (`npm run scrape`, via `scripts/scrape-events.ts`) and stored in `sources/communities.yaml`, `sources/content.yaml`, and `data/events-<year>.json`.
 - `sources/communities.yaml` must not contain time-bounded URLs (no year/month/date in the URL) — communities are recurring, not one-off.
 - Contribution happens two ways: manually editing YAML/JSON, or via GitHub Actions workflows (Add Source, Add Event, Add Content) that open PRs automatically, gated by a PR-checks pipeline that validates URLs are live.
 - Content is Portuguese (pt-BR) throughout.
@@ -44,7 +44,7 @@ The completeness and the openness are the same claim, not two separate ones: the
 
 ## Evidence on Hand
 
-- Real, live event and community data sourced from `sources/communities.yaml`, `sources/content.yaml`, and `src/data/events-2026.json` / `events-2027.json` — not fabricated or placeholder content.
+- Real, live event and community data sourced from `sources/communities.yaml`, `sources/content.yaml`, and `data/events-2026.json` / `events-2027.json` — not fabricated or placeholder content.
 - No testimonials, case studies, or press mentions exist; none should be fabricated.
 
 ## Product Principles
