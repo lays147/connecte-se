@@ -63,19 +63,19 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
 
   const heading = document.createElement("div");
   heading.className =
-    "flex flex-col items-start gap-4 border-b border-brand-100 px-(--spacing-gutter) py-5 sm:flex-row sm:items-end sm:justify-between";
+    "flex flex-col items-start gap-4 border-b border-hairline px-(--spacing-gutter) py-5 sm:flex-row sm:items-end sm:justify-between";
 
   const headingText = document.createElement("div");
   headingText.className = "flex max-w-xl flex-col gap-2";
   const h1 = document.createElement("h1");
-  h1.className = "font-display text-2xl font-bold tracking-tight text-brand-950 sm:text-heading-2xl";
+  h1.className = "font-display text-2xl font-bold tracking-tight text-ink sm:text-heading-2xl";
   h1.textContent = "Onde a tecnologia se encontra no Brasil";
   const subline = document.createElement("span");
-  subline.className = "text-body-sm leading-relaxed text-brand-500";
+  subline.className = "text-body-sm leading-relaxed text-ink-soft";
   headingText.append(h1, subline);
 
   const seg = document.createElement("div");
-  seg.className = "flex shrink-0 gap-0.5 rounded-card-10 border border-brand-100 bg-brand-50 p-0.5";
+  seg.className = "flex shrink-0 gap-0.5 rounded-card-10 border border-hairline bg-surface-sunken p-0.5";
   function segButton(text: string, value: Scope): HTMLButtonElement {
     const btn = document.createElement("button");
     btn.type = "button";
@@ -101,20 +101,20 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   mapCol.className = "min-w-0 flex-1 basis-155 px-2 pb-5 pt-4 sm:min-w-95 sm:px-4";
 
   const mapHost = document.createElement("div");
-  mapHost.className = "relative";
+  mapHost.className = "relative touch-manipulation";
 
   const legendRow = document.createElement("div");
   legendRow.className = "-mt-1.5 flex flex-wrap items-center gap-3.5 px-2 sm:px-3";
 
   const legendLess = document.createElement("span");
-  legendLess.className = "font-mono-label text-label-sm text-brand-500";
+  legendLess.className = "font-mono-label text-label-sm text-ink-soft";
   legendLess.textContent = "menos";
 
   const legendSwatches = document.createElement("div");
   legendSwatches.className = "flex gap-0.75";
 
   const legendMore = document.createElement("span");
-  legendMore.className = "font-mono-label text-label-sm text-brand-500";
+  legendMore.className = "font-mono-label text-label-sm text-ink-soft";
   legendMore.textContent = "mais eventos";
 
   const legendScale = document.createElement("div");
@@ -124,29 +124,34 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   const legendEmpty = document.createElement("div");
   legendEmpty.className = "flex items-center gap-1.5";
   const emptySwatch = document.createElement("span");
-  emptySwatch.className = "size-3.25 rounded-card-4 border border-brand-100 bg-map-empty";
+  emptySwatch.className = "size-3.25 rounded-card-4 border border-hairline bg-map-empty";
   const emptyLabel = document.createElement("span");
-  emptyLabel.className = "text-label-sm text-brand-500";
+  emptyLabel.className = "text-label-sm text-ink-soft";
   emptyLabel.textContent = "nenhum evento na lista";
   legendEmpty.append(emptySwatch, emptyLabel);
 
   legendRow.append(legendScale, legendEmpty);
-  mapCol.append(mapHost, legendRow);
+
+  const mobileHint = document.createElement("p");
+  mobileHint.className = "px-2 pt-3 text-label-sm text-ink-soft sm:hidden";
+  mobileHint.textContent = "Estados pequenos são difíceis de tocar no mapa — use o ranking ao lado para navegar por estado.";
+
+  mapCol.append(mapHost, legendRow, mobileHint);
 
   const sideCol = document.createElement("div");
-  sideCol.className = "flex min-w-75 flex-1 basis-89 flex-col border-t border-brand-100 sm:border-l sm:border-t-0";
+  sideCol.className = "flex min-w-75 flex-1 basis-89 flex-col border-t border-hairline sm:border-l sm:border-t-0";
 
   const stats = document.createElement("div");
-  stats.className = "grid grid-cols-2 gap-px border-b border-brand-100 bg-brand-100";
+  stats.className = "grid grid-cols-2 gap-px border-b border-hairline bg-hairline";
 
   const rankHeader = document.createElement("div");
   rankHeader.className = "flex items-baseline justify-between gap-2.5 px-4.5 pb-2 pt-3.5";
   const rankLabel = document.createElement("span");
-  rankLabel.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-500";
+  rankLabel.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-ink-soft";
   rankLabel.textContent = "Ranking por estado";
   const clearBtn = document.createElement("button");
   clearBtn.type = "button";
-  clearBtn.className = "hidden cursor-pointer border-0 bg-transparent p-0 text-label-sm font-medium text-brand-500";
+  clearBtn.className = "hidden cursor-pointer border-0 bg-transparent p-0 text-label-sm font-medium text-ink-soft";
   clearBtn.textContent = "limpar seleção";
   clearBtn.addEventListener("click", () => {
     state.selected = null;
@@ -158,13 +163,13 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
   rankList.className = "max-h-117.5 overflow-y-auto px-2.5 pb-3";
 
   const extra = document.createElement("div");
-  extra.className = "flex flex-col gap-2 border-t border-brand-100 px-4.5 py-3.5";
+  extra.className = "flex flex-col gap-2 border-t border-hairline px-4.5 py-3.5";
 
   sideCol.append(stats, rankHeader, rankList, extra);
   body.append(mapCol, sideCol);
 
   const panel = document.createElement("div");
-  panel.className = "border-t border-brand-100 bg-brand-50/40 px-(--spacing-gutter) py-5 sm:py-6";
+  panel.className = "border-t border-hairline bg-surface-sunken/40 px-(--spacing-gutter) py-5 sm:py-6";
 
   root.append(heading, body, panel);
 
@@ -193,13 +198,25 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     "pointer-events-none fixed z-10 rounded-card-9 bg-brand-950 px-2.5 py-2 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity";
   document.body.appendChild(tip);
 
+  let showTipRaf: number | null = null;
+
   function showTip(ev: MouseEvent, html: string): void {
-    tip.innerHTML = html;
-    tip.style.opacity = "1";
-    tip.style.left = Math.min(ev.clientX + 14, window.innerWidth - 190) + "px";
-    tip.style.top = ev.clientY - 10 + "px";
+    const x = ev.clientX;
+    const y = ev.clientY;
+    if (showTipRaf !== null) cancelAnimationFrame(showTipRaf);
+    showTipRaf = requestAnimationFrame(() => {
+      showTipRaf = null;
+      tip.innerHTML = html;
+      tip.style.opacity = "1";
+      tip.style.left = Math.min(x + 14, window.innerWidth - 190) + "px";
+      tip.style.top = y - 10 + "px";
+    });
   }
   function hideTip(): void {
+    if (showTipRaf !== null) {
+      cancelAnimationFrame(showTipRaf);
+      showTipRaf = null;
+    }
     tip.style.opacity = "0";
   }
 
@@ -340,12 +357,12 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
         ["Online", online],
       ].map(([k, v]) => {
         const cell = document.createElement("div");
-        cell.className = "flex flex-col gap-1 bg-white px-4.5 py-3.5";
+        cell.className = "flex flex-col gap-1 bg-surface px-4.5 py-3.5";
         const kEl = document.createElement("span");
-        kEl.className = "font-mono-label text-label-2xs font-semibold uppercase tracking-widest text-brand-500";
+        kEl.className = "font-mono-label text-label-2xs font-semibold uppercase tracking-widest text-ink-soft";
         kEl.textContent = String(k);
         const vEl = document.createElement("span");
-        vEl.className = "font-display text-heading-lg font-bold text-brand-950";
+        vEl.className = "font-display text-heading-lg font-bold text-ink";
         vEl.textContent = String(v);
         cell.append(kEl, vEl);
         return cell;
@@ -359,29 +376,29 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     rankList.replaceChildren();
     if (ranked.length === 0) {
       const empty = document.createElement("p");
-      empty.className = "m-2 text-xs leading-relaxed text-brand-500";
+      empty.className = "m-2 text-xs leading-relaxed text-ink-soft";
       empty.textContent = "Nenhum evento presencial nesse período.";
       rankList.appendChild(empty);
     }
     for (const r of ranked) {
       const on = state.selected === r.uf;
       const row = document.createElement("div");
-      row.className = `flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 ${on ? "bg-brand-50" : "bg-transparent"}`;
+      row.className = `flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 ${on ? "bg-surface-sunken" : "bg-transparent"}`;
       row.setAttribute("role", "button");
       row.tabIndex = 0;
       row.setAttribute("aria-pressed", String(on));
       row.setAttribute("aria-label", `${UF_NAME[r.uf]}, ${r.n} ${r.n === 1 ? "evento" : "eventos"}`);
 
       const sig = document.createElement("span");
-      sig.className = `w-7.5 shrink-0 rounded-md py-1 text-center font-mono-label text-label-sm font-semibold ${on ? "bg-brand-200 text-brand-950" : "bg-brand-50 text-brand-500"}`;
+      sig.className = `w-7.5 shrink-0 rounded-md py-1 text-center font-mono-label text-label-sm font-semibold ${on ? "bg-brand-200 text-ink" : "bg-surface-sunken text-ink-soft"}`;
       sig.textContent = r.uf;
 
       const name = document.createElement("span");
-      name.className = `min-w-0 flex-1 truncate text-xs ${on ? "font-semibold" : "font-medium"} text-brand-950`;
+      name.className = `min-w-0 flex-1 truncate text-xs ${on ? "font-semibold" : "font-medium"} text-ink`;
       name.textContent = UF_NAME[r.uf];
 
       const barTrack = document.createElement("span");
-      barTrack.className = "h-1.75 w-19.5 shrink-0 overflow-hidden rounded-full bg-brand-50";
+      barTrack.className = "h-1.75 w-19.5 shrink-0 overflow-hidden rounded-full bg-surface-sunken";
       const barFill = document.createElement("span");
       barFill.className = "block h-full rounded-full";
       barFill.style.width = Math.max(6, (r.n / max) * 100) + "%";
@@ -389,7 +406,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       barTrack.appendChild(barFill);
 
       const count = document.createElement("span");
-      count.className = "w-5 shrink-0 text-right font-mono-label text-xs font-semibold text-brand-950";
+      count.className = "w-5 shrink-0 text-right font-mono-label text-xs font-semibold text-ink";
       count.textContent = String(r.n);
 
       row.append(sig, name, barTrack, count);
@@ -416,7 +433,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       if (n <= 0) continue;
       const on = state.selected === key;
       const row = document.createElement("div");
-      row.className = `flex cursor-pointer items-center justify-between gap-2.5 rounded-card-10 border px-2.5 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 ${on ? "border-brand-300 bg-brand-50" : "border-brand-100 bg-white"}`;
+      row.className = `flex cursor-pointer items-center justify-between gap-2.5 rounded-card-10 border px-2.5 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 ${on ? "border-brand-300 bg-surface-sunken" : "border-hairline bg-surface"}`;
       row.setAttribute("role", "button");
       row.tabIndex = 0;
       row.setAttribute("aria-pressed", String(on));
@@ -425,15 +442,15 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       const left = document.createElement("span");
       left.className = "flex flex-col gap-0.5";
       const labelEl = document.createElement("span");
-      labelEl.className = "text-xs font-semibold text-brand-950";
+      labelEl.className = "text-xs font-semibold text-ink";
       labelEl.textContent = label;
       const hintEl = document.createElement("span");
-      hintEl.className = "text-label-xs text-brand-500";
+      hintEl.className = "text-label-xs text-ink-soft";
       hintEl.textContent = hint;
       left.append(labelEl, hintEl);
 
       const countEl = document.createElement("span");
-      countEl.className = "font-mono-label text-body-sm font-semibold text-brand-950";
+      countEl.className = "font-mono-label text-body-sm font-semibold text-ink";
       countEl.textContent = String(n);
 
       row.append(left, countEl);
@@ -458,11 +475,11 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       ["next", segNext],
     ] as const) {
       const on = state.scope === key;
-      btn.classList.toggle("bg-white", on);
+      btn.classList.toggle("bg-surface", on);
       btn.classList.toggle("shadow-sm", on);
-      btn.classList.toggle("text-brand-950", on);
+      btn.classList.toggle("text-ink", on);
       btn.classList.toggle("bg-transparent", !on);
-      btn.classList.toggle("text-brand-500", !on);
+      btn.classList.toggle("text-ink-soft", !on);
     }
 
     renderPanel(scoped);
@@ -474,10 +491,10 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       const wrap = document.createElement("div");
       wrap.className = "flex flex-col gap-1.5";
       const label = document.createElement("span");
-      label.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-brand-500";
+      label.className = "font-mono-label text-label-xs font-semibold uppercase tracking-widest text-ink-soft";
       label.textContent = "Explore o mapa";
       const hint = document.createElement("span");
-      hint.className = "max-w-xl text-sm leading-relaxed text-brand-700";
+      hint.className = "max-w-xl text-sm leading-relaxed text-ink-soft";
       hint.textContent = "Clique em um estado — no mapa ou no ranking — para ver quais eventos acontecem por lá.";
       wrap.append(label, hint);
       panel.appendChild(wrap);
@@ -501,10 +518,10 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
     const head = document.createElement("div");
     head.className = "mb-3.5 flex flex-wrap items-baseline justify-between gap-4";
     const h2 = document.createElement("h2");
-    h2.className = "font-display text-heading-lg font-bold tracking-tight text-brand-950";
+    h2.className = "font-display text-heading-lg font-bold tracking-tight text-ink";
     h2.textContent = title;
     const countLabel = document.createElement("span");
-    countLabel.className = "text-xs font-medium text-brand-500";
+    countLabel.className = "text-xs font-medium text-ink-soft";
     countLabel.textContent =
       list.length +
       (list.length === 1 ? " evento" : " eventos") +
@@ -516,7 +533,7 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
 
     if (list.length === 0) {
       const empty = document.createElement("span");
-      empty.className = "text-body-sm text-brand-500";
+      empty.className = "text-body-sm text-ink-soft";
       empty.textContent = "Nenhum evento nesse período.";
       rows.appendChild(empty);
     }
@@ -529,28 +546,28 @@ export function renderMapPage(allEvents: EnrichedEvent[]): HTMLElement {
       row.target = "_blank";
       row.rel = "noopener";
       row.className =
-        "flex items-center gap-4 rounded-xl border border-brand-100 bg-white p-3 transition-colors hover:border-brand-300";
+        "flex items-center gap-4 rounded-xl border border-hairline bg-surface p-3 transition-colors hover:border-brand-300";
 
       const dateCol = document.createElement("span");
       dateCol.className = "flex w-13 shrink-0 flex-col items-center gap-0.5";
       const wd = document.createElement("span");
-      wd.className = "font-mono-label text-label-2xs uppercase text-brand-500";
+      wd.className = "font-mono-label text-label-2xs uppercase text-ink-soft";
       wd.textContent = WD[dt.getDay()];
       const dayNum = document.createElement("span");
-      dayNum.className = "font-display text-xl font-bold leading-none text-brand-950";
+      dayNum.className = "font-display text-xl font-bold leading-none text-ink";
       dayNum.textContent = String(dt.getDate());
       const mon = document.createElement("span");
-      mon.className = "font-mono-label text-label-2xs uppercase text-brand-500";
+      mon.className = "font-mono-label text-label-2xs uppercase text-ink-soft";
       mon.textContent = MONTHS_SHORT[dt.getMonth()];
       dateCol.append(wd, dayNum, mon);
 
       const info = document.createElement("span");
       info.className = "flex min-w-0 flex-1 flex-col gap-1";
       const titleEl = document.createElement("span");
-      titleEl.className = "text-sm font-semibold leading-snug text-brand-950";
+      titleEl.className = "text-sm font-semibold leading-snug text-ink";
       titleEl.textContent = e.title;
       const metaEl = document.createElement("span");
-      metaEl.className = "text-xs leading-snug text-brand-500";
+      metaEl.className = "text-xs leading-snug text-ink-soft";
       metaEl.textContent = [e.city, e.community, e.type].filter(Boolean).join(" · ");
       info.append(titleEl, metaEl);
 

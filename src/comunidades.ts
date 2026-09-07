@@ -10,8 +10,10 @@ import {
 } from "./render/communitiesPage";
 import type { SourceType } from "./data/communitiesList";
 import { applyStoredConsent } from "./state/consent";
+import { initTheme } from "./state/theme";
 import { readParams, writeParams } from "./state/urlState";
 
+initTheme();
 applyStoredConsent();
 mountConsentBanner();
 

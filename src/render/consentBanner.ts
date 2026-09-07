@@ -7,11 +7,21 @@ export function mountConsentBanner(): void {
   banner.className =
     "fixed inset-x-0 bottom-0 z-50 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 bg-brand-950 px-(--spacing-gutter) py-4 shadow-[0_-4px_16px_rgba(0,0,0,0.15)]";
 
+  let reserveSpaceRaf: number | null = null;
+
   function reserveSpace(): void {
-    document.body.style.paddingBottom = `${banner.getBoundingClientRect().height}px`;
+    if (reserveSpaceRaf !== null) return;
+    reserveSpaceRaf = requestAnimationFrame(() => {
+      reserveSpaceRaf = null;
+      document.body.style.paddingBottom = `${banner.getBoundingClientRect().height}px`;
+    });
   }
 
   function releaseSpace(): void {
+    if (reserveSpaceRaf !== null) {
+      cancelAnimationFrame(reserveSpaceRaf);
+      reserveSpaceRaf = null;
+    }
     document.body.style.paddingBottom = "";
   }
 
@@ -52,7 +62,9 @@ export function mountConsentBanner(): void {
 
   actions.append(declineBtn, acceptBtn);
   banner.append(text, actions);
-  document.body.appendChild(banner);
+  // Inserted first so it's the first tab stop — a keyboard user shouldn't have
+  // to tab through the whole page before reaching Aceitar/Recusar.
+  document.body.insertBefore(banner, document.body.firstChild);
 
   reserveSpace();
   window.addEventListener("resize", reserveSpace);

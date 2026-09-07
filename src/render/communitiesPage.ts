@@ -16,7 +16,7 @@ const TYPE_LABEL: Record<SourceType, string> = {
 };
 
 const TYPE_ACCENT: Record<SourceType, { text: string; bg: string }> = {
-  community: { text: "text-brand-700", bg: "bg-brand-50" },
+  community: { text: "text-ink-soft", bg: "bg-surface-sunken" },
   event: { text: "text-accent-blue-700", bg: "bg-accent-blue-50" },
 };
 
@@ -35,7 +35,7 @@ function segButton(text: string, active: boolean, onClick: () => void): HTMLButt
   btn.type = "button";
   btn.className = [
     "cursor-pointer whitespace-nowrap rounded-lg px-2.5 py-1.5 text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400",
-    active ? "bg-white text-brand-950 shadow-sm" : "bg-transparent text-brand-500",
+    active ? "bg-surface text-ink shadow-sm" : "bg-transparent text-ink-soft",
   ].join(" ");
   btn.textContent = text;
   btn.addEventListener("click", onClick);
@@ -73,7 +73,7 @@ function renderSourceCard(source: CommunitySource, siblings: CommunitySource[]):
   card.target = "_blank";
   card.rel = "noopener";
   card.className =
-    "flex flex-col overflow-hidden rounded-card-13 border border-brand-100 bg-white text-inherit no-underline hover:border-brand-300 hover:bg-brand-50/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
+    "flex flex-col overflow-hidden rounded-card-13 border border-hairline bg-surface text-inherit no-underline hover:border-brand-300 hover:bg-tint-hover/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
 
   const strip = document.createElement("div");
   strip.className = `h-0.75 ${TYPE_STRIP[source.type]}`;
@@ -91,11 +91,11 @@ function renderSourceCard(source: CommunitySource, siblings: CommunitySource[]):
   topRow.appendChild(avatar);
 
   const name = document.createElement("span");
-  name.className = "min-w-0 flex-1 truncate font-display text-body-md font-semibold tracking-tight text-brand-950";
+  name.className = "min-w-0 flex-1 truncate font-display text-body-md font-semibold tracking-tight text-ink";
   const prefix = sharedPrefixWord(source, siblings);
   if (prefix) {
     const prefixSpan = document.createElement("span");
-    prefixSpan.className = "font-medium text-brand-500";
+    prefixSpan.className = "font-medium text-ink-soft";
     prefixSpan.textContent = prefix;
     name.appendChild(prefixSpan);
     name.appendChild(document.createTextNode(source.name.slice(prefix.length)));
@@ -115,12 +115,12 @@ function renderSourceCard(source: CommunitySource, siblings: CommunitySource[]):
   bottomRow.appendChild(typeTag);
 
   const freqTag = document.createElement("span");
-  freqTag.className = "rounded-card-5 bg-brand-50 px-1.5 py-1 font-mono-label text-label-xs text-brand-500";
+  freqTag.className = "rounded-card-5 bg-surface-sunken px-1.5 py-1 font-mono-label text-label-xs text-ink-soft";
   freqTag.textContent = FREQUENCY_LABEL[source.frequency];
   bottomRow.appendChild(freqTag);
 
   const hostLink = document.createElement("span");
-  hostLink.className = "ml-auto inline-flex items-center gap-1.5 text-label-sm font-medium text-brand-500";
+  hostLink.className = "ml-auto inline-flex items-center gap-1.5 text-label-sm font-medium text-ink-soft";
   hostLink.innerHTML = `${hostOf(source.url)}${externalLinkIconSvg()}`;
   bottomRow.appendChild(hostLink);
 
@@ -147,21 +147,21 @@ export function renderCommunitiesPage(
 
   // ---- hero
   const hero = document.createElement("div");
-  hero.className = "flex flex-wrap items-end justify-between gap-8 border-b border-brand-100 px-(--spacing-gutter) py-7";
+  hero.className = "flex flex-wrap items-end justify-between gap-8 border-b border-hairline px-(--spacing-gutter) py-7";
 
   const heroText = document.createElement("div");
   heroText.className = "flex max-w-155 flex-col gap-2";
 
   const eyebrow = document.createElement("span");
-  eyebrow.className = "font-mono-label text-label-xs uppercase tracking-widest text-brand-500";
+  eyebrow.className = "font-mono-label text-label-xs uppercase tracking-widest text-ink-soft";
   eyebrow.textContent = "Diretório de fontes";
 
   const h1 = document.createElement("h1");
-  h1.className = "font-display text-heading-2xl font-bold leading-tight tracking-tight text-brand-950";
+  h1.className = "font-display text-heading-2xl font-bold leading-tight tracking-tight text-ink";
   h1.textContent = "Comunidades e organizadores de tecnologia";
 
   const heroDesc = document.createElement("span");
-  heroDesc.className = "text-body-sm leading-relaxed text-brand-500";
+  heroDesc.className = "text-body-sm leading-relaxed text-ink-soft";
   heroDesc.textContent =
     "Todas as comunidades e eventos recorrentes que acompanhamos, mesmo os que não têm um próximo encontro anunciado agora.";
 
@@ -179,10 +179,10 @@ export function renderCommunitiesPage(
     const col = document.createElement("div");
     col.className = "flex flex-col gap-1";
     const num = document.createElement("span");
-    num.className = "font-display text-heading-lg font-bold text-brand-950";
+    num.className = "font-display text-heading-lg font-bold text-ink";
     num.textContent = String(n);
     const lbl = document.createElement("span");
-    lbl.className = "font-mono-label text-label-sm uppercase tracking-wider text-brand-500";
+    lbl.className = "font-mono-label text-label-sm uppercase tracking-wider text-ink-soft";
     lbl.textContent = label;
     col.append(num, lbl);
     tallies.appendChild(col);
@@ -193,18 +193,18 @@ export function renderCommunitiesPage(
   // ---- filter bar
   const filterBar = document.createElement("div");
   filterBar.className =
-    "sticky top-0 z-5 flex flex-wrap items-center gap-3.5 border-b border-brand-100 bg-brand-50/40 px-(--spacing-gutter) py-3";
+    "sticky top-0 z-5 flex flex-wrap items-center gap-3.5 border-b border-hairline bg-surface-sunken/40 px-(--spacing-gutter) py-3";
 
   const searchBox = document.createElement("div");
   searchBox.className =
-    "flex h-9 max-w-85 flex-1 basis-64 items-center gap-2 rounded-card-10 border border-brand-100 bg-white px-3 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-400";
+    "flex h-9 max-w-85 flex-1 basis-64 items-center gap-2 rounded-card-10 border border-hairline bg-surface px-3 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-400";
   searchBox.innerHTML = `<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--color-icon-muted)" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.6"></circle><path d="M10.5 10.5 14 14"></path></svg>`;
 
   const searchInput = document.createElement("input");
   searchInput.type = "search";
   searchInput.placeholder = "Buscar por nome";
   searchInput.value = state.query;
-  searchInput.className = "w-full border-0 bg-transparent p-0 text-body-sm text-brand-950 outline-none";
+  searchInput.className = "w-full border-0 bg-transparent p-0 text-body-sm text-ink outline-none";
   let searchDebounce: ReturnType<typeof setTimeout> | undefined;
   searchInput.addEventListener("input", () => {
     clearTimeout(searchDebounce);
@@ -215,7 +215,7 @@ export function renderCommunitiesPage(
 
   const typeTabs = document.createElement("div");
   typeTabs.className =
-    "flex max-w-full shrink-0 gap-0.5 overflow-x-auto rounded-card-10 border border-brand-100 bg-brand-100/60 p-0.5";
+    "flex max-w-full shrink-0 gap-0.5 overflow-x-auto rounded-card-10 border border-hairline bg-surface-sunken p-0.5";
   typeTabs.appendChild(segButton("Tudo", state.type === "todos", () => onChange({ ...state, type: "todos" })));
   typeTabs.appendChild(segButton("Comunidades", state.type === "community", () => onChange({ ...state, type: "community" })));
   typeTabs.appendChild(segButton("Eventos recorrentes", state.type === "event", () => onChange({ ...state, type: "event" })));
@@ -240,19 +240,19 @@ export function renderCommunitiesPage(
     sectionEl.className = "flex flex-col";
 
     const heading = document.createElement("div");
-    heading.className = "flex items-baseline gap-2.5 border-y border-brand-50 bg-brand-50/40 px-(--spacing-gutter) py-4";
+    heading.className = "flex items-baseline gap-2.5 border-y border-surface-sunken bg-surface-sunken/40 px-(--spacing-gutter) py-4";
 
     const dot = document.createElement("span");
     dot.className = `size-1.75 rounded-full ${TYPE_STRIP[type]}`;
     heading.appendChild(dot);
 
     const label = document.createElement("h2");
-    label.className = "font-display text-heading-sm font-semibold text-brand-950";
+    label.className = "font-display text-heading-sm font-semibold text-ink";
     label.textContent = SECTION_LABEL[type];
     heading.appendChild(label);
 
     const count = document.createElement("span");
-    count.className = "text-xs font-medium text-brand-500";
+    count.className = "text-xs font-medium text-ink-soft";
     count.textContent = items.length + (items.length === 1 ? " resultado" : " resultados");
     heading.appendChild(count);
 
@@ -274,14 +274,14 @@ export function renderCommunitiesPage(
     const empty = document.createElement("div");
     empty.className = "flex flex-col items-start gap-1.5 px-(--spacing-gutter) py-12";
     const emptyTitle = document.createElement("span");
-    emptyTitle.className = "font-display text-heading-sm font-semibold text-brand-950";
+    emptyTitle.className = "font-display text-heading-sm font-semibold text-ink";
     emptyTitle.textContent = "Nada encontrado para esse filtro";
     const emptyDesc = document.createElement("span");
-    emptyDesc.className = "text-body-sm text-brand-500";
+    emptyDesc.className = "text-body-sm text-ink-soft";
     emptyDesc.textContent = "Tente outro termo ou ";
     const clearLink = document.createElement("button");
     clearLink.type = "button";
-    clearLink.className = "cursor-pointer font-semibold text-brand-700 underline hover:text-brand-600";
+    clearLink.className = "cursor-pointer font-semibold text-ink-soft underline hover:text-ink";
     clearLink.textContent = "limpe a busca";
     clearLink.addEventListener("click", () => onChange({ query: "", type: "todos" }));
     emptyDesc.appendChild(clearLink);
@@ -292,15 +292,15 @@ export function renderCommunitiesPage(
 
   // ---- CTA
   const cta = document.createElement("div");
-  cta.className = "flex flex-wrap items-center justify-between gap-8 border-t border-brand-100 bg-brand-50/60 px-(--spacing-gutter) py-6";
+  cta.className = "flex flex-wrap items-center justify-between gap-8 border-t border-hairline bg-surface-sunken/60 px-(--spacing-gutter) py-6";
 
   const ctaText = document.createElement("div");
   ctaText.className = "flex max-w-130 flex-col gap-1.5";
   const ctaTitle = document.createElement("h3");
-  ctaTitle.className = "font-display text-heading-md font-bold leading-tight tracking-tight text-brand-950";
+  ctaTitle.className = "font-display text-heading-md font-bold leading-tight tracking-tight text-ink";
   ctaTitle.textContent = "Cadastre uma comunidade";
   const ctaDesc = document.createElement("span");
-  ctaDesc.className = "text-body-sm leading-relaxed text-brand-600";
+  ctaDesc.className = "text-body-sm leading-relaxed text-ink-soft";
   ctaDesc.textContent = "Submeta pelo GitHub: a comunidade entra na lista e passa a ser coletada automaticamente pelo scraper.";
   ctaText.append(ctaTitle, ctaDesc);
 

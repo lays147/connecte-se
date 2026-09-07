@@ -8,7 +8,7 @@ export function mountLayout(header: HTMLElement): PageLayout {
   if (!app) throw new Error("#app element not found");
 
   const shell = document.createElement("div");
-  shell.className = "min-h-screen w-full bg-white";
+  shell.className = "min-h-screen w-full bg-surface";
 
   const main = document.createElement("div");
 

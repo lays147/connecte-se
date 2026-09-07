@@ -6,8 +6,10 @@ import { mountLayout } from "./render/layout";
 import { createInitialContentState, renderContentPage, type ContentPageState } from "./render/contentPage";
 import { FORMAT_ORDER, THEMES, type ContentFormat } from "./data/curatedContent";
 import { applyStoredConsent } from "./state/consent";
+import { initTheme } from "./state/theme";
 import { readParams, writeParams } from "./state/urlState";
 
+initTheme();
 applyStoredConsent();
 mountConsentBanner();
 

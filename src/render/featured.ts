@@ -16,6 +16,8 @@ export interface FeaturedHandlers {
   onPrev: () => void;
   onNext: () => void;
   onSelect: (index: number) => void;
+  onTogglePause: () => void;
+  isPaused: () => boolean;
 }
 
 export type CarouselDirection = "next" | "prev" | "fade";
@@ -59,8 +61,17 @@ export function renderFeaturedCarousel(
   dateBlock.append(wd, day, mon);
 
   const info = document.createElement("div");
-  info.className = "flex min-w-0 flex-1 cursor-pointer flex-col justify-center gap-2 pr-0 md:pr-10";
+  info.className =
+    "flex min-w-0 flex-1 cursor-pointer flex-col justify-center gap-2 rounded-lg pr-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:pr-10";
+  info.tabIndex = 0;
+  info.setAttribute("role", "button");
+  info.setAttribute("aria-label", `Ver detalhes de ${vm.title}`);
   info.addEventListener("click", () => openEventModal(event, today));
+  info.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    e.preventDefault();
+    openEventModal(event, today);
+  });
 
   const badgeRow = document.createElement("div");
   badgeRow.className = "flex items-center gap-2.5";
@@ -148,6 +159,18 @@ export function renderFeaturedCarousel(
   if (list.length > 1) {
     const positionRow = document.createElement("div");
     positionRow.className = "flex items-center gap-2.5";
+
+    const pauseBtn = document.createElement("button");
+    pauseBtn.type = "button";
+    const paused = handlers.isPaused();
+    pauseBtn.setAttribute("aria-label", paused ? "Retomar avanço automático" : "Pausar avanço automático");
+    pauseBtn.className =
+      "flex h-11 w-11 -m-2.5 cursor-pointer items-center justify-center border-0 bg-transparent p-0 text-brand-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60";
+    pauseBtn.innerHTML = paused
+      ? `<svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M2.5 1.5v9l7-4.5-7-4.5Z"/></svg>`
+      : `<svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="2" y="1.5" width="3" height="9" rx="0.75"/><rect x="7" y="1.5" width="3" height="9" rx="0.75"/></svg>`;
+    pauseBtn.addEventListener("click", handlers.onTogglePause);
+    positionRow.appendChild(pauseBtn);
 
     const position = document.createElement("span");
     position.className = "font-mono-label text-label-sm text-brand-300";

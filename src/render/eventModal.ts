@@ -83,7 +83,7 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   dialog.setAttribute("aria-modal", "true");
   dialog.setAttribute("aria-labelledby", "event-modal-title");
   dialog.className =
-    "modal-dialog-enter relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-white shadow-xl";
+    "modal-dialog-enter relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-surface shadow-xl";
 
   const strip = document.createElement("div");
   strip.className = `h-1 shrink-0 ${vm.style.dot}`;
@@ -96,7 +96,7 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   closeBtn.type = "button";
   closeBtn.setAttribute("aria-label", "Fechar");
   closeBtn.className =
-    "absolute right-4 top-4 flex size-8 cursor-pointer items-center justify-center rounded-full text-brand-500 hover:bg-brand-100 hover:text-brand-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
+    "absolute right-4 top-4 flex size-8 cursor-pointer items-center justify-center rounded-full text-ink-soft hover:bg-tint-hover hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
   closeBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1.5 1.5l11 11M12.5 1.5l-11 11"></path></svg>`;
   closeBtn.addEventListener("click", close);
   dialog.appendChild(closeBtn);
@@ -116,7 +116,7 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
 
   const title = document.createElement("h3");
   title.id = "event-modal-title";
-  title.className = "font-display text-heading-lg font-semibold leading-snug text-brand-950";
+  title.className = "font-display text-heading-lg font-semibold leading-snug text-ink";
   title.textContent = vm.title;
 
   const communityRow = document.createElement("div");
@@ -128,23 +128,23 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   communityRow.appendChild(avatar);
 
   const communityName = document.createElement("span");
-  communityName.className = "text-xs font-medium text-brand-800";
+  communityName.className = "text-xs font-medium text-ink";
   communityName.textContent = vm.community;
   communityRow.appendChild(communityName);
 
   const description = document.createElement("p");
-  description.className = "whitespace-pre-line text-sm leading-relaxed text-brand-700";
+  description.className = "whitespace-pre-line text-sm leading-relaxed text-ink-soft";
   description.textContent = vm.description;
 
   const metaRow = document.createElement("div");
-  metaRow.className = "flex flex-col gap-1 border-t border-brand-100 pt-3";
+  metaRow.className = "flex flex-col gap-1 border-t border-hairline pt-3";
 
   const whenSpan = document.createElement("span");
-  whenSpan.className = "font-mono-label text-xs font-semibold text-brand-900";
+  whenSpan.className = "font-mono-label text-xs font-semibold text-ink";
   whenSpan.textContent = vm.when;
 
   const placeSpan = document.createElement("span");
-  placeSpan.className = "text-label-sm text-brand-500";
+  placeSpan.className = "text-label-sm text-ink-soft";
   placeSpan.textContent = vm.place;
 
   metaRow.append(whenSpan, placeSpan);
@@ -153,7 +153,7 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   dialog.appendChild(scroll);
 
   const footer = document.createElement("div");
-  footer.className = "shrink-0 border-t border-brand-100 p-4";
+  footer.className = "shrink-0 border-t border-hairline p-4";
 
   const cta = document.createElement("a");
   cta.href = vm.url;

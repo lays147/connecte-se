@@ -1,3 +1,5 @@
+import { getStoredTheme, resolveTheme, setStoredTheme, type ThemeChoice } from "../state/theme";
+
 export type HeaderPage = "eventos" | "mapa" | "conteudos" | "comunidades";
 
 export interface HeaderHandlers {
@@ -20,10 +22,50 @@ function githubIconSvg(): string {
   </svg>`;
 }
 
+function sunIconSvg(): string {
+  return `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+    <circle cx="8" cy="8" r="3.2"></circle>
+    <path d="M8 0.75v1.75M8 13.5v1.75M2.4 2.4l1.24 1.24M12.36 12.36l1.24 1.24M0.75 8h1.75M13.5 8h1.75M2.4 13.6l1.24-1.24M12.36 3.64l1.24-1.24"></path>
+  </svg>`;
+}
+
+function moonIconSvg(): string {
+  return `<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M13.8 9.7A6 6 0 0 1 6.3 2.2a6.4 6.4 0 1 0 7.5 7.5Z"></path>
+  </svg>`;
+}
+
+function renderThemeToggle(): HTMLButtonElement {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className =
+    "inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-hairline-strong text-ink-soft hover:border-brand-400 hover:text-ink";
+
+  function paint(theme: ThemeChoice): void {
+    button.innerHTML = theme === "dark" ? sunIconSvg() : moonIconSvg();
+    button.setAttribute("aria-label", theme === "dark" ? "Usar tema claro" : "Usar tema escuro");
+    button.title = theme === "dark" ? "Usar tema claro" : "Usar tema escuro";
+  }
+
+  paint(resolveTheme());
+
+  button.addEventListener("click", () => {
+    const next: ThemeChoice = resolveTheme() === "dark" ? "light" : "dark";
+    setStoredTheme(next);
+    paint(next);
+  });
+
+  if (getStoredTheme() === null) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => paint(resolveTheme()));
+  }
+
+  return button;
+}
+
 export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   const header = document.createElement("header");
   header.className =
-    "flex flex-wrap items-center justify-between gap-3 border-b border-brand-100 bg-white px-(--spacing-gutter) py-3 sm:gap-6 sm:py-3.5";
+    "flex flex-wrap items-center justify-between gap-3 border-b border-hairline bg-surface px-(--spacing-gutter) py-3 sm:gap-6 sm:py-3.5";
 
   const logo = document.createElement("a");
   logo.href = "/index.html#top";
@@ -36,10 +78,10 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   const lockup = document.createElement("span");
   lockup.className = "flex flex-col gap-0.5";
   const name = document.createElement("span");
-  name.className = "font-display text-body-md font-bold tracking-tight text-brand-950";
-  name.innerHTML = `Conecte-se <span class="text-brand-500">Brasil</span>`;
+  name.className = "font-display text-body-md font-bold tracking-tight text-ink";
+  name.innerHTML = `Conecte-se <span class="text-ink-soft">Brasil</span>`;
   const tagline = document.createElement("span");
-  tagline.className = "font-mono-label text-label-xs uppercase tracking-widest text-brand-500";
+  tagline.className = "font-mono-label text-label-xs uppercase tracking-widest text-ink-soft";
   tagline.textContent = "eventos de tecnologia";
   lockup.append(name, tagline);
 
@@ -52,8 +94,8 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
     const a = document.createElement("a");
     a.href = href;
     a.className = active
-      ? "flex min-h-11 items-center rounded-lg bg-brand-50 px-3 py-2.5 text-body-sm font-semibold text-brand-950"
-      : "flex min-h-11 items-center rounded-lg bg-transparent px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
+      ? "flex min-h-11 items-center rounded-lg bg-surface-sunken px-3 py-2.5 text-body-sm font-semibold text-ink"
+      : "flex min-h-11 items-center rounded-lg bg-transparent px-3 py-2.5 text-body-sm font-medium text-ink-soft hover:bg-tint-hover";
     a.textContent = text;
     return a;
   }
@@ -71,11 +113,11 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   submit.target = "_blank";
   submit.rel = "noopener";
   submit.className =
-    "flex min-h-11 items-center rounded-lg px-3 py-2.5 text-body-sm font-medium text-brand-500 hover:bg-brand-50";
+    "flex min-h-11 items-center rounded-lg px-3 py-2.5 text-body-sm font-medium text-ink-soft hover:bg-tint-hover";
   submit.textContent = "Enviar evento";
 
   const divider = document.createElement("span");
-  divider.className = "mx-2 hidden h-5.5 w-px bg-brand-100 sm:block";
+  divider.className = "mx-2 hidden h-5.5 w-px bg-hairline sm:block";
 
   const github = document.createElement("a");
   github.href = "https://github.com/lays147/connecte-se";
@@ -84,10 +126,12 @@ export function renderHeader(handlers: HeaderHandlers): HTMLElement {
   github.title = "Ver o repositório no GitHub";
   github.setAttribute("aria-label", "Ver o repositório no GitHub");
   github.className =
-    "inline-flex min-h-11 items-center gap-2 rounded-lg border border-brand-200 py-2 pl-2.5 pr-3 text-xs font-semibold text-brand-950 hover:border-brand-400";
+    "inline-flex min-h-11 items-center gap-2 rounded-lg border border-hairline-strong py-2 pl-2.5 pr-3 text-xs font-semibold text-ink hover:border-brand-400";
   github.innerHTML = `${githubIconSvg()}GitHub`;
 
-  nav.append(eventos, mapa, conteudos, comunidades, submit, divider, github);
+  const themeToggle = renderThemeToggle();
+
+  nav.append(eventos, mapa, conteudos, comunidades, submit, divider, github, themeToggle);
   header.append(logo, nav);
   return header;
 }

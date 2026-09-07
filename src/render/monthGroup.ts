@@ -30,8 +30,8 @@ export function renderMonthSection(
   const heading = document.createElement("button");
   heading.type = "button";
   heading.className = [
-    "flex cursor-pointer items-baseline gap-2.5 border-b border-brand-100 px-(--spacing-gutter) py-4 text-left hover:bg-brand-50/50",
-    bucket.isPast ? "bg-brand-50/30" : "bg-white",
+    "flex cursor-pointer items-baseline gap-2.5 border-b border-hairline px-(--spacing-gutter) py-4 text-left hover:bg-tint-hover/50",
+    bucket.isPast ? "bg-surface-sunken/30" : "bg-surface",
   ].join(" ");
   heading.setAttribute("aria-expanded", String(!collapsed));
   heading.addEventListener("click", handlers.onToggleCollapsed);
@@ -41,12 +41,12 @@ export function renderMonthSection(
   heading.appendChild(dot);
 
   const label = document.createElement("h2");
-  label.className = "font-display text-heading-sm font-semibold capitalize text-brand-950";
+  label.className = "font-display text-heading-sm font-semibold capitalize text-ink";
   label.textContent = `${bucket.label} ${bucket.year}`;
   heading.appendChild(label);
 
   const count = document.createElement("span");
-  count.className = "font-mono-label text-label-sm text-brand-500";
+  count.className = "font-mono-label text-label-sm text-ink-soft";
   count.textContent = bucket.list.length + (bucket.list.length === 1 ? " evento" : " eventos");
   heading.appendChild(count);
 
@@ -60,7 +60,7 @@ export function renderMonthSection(
   if (bucket.isPast && bucket.opened) {
     const badge = document.createElement("span");
     badge.className =
-      "rounded-full border border-brand-100 px-2 py-1 font-mono-label text-label-xs font-medium uppercase tracking-wider text-brand-500";
+      "rounded-full border border-hairline px-2 py-1 font-mono-label text-label-xs font-medium uppercase tracking-wider text-ink-soft";
     badge.textContent = "Mês encerrado";
     heading.appendChild(badge);
   }
@@ -94,7 +94,7 @@ export function renderMonthSection(
     const toggleBtn = document.createElement("button");
     toggleBtn.type = "button";
     toggleBtn.className =
-      "flex items-center gap-1.5 rounded-lg border border-brand-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-brand-700 cursor-pointer hover:border-brand-400";
+      "flex items-center gap-1.5 rounded-lg border border-hairline-strong bg-surface px-2.5 py-1.5 text-xs font-semibold text-ink-soft cursor-pointer hover:border-brand-400";
     toggleBtn.textContent = showCurrentMonthPast ? "Ocultar eventos anteriores" : "Ver eventos anteriores deste mês";
     toggleBtn.addEventListener("click", handlers.onToggleCurrentMonthPast);
     toggleRow.appendChild(toggleBtn);

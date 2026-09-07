@@ -12,15 +12,17 @@ import { renderMonthSection, monthSectionId } from "./render/monthGroup";
 import { renderMonthNavRail } from "./render/monthNav";
 import { observeActiveMonth } from "./state/activeMonth";
 import { createInitialState } from "./state/appState";
-import { startCarousel } from "./state/carousel";
+import { startCarousel, type CarouselController } from "./state/carousel";
 import { applyStoredConsent } from "./state/consent";
 import { defaultFilterState, filterOptions, matchesFilters } from "./state/filters";
 import { getStoredLocation } from "./state/geolocation";
 import { buildMonthBuckets, buildYearNav } from "./state/monthBuckets";
 import { keepScroll } from "./state/scroll";
+import { initTheme } from "./state/theme";
 import { readParams, writeParams } from "./state/urlState";
 import { eventDateKey } from "./lib/date";
 
+initTheme();
 applyStoredConsent();
 mountConsentBanner();
 mountEventModal();
@@ -65,6 +67,7 @@ let featuredCount = 0;
 let stopObservingActiveMonth: () => void = () => {};
 let justExpandedMonthKey: string | null = null;
 const featuredHost = document.createElement("div");
+let carousel: CarouselController | null = null;
 
 // Featured carousel always draws from the full unfiltered event list — the
 // search box and filters below narrow the listing, not the highlights.
@@ -93,6 +96,12 @@ function renderCarousel(direction: CarouselDirection = "fade"): void {
         state.carousel = index;
         renderCarousel(goingForward <= goingBackward ? "next" : "prev");
       },
+      onTogglePause: () => {
+        if (carousel?.isPaused()) carousel.resume();
+        else carousel?.pause();
+        renderCarousel(direction);
+      },
+      isPaused: () => carousel?.isPaused() ?? false,
     },
     direction,
   );
@@ -186,11 +195,11 @@ function render(): void {
     empty.className = "flex flex-col items-center gap-1.5 px-6 py-16 text-center";
 
     const emptyTitle = document.createElement("span");
-    emptyTitle.className = "font-display text-heading-sm font-semibold text-brand-950";
+    emptyTitle.className = "font-display text-heading-sm font-semibold text-ink";
     emptyTitle.textContent = "Nenhum evento com esses filtros";
 
     const emptyDesc = document.createElement("span");
-    emptyDesc.className = "text-body-sm text-brand-500";
+    emptyDesc.className = "text-body-sm text-ink-soft";
 
     if (hasActiveFilters) {
       const otherCount = allUpcoming.length;
@@ -198,7 +207,7 @@ function render(): void {
       emptyDesc.appendChild(document.createTextNode(`${otherLabel} — tente outro termo ou `));
       const clearLink = document.createElement("button");
       clearLink.type = "button";
-      clearLink.className = "cursor-pointer font-semibold text-brand-700 underline hover:text-brand-600";
+      clearLink.className = "cursor-pointer font-semibold text-ink-soft underline hover:text-ink";
       clearLink.textContent = "limpe os filtros";
       clearLink.addEventListener("click", () => {
         state.filters = { ...defaultFilterState(), nearMe: state.filters.nearMe };
@@ -267,10 +276,15 @@ shell.append(renderCtaBand(), renderFooter());
 renderCarousel();
 render();
 
-startCarousel(
+carousel = startCarousel(
   () => featuredCount,
   () => {
     state.carousel += 1;
     renderCarousel("next");
   },
 );
+
+featuredHost.addEventListener("mouseenter", () => carousel?.setHovering(true));
+featuredHost.addEventListener("mouseleave", () => carousel?.setHovering(false));
+featuredHost.addEventListener("focusin", () => carousel?.setHovering(true));
+featuredHost.addEventListener("focusout", () => carousel?.setHovering(false));

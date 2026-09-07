@@ -7,17 +7,17 @@ function githubIconSvg(): string {
 export function renderCtaBand(): HTMLElement {
   const band = document.createElement("div");
   band.className =
-    "flex flex-col items-start gap-6 border-t border-brand-100 bg-brand-50/60 px-(--spacing-gutter) py-6 md:flex-row md:items-center md:justify-between md:gap-8";
+    "flex flex-col items-start gap-6 border-t border-hairline bg-surface-sunken/60 px-(--spacing-gutter) py-6 md:flex-row md:items-center md:justify-between md:gap-8";
 
   const textCol = document.createElement("div");
   textCol.className = "flex max-w-full flex-col gap-1.5 md:max-w-115";
 
   const title = document.createElement("h4");
-  title.className = "font-display text-heading-md font-bold leading-tight tracking-tight text-brand-950";
+  title.className = "font-display text-heading-md font-bold leading-tight tracking-tight text-ink";
   title.textContent = "Não encontrou seu evento?";
 
   const desc = document.createElement("span");
-  desc.className = "text-body-sm leading-relaxed text-brand-600";
+  desc.className = "text-body-sm leading-relaxed text-ink-soft";
   desc.textContent =
     "Submeta pelo GitHub: um evento único entra direto na lista, uma comunidade entra no scraper e passa a ser coletada automaticamente.";
 
@@ -39,7 +39,7 @@ export function renderCtaBand(): HTMLElement {
   addSource.target = "_blank";
   addSource.rel = "noopener";
   addSource.className =
-    "inline-flex items-center gap-2 whitespace-nowrap rounded-card-10 border border-brand-200 bg-white px-4 py-3 text-body-sm font-semibold text-brand-700 hover:border-brand-400";
+    "inline-flex items-center gap-2 whitespace-nowrap rounded-card-10 border border-hairline-strong bg-surface px-4 py-3 text-body-sm font-semibold text-ink-soft hover:border-brand-400";
   addSource.innerHTML = `${githubIconSvg()}Cadastrar comunidade`;
 
   actions.append(submitEvent, addSource);

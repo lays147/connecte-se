@@ -69,7 +69,7 @@ export function renderCard(event: EnrichedEvent, today: Date, nearMe: Coords | n
 
   const card = document.createElement("article");
   card.className =
-    "flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-brand-200 bg-white transition-colors hover:border-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
+    "flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-hairline-strong bg-surface transition-colors hover:border-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400";
   card.tabIndex = 0;
   card.setAttribute("role", "button");
   card.setAttribute("aria-label", `Ver detalhes de ${vm.title}`);
@@ -104,7 +104,7 @@ export function renderCard(event: EnrichedEvent, today: Date, nearMe: Coords | n
 
   if (vm.distanceLabel) {
     const distancePill = document.createElement("span");
-    distancePill.className = "rounded-full bg-brand-50 px-2 py-1 text-xs font-medium text-brand-700";
+    distancePill.className = "rounded-full bg-surface-sunken px-2 py-1 text-xs font-medium text-ink-soft";
     distancePill.textContent = vm.distanceLabel;
     pillGroup.appendChild(distancePill);
   }
@@ -117,7 +117,7 @@ export function renderCard(event: EnrichedEvent, today: Date, nearMe: Coords | n
   topRow.appendChild(pillGroup);
 
   const title = document.createElement("h3");
-  title.className = "line-clamp-2 font-display text-heading-sm font-semibold leading-snug text-brand-950";
+  title.className = "line-clamp-2 font-display text-heading-sm font-semibold leading-snug text-ink";
   title.textContent = vm.title;
 
   const communityRow = document.createElement("div");
@@ -129,30 +129,30 @@ export function renderCard(event: EnrichedEvent, today: Date, nearMe: Coords | n
   communityRow.appendChild(avatar);
 
   const communityName = document.createElement("span");
-  communityName.className = "min-w-0 flex-1 truncate text-xs font-medium text-brand-800";
+  communityName.className = "min-w-0 flex-1 truncate text-xs font-medium text-ink";
   communityName.textContent = vm.community;
   communityRow.appendChild(communityName);
 
   const description = document.createElement("p");
-  description.className = "line-clamp-2 text-xs leading-relaxed text-brand-700";
+  description.className = "line-clamp-2 text-xs leading-relaxed text-ink-soft";
   description.textContent = vm.description;
 
   const spacer = document.createElement("span");
   spacer.className = "flex-1";
 
   const footerRow = document.createElement("div");
-  footerRow.className = "flex flex-wrap items-center justify-between gap-2.5 border-t border-brand-100 pt-3";
+  footerRow.className = "flex flex-wrap items-center justify-between gap-2.5 border-t border-hairline pt-3";
 
   const whenPlace = document.createElement("div");
   whenPlace.className = "flex min-w-0 flex-1 flex-col gap-0.5";
 
   const whenSpan = document.createElement("span");
-  whenSpan.className = "font-mono-label whitespace-nowrap text-xs font-semibold text-brand-900";
+  whenSpan.className = "font-mono-label whitespace-nowrap text-xs font-semibold text-ink";
   whenSpan.textContent = vm.when;
   whenPlace.appendChild(whenSpan);
 
   const placeSpan = document.createElement("span");
-  placeSpan.className = "truncate text-label-sm text-brand-500";
+  placeSpan.className = "truncate text-label-sm text-ink-soft";
   placeSpan.textContent = vm.place;
   whenPlace.appendChild(placeSpan);
 

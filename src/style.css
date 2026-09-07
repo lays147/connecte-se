@@ -32,10 +32,18 @@
 
   --color-page: #f2f0f7;
 
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f5f2fd;
+  --color-tint-hover: #ebe4fb;
+  --color-ink: #1e0b4c;
+  --color-ink-soft: #6d3ae4;
+  --color-hairline: #ebe4fb;
+  --color-hairline-strong: #d4c5f7;
+
   --color-map-empty: #faf9fd;
   --color-map-scale-start: #ddd2fa;
   --color-map-scale-end: #28095e;
-  --color-map-label-line: #b6adcf;
+  --color-map-label-line: #8177a1;
   --color-map-label-dark: #4a4368;
   --color-map-label-light: #ffffff;
   --color-icon-muted: #8a83a3;
@@ -45,8 +53,10 @@
   --font-mono-label: "IBM Plex Mono", ui-monospace, monospace;
 
   /* type-scale steps used across cards, badges and labels beyond Tailwind's defaults */
-  --text-label-2xs: 0.5625rem; /* 9px */
-  --text-label-xs: 0.625rem; /* 10px */
+  /* 11px is the legibility floor for functional/classificatory text; 2xs and xs
+     collapse onto it so no consumer can render label text below that floor. */
+  --text-label-2xs: 0.6875rem; /* 11px */
+  --text-label-xs: 0.6875rem; /* 11px */
   --text-label-sm: 0.6875rem; /* 11px */
   --text-body-sm: 0.8125rem; /* 13px */
   --text-body-sm-tight: 0.78125rem; /* 12.5px */
@@ -68,6 +78,28 @@
   --radius-card-17: 1.0625rem; /* 17px */
 
   --spacing-gutter: clamp(1.5rem, 4vw, 4rem); /* clamp(24px, 4vw, 64px) */
+}
+
+/* Dark theme: only the semantic surface/ink/hairline tokens flip. The brand-*
+   scale stays put — it's what the always-dark hero, footer and modal-tooltip
+   surfaces already use, so redefining it would break those in both themes. */
+:root[data-theme="dark"] {
+  --color-page: #14091f;
+  --color-surface: #1c1030;
+  --color-surface-sunken: #241540;
+  --color-tint-hover: #2c1a4d;
+  --color-ink: #f1ecfb;
+  --color-ink-soft: #b69cf1;
+  --color-hairline: #34215a;
+  --color-hairline-strong: #443070;
+
+  --color-map-empty: #241540;
+  --color-map-scale-start: #3a2764;
+  --color-map-scale-end: #c9b3f5;
+  --color-map-label-line: #8a7ab0;
+  --color-map-label-dark: #241540;
+  --color-map-label-light: #f7f4fd;
+  --color-icon-muted: #8f83ad;
 }
 
 html {
