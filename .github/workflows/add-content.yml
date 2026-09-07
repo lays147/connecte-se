@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       section:
-        description: "Content section"
+        description: "Seção de conteúdo"
         required: true
         type: choice
         options:
@@ -14,19 +14,19 @@ on:
           - podcast
           - curso
       name:
-        description: "Channel, newsletter, blog or course name"
+        description: "Nome do canal, newsletter, blog ou curso"
         required: true
         type: string
       desc:
-        description: "Short description (who makes it, what it covers)"
+        description: "Descrição curta (quem faz, sobre o que é)"
         required: true
         type: string
       themes:
-        description: "Comma-separated themes (e.g. programação,carreira)"
+        description: "Temas separados por vírgula (ex: programação,carreira)"
         required: true
         type: string
       url:
-        description: "Content URL (must not be time-bound, e.g. no year/month/date in it)"
+        description: "URL do conteúdo (não pode ter data, ex: sem ano/mês/dia na URL)"
         required: true
         type: string
 

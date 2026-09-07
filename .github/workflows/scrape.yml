@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       frequency:
-        description: "Only scrape sources with this frequency (leave as 'all' to scrape everything)"
+        description: "Buscar apenas fontes com essa frequência (deixe 'all' para buscar tudo)"
         required: true
         type: choice
         default: all

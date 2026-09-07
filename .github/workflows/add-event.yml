@@ -4,19 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       title:
-        description: "Event title"
+        description: "Título do evento"
         required: true
         type: string
       city:
-        description: "City (use null for online or unknown location)"
+        description: "Cidade (use null para online ou local desconhecido)"
         required: true
         type: string
       state:
-        description: "Brazilian state UF (use null when not explicitly known)"
+        description: "UF do estado - (RJ, SP, MG, etc) (use null quando não souber ao certo)"
         required: true
         type: string
       region:
-        description: "Region"
+        description: "Região"
         required: true
         type: choice
         options:
@@ -26,7 +26,7 @@ on:
           - Norte
           - Centro-Oeste
       event_type:
-        description: "Event type"
+        description: "Tipo de evento"
         required: true
         type: choice
         options:
@@ -40,7 +40,7 @@ on:
           - Community Day
           - Evento
       modality:
-        description: "Event modality"
+        description: "Modalidade do evento"
         required: true
         type: choice
         options:
@@ -49,24 +49,24 @@ on:
           - Híbrido
           - Não informado
       date:
-        description: "Event date (DD/MM/YYYY)"
+        description: "Data do evento (DD/MM/AAAA)"
         required: true
         type: string
       time:
-        description: "Event time (HH:mm, 24h)"
+        description: "Horário do evento (HH:mm, 24h)"
         required: false
         type: string
       description:
-        description: "Short description of the event"
+        description: "Descrição curta do evento"
         required: true
         type: string
       paid:
-        description: "Is the event paid?"
+        description: "O evento é pago?"
         required: true
         type: boolean
         default: false
       url:
-        description: "Event URL"
+        description: "URL do evento"
         required: true
         type: string
 
@@ -105,7 +105,7 @@ jobs:
           EVENT_URL: ${{ inputs.url }}
         run: |
           if [[ ! "$EVENT_DATE" =~ ^([0-3][0-9])/([0-1][0-9])/([0-9]{4})$ ]]; then
-            echo "Invalid date \"$EVENT_DATE\": expected format DD/MM/YYYY" >&2
+            echo "Data inválida \"$EVENT_DATE\": o formato esperado é DD/MM/AAAA" >&2
             exit 1
           fi
           ISO_DATE="${BASH_REMATCH[3]}-${BASH_REMATCH[2]}-${BASH_REMATCH[1]}"
@@ -135,16 +135,16 @@ jobs:
           branch: add-event/${{ github.run_id }}
           title: "feat: add ${{ inputs.title }} event"
           body: |
-            Adds a new event via the "Add Event" workflow, triggered by @${{ github.actor }}.
+            Adiciona um novo evento via workflow "Add Event", disparado por @${{ github.actor }}.
 
-            - **Title:** ${{ inputs.title }}
-            - **City:** ${{ inputs.city }}
-            - **State:** ${{ inputs.state }}
-            - **Date:** ${{ inputs.date }}
-            - **Time:** ${{ inputs.time }}
-            - **Region:** ${{ inputs.region }}
-            - **Type:** ${{ inputs.event_type }}
-            - **Modality:** ${{ inputs.modality }}
-            - **Paid:** ${{ inputs.paid }}
+            - **Título:** ${{ inputs.title }}
+            - **Cidade:** ${{ inputs.city }}
+            - **Estado:** ${{ inputs.state }}
+            - **Data:** ${{ inputs.date }}
+            - **Horário:** ${{ inputs.time }}
+            - **Região:** ${{ inputs.region }}
+            - **Tipo:** ${{ inputs.event_type }}
+            - **Modalidade:** ${{ inputs.modality }}
+            - **Pago:** ${{ inputs.paid }}
             - **URL:** ${{ inputs.url }}
           add-paths: data/events-*.json

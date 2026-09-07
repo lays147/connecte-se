@@ -4,22 +4,22 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: "Community or event name"
+        description: "Nome da comunidade ou evento"
         required: true
         type: string
       url:
-        description: "Source URL (must not be time-bound, e.g. no year/month/date in it)"
+        description: "URL da fonte (não pode ter data, ex: sem ano/mês/dia na URL)"
         required: true
         type: string
       type:
-        description: "Source type"
+        description: "Tipo de fonte"
         required: true
         type: choice
         options:
           - community
           - event
       frequency:
-        description: "How often it happens"
+        description: "Com que frequência acontece"
         required: true
         type: choice
         options:
@@ -67,10 +67,10 @@ jobs:
           branch: add-source/${{ github.run_id }}
           title: "feat: add ${{ inputs.name }} to sources"
           body: |
-            Adds a new source via the "Add Source" workflow, triggered by @${{ github.actor }}.
+            Adiciona uma nova fonte via workflow "Add Source", disparado por @${{ github.actor }}.
 
-            - **Name:** ${{ inputs.name }}
+            - **Nome:** ${{ inputs.name }}
             - **URL:** ${{ inputs.url }}
-            - **Type:** ${{ inputs.type }}
-            - **Frequency:** ${{ inputs.frequency }}
+            - **Tipo:** ${{ inputs.type }}
+            - **Frequência:** ${{ inputs.frequency }}
           add-paths: sources/communities.yaml
