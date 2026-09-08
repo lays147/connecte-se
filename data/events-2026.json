@@ -2235,20 +2235,6 @@
       "state": "SP"
     },
     {
-      "id": "2026-09-datadog-summit-sao-paulo-2026",
-      "title": "Datadog Summit São Paulo 2026",
-      "region": "Sudeste",
-      "type": "Summit",
-      "modality": "Presencial",
-      "date": "15/09/2026",
-      "time": null,
-      "description": "Evento gratuito da Datadog em São Paulo com um dia de aprendizado prático, demonstrações de produtos e networking sobre observabilidade e IA.",
-      "paid": false,
-      "url": "https://www.datadoghq.com/events-webinars/?language=pt",
-      "city": "São Paulo",
-      "state": "SP"
-    },
-    {
       "id": "2026-09-women-s-brunch-sp-tech-week",
       "title": "Women's Brunch - SP Tech Week",
       "city": "São Paulo",
