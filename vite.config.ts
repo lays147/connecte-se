@@ -1,6 +1,18 @@
+import { execFileSync } from "node:child_process";
 import { resolve } from "node:path";
 import { defineConfig, type Plugin } from "vite";
 import tailwindcss from "@tailwindcss/vite";
+
+function lastEventsUpdateAt(): string {
+  try {
+    return execFileSync("git", ["log", "-1", "--format=%cI", "--", "data/*.json"], {
+      cwd: import.meta.dirname,
+      encoding: "utf-8",
+    }).trim();
+  } catch {
+    return "";
+  }
+}
 
 const SHARED_HEAD = `
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,6 +42,9 @@ function sharedHeadPlugin(): Plugin {
 
 export default defineConfig({
   plugins: [tailwindcss(), sharedHeadPlugin()],
+  define: {
+    __EVENTS_UPDATED_AT__: JSON.stringify(lastEventsUpdateAt()),
+  },
   build: {
     rollupOptions: {
       input: {

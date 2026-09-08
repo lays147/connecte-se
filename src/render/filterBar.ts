@@ -95,6 +95,20 @@ function buildNearMeToggle(state: FilterState, onChange: (state: FilterState) =>
   return wrapper;
 }
 
+function lastUpdatedLabel(): string | null {
+  if (!__EVENTS_UPDATED_AT__) return null;
+  const updatedAt = new Date(__EVENTS_UPDATED_AT__);
+  if (Number.isNaN(updatedAt.getTime())) return null;
+
+  const today = new Date();
+  const startOfDay = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+  const daysAgo = Math.round((startOfDay(today) - startOfDay(updatedAt)) / 86_400_000);
+
+  if (daysAgo <= 0) return "atualizado hoje";
+  if (daysAgo === 1) return "atualizado ontem";
+  return `atualizado em ${updatedAt.toLocaleDateString("pt-BR")}`;
+}
+
 export function renderFilterBar(
   allEvents: EnrichedEvent[],
   upcomingCount: number,
@@ -112,7 +126,9 @@ export function renderFilterBar(
 
   const subtitle = document.createElement("span");
   subtitle.className = "text-body-sm text-ink-soft";
-  subtitle.textContent = `${upcomingCount} ${upcomingCount === 1 ? "evento a caminho" : "eventos a caminho"} · lista coletada automaticamente, pode conter imprecisões`;
+  const countLabel = `${upcomingCount} ${upcomingCount === 1 ? "evento a caminho" : "eventos a caminho"} · lista coletada automaticamente, pode conter imprecisões`;
+  const updated = lastUpdatedLabel();
+  subtitle.textContent = updated ? `${countLabel} · ${updated}` : countLabel;
 
   const searchConsole = document.createElement("div");
   searchConsole.className =
