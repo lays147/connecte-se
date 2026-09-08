@@ -46,6 +46,7 @@ body:
         - Nordeste
         - Norte
         - Centro-Oeste
+        - Nacional
     validations:
       required: true
 
