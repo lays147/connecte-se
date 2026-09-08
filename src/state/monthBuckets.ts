@@ -9,6 +9,14 @@ function ord(y: number, m: number): number {
   return y * 12 + m;
 }
 
+// Brazilian week convention: Sunday closes the week (matches WD_SUN in
+// card.ts/featured.ts, where index 0 is "dom").
+function endOfWeekKey(today: Date): string {
+  const end = new Date(today);
+  end.setDate(end.getDate() + (7 - end.getDay()) % 7);
+  return dateKeyOf(end);
+}
+
 export interface MonthBucket {
   key: string;
   year: number;
@@ -17,6 +25,8 @@ export interface MonthBucket {
   all: EnrichedEvent[];
   list: EnrichedEvent[];
   past: EnrichedEvent[];
+  thisWeek: EnrichedEvent[];
+  laterThisMonth: EnrichedEvent[];
   hasPast: boolean;
   isPast: boolean;
   isCurrent: boolean;
@@ -48,6 +58,8 @@ export function buildMonthBuckets(
         all: [],
         list: [],
         past: [],
+        thisWeek: [],
+        laterThisMonth: [],
         hasPast: false,
         isPast: false,
         isCurrent: false,
@@ -59,6 +71,7 @@ export function buildMonthBuckets(
     bucket.all.push(e);
   }
 
+  const weekEndKey = endOfWeekKey(today);
   const bucketList = [...buckets.values()].sort((a, b) => a.order - b.order);
   for (const b of bucketList) {
     b.all.sort((x, y) => eventDateKey(x.date).localeCompare(eventDateKey(y.date)) || x.time.localeCompare(y.time));
@@ -70,10 +83,14 @@ export function buildMonthBuckets(
       const pastEvents = b.all.filter((e) => eventDateKey(e.date) < todayKey);
       b.hasPast = pastEvents.length > 0;
       b.past = showCurrentMonthPast ? pastEvents : [];
+      b.thisWeek = b.list.filter((e) => eventDateKey(e.date) <= weekEndKey);
+      b.laterThisMonth = b.list.filter((e) => eventDateKey(e.date) > weekEndKey);
     } else {
       b.list = b.all;
       b.past = [];
       b.hasPast = false;
+      b.thisWeek = [];
+      b.laterThisMonth = [];
     }
   }
 

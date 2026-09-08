@@ -30,7 +30,7 @@ export function renderMonthSection(
   const heading = document.createElement("button");
   heading.type = "button";
   heading.className = [
-    "flex cursor-pointer items-baseline gap-2.5 border-b border-hairline px-(--spacing-gutter) py-4 text-left hover:bg-tint-hover/50",
+    "flex cursor-pointer items-baseline gap-2.5 border-b border-hairline px-(--spacing-gutter) pt-8 pb-4 text-left hover:bg-tint-hover/50",
     bucket.isPast ? "bg-surface-sunken/30" : "bg-surface",
   ].join(" ");
   heading.setAttribute("aria-expanded", String(!collapsed));
@@ -71,21 +71,46 @@ export function renderMonthSection(
     return section;
   }
 
-  const grid = document.createElement("div");
-  grid.className = [
-    "grid grid-cols-1 gap-4 px-(--spacing-gutter) py-5 sm:grid-cols-2 lg:grid-cols-3",
-    justExpanded ? "month-grid-enter" : "",
-  ].join(" ");
+  const splitThisWeek = bucket.isCurrent && bucket.thisWeek.length > 0 && bucket.laterThisMonth.length > 0;
 
-  bucket.list.forEach((event, i) => {
-    const card = renderCard(event, today, nearMe);
-    if (justExpanded && i < CARD_STAGGER_CAP) {
-      card.classList.add("card-settle-enter");
-      card.style.animationDelay = `${i * CARD_STAGGER_MS}ms`;
-    }
-    grid.appendChild(card);
-  });
-  section.appendChild(grid);
+  function appendGrid(list: typeof bucket.list, startIndex: number, tightBottom = false): void {
+    const grid = document.createElement("div");
+    grid.className = [
+      "grid grid-cols-1 gap-4 px-(--spacing-gutter) pt-5 sm:grid-cols-2 lg:grid-cols-3",
+      tightBottom ? "pb-2" : "pb-5",
+      justExpanded ? "month-grid-enter" : "",
+    ].join(" ");
+
+    list.forEach((event, i) => {
+      const card = renderCard(event, today, nearMe);
+      const staggerIndex = startIndex + i;
+      if (justExpanded && staggerIndex < CARD_STAGGER_CAP) {
+        card.classList.add("card-settle-enter");
+        card.style.animationDelay = `${staggerIndex * CARD_STAGGER_MS}ms`;
+      }
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+  }
+
+  function appendSubHeading(text: string, signal: boolean): void {
+    const sub = document.createElement("h3");
+    sub.className = [
+      "px-(--spacing-gutter) pt-4 font-mono-label text-body-sm font-semibold uppercase tracking-widest",
+      signal ? "text-brand-700" : "text-ink-soft",
+    ].join(" ");
+    sub.textContent = text;
+    section.appendChild(sub);
+  }
+
+  if (splitThisWeek) {
+    appendSubHeading("Esta semana", true);
+    appendGrid(bucket.thisWeek, 0, true);
+    appendSubHeading("Depois este mês", false);
+    appendGrid(bucket.laterThisMonth, bucket.thisWeek.length);
+  } else {
+    appendGrid(bucket.list, 0);
+  }
 
   if (bucket.isCurrent && !bucket.opened && bucket.hasPast) {
     const toggleRow = document.createElement("div");
