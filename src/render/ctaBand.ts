@@ -35,7 +35,7 @@ export function renderCtaBand(): HTMLElement {
   submitEvent.innerHTML = `${githubIconSvg()}Enviar um evento`;
 
   const addSource = document.createElement("a");
-  addSource.href = "https://github.com/lays147/connecte-se/actions/workflows/add-source.yml";
+  addSource.href = "https://github.com/lays147/connecte-se/issues/new?template=add-source.yml";
   addSource.target = "_blank";
   addSource.rel = "noopener";
   addSource.className =

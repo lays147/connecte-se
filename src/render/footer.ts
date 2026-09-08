@@ -62,7 +62,7 @@ export function renderFooter(): HTMLElement {
   submitEventLink.textContent = "Enviar um evento";
 
   const addSourceLink = document.createElement("a");
-  addSourceLink.href = "https://github.com/lays147/connecte-se/actions/workflows/add-source.yml";
+  addSourceLink.href = "https://github.com/lays147/connecte-se/issues/new?template=add-source.yml";
   addSourceLink.target = "_blank";
   addSourceLink.rel = "noopener";
   addSourceLink.className = "text-body-sm font-medium text-brand-100";

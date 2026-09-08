@@ -1,0 +1,49 @@
+name: "🔗 Adicionar fonte"
+description: "Sugira uma nova comunidade ou evento para ser monitorado pelo scraper"
+title: "[Fonte] "
+labels:
+  - "add-source"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preencha os campos abaixo para sugerir uma nova fonte (comunidade ou evento). Depois de
+        enviado, um workflow automático vai validar os dados e abrir um pull request para revisão.
+
+  - type: input
+    id: name
+    attributes:
+      label: Nome da comunidade ou evento
+      placeholder: "Ex: DevOpsDays São Paulo"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL da fonte
+      description: "Não pode ser uma URL vinculada a uma data específica, como um link com ano, mês ou dia"
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Tipo de fonte
+      options:
+        - community
+        - event
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequência
+      options:
+        - monthly
+        - yearly
+        - occasionally
+    validations:
+      required: true

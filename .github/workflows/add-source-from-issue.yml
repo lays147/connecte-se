@@ -1,0 +1,113 @@
+name: Add Source From Issue
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  add-source:
+    if: contains(github.event.issue.labels.*.name, 'add-source')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Parse issue form
+        id: parse
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const body = context.payload.issue.body ?? "";
+
+            const fields = {
+              "Nome da comunidade ou evento": "name",
+              "URL da fonte": "url",
+              "Tipo de fonte": "type",
+              "Frequência": "frequency",
+            };
+
+            const sections = body.split(/^### /m).slice(1);
+            const values = {};
+            for (const section of sections) {
+              const newlineIndex = section.indexOf("\n");
+              const label = section.slice(0, newlineIndex).trim();
+              const key = fields[label];
+              if (!key) continue;
+              const value = section.slice(newlineIndex + 1).trim();
+              values[key] = value === "_No response_" ? "" : value;
+            }
+
+            core.setOutput("name", values.name ?? "");
+            core.setOutput("url", values.url ?? "");
+            core.setOutput("type", values.type ?? "");
+            core.setOutput("frequency", values.frequency ?? "");
+
+      - name: Add source
+        env:
+          SOURCE_NAME: ${{ steps.parse.outputs.name }}
+          SOURCE_URL: ${{ steps.parse.outputs.url }}
+          SOURCE_TYPE: ${{ steps.parse.outputs.type }}
+          SOURCE_FREQUENCY: ${{ steps.parse.outputs.frequency }}
+        run: |
+          npm run add:source -- \
+            --name="$SOURCE_NAME" \
+            --url="$SOURCE_URL" \
+            --type="$SOURCE_TYPE" \
+            --frequency="$SOURCE_FREQUENCY"
+
+      - name: Open pull request
+        if: success()
+        id: create_pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "feat: add ${{ steps.parse.outputs.name }} to sources"
+          branch: add-source/issue-${{ github.event.issue.number }}
+          title: "feat: add ${{ steps.parse.outputs.name }} to sources"
+          body: |
+            Adiciona uma nova fonte a partir da issue #${{ github.event.issue.number }}, enviada por @${{ github.event.issue.user.login }}.
+
+            - **Nome:** ${{ steps.parse.outputs.name }}
+            - **URL:** ${{ steps.parse.outputs.url }}
+            - **Tipo:** ${{ steps.parse.outputs.type }}
+            - **Frequência:** ${{ steps.parse.outputs.frequency }}
+
+            Closes #${{ github.event.issue.number }}
+          add-paths: sources/communities.yaml
+
+      - name: Comment on success
+        if: success()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Obrigado pela sugestão! Abri o pull request #${{ steps.create_pr.outputs.pull-request-number }} com os dados enviados para revisão.`,
+            });
+
+      - name: Comment on failure
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Não consegui processar automaticamente os dados dessa issue. Um mantenedor vai revisar manualmente. Confira os logs do workflow para mais detalhes.",
+            });

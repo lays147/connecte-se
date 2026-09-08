@@ -1,0 +1,117 @@
+name: Add Content From Issue
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  add-content:
+    if: contains(github.event.issue.labels.*.name, 'add-content')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Parse issue form
+        id: parse
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const body = context.payload.issue.body ?? "";
+
+            const fields = {
+              "Seção de conteúdo": "section",
+              "Nome": "name",
+              "Descrição curta": "desc",
+              "Temas": "themes",
+              "URL do conteúdo": "url",
+            };
+
+            const sections = body.split(/^### /m).slice(1);
+            const values = {};
+            for (const section of sections) {
+              const newlineIndex = section.indexOf("\n");
+              const label = section.slice(0, newlineIndex).trim();
+              const key = fields[label];
+              if (!key) continue;
+              const value = section.slice(newlineIndex + 1).trim();
+              values[key] = value === "_No response_" ? "" : value;
+            }
+
+            core.setOutput("section", values.section ?? "");
+            core.setOutput("name", values.name ?? "");
+            core.setOutput("desc", values.desc ?? "");
+            core.setOutput("themes", values.themes ?? "");
+            core.setOutput("url", values.url ?? "");
+
+      - name: Add content
+        env:
+          CONTENT_SECTION: ${{ steps.parse.outputs.section }}
+          CONTENT_NAME: ${{ steps.parse.outputs.name }}
+          CONTENT_DESC: ${{ steps.parse.outputs.desc }}
+          CONTENT_THEMES: ${{ steps.parse.outputs.themes }}
+          CONTENT_URL: ${{ steps.parse.outputs.url }}
+        run: |
+          npm run add:content -- \
+            --section="$CONTENT_SECTION" \
+            --name="$CONTENT_NAME" \
+            --desc="$CONTENT_DESC" \
+            --themes="$CONTENT_THEMES" \
+            --url="$CONTENT_URL"
+
+      - name: Open pull request
+        if: success()
+        id: create_pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "feat: add ${{ steps.parse.outputs.name }} to content"
+          branch: add-content/issue-${{ github.event.issue.number }}
+          title: "feat: add ${{ steps.parse.outputs.name }} to content"
+          body: |
+            Adiciona um novo conteúdo a partir da issue #${{ github.event.issue.number }}, enviada por @${{ github.event.issue.user.login }}.
+
+            - **Seção:** ${{ steps.parse.outputs.section }}
+            - **Nome:** ${{ steps.parse.outputs.name }}
+            - **Temas:** ${{ steps.parse.outputs.themes }}
+            - **URL:** ${{ steps.parse.outputs.url }}
+
+            Closes #${{ github.event.issue.number }}
+          add-paths: sources/content.yaml
+
+      - name: Comment on success
+        if: success()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Obrigado pela sugestão! Abri o pull request #${{ steps.create_pr.outputs.pull-request-number }} com os dados enviados para revisão.`,
+            });
+
+      - name: Comment on failure
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Não consegui processar automaticamente os dados dessa issue. Um mantenedor vai revisar manualmente. Confira os logs do workflow para mais detalhes.",
+            });

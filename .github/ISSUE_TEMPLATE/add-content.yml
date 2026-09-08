@@ -1,0 +1,59 @@
+name: "🎙️ Adicionar conteúdo"
+description: "Sugira um canal, newsletter, blog, podcast ou curso para ser adicionado ao site"
+title: "[Conteúdo] "
+labels:
+  - "add-content"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preencha os campos abaixo para sugerir um novo conteúdo. Depois de enviado, um workflow
+        automático vai validar os dados e abrir um pull request para revisão.
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Seção de conteúdo
+      options:
+        - youtube
+        - newsletter
+        - blog
+        - podcast
+        - curso
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Nome
+      description: "Nome do canal, newsletter, blog, podcast ou curso"
+      placeholder: "Ex: Código Fonte TV"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desc
+    attributes:
+      label: Descrição curta
+      description: "Quem faz, sobre o que é"
+    validations:
+      required: true
+
+  - type: input
+    id: themes
+    attributes:
+      label: Temas
+      description: "Separados por vírgula"
+      placeholder: "Ex: programação,carreira"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL do conteúdo
+      description: "Não pode ser uma URL vinculada a uma data específica, como um link com ano, mês ou dia"
+      placeholder: "https://..."
+    validations:
+      required: true

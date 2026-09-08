@@ -92,7 +92,7 @@ test("Pix copy button flips its label after clicking", async ({ page, context })
   await expect(page.getByRole("button", { name: "Copiada" })).toBeVisible();
 });
 
-test("CTA band links point to the add-event and add-source workflows", async ({ page }) => {
+test("CTA band links point to the add-event and add-source issue templates", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("link", { name: "Enviar um evento" }).first()).toHaveAttribute(
     "href",
@@ -100,7 +100,7 @@ test("CTA band links point to the add-event and add-source workflows", async ({ 
   );
   await expect(page.getByRole("link", { name: "Cadastrar comunidade" }).first()).toHaveAttribute(
     "href",
-    "https://github.com/lays147/connecte-se/actions/workflows/add-source.yml",
+    "https://github.com/lays147/connecte-se/issues/new?template=add-source.yml",
   );
 });
 

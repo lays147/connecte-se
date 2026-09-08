@@ -8,7 +8,7 @@ web
 
 ## Users
 
-Primary users are Brazilian tech professionals (developers and other tech workers) looking to discover meetups, conferences, communities, and worthwhile content near them or in their field, in order to show up and grow their career. Community organizers and contributors are a secondary audience: they use the GitHub Actions-driven workflows (Add Source, Add Event) to submit and maintain listings, but the site's primary job is discovery for the person browsing to find something to attend or follow.
+Primary users are Brazilian tech professionals (developers and other tech workers) looking to discover meetups, conferences, communities, and worthwhile content near them or in their field, in order to show up and grow their career. Community organizers and contributors are a secondary audience: they submit and maintain listings via GitHub issue forms (Add Source, Add Event, Add Content) that trigger automated PRs, but the site's primary job is discovery for the person browsing to find something to attend or follow.
 
 ## Product Purpose
 
@@ -16,14 +16,14 @@ Conecte-se Brasil ("Connect Yourself Brazil") is a best-effort, national index o
 
 ## Positioning
 
-The completeness and the openness are the same claim, not two separate ones: the site is both the most complete national aggregation of Brazilian tech events and a community-maintained, open-contribution index. Anyone can propose a new source or event through a GitHub Actions workflow (Add Source / Add Event) that opens an automated PR, validated by a checking pipeline before merge. No single community's own listing, and no closed/curated directory, can make both claims at once — exhaustive coverage achieved specifically through open, low-friction, automated contribution.
+The completeness and the openness are the same claim, not two separate ones: the site is both the most complete national aggregation of Brazilian tech events and a community-maintained, open-contribution index. Anyone can propose a new source or event through a GitHub issue form (Add Source / Add Event) that opens an automated PR, validated by a checking pipeline before merge. No single community's own listing, and no closed/curated directory, can make both claims at once — exhaustive coverage achieved specifically through open, low-friction, automated contribution.
 
 ## Operating Context
 
 - Three static pages: the landing/events page (`index.html`), the map view (`mapa.html`), and the content library (`conteudos.html`).
 - Event and community data is scraped on a best-effort basis from source URLs (`npm run scrape`, via `scripts/scrape-events.ts`) and stored in `sources/communities.yaml`, `sources/content.yaml`, and `data/events-<year>.json`.
 - `sources/communities.yaml` must not contain time-bounded URLs (no year/month/date in the URL) — communities are recurring, not one-off.
-- Contribution happens two ways: manually editing YAML/JSON, or via GitHub Actions workflows (Add Source, Add Event, Add Content) that open PRs automatically, gated by a PR-checks pipeline that validates URLs are live.
+- Contribution happens two ways: manually editing YAML/JSON, or via GitHub issue forms (Add Source, Add Event, Add Content) that open PRs automatically, gated by a PR-checks pipeline that validates URLs are live.
 - Content is Portuguese (pt-BR) throughout.
 - Deployed at connect.lays147.dev.br via a `deploy.yml` GitHub Actions workflow.
 

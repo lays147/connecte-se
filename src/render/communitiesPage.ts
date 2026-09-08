@@ -305,7 +305,7 @@ export function renderCommunitiesPage(
   ctaText.append(ctaTitle, ctaDesc);
 
   const ctaLink = document.createElement("a");
-  ctaLink.href = "https://github.com/lays147/connecte-se/actions/workflows/add-source.yml";
+  ctaLink.href = "https://github.com/lays147/connecte-se/issues/new?template=add-source.yml";
   ctaLink.target = "_blank";
   ctaLink.rel = "noopener";
   ctaLink.className =
