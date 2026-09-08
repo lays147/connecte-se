@@ -3051,6 +3051,20 @@
       "url": "https://lu.ma/l2f11j2p"
     },
     {
+      "id": "2026-09-human-risk-conference",
+      "title": "Human Risk Conference",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "26/09/2026",
+      "time": "08:00",
+      "description": "A HumanConf é a primeira e única conferência no Brasil dedicada exclusivamente ao fortalecimento da camada humana da segurança da informação. Sem fins lucrativos, organizada por voluntários, e de volta para a terceira edição.",
+      "paid": true,
+      "url": "https://humanconf.com/"
+    },
+    {
       "id": "2026-09-native-26",
       "title": "NATIVE'26",
       "city": "São Paulo",
