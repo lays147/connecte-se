@@ -3618,6 +3618,20 @@
       "url": "https://lu.ma/kbk2mz6j"
     },
     {
+      "id": "2026-11-xconf-americas-2026",
+      "title": "XConf Americas 2026",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "05/11/2026",
+      "time": null,
+      "description": "Conferência de tecnologia organizada pela Thoughtworks, reunindo desenvolvedores e profissionais de tecnologia com palestras de especialistas do setor. A renda dos ingressos é doada à PrograMaria, organização que promove a participação de mulheres na carreira de tecnologia. Realizada no Centro de Convenções Rebouças.",
+      "paid": true,
+      "url": "https://www.thoughtworks.com/pt-br/about-us/events/xconf/2026/xconf-americas-2026"
+    },
+    {
       "id": "2026-11-the-developer-s-life-weekend-edicao-campo-mourao",
       "title": "The Developer's Life Weekend - Edição Campo Mourão",
       "city": "Campo Mourão",
