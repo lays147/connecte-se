@@ -3646,6 +3646,20 @@
       "url": "https://lu.ma/8nmknjda"
     },
     {
+      "id": "2026-11-devpr-conf-26",
+      "title": "DevPR Conf 26",
+      "city": "Maringá",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "07/11/2026",
+      "time": "08:00",
+      "description": "11ª edição da DevPR Conf, evento da comunidade DevParaná com um palco único, 7 palestras, almoço incluso e networking, realizado no Bondam Restaurante no Parque do Japão em Maringá.",
+      "paid": true,
+      "url": "https://devpr.org/#top"
+    },
+    {
       "id": "2026-11-red-hat-summit-connect-2026-sao-paulo",
       "title": "Red Hat Summit: Connect 2026 São Paulo",
       "city": "São Paulo",
