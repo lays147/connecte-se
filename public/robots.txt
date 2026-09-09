@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://connect.lays147.dev.br/sitemap.xml

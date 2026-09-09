@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && node scripts/gen-sitemap.ts && vite build",
     "preview": "vite preview",
+    "gen:sitemap": "node scripts/gen-sitemap.ts",
     "typecheck": "tsc -b --noEmit",
     "test:e2e": "playwright test",
     "scrape": "node --env-file-if-exists=.env scripts/scrape-events.ts",
