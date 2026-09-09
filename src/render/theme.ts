@@ -50,7 +50,7 @@ export function modalityBadge(modality: string): ModalityBadge {
     case "Online":
       return { label: "Online", bg: "bg-modality-online-bg" };
     case "Híbrido":
-      return { label: "Híbrido", bg: "bg-modality-presencial-bg" };
+      return { label: "Híbrido", bg: "bg-modality-hibrido-bg" };
     case "Presencial":
       return { label: "Presencial", bg: "bg-modality-presencial-bg" };
     default:

@@ -4,7 +4,7 @@ import { trackAnalyticsEvent } from "../state/consent";
 import { distanceKm } from "../state/filters";
 import type { Coords } from "../state/geolocation";
 import { openEventModal } from "./eventModal";
-import { priceStyle, typeStyle } from "./theme";
+import { modalityBadge, priceStyle, typeStyle } from "./theme";
 
 const MONTHS_SHORT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 const WD_SUN = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
@@ -31,6 +31,7 @@ export interface CardViewModel {
   when: string;
   price: ReturnType<typeof priceStyle>;
   style: ReturnType<typeof typeStyle>;
+  modality: ReturnType<typeof modalityBadge>;
   distanceLabel: string | null;
 }
 
@@ -56,10 +57,11 @@ export function toCardViewModel(e: EnrichedEvent, today: Date, nearMe: Coords | 
     description: e.description,
     community,
     initials: initialsOf(community),
-    place: e.city ? e.city + ", " + e.region : e.region,
+    place: e.city ?? e.region,
     when,
     price: priceStyle(e.paid),
     style: typeStyle(e.type),
+    modality: modalityBadge(e.modality),
     distanceLabel: km === null ? null : km < 1 ? "menos de 1 km" : `${Math.round(km)} km`,
   };
 }
@@ -151,10 +153,20 @@ export function renderCard(event: EnrichedEvent, today: Date, nearMe: Coords | n
   whenSpan.textContent = vm.when;
   whenPlace.appendChild(whenSpan);
 
+  const placeRow = document.createElement("div");
+  placeRow.className = "flex min-w-0 items-center gap-1.5";
+
+  const modalityDot = document.createElement("span");
+  modalityDot.className = `size-1.5 shrink-0 rounded-full ${vm.modality.bg}`;
+  modalityDot.setAttribute("aria-hidden", "true");
+  placeRow.appendChild(modalityDot);
+
   const placeSpan = document.createElement("span");
   placeSpan.className = "truncate text-label-sm text-ink-soft";
-  placeSpan.textContent = vm.place;
-  whenPlace.appendChild(placeSpan);
+  placeSpan.textContent = `${vm.modality.label} · ${vm.place}`;
+  placeRow.appendChild(placeSpan);
+
+  whenPlace.appendChild(placeRow);
 
   footerRow.appendChild(whenPlace);
 
@@ -180,6 +192,7 @@ export function renderCard(event: EnrichedEvent, today: Date, nearMe: Coords | n
   card.dataset.region = event.region;
   card.dataset.type = event.type;
   card.dataset.paid = String(event.paid);
+  card.dataset.modality = event.modality;
   card.dataset.community = event.community ?? "";
 
   return card;

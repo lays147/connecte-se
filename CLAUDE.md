@@ -8,4 +8,5 @@
 - this project use mise as the package manager, run the node commands using it
 - use playwright to test the rendering of the website
 - dont use chromium-cli for rentering testing
+- always write tests to validate the new features or to avoid regression
 

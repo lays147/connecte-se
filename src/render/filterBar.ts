@@ -151,6 +151,9 @@ export function renderFilterBar(
   addonsRow.appendChild(
     buildSelect("Pago?", options.paid, state.paid, (value) => onChange({ ...state, paid: value })),
   );
+  addonsRow.appendChild(
+    buildSelect("Modalidade", options.modality, state.modality, (value) => onChange({ ...state, modality: value })),
+  );
 
   addonsRow.appendChild(buildNearMeToggle(state, onChange));
 

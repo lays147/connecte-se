@@ -23,12 +23,20 @@ test("featured carousel renders with a modality badge and navigation controls", 
   expect(positionBefore).toContain("1 /");
 });
 
-test("filter bar has exactly the region, type, and paid selects", async ({ page }) => {
+test("filter bar has the region, type, paid, and modality selects", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("label", { hasText: "Região" }).locator("select")).toBeVisible();
   await expect(page.locator("label", { hasText: "Tipo" }).locator("select")).toBeVisible();
   await expect(page.locator("label", { hasText: "Pago?" }).locator("select")).toBeVisible();
-  await expect(page.locator("label", { hasText: "Modalidade" })).toHaveCount(0);
+  await expect(page.locator("label", { hasText: "Modalidade" }).locator("select")).toBeVisible();
+});
+
+test("modality filter removes non-matching cards from the DOM", async ({ page }) => {
+  await page.goto("/");
+  await page.locator("label", { hasText: "Modalidade" }).locator("select").selectOption("Online");
+
+  const nonOnlineCards = page.locator("article:not([data-modality='Online'])");
+  await expect(nonOnlineCards).toHaveCount(0);
 });
 
 test("current month renders first with a card for every event in it", async ({ page }) => {

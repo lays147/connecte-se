@@ -37,12 +37,14 @@ const regionParam = params.get("regiao");
 const cityParam = params.get("cidade");
 const typeParam = params.get("tipo");
 const paidParam = params.get("pago");
+const modalityParam = params.get("modalidade");
 const queryParam = params.get("busca");
 state.filters = {
   region: regionParam && options.region.includes(regionParam) ? regionParam : defaults.region,
   city: cityParam && options.city.includes(cityParam) ? cityParam : defaults.city,
   type: typeParam && options.type.includes(typeParam) ? typeParam : defaults.type,
   paid: paidParam && options.paid.includes(paidParam) ? paidParam : defaults.paid,
+  modality: modalityParam && options.modality.includes(modalityParam) ? modalityParam : defaults.modality,
   query: queryParam ?? defaults.query,
   nearMe: getStoredLocation(),
 };
@@ -53,6 +55,7 @@ function syncUrl(): void {
     cidade: state.filters.city === defaults.city ? null : state.filters.city,
     tipo: state.filters.type === defaults.type ? null : state.filters.type,
     pago: state.filters.paid === defaults.paid ? null : state.filters.paid,
+    modalidade: state.filters.modality === defaults.modality ? null : state.filters.modality,
     busca: state.filters.query === defaults.query ? null : state.filters.query,
   });
 }

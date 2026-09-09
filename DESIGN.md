@@ -27,6 +27,7 @@ colors:
   price-free-text: "oklch(0.44 0.1 160)"
   modality-online-bg: "oklch(0.85 0.15 155)"
   modality-presencial-bg: "oklch(0.86 0.13 85)"
+  modality-hibrido-bg: "oklch(0.85 0.13 270)"
   page: "#f2f0f7"
   map-empty: "#faf9fd"
   map-scale-start: "#ddd2fa"
@@ -117,7 +118,7 @@ Each is used exactly the same way: a text/dot color plus a matching pale backgro
 ### Semantic status colors
 - **Paid** (`price-paid-bg`/`price-paid-text`, warm amber-oklch): the "Pago" pill.
 - **Free** (`price-free-bg`/`price-free-text`, green-oklch): the "Gratuito" pill.
-- **Online / Presencial modality** (`modality-online-bg` green, `modality-presencial-bg` amber): map legend and filters.
+- **Online / Presencial / Híbrido modality** (`modality-online-bg` green, `modality-presencial-bg` amber, `modality-hibrido-bg` periwinkle): map legend, filters, and the modality indicator on event cards and the event modal.
 
 ### Named Rules
 **The One Signal Rule.** Purple is the only color allowed to mean "act on this" (primary buttons, active nav, active toggle). The accent family (blue/teal/coral) may only classify, never call to action.

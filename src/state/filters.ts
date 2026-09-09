@@ -9,6 +9,7 @@ export interface FilterState {
   city: string;
   type: string;
   paid: string;
+  modality: string;
   query: string;
   nearMe: Coords | null;
 }
@@ -16,7 +17,7 @@ export interface FilterState {
 const ALL = "Todos";
 
 export function defaultFilterState(): FilterState {
-  return { region: ALL, city: ALL, type: ALL, paid: ALL, query: "", nearMe: null };
+  return { region: ALL, city: ALL, type: ALL, paid: ALL, modality: ALL, query: "", nearMe: null };
 }
 
 export function distanceKm(event: EnrichedEvent, from: Coords): number | null {
@@ -38,6 +39,7 @@ export function matchesFilters(event: EnrichedEvent, state: FilterState): boolea
   if (state.type !== ALL && event.type !== state.type) return false;
   if (state.paid === "Pago" && !event.paid) return false;
   if (state.paid === "Gratuito" && event.paid) return false;
+  if (state.modality !== ALL && event.modality !== state.modality) return false;
   if (state.nearMe) {
     const km = distanceKm(event, state.nearMe);
     if (km === null || km > NEAR_ME_RADIUS_KM) return false;
@@ -60,6 +62,7 @@ export interface FilterOptions {
   city: string[];
   type: string[];
   paid: string[];
+  modality: string[];
 }
 
 export function filterOptions(allEvents: EnrichedEvent[]): FilterOptions {
@@ -68,5 +71,6 @@ export function filterOptions(allEvents: EnrichedEvent[]): FilterOptions {
     city: [ALL, ...uniqueSorted(allEvents.map((e) => e.city).filter((c): c is string => Boolean(c)))],
     type: [ALL, ...uniqueSorted(allEvents.map((e) => e.type))],
     paid: [ALL, "Gratuito", "Pago"],
+    modality: [ALL, ...uniqueSorted(allEvents.map((e) => e.modality).filter(Boolean))],
   };
 }

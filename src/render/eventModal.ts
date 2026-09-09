@@ -143,11 +143,20 @@ export function openEventModal(event: EnrichedEvent, today: Date): void {
   whenSpan.className = "font-mono-label text-xs font-semibold text-ink";
   whenSpan.textContent = vm.when;
 
+  const placeRow = document.createElement("div");
+  placeRow.className = "flex min-w-0 items-center gap-1.5";
+
+  const modalityDot = document.createElement("span");
+  modalityDot.className = `size-1.5 shrink-0 rounded-full ${vm.modality.bg}`;
+  modalityDot.setAttribute("aria-hidden", "true");
+  placeRow.appendChild(modalityDot);
+
   const placeSpan = document.createElement("span");
   placeSpan.className = "text-label-sm text-ink-soft";
-  placeSpan.textContent = vm.place;
+  placeSpan.textContent = `${vm.modality.label} · ${vm.place}`;
+  placeRow.appendChild(placeSpan);
 
-  metaRow.append(whenSpan, placeSpan);
+  metaRow.append(whenSpan, placeRow);
 
   scroll.append(topRow, title, communityRow, description, metaRow);
   dialog.appendChild(scroll);
