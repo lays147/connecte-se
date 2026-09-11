@@ -3646,6 +3646,20 @@
       "url": "https://gdg.community.dev/events/details/google-gdg-campo-mourao-presents-the-developers-life-weekend-edicao-campo-mourao/"
     },
     {
+      "id": "2026-11-open-ai-dev-exchange",
+      "title": "Open AI Dev Exchange",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "06/11/2026",
+      "time": "14:00",
+      "description": "O OpenAI DevDay Exchange reúne desenvolvedores e fundadores com perfil técnico do mundo todo para experiências práticas e conversas sobre como equipes de referência estão moldando a próxima geração de produtos de IA. Cada evento ganha a identidade da cidade que o recebe, criando um espaço colaborativo para os participantes trocarem ideias, compartilharem o que estão desenvolvendo, aprenderem uns com os outros e se conectarem diretamente com as equipes da OpenAI.",
+      "paid": false,
+      "url": "https://events.openai.com/devdayexchange2026"
+    },
+    {
       "id": "2026-11-platformcon-live-day-sao-paulo",
       "title": "PlatformCon Live Day - São Paulo",
       "city": "São Paulo",
