@@ -2665,6 +2665,20 @@
       "state": "RJ"
     },
     {
+      "id": "2026-09-semana-caldeira",
+      "title": "Semana Caldeira",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "21/09/2026",
+      "time": "09:00",
+      "description": "Uma celebração da Comunidade Caldeira. A Semana Caldeira nasceu para comemorar o nosso primeiro ano de operação. Hoje, em sua 5ª edição, se tornou uma das nossas tradições. Um encontro gratuito feito da Comunidade Caldeira para a Comunidade Caldeira. Nosso momento anual de conectar quem faz, acelerar quem sonha e transformar realidades juntos.",
+      "paid": true,
+      "url": "https://semanacaldeira.com.br/"
+    },
+    {
       "id": "2026-09-linuxtips-local-salvador",
       "title": "LINUXtips.local Salvador",
       "region": "Nordeste",
