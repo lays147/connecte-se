@@ -2347,6 +2347,20 @@
       "url": "https://descubra.pm3.com.br/ai-fest-2026/"
     },
     {
+      "id": "2026-09-datadog-summit-sao-paulo-2026",
+      "title": "Datadog Summit São Paulo 2026",
+      "city": "São Paulo",
+      "state": null,
+      "region": "Sudeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "15/09/2026",
+      "time": null,
+      "description": "Evento gratuito da comunidade Datadog em São Paulo, com um dia de aprendizado prático, demonstrações e networking.",
+      "paid": false,
+      "url": "https://www.datadoghq.com/events-webinars/?language=pt"
+    },
+    {
       "id": "2026-09-ai-market-access-brazil",
       "title": "AI & Market Access Brazil",
       "city": "São Paulo",
@@ -2748,6 +2762,20 @@
       "url": "https://www.meetup.com/aidev-saopaulo/events/315935947/"
     },
     {
+      "id": "2026-09-salvador-meetup-codecon-3",
+      "title": "Salvador - Meetup Codecon - #3",
+      "city": "Salvador",
+      "state": null,
+      "region": "Nordeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "22/09/2026",
+      "time": "19:00",
+      "description": "Encontro presencial da comunidade Codecon em Salvador, reunindo desenvolvedores para trocar experiências e conhecimento no Espaço SIC.",
+      "paid": false,
+      "url": "https://eventos.codecon.dev/eventos/salvador-meetup-codecon-3"
+    },
+    {
       "id": "2026-09-tdc-sao-paulo-2026",
       "title": "TDC São Paulo 2026",
       "region": "Sudeste",
@@ -2829,6 +2857,20 @@
       "description": "A sexta edição do HealthTech Summit Rio 2026 consolida-se como a bússola de inovação estratégica para todos que buscam inovar no setor de saúde através da tecnologia.\n\nCom uma Curadoria Temática conectada a Waterloo: um dos principais hubs de inovação em saúde e tecnologia médica das Américas com mais de 100 empresas do setor. O destaque é a colaboração entre centros de pesquisa, incubadoras líderes e mercado industrial.\n\nDescubra o ponto de convergência ideal onde os algoritmos aceleram diagnósticos e transformam a sustentabilidade das operações corporativas de saúde.",
       "paid": true,
       "url": "https://assespro.rio/healthtech2026"
+    },
+    {
+      "id": "2026-09-joinville-meetup-codecon-27",
+      "title": "Joinville - Meetup Codecon - #27",
+      "city": "Joinville",
+      "state": null,
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "23/09/2026",
+      "time": "19:00",
+      "description": "Meetup presencial da Codecon em Joinville no XYZ Coworking, com bate-papos e networking entre desenvolvedores da região.",
+      "paid": false,
+      "url": "https://eventos.codecon.dev/eventos/joinville-meetup-codecon-27"
     },
     {
       "id": "2026-09-linuxtips-local-porto-alegre",
@@ -3272,6 +3314,20 @@
       "url": "https://lu.ma/7bkembbl"
     },
     {
+      "id": "2026-10-datadog-secure-em-sao-paulo",
+      "title": "Datadog Secure em São Paulo",
+      "city": "São Paulo",
+      "state": null,
+      "region": "Sudeste",
+      "type": "Evento técnico",
+      "modality": "Presencial",
+      "date": "14/10/2026",
+      "time": null,
+      "description": "Primeira edição do Datadog Secure em São Paulo, reunindo especialistas para discutir segurança e observabilidade.",
+      "paid": false,
+      "url": "https://www.datadoghq.com/events-webinars/?language=pt"
+    },
+    {
       "id": "2026-10-ai-conf-roll",
       "title": "AI CONF'ROLL",
       "city": "São Paulo",
@@ -3465,6 +3521,20 @@
       "url": "https://luma.com/devin-sp-3"
     },
     {
+      "id": "2026-10-datadog-live-em-sao-paulo-em-outubro",
+      "title": "Datadog Live em São Paulo em Outubro",
+      "city": "São Paulo",
+      "state": null,
+      "region": "Sudeste",
+      "type": "Evento técnico",
+      "modality": "Presencial",
+      "date": "29/10/2026",
+      "time": null,
+      "description": "Evento global de segurança e observabilidade da Datadog em São Paulo, com cases de clientes, demonstrações ao vivo e presença de líderes de mercado.",
+      "paid": false,
+      "url": "https://www.datadoghq.com/events-webinars/?language=pt"
+    },
+    {
       "id": "2026-10-link-festival-digital-de-acessibilidade-9-edicao",
       "title": "Link: festival digital de acessibilidade | 9ª edição",
       "city": "São Paulo",
@@ -3572,6 +3642,34 @@
       "description": "O DevFestPoa26 não é só mais uma conferência de tecnologia. É o encontro anual das comunidades GDG Porto Alegre e GDG Caxias do Sul — feito por quem programa, projeta, lidera e aprende no dia a dia, para quem quer fazer parte disso.",
       "paid": true,
       "url": "https://www.devfestportoalegre.com.br/"
+    },
+    {
+      "id": "2026-10-aws-community-day-brasil-edicao-norte",
+      "title": "AWS Community Day Brasil - Edição Norte",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "31/10/2026",
+      "time": null,
+      "description": "Evento da comunidade AWS que reúne desenvolvedores e entusiastas de nuvem da Amazônia e de todo o Brasil em Belém/PA para um dia de aprendizado e networking.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/aws-community-day-brasil---edicao-norte-377"
+    },
+    {
+      "id": "2026-10-devfest-porto-alegre-2026",
+      "title": "DevFest Porto Alegre 2026",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "31/10/2026",
+      "time": null,
+      "description": "Edição 2026 do DevFest Porto Alegre, evento que reúne tecnologia, comunidade e inovação promovido pelo GDG Porto Alegre. Contará com palestras, workshops e networking para profissionais e entusiastas de tecnologia.",
+      "paid": true,
+      "url": "https://gdg.community.dev/events/details/google-gdg-porto-alegre-presents-devfest-porto-alegre-2026/cohost-gdg-porto-alegre"
     }
   ],
   "Novembro": [
