@@ -2347,6 +2347,20 @@
       "url": "https://descubra.pm3.com.br/ai-fest-2026/"
     },
     {
+      "id": "2026-09-aws-ug-go-048-agentcore-harness",
+      "title": "[AWS UG GO] #048 - AgentCore + Harness",
+      "city": "Goiânia",
+      "state": "GO",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "15/09/2026",
+      "time": "19:00",
+      "description": "Agentes de IA são fáceis de demonstrar. Mas e colocar tudo isso em produção de verdade?\nAWS User Group Goiânia e Codex Community se unem para falar sobre AgentCore + Harness.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-go/events/316463782/"
+    },
+    {
       "id": "2026-09-ai-market-access-brazil",
       "title": "AI & Market Access Brazil",
       "city": "São Paulo",
