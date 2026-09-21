@@ -2984,6 +2984,20 @@
       "url": "https://www.meetup.com/sao-paulo-java-meetup/events/316227210"
     },
     {
+      "id": "2026-09-curitiba-meetup-codecon-22",
+      "title": "Curitiba - Meetup Codecon - #22",
+      "city": "Curitiba",
+      "state": null,
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "24/09/2026",
+      "time": "19:00",
+      "description": "Encontro presencial da comunidade Codecon em Curitiba, no Pinhão Hub, com palestras e networking para desenvolvedores.",
+      "paid": false,
+      "url": "https://eventos.codecon.dev/eventos/curitiba-meetup-codecon-22"
+    },
+    {
       "id": "2026-09-linuxtips-local-belo-horizonte",
       "title": "LINUXtips.local Belo Horizonte",
       "region": "Sudeste",
@@ -3670,6 +3684,20 @@
       "description": "Edição 2026 do DevFest Porto Alegre, evento que reúne tecnologia, comunidade e inovação promovido pelo GDG Porto Alegre. Contará com palestras, workshops e networking para profissionais e entusiastas de tecnologia.",
       "paid": true,
       "url": "https://gdg.community.dev/events/details/google-gdg-porto-alegre-presents-devfest-porto-alegre-2026/cohost-gdg-porto-alegre"
+    },
+    {
+      "id": "2026-10-aws-community-day-brasil-edicao-norte",
+      "title": "AWS Community Day Brasil - Edição Norte",
+      "city": "Belém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Community Day",
+      "modality": "Presencial",
+      "date": "31/10/2026",
+      "time": null,
+      "description": "Belém será a sede da edição Norte do AWS Community Day, reunindo a comunidade AWS da Amazônia e de todo o Brasil para um dia de aprendizado e networking.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/aws-community-day-brasil---edicao-norte-377"
     }
   ],
   "Novembro": [
@@ -4116,6 +4144,20 @@
       "url": "https://gdg.community.dev/gdg-recife/",
       "city": "Recife",
       "state": "PE"
+    },
+    {
+      "id": "2026-12-devfest-brasilia-2026",
+      "title": "DevFest Brasília 2026",
+      "city": "Brasília",
+      "state": "DF",
+      "region": "Centro-Oeste",
+      "type": "Conferência",
+      "modality": "Não informado",
+      "date": "05/12/2026",
+      "time": null,
+      "description": "O DevFest Brasília 2026 é um dos principais eventos de tecnologia do Brasil, com conteúdo de alta qualidade e uma nova trilha prática de workshops sobre diversos temas. O local ainda será confirmado e os ingressos estarão disponíveis em breve.",
+      "paid": true,
+      "url": "https://gdg.community.dev/gdg-brasilia/"
     },
     {
       "id": "2026-12-tdcx-porto-alegre-2026",
