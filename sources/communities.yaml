@@ -27,6 +27,10 @@ sources:
     url: https://www.meetup.com/aws-user-group-alto-tiete
     type: community
     frequency: occasionally
+  - name: AWS User Group Anápolis
+    url: https://www.meetup.com/pt-br/aws-user-group-anapolis
+    type: community
+    frequency: occasionally
   - name: AWS User Group Atibaia
     url: https://www.meetup.com/aws-user-group-atibaia-sp
     type: community
@@ -35,8 +39,16 @@ sources:
     url: https://www.meetup.com/aws-user-group-baixada-santista
     type: community
     frequency: occasionally
+  - name: AWS User Group Belém
+    url: https://www.meetup.com/awsbelem
+    type: community
+    frequency: occasionally
   - name: AWS User Group Belo Horizonte
     url: https://www.meetup.com/awsusergroupbh
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Blumenau
+    url: https://www.meetup.com/aws-usergroup-blumenau
     type: community
     frequency: occasionally
   - name: AWS User Group Brasília
@@ -47,6 +59,10 @@ sources:
     url: https://www.meetup.com/awscampinas
     type: community
     frequency: occasionally
+  - name: AWS User Group Canoas
+    url: https://www.meetup.com/aws-user-group-canoas
+    type: community
+    frequency: occasionally
   - name: AWS User Group Castanhal
     url: https://www.meetup.com/aws-user-group-castanhal
     type: community
@@ -55,12 +71,28 @@ sources:
     url: https://www.meetup.com/aws-user-group-circuito-das-aguas-paulista
     type: community
     frequency: occasionally
+  - name: AWS User Group Coração do Rio Grande
+    url: https://www.meetup.com/aws-user-group-coracao-do-rio-grande
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Criciúma
+    url: https://www.meetup.com/criciumaops
+    type: community
+    frequency: occasionally
   - name: AWS User Group Curitiba
     url: https://www.meetup.com/aws-curitiba-user-group
     type: community
     frequency: occasionally
+  - name: AWS User Group Florianópolis
+    url: https://www.meetup.com/aws-user-group-floripa
+    type: community
+    frequency: occasionally
   - name: AWS User Group Fortaleza
     url: https://www.meetup.com/aws-user-group-fortaleza
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Foz de Iguaçu
+    url: https://www.meetup.com/aws-usergroup-oeste-e-fronteiras
     type: community
     frequency: occasionally
   - name: AWS User Group Goiânia
@@ -79,12 +111,44 @@ sources:
     url: https://www.meetup.com/aws-user-group-joinville
     type: community
     frequency: occasionally
+  - name: AWS User Group Londrina
+    url: https://www.meetup.com/aws-user-group-londrina
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Manaus
+    url: https://www.meetup.com/aws-user-group-manaus
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Maringá
+    url: https://www.meetup.com/meetup-group-hafctguq
+    type: community
+    frequency: occasionally
   - name: AWS User Group Montes Claros
     url: https://www.meetup.com/aws-user-group-montes-claros
     type: community
     frequency: occasionally
   - name: AWS User Group Parauapebas
     url: https://www.meetup.com/aws-user-group-parauapebas
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Passo Fundo
+    url: https://www.meetup.com/aws-user-group-passo-fundo
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Piauí
+    url: https://www.meetup.com/aws-user-group-piaui
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Piracicaba
+    url: https://www.meetup.com/aws-ug-regiao-metropolitana-de-piracicaba
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Porto Alegre
+    url: https://www.meetup.com/aws-porto-alegre
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Recife
+    url: https://www.meetup.com/aws-user-group-recife
     type: community
     frequency: occasionally
   - name: AWS User Group Rio
@@ -115,8 +179,16 @@ sources:
     url: https://www.meetup.com/aws-user-group-triangulo-mineiro
     type: community
     frequency: occasionally
+  - name: AWS User Group Tubarão
+    url: https://www.meetup.com/tubaraoops
+    type: community
+    frequency: occasionally
   - name: AWS User Group Tucuruí
     url: https://www.meetup.com/pt-br/aws-user-group-tucurui
+    type: community
+    frequency: occasionally
+  - name: AWS User Group Tupaciguara/Uberlândia
+    url: https://www.meetup.com/aws-user-group-tupaciguara
     type: community
     frequency: occasionally
   - name: AWS User Group Vale do Paraíba
