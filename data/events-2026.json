@@ -3189,6 +3189,20 @@
       "description": "17ª edição da TecnoUpdate, conferência e evento de networking para software houses, reunindo líderes, founders e CTOs para conteúdo estratégico sobre reforma tributária, inovação e inteligência artificial.",
       "paid": true,
       "url": "https://www.tecnoupdate.com.br"
+    },
+    {
+      "id": "2026-09-governanca-de-dados-na-era-de-ia",
+      "title": "Governança de Dados na Era de IA",
+      "city": null,
+      "state": null,
+      "region": "Nacional",
+      "type": "Meetup Online",
+      "modality": "Online",
+      "date": "30/09/2026",
+      "time": "15:00",
+      "description": "A inteligência artificial está transformando negócios em uma velocidade sem precedentes, mas nenhuma estratégia de IA escala sem dados confiáveis, segurança e uma Cloud preparada para acompanhar esse crescimento.\n\n\nNeste encontro online, vamos mostrar como AWS, dados e IA se conectam na prática, passando por arquitetura, governança, segurança, oportunidades de otimização e caminhos para viabilizar projetos. Você também vai conhecer um case real, entender o que mudou na prática e quais resultados foram alcançados.",
+      "paid": false,
+      "url": "https://convite.eventosdecloud.com.br/governanca-de-dados-na-era-da-ia"
     }
   ],
   "Outubro": [
