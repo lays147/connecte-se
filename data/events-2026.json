@@ -3163,6 +3163,20 @@
       "url": "https://lu.ma/kicyn9ju"
     },
     {
+      "id": "2026-09-goiania-meetup-codecon-3",
+      "title": "Goiânia - Meetup Codecon - #3",
+      "city": "Goiânia",
+      "state": null,
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "28/09/2026",
+      "time": "19:00",
+      "description": "Encontro presencial da comunidade Codecon em Goiânia, reunindo desenvolvedores para networking e conteúdo tech no Hub Goiás.",
+      "paid": false,
+      "url": "https://eventos.codecon.dev/eventos/goiania-meetup-codecon-3"
+    },
+    {
       "id": "2026-09-lideranca-transformadora",
       "title": "Liderança Transformadora",
       "city": "São Paulo",
@@ -3189,6 +3203,34 @@
       "description": "17ª edição da TecnoUpdate, conferência e evento de networking para software houses, reunindo líderes, founders e CTOs para conteúdo estratégico sobre reforma tributária, inovação e inteligência artificial.",
       "paid": true,
       "url": "https://www.tecnoupdate.com.br"
+    },
+    {
+      "id": "2026-09-floripa-meetup-codecon-20",
+      "title": "Floripa - Meetup Codecon - #20",
+      "city": "Florianópolis",
+      "state": null,
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "29/09/2026",
+      "time": "19:00",
+      "description": "Meetup presencial da Codecon em Florianópolis, com palestras e networking para a comunidade dev local, na sede da HostGator.",
+      "paid": false,
+      "url": "https://eventos.codecon.dev/eventos/floripa-meetup-codecon-20"
+    },
+    {
+      "id": "2026-09-sao-paulo-meetup-codecon-14",
+      "title": "São Paulo - Meetup Codecon - #14",
+      "city": "São Paulo",
+      "state": null,
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "29/09/2026",
+      "time": "19:00",
+      "description": "Encontro presencial da comunidade Codecon em São Paulo, realizado na Oracle, com conteúdo e networking para devs.",
+      "paid": false,
+      "url": "https://eventos.codecon.dev/eventos/sao-paulo-meetup-codecon-14"
     },
     {
       "id": "2026-09-governanca-de-dados-na-era-de-ia",
@@ -3232,6 +3274,34 @@
       "description": "O maior evento de Cibersegurança e Operações de TI do Sul do Brasil está de volta para a sua 4ª edição, ainda maior e mais transformador!",
       "paid": false,
       "url": "https://lu.ma/46uougkl"
+    },
+    {
+      "id": "2026-10-escola-regional-de-informatica-norte-2-edicao-xix",
+      "title": "Escola Regional de Informática Norte 2 - Edição XIX",
+      "city": null,
+      "state": null,
+      "region": "Norte",
+      "type": "Conferência",
+      "modality": "Híbrido",
+      "date": "01/10/2026",
+      "time": null,
+      "description": "A XIX Escola Regional de Informática Norte 2 (ERIN 2026) é um dos principais eventos de Tecnologias da Informação e Comunicação da região Norte do Brasil, com formato híbrido.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/escola-regional-de-informatica-norte-2---edicao-xix-468"
+    },
+    {
+      "id": "2026-10-alem-do-codigo-criatividade-games-e-o-futuro-das-carreiras",
+      "title": "Além do Código: Criatividade, Games e o Futuro das Carreiras",
+      "city": "Brasília",
+      "state": "DF",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "01/10/2026",
+      "time": "19:00",
+      "description": "Meetup do GDG Brasília sobre criatividade, games e o futuro das carreiras em tecnologia, com as palestrantes Wenes Soares e Thaís Chaves. Evento presencial realizado no SENAC DF.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-brasilia/"
     },
     {
       "id": "2026-10-forgehacks-online-2026",
@@ -3494,6 +3564,20 @@
       "url": "https://bracis.sbc.org.br/2026/eniac/"
     },
     {
+      "id": "2026-10-1-hackathon-do-tjpa",
+      "title": "1° Hackathon do TJPA",
+      "city": null,
+      "state": "PA",
+      "region": "Norte",
+      "type": "Hackathon",
+      "modality": "Híbrido",
+      "date": "21/10/2026",
+      "time": null,
+      "description": "Maratona híbrida que reúne universitários, recém-formados, empreendedores e a comunidade de inovação para resolver desafios reais do Poder Judiciário paraense, com premiação de até R$15.000,00.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/1-hackathon-do-tjpa-466"
+    },
+    {
       "id": "2026-10-php-conference-brasil-2026-dias-presenciais",
       "title": "PHP Conference Brasil 2026 - Dias Presenciais",
       "region": "Sul",
@@ -3506,6 +3590,20 @@
       "url": "https://phpconference.com.br",
       "city": "Maringá",
       "state": "PR"
+    },
+    {
+      "id": "2026-10-introducao-a-cloud-computing-inauguracao-aws-sbg-ifpa",
+      "title": "Introdução à Cloud Computing - Inauguração AWS SBG IFPA",
+      "city": null,
+      "state": null,
+      "region": "Norte",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "23/10/2026",
+      "time": "17:00",
+      "description": "Evento presencial de inauguração do AWS Student Builder Group do IFPA, com palestra introdutória sobre cloud computing, brindes e networking.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/comunidade/introducao-a-cloud-computing-463"
     },
     {
       "id": "2026-10-devopsdays-florianopolis",
