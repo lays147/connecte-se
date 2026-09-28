@@ -3810,6 +3810,20 @@
       "description": "Belém será a sede da edição Norte do AWS Community Day, reunindo a comunidade AWS da Amazônia e de todo o Brasil para um dia de aprendizado e networking.",
       "paid": false,
       "url": "https://comunidade.devsnorte.com/eventos/aws-community-day-brasil---edicao-norte-377"
+    },
+    {
+      "id": "2026-10-dados-in-rio-dia-das-bruxas",
+      "title": "Dados in Rio: Dia das Bruxas",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "31/10/2026",
+      "time": "09:00",
+      "description": "Dados In Rio: Dia das Bruxas é uma edição especial do Dados In Rio, realizada no dia 31 de outubro de 2026, em celebração ao Halloween.\n\nO evento reúne a comunidade para explorar o lado mais assustador — e divertido — do universo de Dados, Inteligência Artificial, Machine Learning, Data Science e Engenharia de Dados.\n\nA proposta é trazer histórias reais, desafios técnicos, experiências profissionais, falhas inesperadas e conceitos que mostram que, no mundo da tecnologia, às vezes a realidade pode ser mais assustadora que a ficção.",
+      "paid": false,
+      "url": "https://www.komuniverse.com/pt/techinrio/dados-in-rio-dia-das-bruxas"
     }
   ],
   "Novembro": [
