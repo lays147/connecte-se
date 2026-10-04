@@ -4217,6 +4217,20 @@
       "url": "https://www.tickettailor.com/events/gambiconf/2226768"
     },
     {
+      "id": "2026-11-pythonserra",
+      "title": "PythonSerra",
+      "city": "Nova Friburgo",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "28/11/2026",
+      "time": "10:00",
+      "description": "A PythOnRio sobe a Serra pela primeira vez para abordar assuntos relevantes para quem trabalha, estuda e vive de tecnologia!",
+      "paid": false,
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSe99rLGSQuTelLUBw_XOH7tytRKEBv1rSZ6goHL5BZt0UpAww/viewform"
+    },
+    {
       "id": "2026-11-xix-brazilian-symposium-on-bioinformatics-bsb-2026",
       "title": "XIX Brazilian Symposium on Bioinformatics (BSB 2026)",
       "city": "Ribeirão Preto",
