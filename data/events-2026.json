@@ -3717,6 +3717,20 @@
       "url": "https://www.datadoghq.com/events-webinars/?language=pt"
     },
     {
+      "id": "2026-10-ia-observabilidade-e-datadog",
+      "title": "IA, Observabilidade e Datadog",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Evento",
+      "modality": "Presencial",
+      "date": "29/10/2026",
+      "time": "18:00",
+      "description": "Te convidamos para uma experiência exclusiva na Fábrica de Dengo, dia 29 de outubro, a partir das 18h. Iremos falar sobre os recentes investimentos da Datadog na América Latina e no Brasil, com a presença do nosso VP Américas Kenny Smith. Junte-se a nós nesse jantar com degustação de vinhos.",
+      "paid": false,
+      "url": "https://events.datadoghq.com/pt/events/1029-experienciadengo"
+    },
+    {
       "id": "2026-10-link-festival-digital-de-acessibilidade-9-edicao",
       "title": "Link: festival digital de acessibilidade | 9ª edição",
       "city": "São Paulo",
