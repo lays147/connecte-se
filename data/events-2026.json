@@ -3359,6 +3359,20 @@
       "url": "https://lu.ma/uurzve2l"
     },
     {
+      "id": "2026-10-agentes-data-go-aquece-devfest-porto-alegre-2026",
+      "title": "agentes • data • go [AQUECE DevFest Porto Alegre 2026]",
+      "city": null,
+      "state": null,
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "07/10/2026",
+      "time": null,
+      "description": "Meetup online organizado pelo GDG Porto Alegre e GDG Caxias do Sul sobre IA, dados e programação em Go, parte do aquecimento para o DevFest Porto Alegre 2026.",
+      "paid": false,
+      "url": "https://gdg.community.dev/events/details/google-gdg-porto-alegre-presents-agentes-data-go-aquece-devfest-porto-alegre-2026/cohost-gdg-porto-alegre"
+    },
+    {
       "id": "2026-10-oktobercloud-2026",
       "title": "Oktobercloud 2026",
       "region": "Sul",
@@ -3440,6 +3454,20 @@
       "url": "https://www.datadoghq.com/events-webinars/?language=pt"
     },
     {
+      "id": "2026-10-hacking-aquece-devfest-porto-alegre-2026",
+      "title": "hacking [AQUECE DevFest Porto Alegre 2026]",
+      "city": null,
+      "state": null,
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Não informado",
+      "date": "14/10/2026",
+      "time": null,
+      "description": "Evento sobre cibersegurança, abordando os principais ataques em aplicações web e boas práticas de mitigação, com o especialista Wesley, parte do aquecimento para o DevFest Porto Alegre 2026.",
+      "paid": false,
+      "url": "https://gdg.community.dev/events/details/google-gdg-caxias-do-sul-presents-hacking-aquece-devfest-porto-alegre-2026/cohost-gdg-porto-alegre"
+    },
+    {
       "id": "2026-10-ai-conf-roll",
       "title": "AI CONF'ROLL",
       "city": "São Paulo",
@@ -3493,6 +3521,20 @@
       "description": "☁️ Code & Pajamas",
       "paid": true,
       "url": "https://gdg.community.dev/events/details/google-gdg-cloud-sao-paulo-presents-code-amp-pajamas/"
+    },
+    {
+      "id": "2026-10-rio-de-janeiro-meetup-codecon-3",
+      "title": "Rio de Janeiro - Meetup Codecon - #3",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "17/10/2026",
+      "time": "09:00",
+      "description": "Meetup da comunidade Codecon no Rio de Janeiro, reunindo desenvolvedores para troca de experiências e networking na FIAP Rio de Janeiro.",
+      "paid": false,
+      "url": "https://eventos.codecon.dev/eventos/rio-de-janeiro-meetup-codecon-3"
     },
     {
       "id": "2026-10-php-conference-brasil-2026",
@@ -4089,6 +4131,20 @@
       "description": "DevOpsDays volta a Belém para espalhar a cultura DevOps, fortalecer conexões e trocar experiências entre profissionais de tecnologia.",
       "paid": true,
       "url": "https://devopsdays.org/events/2026-belem"
+    },
+    {
+      "id": "2026-11-devfest-sul-2026",
+      "title": "DevFest Sul 2026",
+      "city": "Florianópolis",
+      "state": null,
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Não informado",
+      "date": "14/11/2026",
+      "time": null,
+      "description": "O DevFest Sul 2026 reúne desenvolvedores, designers e cientistas de dados para explorar inteligência artificial, Google Cloud e outras tecnologias, com trilhas técnicas e networking.",
+      "paid": false,
+      "url": "https://gdg.community.dev/gdg-floripa/"
     },
     {
       "id": "2026-11-sao-paulo-2026-venture-capital-world-summit",
