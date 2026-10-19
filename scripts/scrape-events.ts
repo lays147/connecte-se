@@ -3,12 +3,21 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { loadSources, type EventSource, type Frequency } from "../src/data/sources.ts";
 import type { EventsByMonth, TechEvent } from "../src/types.ts";
-import { extractEventsFromPage, type ExtractedEvent } from "./lib/extractEvents.ts";
+import {
+  addUsage,
+  emptyUsage,
+  extractEventsFromPage,
+  type TokenUsage,
+} from "./lib/extractEvents.ts";
 import { buildEventId, monthNameFromDate, sortEventsByMonth } from "./lib/events.ts";
+import { filterLinks, hashPage, hasDateLikeText } from "./lib/pageFilters.ts";
+import { readScrapeCache, writeScrapeCache } from "./lib/scrapeCache.ts";
 
 function eventsPathForYear(year: number): string {
   return fileURLToPath(new URL(`../data/events-${year}.json`, import.meta.url));
 }
+
+const SCRAPE_CACHE_PATH = fileURLToPath(new URL("../data/scrape-cache.json", import.meta.url));
 
 const PAGE_TEXT_LIMIT = 15000;
 const NAV_TIMEOUT_MS = 30000;
@@ -66,11 +75,12 @@ function writeEvents(path: string, events: EventsByMonth): void {
 
 interface SourceResult {
   source: string;
-  status: "ok" | "no-events" | "failed" | "skipped-yearly";
+  status: "ok" | "no-events" | "failed" | "skipped-yearly" | "unchanged" | "no-dates";
   found: number;
   added: number;
   skippedDuplicate: number;
   backfilled: number;
+  usage: TokenUsage;
   error?: string;
 }
 
@@ -114,6 +124,7 @@ async function main(): Promise<void> {
     }
   }
 
+  const scrapeCache = readScrapeCache(SCRAPE_CACHE_PATH);
   const results: SourceResult[] = [];
 
   const browser = await chromium.launch({ headless: true });
@@ -127,6 +138,7 @@ async function main(): Promise<void> {
         added: 0,
         skippedDuplicate: 0,
         backfilled: 0,
+        usage: emptyUsage(),
       };
 
       if (
@@ -153,18 +165,34 @@ async function main(): Promise<void> {
           0,
           PAGE_TEXT_LIMIT,
         );
-        const pageLinks = await page.evaluate(() =>
+        const rawLinks = await page.evaluate(() =>
           Array.from(document.querySelectorAll("a"))
             .map((a) => ({ href: a.href, text: a.textContent?.trim() ?? "" }))
             .filter((l) => l.text && l.href.startsWith("http")),
         );
+        const pageLinks = filterLinks(rawLinks, source.url);
 
-        const candidates: ExtractedEvent[] = await extractEventsFromPage(
+        const pageHash = hashPage(pageText, pageLinks, options.year);
+        const cached = scrapeCache[source.url];
+        if (!options.force && !options.backfillTime && cached?.hash === pageHash) {
+          result.status = "unchanged";
+        } else if (!hasDateLikeText(pageText)) {
+          result.status = "no-dates";
+        }
+        if (result.status === "unchanged" || result.status === "no-dates") {
+          console.log(`${progress} ${source.name} - ${result.status}, skipping extraction`);
+          results.push(result);
+          continue;
+        }
+
+        const { events: candidates, usage } = await extractEventsFromPage(
           pageText,
           pageLinks,
           source,
           options.year,
         );
+        result.usage = usage;
+        scrapeCache[source.url] = { hash: pageHash, checkedAt: new Date().toISOString() };
         result.found = candidates.length;
         result.status = candidates.length > 0 ? "ok" : "no-events";
 
@@ -201,7 +229,7 @@ async function main(): Promise<void> {
       }
 
       console.log(
-        `${progress} ${source.name} - ${result.status} (found ${result.found}, added ${result.added}, backfilled ${result.backfilled})`,
+        `${progress} ${source.name} - ${result.status} (found ${result.found}, added ${result.added}, backfilled ${result.backfilled}) ${formatUsage(result.usage)}`,
       );
       results.push(result);
     }
@@ -211,6 +239,7 @@ async function main(): Promise<void> {
 
   if (!options.dryRun) {
     writeEvents(eventsPath, events);
+    writeScrapeCache(SCRAPE_CACHE_PATH, scrapeCache);
   }
 
   printSummary(results, options.dryRun);
@@ -220,13 +249,19 @@ async function main(): Promise<void> {
   }
 }
 
+function formatUsage(usage: TokenUsage): string {
+  return `[tokens in ${usage.input}, out ${usage.output}, cache read ${usage.cacheRead}, cache write ${usage.cacheWrite}]`;
+}
+
 function printSummary(results: SourceResult[], dryRun: boolean): void {
   console.log(dryRun ? "\n(dry run - no changes written)\n" : "\nScrape summary:\n");
   for (const r of results) {
     const line =
       r.status === "skipped-yearly"
         ? `  [${r.status.padEnd(14)}] ${r.source} - already covered for this year`
-        : `  [${r.status.padEnd(14)}] ${r.source} - found ${r.found}, added ${r.added}, backfilled ${r.backfilled}, skipped ${r.skippedDuplicate}`;
+        : r.status === "unchanged" || r.status === "no-dates"
+          ? `  [${r.status.padEnd(14)}] ${r.source} - extraction skipped`
+          : `  [${r.status.padEnd(14)}] ${r.source} - found ${r.found}, added ${r.added}, backfilled ${r.backfilled}, skipped ${r.skippedDuplicate}`;
     console.log(r.error ? `${line} (${r.error})` : line);
   }
 
@@ -237,10 +272,14 @@ function printSummary(results: SourceResult[], dryRun: boolean): void {
   const totalAdded = results.reduce((sum, r) => sum + r.added, 0);
   const totalBackfilled = results.reduce((sum, r) => sum + r.backfilled, 0);
   const totalSkipped = results.reduce((sum, r) => sum + r.skippedDuplicate, 0);
+  const unchanged = results.filter((r) => r.status === "unchanged").length;
+  const noDates = results.filter((r) => r.status === "no-dates").length;
+  const totalUsage = results.reduce((sum, r) => addUsage(sum, r.usage), emptyUsage());
 
   console.log(
-    `\n${succeeded} ok, ${noEvents} no-events, ${failed} failed, ${skippedYearly} skipped-yearly | ${totalAdded} events added, ${totalBackfilled} backfilled, ${totalSkipped} duplicates skipped\n`,
+    `\n${succeeded} ok, ${noEvents} no-events, ${failed} failed, ${skippedYearly} skipped-yearly, ${unchanged} unchanged, ${noDates} no-dates | ${totalAdded} events added, ${totalBackfilled} backfilled, ${totalSkipped} duplicates skipped`,
   );
+  console.log(`Claude API usage: ${formatUsage(totalUsage)}\n`);
 }
 
 main().catch((error) => {

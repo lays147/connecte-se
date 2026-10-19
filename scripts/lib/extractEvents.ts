@@ -47,6 +47,40 @@ function getClient(): Anthropic {
   return client;
 }
 
+export interface TokenUsage {
+  input: number;
+  output: number;
+  cacheRead: number;
+  cacheWrite: number;
+}
+
+export interface ExtractionResult {
+  events: ExtractedEvent[];
+  usage: TokenUsage;
+}
+
+export function emptyUsage(): TokenUsage {
+  return { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };
+}
+
+export function addUsage(a: TokenUsage, b: TokenUsage): TokenUsage {
+  return {
+    input: a.input + b.input,
+    output: a.output + b.output,
+    cacheRead: a.cacheRead + b.cacheRead,
+    cacheWrite: a.cacheWrite + b.cacheWrite,
+  };
+}
+
+function toTokenUsage(usage: Anthropic.Usage): TokenUsage {
+  return {
+    input: usage.input_tokens,
+    output: usage.output_tokens,
+    cacheRead: usage.cache_read_input_tokens ?? 0,
+    cacheWrite: usage.cache_creation_input_tokens ?? 0,
+  };
+}
+
 export interface PageLink {
   href: string;
   text: string;
@@ -60,25 +94,10 @@ function formatToday(today: Date): string {
   return `${day}/${month}/${today.getFullYear()}`;
 }
 
-function buildPrompt(
-  pageText: string,
-  pageLinks: PageLink[],
-  source: EventSource,
-  year: number,
-  today: Date,
-): string {
-  const linksBlock = pageLinks
-    .slice(0, MAX_LINKS)
-    .map((l) => `- "${l.text}" -> ${l.href}`)
-    .join("\n");
-
-  return `You are extracting structured tech-event data for a Brazil tech-events aggregator site.
-
-Source context:
-- name: ${source.name}
-- url: ${source.url}
-- type: ${source.type}
-- frequency: ${source.frequency}
+// Identical for every source in a run, so it is sent as a cached system block.
+// Keep anything source-specific out of it, or the cache misses on every call.
+export function buildSystemPrompt(year: number, today: Date): string {
+  return `You are extracting structured tech-event data for a Brazil tech-events aggregator site. Each message gives you one source's context, the links found on its page, and its page text.
 
 Instructions:
 - Only extract events that will actually take place in Brazil during calendar year ${year}. Only include events happening today (${formatToday(today)}) or later — skip every event whose date is already in the past. Never invent or guess a date — if you cannot determine a specific, real ${year} date for an event, omit it. Format "date" as Brazilian "DD/MM/${year}" (e.g. "15/03/${year}"), not ISO.
@@ -93,9 +112,22 @@ Instructions:
 - "time" should be the event's actual stated start time, converted to 24h "HH:mm" in Brazil local time for that event's location. Only set it when the page (or a specific event link's own page content, if visible in the provided text) explicitly states a start time. Never guess or default it from the event type or typical conventions — use null when no explicit time is stated.
 - "description" should be a 1-2 sentence description written in Portuguese.
 - "paid" should reflect actual ticket/pricing information when present in the text; otherwise infer a reasonable default from the event's apparent scale (large multi-day conferences are usually paid, community meetups are usually free).
-- "url" must be a single, clean, well-formed URL identifying that SPECIFIC event/edition, not the generic source page. A "Links found on the page" list is provided below with each link's visible text and its target address — when a Brazil edition corresponds to one of those links (e.g. the link text names that city or that edition), use that link's exact href as "url". Only fall back to the source url given above when no specific per-edition link can be matched. Never concatenate multiple links, paths, or URL fragments into one string.
+- "url" must be a single, clean, well-formed URL identifying that SPECIFIC event/edition, not the generic source page. A "Links found on the page" list is provided with each link's visible text and its target address — when a Brazil edition corresponds to one of those links (e.g. the link text names that city or that edition), use that link's exact href as "url". Only fall back to the source url from the source context when no specific per-edition link can be matched. Never concatenate multiple links, paths, or URL fragments into one string.
 - For meetup.com sources specifically: never use the group's root URL (e.g. "https://www.meetup.com/some-group") as "url". Always find and use that specific event's own page, which includes an "/events/" path segment (e.g. "https://www.meetup.com/some-group/events/123456789/"). If no such per-event link is found for a given date, omit that event rather than falling back to the group URL.
-- Return every distinct dated Brazil event you find (a page may describe multiple: recurring meetup dates, multiple Brazilian chapters of the same series, etc). If there are none, return an empty array.
+- Return every distinct dated Brazil event you find (a page may describe multiple: recurring meetup dates, multiple Brazilian chapters of the same series, etc). If there are none, return an empty array.`;
+}
+
+export function buildUserPrompt(pageText: string, pageLinks: PageLink[], source: EventSource): string {
+  const linksBlock = pageLinks
+    .slice(0, MAX_LINKS)
+    .map((l) => `- "${l.text}" -> ${l.href}`)
+    .join("\n");
+
+  return `Source context:
+- name: ${source.name}
+- url: ${source.url}
+- type: ${source.type}
+- frequency: ${source.frequency}
 
 Links found on the page (visible text -> target URL, may be truncated):
 """
@@ -114,7 +146,7 @@ export async function extractEventsFromPage(
   source: EventSource,
   year: number,
   today: Date = new Date(),
-): Promise<ExtractedEvent[]> {
+): Promise<ExtractionResult> {
   const ExtractedEventsSchema = z.array(buildExtractedEventSchema(year));
 
   const response = await getClient().messages.parse({
@@ -123,7 +155,10 @@ export async function extractEventsFromPage(
     output_config: {
       format: zodOutputFormat(ExtractedEventsSchema),
     },
-    messages: [{ role: "user", content: buildPrompt(pageText, pageLinks, source, year, today) }],
+    system: [
+      { type: "text", text: buildSystemPrompt(year, today), cache_control: { type: "ephemeral" } },
+    ],
+    messages: [{ role: "user", content: buildUserPrompt(pageText, pageLinks, source) }],
   });
 
   if (response.parsed_output === null) {
@@ -133,7 +168,7 @@ export async function extractEventsFromPage(
   const knownUrls = new Set([source.url, ...pageLinks.map((l) => l.href)]);
   const isMeetupGroupUrl = /^https:\/\/www\.meetup\.com\//.test(source.url) && !/\/events\//.test(source.url);
 
-  return response.parsed_output.filter((event) => isUpcoming(event.date, today)).flatMap((event) => {
+  const events = response.parsed_output.filter((event) => isUpcoming(event.date, today)).flatMap((event) => {
     if (knownUrls.has(event.url)) {
       return [event];
     }
@@ -142,4 +177,6 @@ export async function extractEventsFromPage(
     }
     return [{ ...event, url: source.url }];
   });
+
+  return { events, usage: toTokenUsage(response.usage) };
 }
