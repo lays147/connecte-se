@@ -1,5 +1,5 @@
 import { MONTH_NAMES, type EventsByMonth, type MonthName, type TechEvent } from "../../src/types.ts";
-import { eventDateKey, isValidEventDate } from "../../src/lib/date.ts";
+import { eventDateKey, isValidEventDate, parseEventDate } from "../../src/lib/date.ts";
 
 export function slugify(title: string): string {
   return title
@@ -36,3 +36,9 @@ export function isValidDate(date: string): boolean {
 }
 
 export type { EventsByMonth, MonthName, TechEvent };
+
+// True when the event happens today or later (date-only comparison, local time).
+export function isUpcoming(date: string, today: Date = new Date()): boolean {
+  const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  return parseEventDate(date).getTime() >= startOfToday.getTime();
+}

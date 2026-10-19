@@ -3,6 +3,7 @@ import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import * as z from "zod";
 import type { EventSource } from "../../src/data/sources.ts";
 import type { TechEvent } from "../../src/types.ts";
+import { isUpcoming } from "./events.ts";
 
 export type ExtractedEvent = Omit<TechEvent, "id">;
 
@@ -53,7 +54,19 @@ export interface PageLink {
 
 const MAX_LINKS = 300;
 
-function buildPrompt(pageText: string, pageLinks: PageLink[], source: EventSource, year: number): string {
+function formatToday(today: Date): string {
+  const day = String(today.getDate()).padStart(2, "0");
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  return `${day}/${month}/${today.getFullYear()}`;
+}
+
+function buildPrompt(
+  pageText: string,
+  pageLinks: PageLink[],
+  source: EventSource,
+  year: number,
+  today: Date,
+): string {
   const linksBlock = pageLinks
     .slice(0, MAX_LINKS)
     .map((l) => `- "${l.text}" -> ${l.href}`)
@@ -68,7 +81,7 @@ Source context:
 - frequency: ${source.frequency}
 
 Instructions:
-- Only extract events that will actually take place in Brazil during calendar year ${year}. Never invent or guess a date — if you cannot determine a specific, real ${year} date for an event, omit it. Format "date" as Brazilian "DD/MM/${year}" (e.g. "15/03/${year}"), not ISO.
+- Only extract events that will actually take place in Brazil during calendar year ${year}. Only include events happening today (${formatToday(today)}) or later — skip every event whose date is already in the past. Never invent or guess a date — if you cannot determine a specific, real ${year} date for an event, omit it. Format "date" as Brazilian "DD/MM/${year}" (e.g. "15/03/${year}"), not ISO.
 - Many of these sources (e.g. DevOpsDays, ServerlessDays, Web Summit, AWS Summit-style events) run many international editions/chapters. Scan the ENTIRE page for every listed edition or chapter, identify which ones are located in Brazil (by Brazilian city/state name, "Brasil"/"Brazil" labeling, or .br links), and extract ONLY those. Ignore every non-Brazil edition, even if it is the most prominent one on the page.
 - If the page is a global index/listing page whose links point to separate per-city pages, and a Brazil edition's own date/details are not directly visible in this page's text, return an empty array rather than guessing at what that sub-page might say.
 - If the page contains no discoverable concrete Brazil event details (dates, locations) at all, return an empty array.
@@ -100,6 +113,7 @@ export async function extractEventsFromPage(
   pageLinks: PageLink[],
   source: EventSource,
   year: number,
+  today: Date = new Date(),
 ): Promise<ExtractedEvent[]> {
   const ExtractedEventsSchema = z.array(buildExtractedEventSchema(year));
 
@@ -109,7 +123,7 @@ export async function extractEventsFromPage(
     output_config: {
       format: zodOutputFormat(ExtractedEventsSchema),
     },
-    messages: [{ role: "user", content: buildPrompt(pageText, pageLinks, source, year) }],
+    messages: [{ role: "user", content: buildPrompt(pageText, pageLinks, source, year, today) }],
   });
 
   if (response.parsed_output === null) {
@@ -119,7 +133,7 @@ export async function extractEventsFromPage(
   const knownUrls = new Set([source.url, ...pageLinks.map((l) => l.href)]);
   const isMeetupGroupUrl = /^https:\/\/www\.meetup\.com\//.test(source.url) && !/\/events\//.test(source.url);
 
-  return response.parsed_output.flatMap((event) => {
+  return response.parsed_output.filter((event) => isUpcoming(event.date, today)).flatMap((event) => {
     if (knownUrls.has(event.url)) {
       return [event];
     }
