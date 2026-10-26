@@ -1,0 +1,362 @@
+{
+  "https://brasil.pyladies.com": {
+    "hash": "ebbdd2b6c611574b9fb89934e76c523be9207bc81bda13b28ad0bd4bc3cd3c77",
+    "checkedAt": "2026-10-26T12:10:40.756Z"
+  },
+  "https://codecon.dev": {
+    "hash": "5e8b401d4f03aa6410cbca7b60e2c2d2db92dbcd2e50e3a0f9d3e13e1639268b",
+    "checkedAt": "2026-10-26T12:04:05.685Z"
+  },
+  "https://community.cncf.io/cloud-native-sao-paulo-city/": {
+    "hash": "6de7d479f9090a102c6c2505e3d21c4d1e9d1ce38a00f8b70b18971296f08413",
+    "checkedAt": "2026-10-26T12:03:28.909Z"
+  },
+  "https://comunidade.devsnorte.com": {
+    "hash": "08176cb98b6d0784430ad2daededa436f0cb1e8a4d1dc219c4a90ea0fb04f0c6",
+    "checkedAt": "2026-10-26T12:05:45.572Z"
+  },
+  "https://gdg.community.dev/gdg-brasilia/": {
+    "hash": "65a638250a615903600022376945e83018c08f37760c33f15c15381d4a3268a9",
+    "checkedAt": "2026-10-26T12:08:01.060Z"
+  },
+  "https://gdg.community.dev/gdg-curitiba/": {
+    "hash": "16bbe356d06fb534df68e8b6341aafc35d451628d658573f7e3f134104fa96be",
+    "checkedAt": "2026-10-26T12:08:09.753Z"
+  },
+  "https://gdg.community.dev/gdg-floripa/": {
+    "hash": "bdf79f25ae21a3f47b204d7e1caba04ccdf71f4c433bba19ea27ab8434f2c261",
+    "checkedAt": "2026-10-26T12:08:20.645Z"
+  },
+  "https://gdg.community.dev/gdg-porto-alegre/": {
+    "hash": "778efec4aef6c602ff7fc42de11fdc3cbbb4ecf799c3ac50d5491a2a154e45a4",
+    "checkedAt": "2026-10-26T12:08:31.765Z"
+  },
+  "https://gdg.community.dev/gdg-recife/": {
+    "hash": "db1230e1a738a16d6475c3a12c65caa04d5014f6ad5c47474c17ed50c0ca17e5",
+    "checkedAt": "2026-10-26T12:08:43.643Z"
+  },
+  "https://gdg.community.dev/gdg-sao-paulo/": {
+    "hash": "9f5335804d1bddfd3bcd5b2feb75ef4ec94923a56c23fe9cfd21197e0f987bcc",
+    "checkedAt": "2026-10-26T12:09:20.572Z"
+  },
+  "https://gdgbh.com.br/": {
+    "hash": "c226b9daa812015bf0e374824179b7b45b6fa76d2e19ad977fc9370b7fad4095",
+    "checkedAt": "2026-10-26T12:07:48.739Z"
+  },
+  "https://kotlin.dev.br": {
+    "hash": "1f4e8dc379aa7ba711b1617a90d8c6a98d552bb41deabeee16e85f257ecf203f",
+    "checkedAt": "2026-10-26T12:09:45.429Z"
+  },
+  "https://linktr.ee/paraibajs": {
+    "hash": "bf526729d0a4778962c28f30b966f837495ebdcede5b26893f02a87ffb8ff739",
+    "checkedAt": "2026-10-26T12:10:17.476Z"
+  },
+  "https://rustlang.com.br": {
+    "hash": "dc423fee9d6e44808061f008ce0fa43c0acb6b6591fe6de0d13873c443089771",
+    "checkedAt": "2026-10-26T12:10:55.866Z"
+  },
+  "https://soujava.org.br": {
+    "hash": "d2b75b1f05f5f521ad0b6a8ae38a02bd94b6f1d18d4520d2ba2edb1bb9a52d7f",
+    "checkedAt": "2026-10-26T12:11:29.780Z"
+  },
+  "https://www.datadoghq.com/events-webinars/?language=pt": {
+    "hash": "55bea0c0a78b7898cad253ee890360ca9f54784bc6dd3ec9bb5088d82d44dfcd",
+    "checkedAt": "2026-10-26T12:04:43.686Z"
+  },
+  "https://www.meetup.com/aws-curitiba-user-group": {
+    "hash": "4007e41ee4c0b31c18a68cd6004e3e40832d3b9a9e410d6a7eac44626afb1c88",
+    "checkedAt": "2026-10-26T11:54:08.564Z"
+  },
+  "https://www.meetup.com/aws-go/": {
+    "hash": "bbb53dcb083c1e95db77cc326d6680e09ef15126f24a75b56594a2d9d3ebe3f6",
+    "checkedAt": "2026-10-26T11:54:58.247Z"
+  },
+  "https://www.meetup.com/aws-porto-alegre": {
+    "hash": "85ff41de3358844ad3046bde5fa9765b2504fa7c9048f8f23e9e9158d3456996",
+    "checkedAt": "2026-10-26T11:57:44.721Z"
+  },
+  "https://www.meetup.com/aws-ug-regiao-metropolitana-de-piracicaba": {
+    "hash": "0b3f6789e0c2d6a024e83292423ff1aaddcdd1a549e5cf2c2fae2f1fe1328fae",
+    "checkedAt": "2026-10-26T11:57:02.340Z"
+  },
+  "https://www.meetup.com/aws-user-group-abc-paulista": {
+    "hash": "b9fdfb113579470174edcb67bb5552037e301c64a2bd6257f91d20647eb7d78d",
+    "checkedAt": "2026-10-26T11:49:52.794Z"
+  },
+  "https://www.meetup.com/aws-user-group-alto-tiete": {
+    "hash": "2874e1174cef72e7bee989a221dcef4a6003fe24bf5c7de88b36b6dc03a10572",
+    "checkedAt": "2026-10-26T11:50:03.124Z"
+  },
+  "https://www.meetup.com/aws-user-group-atibaia-sp": {
+    "hash": "d9ce4ef53597660aa477ed22ccbe4478f1150453c8581509f57359c097a26f47",
+    "checkedAt": "2026-10-26T11:50:45.859Z"
+  },
+  "https://www.meetup.com/aws-user-group-baixada-santista": {
+    "hash": "ff445c82299c67f47dda8a93bf617b1ed9239ce10c6cef0669b8554aea88dfab",
+    "checkedAt": "2026-10-26T11:51:18.846Z"
+  },
+  "https://www.meetup.com/aws-user-group-brasilia": {
+    "hash": "44d408922959daada20e16d16c41e38c4e9fb6523aa2593ff0fd7d0729f05c59",
+    "checkedAt": "2026-10-26T11:52:11.294Z"
+  },
+  "https://www.meetup.com/aws-user-group-canoas": {
+    "hash": "4a17d6f781d9db768678168574bd7b09d695534bfacc2a2ec2a8ddcd181b6b2f",
+    "checkedAt": "2026-10-26T11:52:38.264Z"
+  },
+  "https://www.meetup.com/aws-user-group-castanhal": {
+    "hash": "484252722fe95f4631c65cbd42b13d98a76af3762857b941741c0157066bb857",
+    "checkedAt": "2026-10-26T11:52:59.564Z"
+  },
+  "https://www.meetup.com/aws-user-group-circuito-das-aguas-paulista": {
+    "hash": "14fbf3738034c6ea4821bbe0a7ba2a0ac65aaf7adc25dab33009b692f727b417",
+    "checkedAt": "2026-10-26T11:53:18.741Z"
+  },
+  "https://www.meetup.com/aws-user-group-coracao-do-rio-grande": {
+    "hash": "5a41f2e7d1d22fa8ab4bfe84cf6430af5c1cfc707fc21b517efb97ba6ff82eb1",
+    "checkedAt": "2026-10-26T11:53:25.786Z"
+  },
+  "https://www.meetup.com/aws-user-group-floripa": {
+    "hash": "7b39d9260931d4823647e30dbc4a423d4cf20e8d1c27cc3fb9a9d522cdd739f7",
+    "checkedAt": "2026-10-26T11:54:20.101Z"
+  },
+  "https://www.meetup.com/aws-user-group-fortaleza": {
+    "hash": "2d60d4fa6abb5f0005d46c604d301ed5e996f9972cf0cf23713cedf74c5eb01e",
+    "checkedAt": "2026-10-26T11:54:28.987Z"
+  },
+  "https://www.meetup.com/aws-user-group-interior-sp": {
+    "hash": "6418bea23c78d0b2676402c9863a9879df6e05d069023ec7e7d393e51b90e709",
+    "checkedAt": "2026-10-26T11:55:05.618Z"
+  },
+  "https://www.meetup.com/aws-user-group-joinville": {
+    "hash": "6d4b5703a627446e6a185a6f8e10b2fc8a49eb11dcfafe7b0db24ec1d284b737",
+    "checkedAt": "2026-10-26T11:55:28.229Z"
+  },
+  "https://www.meetup.com/aws-user-group-londrina": {
+    "hash": "596d38fe7ba1e7b644e4b99f8f6066033651c88a3a248c70ed87e69a76eddcf4",
+    "checkedAt": "2026-10-26T11:55:38.010Z"
+  },
+  "https://www.meetup.com/aws-user-group-manaus": {
+    "hash": "e1083a1d719fb9dfafc7e2b7731ee81b628c58b777683e92e6085496fd9da38e",
+    "checkedAt": "2026-10-26T11:55:47.757Z"
+  },
+  "https://www.meetup.com/aws-user-group-montes-claros": {
+    "hash": "acc08213468d70208013c18ee7e82c7a0ea412067d47950a4a2f48cd8fb991ee",
+    "checkedAt": "2026-10-26T11:56:09.503Z"
+  },
+  "https://www.meetup.com/aws-user-group-parauapebas": {
+    "hash": "f3bda6634a1afae48dc30837128ce2f713fda8f939930b6bc94e76666be425d9",
+    "checkedAt": "2026-10-26T11:56:15.841Z"
+  },
+  "https://www.meetup.com/aws-user-group-passo-fundo": {
+    "hash": "989736d08a038d8b8ab62a2f22e374a37cbd2a3b59a866f967cc824a24539fe3",
+    "checkedAt": "2026-10-26T11:56:33.741Z"
+  },
+  "https://www.meetup.com/aws-user-group-piaui": {
+    "hash": "9a016cf246fcdb577c6fffad44a6f9b2f50f38a69283829c60568d1206ee36a4",
+    "checkedAt": "2026-10-26T11:56:43.957Z"
+  },
+  "https://www.meetup.com/aws-user-group-recife": {
+    "hash": "306f38472da0a674dec4bb67849d3c34ed5327615ee2c981d0feebbbbe420069",
+    "checkedAt": "2026-10-26T11:57:53.114Z"
+  },
+  "https://www.meetup.com/aws-user-group-rio": {
+    "hash": "f3ab41257910690669dadb90d186812b8d9a33efd7519e290a450a35eff80939",
+    "checkedAt": "2026-10-26T11:58:19.202Z"
+  },
+  "https://www.meetup.com/aws-user-group-sao-lourenco": {
+    "hash": "0b3b7f56aabcc6db1e2110c2c1621438f7f6fb4543548820cedd3df822d316fb",
+    "checkedAt": "2026-10-26T11:58:30.487Z"
+  },
+  "https://www.meetup.com/aws-user-group-sao-roque": {
+    "hash": "59ae1acb85110db8c3878cb66726721268252ec473a8e01d35092d70e5f826f3",
+    "checkedAt": "2026-10-26T11:59:13.394Z"
+  },
+  "https://www.meetup.com/aws-user-group-serido-e-sabugy": {
+    "hash": "9a00f98c65f87e6d3cce8c9e76d0975e78b96578f86644791d87b012a465b0dd",
+    "checkedAt": "2026-10-26T12:00:06.947Z"
+  },
+  "https://www.meetup.com/aws-user-group-sorocaba": {
+    "hash": "a6916cd2677aea6a7d186c5f009a7d07a670b9f04d152e1cd222ca04f25114a9",
+    "checkedAt": "2026-10-26T12:00:17.537Z"
+  },
+  "https://www.meetup.com/aws-user-group-triangulo-mineiro": {
+    "hash": "c883571da93f54cb0dafd373336afc659d9397908060025011b4e60ac27dc7cc",
+    "checkedAt": "2026-10-26T12:00:31.286Z"
+  },
+  "https://www.meetup.com/aws-user-group-tupaciguara": {
+    "hash": "c46ee4066b69e7ad20958ce8d23c5efc540f9788a3f79ebcaefc4baa2c3fe738",
+    "checkedAt": "2026-10-26T12:01:07.407Z"
+  },
+  "https://www.meetup.com/aws-user-group-vale-do-paraiba": {
+    "hash": "5acaad25c76b43ba32b328cda5f93557582d63192d19e24a2d9b278c9b5bea98",
+    "checkedAt": "2026-10-26T12:01:46.409Z"
+  },
+  "https://www.meetup.com/aws-usergroup-blumenau": {
+    "hash": "9d2a6d3ecfde3ac39f84a02add4c8f93819c784a2048a4acf2c942529e7e7c5f",
+    "checkedAt": "2026-10-26T11:52:00.124Z"
+  },
+  "https://www.meetup.com/aws-usergroup-oeste-e-fronteiras": {
+    "hash": "78b285608b84adec3d3ed61653a36eafeafa8c69bf4767b046ebf1b9084b11c0",
+    "checkedAt": "2026-10-26T11:54:38.676Z"
+  },
+  "https://www.meetup.com/aws-women-user-group-goiania": {
+    "hash": "f9d5bb7fb1e73b813c0d31ac92279fd82a760683eb88c51b704373cdbf25a58b",
+    "checkedAt": "2026-10-26T12:02:05.643Z"
+  },
+  "https://www.meetup.com/awsbelem": {
+    "hash": "0c152b1b8ece7b87dc85d40d777f3f7585499985b4aabe037f5ee4f50c526550",
+    "checkedAt": "2026-10-26T11:51:24.714Z"
+  },
+  "https://www.meetup.com/awscampinas": {
+    "hash": "938dcbe7b6540b4d0cd734df1b1d64eef909b024e6ff9d2ddad14d8722bca886",
+    "checkedAt": "2026-10-26T11:52:27.138Z"
+  },
+  "https://www.meetup.com/awsusergroupbh": {
+    "hash": "7e70c20d7ecb059d653b7da0493c3745e05d475a566f6753b3b262439a050bd2",
+    "checkedAt": "2026-10-26T11:51:46.769Z"
+  },
+  "https://www.meetup.com/awsusergroupsp": {
+    "hash": "da682b3cd82e78b340d770c4b2ef96cad6273a1480e8a67c18db6a53ec703db0",
+    "checkedAt": "2026-10-26T11:58:52.214Z"
+  },
+  "https://www.meetup.com/azure-talks": {
+    "hash": "51b47b7ada7e0c1b60608294b232fce5df5682f0ee7235343201406920ea69a0",
+    "checkedAt": "2026-10-26T12:02:34.597Z"
+  },
+  "https://www.meetup.com/azureacademy": {
+    "hash": "c3d64c92622a3f3f4950034df3adb1901cc060f5822633aab7806ae6a16e6fa7",
+    "checkedAt": "2026-10-26T12:02:15.751Z"
+  },
+  "https://www.meetup.com/clojure-br": {
+    "hash": "4f941ee1b034ddce360db9aa03864131fc08e8ef09b981073003601ed1a09566",
+    "checkedAt": "2026-10-26T12:03:20.284Z"
+  },
+  "https://www.meetup.com/cocoaheads-poa": {
+    "hash": "76e4b4e2fcbd2a25287efd99ea4f3a26cbbffa6ec42c28bb5bf62832cb62c443",
+    "checkedAt": "2026-10-26T12:03:54.870Z"
+  },
+  "https://www.meetup.com/confrariaweb3": {
+    "hash": "14b54d63aeafd9bebe567487581861f6cbadc2c7bd724c1721e11fafc5df2305",
+    "checkedAt": "2026-10-26T12:12:13.244Z"
+  },
+  "https://www.meetup.com/criciumaops": {
+    "hash": "2dce306b112d75241b112a50797707c667c19714007e33ce0aab711de3eb1dfe",
+    "checkedAt": "2026-10-26T11:53:56.328Z"
+  },
+  "https://www.meetup.com/devops-professionals": {
+    "hash": "71ad3715898c39daff22286ff21f47904256c106959ec0e276f10efe08d78231",
+    "checkedAt": "2026-10-26T12:05:08.727Z"
+  },
+  "https://www.meetup.com/engenharia-dados-academy": {
+    "hash": "8439bf197a69185efb20da08bcd4789449464afda4981060bc718150189e6dd3",
+    "checkedAt": "2026-10-26T12:06:44.736Z"
+  },
+  "https://www.meetup.com/fiapmeetups": {
+    "hash": "5370354da95086d2da60af6ca59d55988ccdf29ecb6e64a26e279390d32ca151",
+    "checkedAt": "2026-10-26T12:07:07.496Z"
+  },
+  "https://www.meetup.com/fluttercwb": {
+    "hash": "fde58073e30caf9d317d9d54da9f7c4d8135e1db353fece9223a374509bea5a5",
+    "checkedAt": "2026-10-26T12:07:27.078Z"
+  },
+  "https://www.meetup.com/grupy-sp": {
+    "hash": "d2db2286ea6db5c19685234cfbf322b29f8cb8553a706354f1079a08a5027d72",
+    "checkedAt": "2026-10-26T12:09:39.242Z"
+  },
+  "https://www.meetup.com/le-wagon-rio-de-janeiro-coding-bootcamp": {
+    "hash": "31fb782ad7d860ae2fb09316f5d3a993716b093c4afb5c6c004be6e0611e5894",
+    "checkedAt": "2026-10-26T12:09:52.591Z"
+  },
+  "https://www.meetup.com/meetup-group-hafctguq": {
+    "hash": "64e0abf6ea3352b18dd022bf631752f89073d73c9c1b0b7a97ad422501e062d5",
+    "checkedAt": "2026-10-26T11:55:55.101Z"
+  },
+  "https://www.meetup.com/microsoft-reactor-sao-paulo": {
+    "hash": "4f793e6767e08fd026a8c0af9861bcb7e79e72202e5edf641dadbd63d256dccb",
+    "checkedAt": "2026-10-26T12:10:03.685Z"
+  },
+  "https://www.meetup.com/php-sp": {
+    "hash": "fa46a16a275b8457d19f02def51075c25e1539d59fc4c201e3c5583d62143672",
+    "checkedAt": "2026-10-26T12:10:27.803Z"
+  },
+  "https://www.meetup.com/pt-BR/ai-devs-sp/": {
+    "hash": "c8aadf6adbaa91a24513ff659cbc6cfe0381c29cf4e862bedec94140755763fe",
+    "checkedAt": "2026-10-26T11:49:45.384Z"
+  },
+  "https://www.meetup.com/pt-BR/aidev-saopaulo/": {
+    "hash": "f73ce663663aff374b74b48f2416ca9e86cccfd1632c1ee2fe74056bd869d712",
+    "checkedAt": "2026-10-26T12:11:23.135Z"
+  },
+  "https://www.meetup.com/pt-br/aws-user-group-anapolis": {
+    "hash": "9a90836d7a2d0e1ce8fc5e3663f7e57e3dd745c9f461dc1ec06906fe644dc15b",
+    "checkedAt": "2026-10-26T11:50:14.436Z"
+  },
+  "https://www.meetup.com/pt-BR/aws-user-group-joao-pessoa/": {
+    "hash": "0c0431f60a968dd94b9ed3c61a31abee5f59bcd5462cc95fa0cce0faf7927dab",
+    "checkedAt": "2026-10-26T11:55:15.480Z"
+  },
+  "https://www.meetup.com/pt-br/aws-user-group-tucurui": {
+    "hash": "4454d4a9a37df496ec4d744232ae1ab953e349bdd3928a917d34c8031518665d",
+    "checkedAt": "2026-10-26T12:00:56.102Z"
+  },
+  "https://www.meetup.com/pt-BR/craftcodeclub/": {
+    "hash": "946f10a34436dd9aa6dc8cfbbc54c718d1f2e60a090d9156657ee9bfabad4e93",
+    "checkedAt": "2026-10-26T12:04:22.065Z"
+  },
+  "https://www.meetup.com/pt-BR/datadog-user-group-brasil/": {
+    "hash": "b9b42736c07eb358f1b29c5985378d437d8a145d80f6f49a6dc328b9837d449e",
+    "checkedAt": "2026-10-26T12:04:31.276Z"
+  },
+  "https://www.meetup.com/pt-BR/docker-rio-de-janeiro": {
+    "hash": "2559ad44325bdd243d8bf87a04f9e0434c33035ecdfab06c1091702625781bc3",
+    "checkedAt": "2026-10-26T12:06:03.527Z"
+  },
+  "https://www.meetup.com/pt-BR/dotnet-Sao-Paulo/": {
+    "hash": "2e7ef3411bd27ffad1cc9adf8a6efc8c72581a7b6d04255441161c9ca39c4a95",
+    "checkedAt": "2026-10-26T11:49:23.792Z"
+  },
+  "https://www.meetup.com/pt-BR/gdgriodejaneiro/": {
+    "hash": "80c3d635972b8e770227d426b6b688195d68e62457a6943d8a48bab954d61dc4",
+    "checkedAt": "2026-10-26T12:08:53.806Z"
+  },
+  "https://www.meetup.com/pt-BR/gdgsjc/": {
+    "hash": "0c5b5a9243d757741f7fa302ffb90a789895a7aea3b439bd14e7db95ee8b0371",
+    "checkedAt": "2026-10-26T12:09:05.860Z"
+  },
+  "https://www.meetup.com/pt-BR/golangbr/": {
+    "hash": "fbef2d3a474434891f232fa971dd268ecea76bcfbddcfdf7e3d4ce488a660a16",
+    "checkedAt": "2026-10-26T12:07:41.604Z"
+  },
+  "https://www.meetup.com/pt-BR/rio-de-janeiro-elastic-fantastics/": {
+    "hash": "35eb42fc6de0a701c7e31fa201fcf9b3a23f241013f2d5eea0dd76e7fbb785b7",
+    "checkedAt": "2026-10-26T12:06:14.757Z"
+  },
+  "https://www.meetup.com/pt-BR/wordpressbelohorizonte/": {
+    "hash": "a3bec2b5989feace0a9d7703e83dd8df48525324389b805f5bacd791f9a327f3",
+    "checkedAt": "2026-10-26T12:02:46.643Z"
+  },
+  "https://www.meetup.com/rladies-sao-paulo": {
+    "hash": "c1163501550b02e222f5b34d86b58ec587a0a7c85d2360c391c95aa66771c0ea",
+    "checkedAt": "2026-10-26T12:10:48.633Z"
+  },
+  "https://www.meetup.com/soujavacampinas": {
+    "hash": "6491e7d83350daee0c02cfd0401897b5c4da21d01f8ed40c876486cc6eb3c789",
+    "checkedAt": "2026-10-26T12:11:45.321Z"
+  },
+  "https://www.meetup.com/tubaraoops": {
+    "hash": "f06d97ab028825c8c871f1391e323f7e8562c12373b94584f33d0e8f263ca5e1",
+    "checkedAt": "2026-10-26T12:00:44.380Z"
+  },
+  "https://www.meetup.com/uber-tech-latam": {
+    "hash": "df991b65b86cb72b0eb73263fdbe1700c33f8505a8c9b6239708ffa4492bb907",
+    "checkedAt": "2026-10-26T12:11:52.489Z"
+  },
+  "https://www.meetup.com/womakerscode": {
+    "hash": "45dfa7026b3d64dab098a60cb8b14b9d0c3cbd55c4d5c4c12d82d909ed27e3f6",
+    "checkedAt": "2026-10-26T12:12:47.982Z"
+  },
+  "https://www.programaria.org": {
+    "hash": "0a07baa8de933caa2bc5cc77b52834602399c2a390bb6c113048db017b156e2f",
+    "checkedAt": "2026-10-26T12:10:34.840Z"
+  }
+}
