@@ -5743,6 +5743,20 @@
       "url": "https://gdg.community.dev/events/details/google-gdg-floripa-presents-devfest-floripa-2026/cohost-gdg-floripa"
     },
     {
+      "id": "2026-11-net-conf-2026",
+      "title": ".Net Conf 2026",
+      "city": "Goiânia",
+      "state": "GO",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "14/11/2026",
+      "time": "08:30",
+      "description": "Depois da edição de 2025 e de outros encontros que fazem parte da nossa história, a comunidade Override convida você para mais uma edição do .NET Conf Goiânia! Nosso encontro regional traz para perto da comunidade goiana as novidades e as conversas do .NET Conf, o evento online mundial dedicado ao universo .NET.\n\nNo dia 14 de novembro, vamos nos reunir no SENAI Fatesg para aprender, compartilhar experiências e fortalecer as conexões entre quem desenvolve com .NET na nossa região. Teremos palestras, conversas sobre os desafios do desenvolvimento e espaço para conhecer pessoas que também têm vontade de aprender e compartilhar. Seja você experiente ou esteja começando, venha participar dessa história com a gente!",
+      "paid": true,
+      "url": "https://www.sympla.com.br/evento/net-conf-2026-goiania-go/3622134"
+    },
+    {
       "id": "2026-11-sao-paulo-2026-venture-capital-world-summit",
       "title": "São Paulo 2026 Venture Capital World Summit",
       "city": "São Paulo",
