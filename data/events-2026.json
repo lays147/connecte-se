@@ -5620,6 +5620,20 @@
       "url": "https://gdg.community.dev/events/details/google-gdg-brasilia-presents-dos-dados-a-decisao-desenvolvendo-um-sistema-de-recomendacao/"
     },
     {
+      "id": "2026-11-online-kubernetes-dicas-e-truques-para-o-dia-a-dia-24-edicao",
+      "title": "[Online] Kubernetes: dicas e truques para o dia a dia | 24ª edição",
+      "city": null,
+      "state": null,
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "09/11/2026",
+      "time": "21:00",
+      "description": "Encontro online da comunidade .NET São Paulo com dicas práticas sobre Kubernetes para o dia a dia dos desenvolvedores.",
+      "paid": false,
+      "url": "https://www.meetup.com/dotnet-sao-paulo/events/317180965/?eventOrigin=group_similar_events"
+    },
+    {
       "id": "2026-11-red-hat-summit-connect-2026-sao-paulo",
       "title": "Red Hat Summit: Connect 2026 São Paulo",
       "city": "São Paulo",
@@ -5773,6 +5787,20 @@
       "url": "https://www.meetup.com/pt-BR/aidev-saopaulo/events/317104232/?eventOrigin=group_upcoming_events"
     },
     {
+      "id": "2026-11-aws-student-builder-ufabc-construa-seu-primeiro-aplicativo-na-nuvem",
+      "title": "AWS Student Builder UFABC: Construa seu primeiro aplicativo na nuvem",
+      "city": "Santo André",
+      "state": null,
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "11/11/2026",
+      "time": "19:00",
+      "description": "Workshop prático para estudantes construírem seu primeiro aplicativo na nuvem usando serviços da AWS.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-sbg-at-federal-university-of-abc-santo-andre-campus/events/317312434/?eventOrigin=group_similar_events"
+    },
+    {
       "id": "2026-11-agile-brazil-2026",
       "title": "Agile Brazil 2026",
       "city": "Foz do Iguaçu",
@@ -5855,6 +5883,34 @@
       "description": "Encontro online do grupo R-Ladies Niterói sobre coleta de dados e análise bibliométrica utilizando o pacote bibliometrix.",
       "paid": false,
       "url": "https://www.meetup.com/rladies-niteroi/events/317089435/?eventOrigin=group_similar_events"
+    },
+    {
+      "id": "2026-11-introducao-a-computacao-em-nuvem-com-aws",
+      "title": "Introdução à Computação em Nuvem com AWS",
+      "city": null,
+      "state": null,
+      "region": "Nordeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "13/11/2026",
+      "time": "19:00",
+      "description": "Evento online com introdução aos conceitos de computação em nuvem utilizando a AWS, promovido pelo grupo AWS SBG do Instituto Federal de Educação, Ciência e Tecnologia do Ceará - Iguatu.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-sbg-at-federal-inst-of-edu-sci-and-tech-ceara-iguatu/events/317278906/?eventOrigin=group_similar_events"
+    },
+    {
+      "id": "2026-11-14-como-os-arquitetos-aws-projetam-sistemas-distribuidos-e-data-driven",
+      "title": "#14 - Como os arquitetos AWS projetam sistemas distribuídos e data-driven",
+      "city": "Joinville",
+      "state": "SC",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "13/11/2026",
+      "time": "19:00",
+      "description": "Palestra sobre como os arquitetos da AWS projetam sistemas distribuídos e data-driven, explorando resiliência, consistência e governança de dados em arquiteturas de nuvem.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-joinville/events/317181316/?eventOrigin=group_upcoming_events"
     },
     {
       "id": "2026-11-devopsdays-brasilia",
@@ -6037,6 +6093,20 @@
       "url": "https://www.meetup.com/clojure-br/events/317317764/?eventOrigin=group_upcoming_events"
     },
     {
+      "id": "2026-11-meetup-05-grupo-de-estudos-aws-trilhas-simultaneas-cloud-ai-practitioner",
+      "title": "Meetup #05: Grupo de Estudos AWS - Trilhas Simultâneas Cloud & AI Practitioner",
+      "city": "Itajaí",
+      "state": "SC",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "14/11/2026",
+      "time": "09:30",
+      "description": "Encontro de estudos em grupo com trilhas simultâneas sobre AWS Cloud Practitioner e AI Practitioner, promovido pela comunidade AWS SBG da Universidade do Vale do Itajaí.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-sbg-university-of-itajai-valley/events/316868991/?eventOrigin=group_similar_events"
+    },
+    {
       "id": "2026-11-sao-paulo-2026-venture-capital-world-summit",
       "title": "São Paulo 2026 Venture Capital World Summit",
       "city": "São Paulo",
@@ -6121,6 +6191,20 @@
       "url": "https://www.meetup.com/sao-paulo-dbt-meetup-group/events/316181213/?eventOrigin=group_similar_events"
     },
     {
+      "id": "2026-11-wpcuritiba-89-como-o-wordpress-mudou-nossas-trajetorias",
+      "title": "WPCuritiba 89: Como o WordPress mudou nossas trajetórias",
+      "city": "Curitiba",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "17/11/2026",
+      "time": "19:00",
+      "description": "Encontro da comunidade WordPress Curitiba onde membros compartilham histórias de como o WordPress impactou suas carreiras e trajetórias profissionais.",
+      "paid": false,
+      "url": "https://www.meetup.com/wpcuritiba/events/317318193/?eventOrigin=group_similar_events"
+    },
+    {
       "id": "2026-11-data-science-garoa-hacker-clube",
       "title": "Data Science @ Garoa Hacker Clube",
       "city": "São Paulo",
@@ -6203,6 +6287,20 @@
       "description": "Meetup promovido pelo GDG Rio de Janeiro sobre tecnologias de nuvem nativa e Kubernetes.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/gdgriodejaneiro/events/317298149/?eventOrigin=group_similar_events"
+    },
+    {
+      "id": "2026-11-conversando-com-os-dados-do-raw-data-ao-quicksight-conversacional",
+      "title": "Conversando com os dados: do raw data ao QuickSight conversacional",
+      "city": null,
+      "state": null,
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "18/11/2026",
+      "time": "19:00",
+      "description": "Meetup online sobre o processo de transformação de dados brutos em insights visuais utilizando o Amazon QuickSight, promovido pelo AWS User Group da UFOP.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-sbg-at-ufop-federal-university-of-ouro-preto/events/317214480/?eventOrigin=group_similar_events"
     },
     {
       "id": "2026-11-sua-ia-corporativa-parou-no-chat-agentes-automacoes-e-apps-com-o-amazon-quick",
@@ -6483,6 +6581,20 @@
       "description": "Segunda edição do Grafana Weekend em São Paulo, trazendo novidades sobre Observabilidade, DevOps e Inteligência Artificial em encontro presencial.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/grafana-and-friends-sao-paulo/events/317174867/?eventOrigin=group_similar_events"
+    },
+    {
+      "id": "2026-11-grafana-weekend-2ed-novidades-em-observabilidade-devops-ia",
+      "title": "Grafana Weekend 2ed: novidades em Observabilidade, DevOps, IA",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "28/11/2026",
+      "time": "08:30",
+      "description": "Encontro presencial em São Paulo reunindo a comunidade de Observabilidade, DevOps e IA promovido pelo Grafana & Friends São Paulo.",
+      "paid": false,
+      "url": "https://www.meetup.com/grafana-and-friends-sao-paulo/events/317174867/?eventOrigin=group_similar_events"
     },
     {
       "id": "2026-11-xix-brazilian-symposium-on-bioinformatics-bsb-2026",
