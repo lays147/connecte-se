@@ -6079,6 +6079,20 @@
       "url": "https://comunidade.devsnorte.com/eventos/ii-semana-academica-do-campus-xxii---ananindeua-516"
     },
     {
+      "id": "2026-11-task-arithmetic-for-fairer-speechllms-and-language-expansion",
+      "title": "Task Arithmetic for Fairer SpeechLLMs and Language Expansion",
+      "city": "Belém",
+      "state": null,
+      "region": "Norte",
+      "type": "Palestra",
+      "modality": "Presencial",
+      "date": "16/11/2026",
+      "time": "10:00",
+      "description": "Palestra internacional do Dr. Ravi Shekhar (University of Essex) no PPGCOMP/UFPA, realizada no Auditório do ICEN, Campus do Guamá, em Belém.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/task-arithmetic-for-fairer-speechllms-and-language-expansion-532"
+    },
+    {
       "id": "2026-11-expocreati-2026",
       "title": "EXPOCREATI 2026",
       "city": "Manaus",
@@ -6119,6 +6133,34 @@
       "description": "Encontro da comunidade dbt de São Paulo para compartilhar experiências e novidades sobre engenharia de dados, realizado na FIAP Paulista.",
       "paid": false,
       "url": "https://www.meetup.com/sao-paulo-dbt-meetup-group/events/316181213/?eventOrigin=group_similar_events"
+    },
+    {
+      "id": "2026-11-do-zero-a-golden-jacket",
+      "title": "Do zero à Golden Jacket 🧥✨☁️",
+      "city": "Brasília",
+      "state": "DF",
+      "region": "Centro-Oeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "17/11/2026",
+      "time": "19:30",
+      "description": "Encontro da comunidade AWS em Brasília promovido pelo AWS SBG da Universidade Católica de Brasília, com palestras sobre certificações e carreira em nuvem.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-sbg-at-catholic-university-of-brasilia/events/317308392/?eventOrigin=group_similar_events"
+    },
+    {
+      "id": "2026-11-jornada-de-inovacao-da-ufopa-jinu-2026",
+      "title": "Jornada de Inovação da UFOPA - JINU 2026",
+      "city": "Santarém",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "17/11/2026",
+      "time": null,
+      "description": "4ª edição da Jornada de Inovação da UFOPA, com painéis, oficinas e conexões sobre inovação, ciência, tecnologia e bioeconomia na Amazônia, em Santarém.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/jornada-de-inovacao-da-ufopa---jinu-2026-535"
     },
     {
       "id": "2026-11-data-science-garoa-hacker-clube",
@@ -6205,6 +6247,34 @@
       "url": "https://www.meetup.com/pt-BR/gdgriodejaneiro/events/317298149/?eventOrigin=group_similar_events"
     },
     {
+      "id": "2026-11-minicurso-divas-digitais",
+      "title": "Minicurso Divas Digitais",
+      "city": "Nova Ipixuna",
+      "state": "PA",
+      "region": "Norte",
+      "type": "Minicurso",
+      "modality": "Presencial",
+      "date": "18/11/2026",
+      "time": "08:00",
+      "description": "Minicurso voltado à Rede de Proteção, realizado no Laboratório de Engenharia em Nova Ipixuna, Pará, entre 12 e 18 de novembro de 2026.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/minicurso-divas-digitais-533"
+    },
+    {
+      "id": "2026-11-phpsp-campinas-pub",
+      "title": "PHPSP Campinas + PUB",
+      "city": "Campinas",
+      "state": null,
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "18/11/2026",
+      "time": "19:00",
+      "description": "Encontro presencial da comunidade PHPSP em Campinas, reunindo desenvolvedores PHP para networking e bate-papo técnico em um bar local.",
+      "paid": false,
+      "url": "https://www.meetup.com/phpsp-campinas/events/317387639/?eventOrigin=group_similar_events"
+    },
+    {
       "id": "2026-11-sua-ia-corporativa-parou-no-chat-agentes-automacoes-e-apps-com-o-amazon-quick",
       "title": "Sua IA corporativa parou no chat? Agentes, automações e apps com o Amazon Quick",
       "city": "Curitiba",
@@ -6261,6 +6331,20 @@
       "url": "https://www.meetup.com/pt-BR/aws-sbg-at-ufpb-federal-univ-of-paraiba-campus-i/events/317268818/?eventOrigin=group_similar_events"
     },
     {
+      "id": "2026-11-online-monitoramento-e-seguranca-aplicacoes-infra-container-nuvem-17-ed",
+      "title": "[Online] Monitoramento e Segurança - aplicações, infra, container, nuvem | 17 ed",
+      "city": null,
+      "state": null,
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "20/11/2026",
+      "time": "21:00",
+      "description": "Evento online e gratuito que discute monitoramento e segurança de aplicações, infraestrutura, containers e soluções em nuvem.",
+      "paid": false,
+      "url": "https://www.meetup.com/devops-professionals/events/317173437/?eventOrigin=group_upcoming_events"
+    },
+    {
       "id": "2026-11-do-zero-a-nuvem-primeiros-passos-com-a-aws",
       "title": "Do Zero à Nuvem: Primeiros Passos com a AWS",
       "city": null,
@@ -6287,6 +6371,34 @@
       "description": "Meetup da comunidade Clojure BR na UNICAMP sobre como escrever Java WebServlets utilizando Clojure.",
       "paid": false,
       "url": "https://www.meetup.com/clojure-br/events/317317770/?eventOrigin=group_upcoming_events"
+    },
+    {
+      "id": "2026-11-devfest-ctba-2026",
+      "title": "DevFest Ctba 2026",
+      "city": "Curitiba",
+      "state": "PR",
+      "region": "Sul",
+      "type": "Conferência",
+      "modality": "Presencial",
+      "date": "22/11/2026",
+      "time": null,
+      "description": "Evento premier para desenvolvedores e entusiastas de tecnologia em Curitiba, com apresentações, workshops e networking sobre as últimas tendências tecnológicas.",
+      "paid": true,
+      "url": "https://gdg.community.dev/events/details/google-gdg-curitiba-presents-devfest-ctba-2026/"
+    },
+    {
+      "id": "2026-11-fiap-meetup-do-insight-ao-impacto-dados-aplicados-a-produto-e-design",
+      "title": "FIAP Meetup | Do insight ao impacto: dados aplicados a produto e design",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "24/11/2026",
+      "time": "19:00",
+      "description": "Meetup da FIAP sobre como dados e evidências ajudam a validar decisões em produto e design, indo além de opiniões para gerar valor real.",
+      "paid": false,
+      "url": "https://www.meetup.com/fiapmeetups/events/317368525/?eventOrigin=group_upcoming_events"
     },
     {
       "id": "2026-11-devin-meetup-sao-paulo-novembro",
@@ -6345,6 +6457,34 @@
       "url": "https://www.meetup.com/clojure-br/events/317330941/?eventOrigin=group_upcoming_events"
     },
     {
+      "id": "2026-11-codecon-ladies-meetup-codecon-11",
+      "title": "Codecon Ladies - Meetup Codecon - #11",
+      "city": null,
+      "state": null,
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "25/11/2026",
+      "time": "19:00",
+      "description": "Edição online do meetup Codecon Ladies, voltado para mulheres da área de tecnologia, com discussões e networking virtual.",
+      "paid": false,
+      "url": "https://eventos.codecon.dev/eventos/codecon-ladies-meetup-codecon-11"
+    },
+    {
+      "id": "2026-11-meetup-aniversario-grupy-sp-django-day-sp-2027-magalu-cloud",
+      "title": "Meetup aniversário GruPy-SP + Django Day SP 2027 @ Magalu Cloud",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "25/11/2026",
+      "time": "19:00",
+      "description": "Meetup comemorativo do aniversário do GruPy-SP com palestras sobre Django e arquitetura de software, servindo também de aquecimento para o Django Day SP 2027.",
+      "paid": false,
+      "url": "https://www.meetup.com/grupy-sp/events/317299112/?eventOrigin=group_upcoming_events"
+    },
+    {
       "id": "2026-11-venha-visitar-o-tractian-ai-lab",
       "title": "Venha visitar o Tractian AI Lab",
       "city": "São Paulo",
@@ -6385,6 +6525,20 @@
       "description": "Encontro da comunidade AWS em Belém sobre engenharia de software e inteligência artificial, com foco na ferramenta KIRO, realizado no IFPA Campus Belém.",
       "paid": false,
       "url": "https://www.meetup.com/aws-sbg-at-ifpa-federal-institute-of-para-belem-campus/events/317275373/?eventOrigin=group_similar_events"
+    },
+    {
+      "id": "2026-11-1-meetup-aws-sbg-ufpb",
+      "title": "1° Meetup AWS SBG UFPB",
+      "city": "João Pessoa",
+      "state": "PB",
+      "region": "Nordeste",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "27/11/2026",
+      "time": "14:00",
+      "description": "Primeiro meetup do AWS Student Builders Group na UFPB, Campus I, reunindo estudantes e entusiastas de AWS em João Pessoa.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/aws-sbg-at-ufpb-federal-univ-of-paraiba-campus-i/events/317268818/?eventOrigin=group_similar_events"
     },
     {
       "id": "2026-11-front-in-floripa-2026",
@@ -6497,6 +6651,20 @@
       "description": "Simpósio brasileiro de bioinformática da SBC, reunindo pesquisa em biologia computacional, genômica e algoritmos aplicados às ciências da vida.",
       "paid": true,
       "url": "https://www.sbc.org.br/bsb2026"
+    },
+    {
+      "id": "2026-11-xxxvii-seminario-de-iniciacao-cientifica-ufpa-seminic",
+      "title": "XXXVII Seminário de Iniciação Científica UFPA - Seminic",
+      "city": "Belém",
+      "state": null,
+      "region": "Norte",
+      "type": "Seminário",
+      "modality": "Híbrido",
+      "date": "30/11/2026",
+      "time": null,
+      "description": "37ª edição do Seminic da UFPA, em formato híbrido no Campus do Guamá, em Belém, com foco em ciência jovem, inteligência artificial e inovação para a Amazônia.",
+      "paid": false,
+      "url": "https://comunidade.devsnorte.com/eventos/xxxvii-seminario-de-iniciacao-cientifica-ufpa---seminic-531"
     }
   ],
   "Dezembro": [
@@ -6555,6 +6723,34 @@
       "description": "Evento híbrido da FIAP sobre a interseção entre cibersegurança e inteligência artificial, abordando novas estratégias de defesa digital.",
       "paid": false,
       "url": "https://www.meetup.com/pt-BR/fiapmeetups/events/317298463/?eventOrigin=group_similar_events"
+    },
+    {
+      "id": "2026-12-datadog-user-group-meetup-joinville-1-edicao",
+      "title": "🐶 Datadog User Group Meetup Joinville - 1ª Edição",
+      "city": "Joinville",
+      "state": "SC",
+      "region": "Sul",
+      "type": "Meetup",
+      "modality": "Presencial",
+      "date": "03/12/2026",
+      "time": "18:30",
+      "description": "Encontro do Datadog User Group em Joinville reunindo profissionais de observabilidade, SRE e monitoramento para debater tendências do universo Datadog.",
+      "paid": false,
+      "url": "https://www.meetup.com/pt-BR/datadog-user-group-brasil/events/317395191/?eventOrigin=group_featured_event"
+    },
+    {
+      "id": "2026-12-startup-weekend-summit-brasil",
+      "title": "Startup Weekend Summit Brasil",
+      "city": "Goiânia",
+      "state": "GO",
+      "region": "Centro-Oeste",
+      "type": "Summit",
+      "modality": "Presencial",
+      "date": "04/12/2026",
+      "time": "18:00",
+      "description": "Maior encontro de lideranças de Startup Weekend do Brasil, reunindo keynotes, workshops e painéis em Goiânia durante três dias.",
+      "paid": true,
+      "url": "https://www.meetup.com/aws-women-user-group-goiania/events/317403446/?eventOrigin=group_upcoming_events"
     },
     {
       "id": "2026-12-devopsdays-salvador",
@@ -6690,6 +6886,20 @@
       "description": "Workshop prático sobre o Kiro, ambiente de desenvolvimento integrado baseado em IA da AWS, com atividades de prototipação, desenvolvimento e deploy na nuvem.",
       "paid": false,
       "url": "https://www.meetup.com/aws-user-group-sao-roque/events/317159756/?eventOrigin=group_upcoming_events"
+    },
+    {
+      "id": "2026-12-online-6-aws-amplify-tire-seus-projetos-do-papel",
+      "title": "[Online #6] - AWS Amplify: Tire seus projetos do papel",
+      "city": null,
+      "state": null,
+      "region": "Sudeste",
+      "type": "Meetup",
+      "modality": "Online",
+      "date": "15/12/2026",
+      "time": "19:00",
+      "description": "Encontro online do AWS User Group Sorocaba com Suzana Melo sobre como usar o AWS Amplify para tirar projetos pessoais do papel e colocá-los na nuvem sem ser especialista em Cloud.",
+      "paid": false,
+      "url": "https://www.meetup.com/aws-user-group-sorocaba/events/317370576/?eventOrigin=group_featured_event"
     }
   ]
 }
